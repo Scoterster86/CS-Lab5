@@ -2,7 +2,7 @@
 
 void Shopper::BotMove()
 {
-  int stores = 2;	//number of stores
+	int stores = this->storelist_->GetSize();	//number of stores
   
   int i,xstore,ystore,zstore,storecomplete;
   //moves robot to every store and returns the robot to the starting position
@@ -14,12 +14,9 @@ void Shopper::BotMove()
 	zstore=0;
       }
     
-    int xpos = this->xpos_;
-    int ypos = this->ypos_;
-    int zpos = this->zpos_;
-    int xstore = this->storelist.front().xstore_;
-    int ystore = this->storelist.front().ystore_;
-    int zstore = this->storelist.front().zstore_;
+    int xstore = this->storelist_->xstore_;
+	int ystore = this->storelist_->ystore_;
+	int zstore = this->storelist_->zstore_;
     
     
     storecomplete=0;
@@ -38,9 +35,9 @@ void Shopper::BotMove()
       int xpos = this->xpos_;
       int ypos = this->ypos_;
       int zpos = this->zpos_;
-      int xstore = this->storelist.front().xstore_;
-      int ystore = this->storelist.front().ystore_;
-      int zstore = this->storelist.front().zstore_;
+      int xstore = this->storelist_->xstore_;
+	  int ystore = this->storelist_->ystore_;
+	  int zstore = this->storelist_->zstore_;
       //if bot position (3,13,X)
       if(xpos==3 && ypos==13){
 	//printf("\n Position %d %d %d\n", xpos, ypos, zpos);
@@ -427,7 +424,8 @@ void Shopper::BotMove()
 
 void Shopper::AddStore(Store* store)
 {
-	this->storelist.push_back(*store);
+	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;
+	else this->storelist_->AddStore(store);
 }
 
 void Shopper::RemoveStore()
@@ -844,12 +842,13 @@ Shopper::Shopper()
 	this->xpos_ = 0;
 	this->ypos_ = 0;
 	this->zpos_ = 0;
+	this->storelist_ = new Store();
 }
 
 int Shopper::storecomplete(){
-	int xpos = this->storelist.front().xstore_;
-	int ypos = this->storelist.front().ystore_;
-	int zpos = this->storelist.front().zstore_;
+	int xpos = this->storelist_->xstore_;
+	int ypos = this->storelist_->ystore_;
+	int zpos = this->storelist_->zstore_;
 	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
 	if (zpos == 0){
 		TIME++;

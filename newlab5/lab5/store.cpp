@@ -9,6 +9,7 @@ Store::Store(Store* store)
 	this->pNext = nullptr;
 }
 
+
 Store::Store()
 {
 	this->xstore_ = 0;
@@ -21,6 +22,7 @@ Store::Store()
 void Store::AddStore(Store* store)
 {
 	Store* ptr = this;
+	
 	while (ptr->pNext)
 	{
 		ptr = ptr->pNext;
@@ -32,7 +34,7 @@ int Store::GetSize()
 {
 
 	int n = 0;
-	Store* ptr;
+	Store* ptr = this;
 	while (ptr)
 	{
 		n++;

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+
 using namespace std;
 
 #define nullptr NULL
@@ -8,7 +8,6 @@ using namespace std;
 #define HEIGHT 2
 extern int TimeSlice;
 extern int TIME;
-
 extern int Floor[LENGTH][WIDTH][HEIGHT];
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, 
 	StNorth, StSouth, StEast, StWest, StNorthWest, StNorthEast, StSouthEast, 
@@ -34,7 +33,6 @@ public:
 
 	int RobotNum_;
 	int xpos_, ypos_, zpos_;
-	list<Store> storelist;
 	Store* storelist_;
 
 	Shopper();
