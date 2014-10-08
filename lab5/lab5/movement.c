@@ -396,7 +396,6 @@ int movement(int direction){
   case End:
     //case 20 Removes bot from simulation and prints out a notification
     printf("robot %d left the simulation at time %d\n", BOTNUM, TIME);
-    bottimes[BOTNUM-1][2]=TIME;
     
     TIME++;
 
