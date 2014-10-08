@@ -35,6 +35,7 @@ public:
 	int RobotNum_;
 	int xpos_, ypos_, zpos_;
 	list<Store> storelist;
+	Store* storelist_;
 
 	Shopper();
 

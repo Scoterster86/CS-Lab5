@@ -432,7 +432,7 @@ void Shopper::AddStore(Store* store)
 
 void Shopper::RemoveStore()
 {
-	this->storelist.pop_front();
+	this->storelist_ = this->storelist_->pNext;
 }
 
 
