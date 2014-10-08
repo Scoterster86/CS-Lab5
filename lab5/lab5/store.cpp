@@ -8,12 +8,3 @@ Store::Store(Store* store)
 	this->TimeSlice_ = store->TimeSlice_;
 }
 
-void AddStore(Store* store)
-{
-	storelist.push_back(*store);
-}
-
-void RemoveStore()
-{
-	storelist.pop_back();
-}
