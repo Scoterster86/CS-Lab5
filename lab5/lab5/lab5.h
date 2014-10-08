@@ -35,7 +35,7 @@ public:
 
 	void AddStore(Store* store);
 	void RemoveStore();
-
+	void storecomplete();
 	void BotMove();
 	int movement(int);
 	void AddShopper(Shopper*);
