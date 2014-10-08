@@ -13,9 +13,9 @@ int movement(int direction){
     //case 0  Moves up 4 rows and increments TIME by 1 for each movement
     for(j=0; j<4; j++){
 
-      xpos--;
+      this->xpos--;
       TIME= TIME+1;
-      floor[this.xpos][this.ypos][this.zpos] = BOTNUM;
+      floor[this->xpos][this->ypos][this->zpos] = BOTNUM;
       timecheck();
     }
     break;
@@ -24,18 +24,18 @@ int movement(int direction){
     //case 1  Moves up 2 rows and up and to the right 3 times and 
     //increments TIME by 1 for each movement
     for(j=0; j<5; j++){
-      if(j<2 && zpos==0){
-	this.xpos=this.xpos--;
+      if(j<2 && this->zpos_==0){
+	this->xpos_=this->xpos_--;
       }
-      else if(j<2 && this.zpos==1){
-	this.ypos--;
+      else if(j<2 && this->zpos_==1){
+	this->ypos_=ypos_--;
       }
       else{
-	this.xpos= this.xpos--;
-	this.ypos= this.ypos--;
+	this->xpos_= this->xpos_--;
+	this->ypos_= this->ypos_--;
       }
       TIME++;
-      floor[this.xpos][this.ypos][this.zpos] = BOTNUM;
+      floor[this->xpos_][this->ypos_][this->zpos_] = BOTNUM;
       timecheck();
     }
       break;
@@ -43,9 +43,9 @@ int movement(int direction){
     //printf("W");
     //case 2  Moves left 4 columns and increments TIME by 1 for each movement
     for(j=0; j<4; j++){
-      this.ypos=this.ypos--;
+      this->ypos_=this->ypos_--;
       TIME++;
-      floor[this.xpos][this.ypos][this.zpos] = BOTNUM;
+      floor[this->xpos_][this->ypos][this->zpos_] = BOTNUM;
       timecheck();
     }
     break;
