@@ -31,7 +31,7 @@ public:
 	Shopper();
 
 	void AddStore(Store* store);
-	void Shopper::RemoveStore();
+	void RemoveStore();
 
 	void BotMove();
 	void AddShopper(Shopper*);

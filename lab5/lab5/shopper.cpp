@@ -31,21 +31,23 @@ void Shopper::BotMove()
 			zstore=0;
 		}
 
-		int xpos = this->storelist.front().xstore_;
-		int ypos = this->storelist.front().ystore_;
-		int zpos = this->storelist.front().zstore_;
-		
+		int xpos = this->xpos_;
+		int ypos = this->ypos_;
+		int zpos = this->zpos_;
+		int xstore = this->storelist.front().xstore_;
+		int ystore = this->storelist.front().ystore_;
+		int zstore = this->storelist.front().zstore_;
 
 
 		storecomplete=0;
 		if(i==0){//begin if
-			Floor[8][16][0]=this->RobotNum_;
-		    xpos=8;
-		    ypos=16;
-			zpos=0;
-			TIME++;
-			timecheck();
-			movement(NorthWest);
+		  Floor[8][16][0]=this->RobotNum_;
+		  xpos=8;
+		  ypos=16;
+		  zpos=0;
+		  TIME++;
+		  timecheck();
+		  movement(NorthWest);
 		}//end i==0 if
 
 	while(storecomplete==0){
