@@ -18,12 +18,15 @@ class Store
 {
 public:
 	int xstore_, ystore_, zstore_;
-	
+	Store* pNext;
 	int TimeSlice_;
 
+	void AddStore(Store*);
+	int GetSize();
 	Store();
 	Store(Store*);
 };
+
 
 class Shopper
 {
