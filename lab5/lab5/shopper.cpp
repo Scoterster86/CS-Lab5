@@ -87,7 +87,7 @@ void Shopper::BotMove()
       else if(xpos==0 && ypos==8){
 	// printf("\n Position %d %d %d\n", xpos, ypos, zpos);
 	if(zpos==0){
-	  //if the store is on the second floor or the fastest route to the store is down
+	  //if the store is on the second Floor or the fastest route to the store is down
 	  if(zstore==1 || (zstore==0 && ystore>=6)){//begin zs1 || zs0 && ys>=6 if
 	    movement(South);
 	    // printf("South");
@@ -250,7 +250,7 @@ void Shopper::BotMove()
       else if(xpos==8 && ypos==8){
         //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
 	if(zpos==0){
-	  //if the target store is on the second floor use the elevator
+	  //if the target store is on the second Floor use the elevator
 	  if(zstore==1){
 	    movement(Up);
 	  }
@@ -263,7 +263,7 @@ void Shopper::BotMove()
 	  }
 	}
 	else{//if zpos==1
-	  //if the target store is on the first floor use the elevator
+	  //if the target store is on the first Floor use the elevator
           if(zstore==0){
             movement(Down);
           }
@@ -447,4 +447,409 @@ void Shopper::RemoveStore()
 	this->storelist.pop_front();
 }
 
-void RRqueue()
+void RRqueue();
+
+//prototypes
+int timecheck();
+int storecomplete();
+int Shopper::movement(int direction){
+	int j;
+	int xpos = this->xpos_;
+	int ypos = this->ypos_;
+	int zpos = this->zpos_;
+
+
+
+	switch (direction){
+	case North:
+		//printf("N");
+		//case 0 Moves up 4 rows and increments TIME by 1 for each movement
+		for (j = 0; j<4; j++){
+			xpos--;
+			TIME = TIME + 1;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case NorthWest:
+		//printf("NW, %d %d %d", xpos, ypos, zpos);
+		//case 1 Moves up 2 rows and up and to the right 3 times and
+		//increments TIME by 1 for each movement
+		for (j = 0; j<5; j++){
+			if (j<2 && zpos == 0){
+				xpos--;
+			}
+			else if (j<2 && zpos == 1){
+				ypos--;
+			}
+			else{
+				xpos--;
+				ypos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case West:
+		//printf("W");
+		//case 2 Moves left 4 columns and increments TIME by 1 for each movement
+		for (j = 0; j<4; j++){
+			ypos--;
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case SouthWest:
+		//printf("SW");
+		//case 3 Moves down 2 rows, down and the to
+		//the left 3 times and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j<2 && zpos == 0){
+				ypos--;
+			}
+			else if (j<2 && zpos == 1){
+				xpos++;
+			}
+			else{
+				xpos++;
+				ypos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case South:
+		//printf("S");
+		//case 4 Moves down 4 rows and increments TIME by 1 for each movement
+		for (j = 0; j<4; j++){
+			xpos++;
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case SouthEast:
+		//printf("SE");
+		//case 5 Moves down 2 rows, down and the right 3 times
+		// and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j<2 && zpos == 0){
+				xpos++;
+			}
+			else if (j<2 && zpos == 1){
+				ypos++;
+			}
+			else{
+				xpos++;
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case East:
+		//printf("E");
+		//case 6 Moves right 4 columns and increments TIME by 1 for each movement
+		for (j = 0; j<4; j++){
+			ypos++;
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case NorthEast:
+		//printf("NE");
+		//case 7 Moves up a row and right a column and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j<2 && zpos == 0){
+				ypos++;
+			}
+			else if (j<2 && zpos == 1){
+				xpos--;
+			}
+			else{
+				xpos--;
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case Up:
+		//printf("Up");
+		//case 8 Moves up a Floor, increments TIME by 3, and prints when the bot
+		//got on and off the elevator
+		zpos++;
+		printf("robot %d got on elevator at time %d\n", this->RobotNum_, TIME);
+		Floor[xpos][ypos][zpos] = this->RobotNum_;
+		for (j = 0; j<3; j++){
+			TIME++;
+			timecheck();
+		}
+		printf("robot %d got off elevator at time %d\n", this->RobotNum_, TIME);
+		break;
+	case Down:
+		//printf("Down");
+		//case 9 Moves down a Floor and increments TIME by 3, and prints when the bot
+		//got on and off the elevator
+		zpos--;
+		printf("robot %d got on elevator at time %d\n", this->RobotNum_, TIME);
+		Floor[xpos][ypos][zpos] = this->RobotNum_;
+		for (j = 0; j<3; j++){
+			TIME++;
+			timecheck();
+		}
+		printf("robot %d got off elevator at time %d\n", this->RobotNum_, TIME);
+		break;
+	case StNorth:
+		//printf("StN");
+		//case 10 moves up two rows, enters the store, then moves down two rows
+		//increments time by 1 for each movement
+		for (j = 0; j<5; j++){
+			if (j<2){
+				xpos--;
+			}
+			else if (j == 2){
+				storecomplete();
+			}
+			else{
+				xpos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StSouth:
+		// printf("StS");
+		//case 11 moves down two rows, enters the store, then moves up two rows
+		//increments time by 1 for each movement
+		for (j = 0; j<5; j++){
+			if (j<2){
+				xpos++;
+			}
+			else if (j == 2){
+				storecomplete();
+			}
+			else{
+				xpos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StEast:
+		// printf("StE");
+		//case 12 moves right two columns, enters the store, then moves left two columns
+		//increments time by 1 for each movement
+		for (j = 0; j<5; j++){
+			if (j<2){
+				ypos++;
+			}
+			else if (j == 2){
+				storecomplete();
+			}
+			else{
+				ypos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StWest:
+		// printf("StW");
+		//case 13 moves left two columns, enters the store, then moves right two columns
+		//increments time by 1 for each movement
+		for (j = 0; j<5; j++){
+			if (j<2){
+				ypos--;
+			}
+			else if (j == 2){
+				storecomplete();
+			}
+			else{
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StNorthWest:
+		// printf("StNW");
+		//case 14 moves up a row and left a column, enters the store,
+		// then moves down a row and right a column increments time by 1 for each movement
+		for (j = 0; j<3; j++){
+			if (j == 0){
+				xpos--;
+				ypos--;
+			}
+			else if (j == 1){
+				storecomplete();
+			}
+			else{
+				xpos++;
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StNorthEast:
+		// printf("StNE");
+		//case 15 moves up a row and right a column, enters the store,
+		// then moves down a row and left a column increments time by 1 for each movement
+		for (j = 0; j<3; j++){
+			if (j == 0){
+				xpos--;
+				ypos++;
+			}
+			else if (j == 1){
+				storecomplete();
+			}
+			else{
+				xpos++;
+				ypos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StSouthEast:
+		//case 16 moves down a row and right a column, enters the store,
+		// then moves up a row and left a column increments time by 1 for each movement
+		// printf("StSE");
+		for (j = 0; j<3; j++){
+			if (j == 0){
+				xpos++;
+				ypos++;
+			}
+			else if (j == 1){
+				storecomplete();
+			}
+			else{
+				xpos--;
+				ypos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case StSouthWest:
+		//case 15 moves down a row and left a column, enters the store,
+		// then moves up a row and right a column, increments time by 1 for each movement
+		//printf("StSW");
+		for (j = 0; j<3; j++){
+			if (j == 0){
+				xpos++;
+				ypos--;
+			}
+			else if (j == 1){
+				storecomplete();
+			}
+			else{
+				xpos--;
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case NorthWest2:
+		// printf("%d %d %d",xpos, ypos,zpos);
+		//case 16 Moves up a row and left a column and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j>2 && zpos == 0){
+				ypos--;
+			}
+			else if (j>2 && zpos == 1){
+				xpos--;
+			}
+			else{
+				xpos--;
+				ypos--;
+			}
+			//printf("NW2\n");
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case NorthEast2:
+		//printf("NE2");
+		//case 17 Moves up a row and right a column and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j>2 && zpos == 0){
+				xpos--;
+			}
+			else if (j>2 && zpos == 1){
+				ypos++;
+			}
+			else{
+				xpos--;
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case SouthWest2:
+		// printf("SW2");
+		//case 18 Moves down a row and left a column and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j>2 && zpos == 0){
+				xpos++;
+			}
+			else if (j>2 && zpos == 1){
+				ypos--;
+			}
+			else{
+				xpos++;
+				ypos--;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case SouthEast2:
+		//printf("SE2");
+		//case 19 Moves down a row and right a column and increments TIME by 1
+		for (j = 0; j<5; j++){
+			if (j>2 && zpos == 0){
+				ypos++;
+			}
+			else if (j>2 && zpos == 1){
+				xpos++;
+			}
+			else{
+				xpos++;
+				ypos++;
+			}
+			TIME++;
+			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			timecheck();
+		}
+		break;
+	case End:
+		//case 20 Removes bot from simulation and prints out a notification
+		printf("robot %d left the simulation at time %d\n", this->RobotNum_, TIME);
+		//[this->RobotNum_ - 1][2] = TIME;
+		TIME++;
+	default:
+		break;
+	}
+	return 0;
+}
