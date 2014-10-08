@@ -1,16 +1,24 @@
-﻿2014/10/08 15:48:37 にビルドを開始しました。
-     1>ノード 2 上のプロジェクト "C:\Users\LMN\Documents\GitHub\CS-Lab5\lab5\lab5\lab5.vcxproj" (Build ターゲット)。
+﻿2014/10/08 16:20:22 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\lab5\lab5.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp shopper.cpp store.cpp timecheck.cpp
+         timecheck.cpp
+         store.cpp
+         shopper.cpp
+     1>c:\users\lmn\documents\github\cs-lab5\newlab5\lab5\shopper.cpp(7): warning C4101: 'ystore' : ローカル変数は 1 度も使われていません。
+     1>c:\users\lmn\documents\github\cs-lab5\newlab5\lab5\shopper.cpp(7): warning C4101: 'zstore' : ローカル変数は 1 度も使われていません。
+     1>c:\users\lmn\documents\github\cs-lab5\newlab5\lab5\shopper.cpp(7): warning C4101: 'xstore' : ローカル変数は 1 度も使われていません。
          main.cpp
+         コードを生成中...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\LMN\Documents\GitHub\CS-Lab5\lab5\Debug\lab5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\LMN\Documents\GitHub\CS-Lab5\lab5\Debug\lab5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\LMN\Documents\GitHub\CS-Lab5\lab5\Debug\lab5.lib" /MACHINE:X86 Debug\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\Debug\lab5.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\Debug\lab5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\Debug\lab5.lib" /MACHINE:X86 Debug\main.obj
          Debug\shopper.obj
          Debug\store.obj
          Debug\timecheck.obj
-         lab5.vcxproj -> C:\Users\LMN\Documents\GitHub\CS-Lab5\lab5\Debug\lab5.exe
-     1>プロジェクト "C:\Users\LMN\Documents\GitHub\CS-Lab5\lab5\lab5\lab5.vcxproj" (Build ターゲット) のビルドが完了しました。
+         LINK : 前回のインクリメンタル リンクで C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\Debug\lab5.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+         lab5.vcxproj -> C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\Debug\lab5.exe
+     1>プロジェクト "C:\Users\LMN\Documents\GitHub\CS-Lab5\newlab5\lab5\lab5.vcxproj" (Build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:01.15
+経過時間 00:00:02.91
