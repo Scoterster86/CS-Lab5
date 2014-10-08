@@ -39,9 +39,9 @@ void Shopper::BotMove()
 		storecomplete=0;
 		if(i==0){//begin if
 		  Floor[8][16][0]=this->RobotNum_;
-		  xpos=8;
-		  ypos=16;
-		  zpos=0;
+		  this->xpos_=8;
+		  this->ypos_=16;
+		  this->zpos_=0;
 		  TIME++;
 		  timecheck();
 		  this->movement(NorthWest);
@@ -49,7 +49,12 @@ void Shopper::BotMove()
 
 	while(storecomplete==0){
       //printf("\n%d %d %d\n", xpos, ypos, zpos);
-
+		int xpos = this->xpos_;
+		int ypos = this->ypos_;
+		int zpos = this->zpos_;
+		int xstore = this->storelist.front().xstore_;
+		int ystore = this->storelist.front().ystore_;
+		int zstore = this->storelist.front().zstore_;
       //if bot position (3,13,X)
       if(xpos==3 && ypos==13){
 	//printf("\n Position %d %d %d\n", xpos, ypos, zpos);
