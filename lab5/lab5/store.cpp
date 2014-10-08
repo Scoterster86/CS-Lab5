@@ -8,3 +8,10 @@ Store::Store(Store* store)
 	this->TimeSlice_ = store->TimeSlice_;
 }
 
+Store::Store()
+{
+	this->xstore_ = 0;
+	this->ystore_ = 0;
+	this->zstore_ = 0;
+	this->TimeSlice_ = 0;
+}

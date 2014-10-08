@@ -79,6 +79,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="shopper.cpp" />
     <ClCompile Include="store.cpp" />
+    <ClCompile Include="timecheck.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lab5.h" />

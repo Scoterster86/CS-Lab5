@@ -3,11 +3,13 @@
 using namespace std;
 
 #define nullptr NULL
+#define LENGTH 17
+#define WIDTH 17
+#define HEIGHT 2
+extern int TimeSlice;
+extern int TIME;
 
-int TimeSlice;
-int TIME=0;
-
-int Floor[16][16][2];
+extern int Floor[LENGTH][WIDTH][HEIGHT];
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, 
 	StNorth, StSouth, StEast, StWest, StNorthWest, StNorthEast, StSouthEast, 
 	StSouthWest, NorthWest2, NorthEast2, SouthWest2, SouthEast2, End };
@@ -36,8 +38,12 @@ public:
 	void AddStore(Store* store);
 	void RemoveStore();
 
+	int storecomplete();
 	void BotMove();
 	int movement(int);
 	void AddShopper(Shopper*);
 	void RemoveShopper();
 };
+
+int timecheck();
+void RRqueue();
