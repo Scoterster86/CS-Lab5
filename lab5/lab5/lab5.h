@@ -1,16 +1,20 @@
 #include <iostream>
+#include <list>
+using namespace std;
+
 #define nullptr NULL
+
+list<Store> storelist;
 
 class Store
 {
 public:
 	int xstore_, ystore_, zstore_;
-	Store* NextStore_;
+	
 	int TimeSlice_;
 
 	Store();
-	void AddStore(Store*);
-	void RemoveStore();
+	Store(Store*);
 };
 
 class Shopper

@@ -1,21 +1,19 @@
 #include "lab5.h"
 
-
-void Store::AddStore(Store* store)
+Store::Store(Store* store)
 {
-	///	If the store list is not empty	///
-	if (this)
-	{
+	this->xstore_ = store->xstore_;
+	this->ystore_ = store->ystore_;
+	this->zstore_ = store->zstore_;
+	this->TimeSlice_ = store->TimeSlice_;
+}
 
-	}
+void AddStore(Store* store)
+{
+	storelist.push_back(*store);
+}
 
-	//// If the store list is empty	///
-	else
-	{
-		this->xstore_ = store->xstore_;
-		this->ystore_ = store->ystore_;
-		this->zstore_ = store->zstore_;
-
-		this->NextStore_ = nullptr;	//set the next store as empty
-	}
+void RemoveStore()
+{
+	storelist.pop_back();
 }
