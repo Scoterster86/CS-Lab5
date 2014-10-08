@@ -447,9 +447,9 @@ void Shopper::RemoveStore()
 
 int Shopper::movement(int direction){
 	int j;
-	int xpos = this->xpos_;
-	int ypos = this->ypos_;
-	int zpos = this->zpos_;
+	;
+	this->ypos_;
+	this->zpos_;
 
 
 
@@ -458,29 +458,29 @@ int Shopper::movement(int direction){
 		//printf("N");
 		//case 0 Moves up 4 rows and increments TIME by 1 for each movement
 		for (j = 0; j<4; j++){
-			xpos--;
+			this->xpos_--;
 			TIME = TIME + 1;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
 	case NorthWest:
-		//printf("NW, %d %d %d", xpos, ypos, zpos);
+		//printf("NW, %d %d %d", this->xpos_, this->ypos_, this->zpos_);
 		//case 1 Moves up 2 rows and up and to the right 3 times and
 		//increments TIME by 1 for each movement
 		for (j = 0; j<5; j++){
-			if (j<2 && zpos == 0){
-				xpos--;
+			if (j<2 && this->zpos_ == 0){
+				this->xpos_--;
 			}
-			else if (j<2 && zpos == 1){
-				ypos--;
+			else if (j<2 && this->zpos_ == 1){
+				this->ypos_--;
 			}
 			else{
-				xpos--;
-				ypos--;
+				this->xpos_--;
+				this->ypos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -488,9 +488,9 @@ int Shopper::movement(int direction){
 		//printf("W");
 		//case 2 Moves left 4 columns and increments TIME by 1 for each movement
 		for (j = 0; j<4; j++){
-			ypos--;
+			this->ypos_--;
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -499,18 +499,18 @@ int Shopper::movement(int direction){
 		//case 3 Moves down 2 rows, down and the to
 		//the left 3 times and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j<2 && zpos == 0){
-				ypos--;
+			if (j<2 && this->zpos_ == 0){
+				this->ypos_--;
 			}
-			else if (j<2 && zpos == 1){
-				xpos++;
+			else if (j<2 && this->zpos_ == 1){
+				this->xpos_++;
 			}
 			else{
-				xpos++;
-				ypos--;
+				this->xpos_++;
+				this->ypos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -518,9 +518,9 @@ int Shopper::movement(int direction){
 		//printf("S");
 		//case 4 Moves down 4 rows and increments TIME by 1 for each movement
 		for (j = 0; j<4; j++){
-			xpos++;
+			this->xpos_++;
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -529,18 +529,18 @@ int Shopper::movement(int direction){
 		//case 5 Moves down 2 rows, down and the right 3 times
 		// and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j<2 && zpos == 0){
-				xpos++;
+			if (j<2 && this->zpos_ == 0){
+				this->xpos_++;
 			}
-			else if (j<2 && zpos == 1){
-				ypos++;
+			else if (j<2 && this->zpos_ == 1){
+				this->ypos_++;
 			}
 			else{
-				xpos++;
-				ypos++;
+				this->xpos_++;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -548,9 +548,9 @@ int Shopper::movement(int direction){
 		//printf("E");
 		//case 6 Moves right 4 columns and increments TIME by 1 for each movement
 		for (j = 0; j<4; j++){
-			ypos++;
+			this->ypos_++;
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -558,18 +558,18 @@ int Shopper::movement(int direction){
 		//printf("NE");
 		//case 7 Moves up a row and right a column and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j<2 && zpos == 0){
-				ypos++;
+			if (j<2 && this->zpos_ == 0){
+				this->ypos_++;
 			}
-			else if (j<2 && zpos == 1){
-				xpos--;
+			else if (j<2 && this->zpos_ == 1){
+				this->xpos_--;
 			}
 			else{
-				xpos--;
-				ypos++;
+				this->xpos_--;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -577,9 +577,9 @@ int Shopper::movement(int direction){
 		//printf("Up");
 		//case 8 Moves up a Floor, increments TIME by 3, and prints when the bot
 		//got on and off the elevator
-		zpos++;
+		this->zpos_++;
 		printf("robot %d got on elevator at time %d\n", this->RobotNum_, TIME);
-		Floor[xpos][ypos][zpos] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		for (j = 0; j<3; j++){
 			TIME++;
 			timecheck();
@@ -590,9 +590,9 @@ int Shopper::movement(int direction){
 		//printf("Down");
 		//case 9 Moves down a Floor and increments TIME by 3, and prints when the bot
 		//got on and off the elevator
-		zpos--;
+		this->zpos_--;
 		printf("robot %d got on elevator at time %d\n", this->RobotNum_, TIME);
-		Floor[xpos][ypos][zpos] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		for (j = 0; j<3; j++){
 			TIME++;
 			timecheck();
@@ -605,16 +605,16 @@ int Shopper::movement(int direction){
 		//increments time by 1 for each movement
 		for (j = 0; j<5; j++){
 			if (j<2){
-				xpos--;
+				this->xpos_--;
 			}
 			else if (j == 2){
 				storecomplete();
 			}
 			else{
-				xpos++;
+				this->xpos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -624,16 +624,16 @@ int Shopper::movement(int direction){
 		//increments time by 1 for each movement
 		for (j = 0; j<5; j++){
 			if (j<2){
-				xpos++;
+				this->xpos_++;
 			}
 			else if (j == 2){
 				storecomplete();
 			}
 			else{
-				xpos--;
+				this->xpos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -643,16 +643,16 @@ int Shopper::movement(int direction){
 		//increments time by 1 for each movement
 		for (j = 0; j<5; j++){
 			if (j<2){
-				ypos++;
+				this->ypos_++;
 			}
 			else if (j == 2){
 				storecomplete();
 			}
 			else{
-				ypos--;
+				this->ypos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -662,16 +662,16 @@ int Shopper::movement(int direction){
 		//increments time by 1 for each movement
 		for (j = 0; j<5; j++){
 			if (j<2){
-				ypos--;
+				this->ypos_--;
 			}
 			else if (j == 2){
 				storecomplete();
 			}
 			else{
-				ypos++;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -681,18 +681,18 @@ int Shopper::movement(int direction){
 		// then moves down a row and right a column increments time by 1 for each movement
 		for (j = 0; j<3; j++){
 			if (j == 0){
-				xpos--;
-				ypos--;
+				this->xpos_--;
+				this->ypos_--;
 			}
 			else if (j == 1){
 				storecomplete();
 			}
 			else{
-				xpos++;
-				ypos++;
+				this->xpos_++;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -702,18 +702,18 @@ int Shopper::movement(int direction){
 		// then moves down a row and left a column increments time by 1 for each movement
 		for (j = 0; j<3; j++){
 			if (j == 0){
-				xpos--;
-				ypos++;
+				this->xpos_--;
+				this->ypos_++;
 			}
 			else if (j == 1){
 				storecomplete();
 			}
 			else{
-				xpos++;
-				ypos--;
+				this->xpos_++;
+				this->ypos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -723,18 +723,18 @@ int Shopper::movement(int direction){
 		// printf("StSE");
 		for (j = 0; j<3; j++){
 			if (j == 0){
-				xpos++;
-				ypos++;
+				this->xpos_++;
+				this->ypos_++;
 			}
 			else if (j == 1){
 				storecomplete();
 			}
 			else{
-				xpos--;
-				ypos--;
+				this->xpos_--;
+				this->ypos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -744,38 +744,38 @@ int Shopper::movement(int direction){
 		//printf("StSW");
 		for (j = 0; j<3; j++){
 			if (j == 0){
-				xpos++;
-				ypos--;
+				this->xpos_++;
+				this->ypos_--;
 			}
 			else if (j == 1){
 				storecomplete();
 			}
 			else{
-				xpos--;
-				ypos++;
+				this->xpos_--;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
 	case NorthWest2:
-		// printf("%d %d %d",xpos, ypos,zpos);
+		// printf("%d %d %d",this->xpos_, this->ypos_,this->zpos_);
 		//case 16 Moves up a row and left a column and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j>2 && zpos == 0){
-				ypos--;
+			if (j>2 && this->zpos_ == 0){
+				this->ypos_--;
 			}
-			else if (j>2 && zpos == 1){
-				xpos--;
+			else if (j>2 && this->zpos_ == 1){
+				this->xpos_--;
 			}
 			else{
-				xpos--;
-				ypos--;
+				this->xpos_--;
+				this->ypos_--;
 			}
 			//printf("NW2\n");
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -783,18 +783,18 @@ int Shopper::movement(int direction){
 		//printf("NE2");
 		//case 17 Moves up a row and right a column and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j>2 && zpos == 0){
-				xpos--;
+			if (j>2 && this->zpos_ == 0){
+				this->xpos_--;
 			}
-			else if (j>2 && zpos == 1){
-				ypos++;
+			else if (j>2 && this->zpos_ == 1){
+				this->ypos_++;
 			}
 			else{
-				xpos--;
-				ypos++;
+				this->xpos_--;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -802,18 +802,18 @@ int Shopper::movement(int direction){
 		// printf("SW2");
 		//case 18 Moves down a row and left a column and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j>2 && zpos == 0){
-				xpos++;
+			if (j>2 && this->zpos_ == 0){
+				this->xpos_++;
 			}
-			else if (j>2 && zpos == 1){
-				ypos--;
+			else if (j>2 && this->zpos_ == 1){
+				this->ypos_--;
 			}
 			else{
-				xpos++;
-				ypos--;
+				this->xpos_++;
+				this->ypos_--;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
@@ -821,18 +821,18 @@ int Shopper::movement(int direction){
 		//printf("SE2");
 		//case 19 Moves down a row and right a column and increments TIME by 1
 		for (j = 0; j<5; j++){
-			if (j>2 && zpos == 0){
-				ypos++;
+			if (j>2 && this->zpos_ == 0){
+				this->ypos_++;
 			}
-			else if (j>2 && zpos == 1){
-				xpos++;
+			else if (j>2 && this->zpos_ == 1){
+				this->xpos_++;
 			}
 			else{
-				xpos++;
-				ypos++;
+				this->xpos_++;
+				this->ypos_++;
 			}
 			TIME++;
-			Floor[xpos][ypos][zpos] = this->RobotNum_;
+			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 			timecheck();
 		}
 		break;
