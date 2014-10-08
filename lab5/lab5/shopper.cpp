@@ -23,7 +23,12 @@ void Shopper::BotMove()
 			zstore=0;
 		}
 		*/
-
+		int xpos = this->xpos_;
+		int ypos = this->ypos_;
+		int zpos = this->zpos_;
+		int xstore = this->storelist.front().xstore_;
+		int ystore = this->storelist.front().ystore_;
+		int zstore = this->storelist.front().zstore_;
 		if (stores == i)
 		{
 			xstore=8;
@@ -31,12 +36,7 @@ void Shopper::BotMove()
 			zstore=0;
 		}
 
-		int xpos = this->xpos_;
-		int ypos = this->ypos_;
-		int zpos = this->zpos_;
-		int xstore = this->storelist.front().xstore_;
-		int ystore = this->storelist.front().ystore_;
-		int zstore = this->storelist.front().zstore_;
+	
 
 
 		storecomplete=0;
