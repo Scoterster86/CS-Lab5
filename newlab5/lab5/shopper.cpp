@@ -2,59 +2,45 @@
 
 void Shopper::BotMove()
 {
-	int stores = 2;	//number of stores
-
-	int i,xstore,ystore,zstore,storecomplete;
-	//moves robot to every store and returns the robot to the starting position
-	for(i=0;i<=stores;i++){
-		/*
-		//if the bot hasn't completed all store runs, scan for next store
-		if(i<stores){
-			printf("Input store coordinates x y z:\n");
-			getchar();
-			scanf("%d %d %d", &xstore, &ystore, &zstore);
-		}
-		else{//set store to starting position
-			xstore=8;
-			ystore=16;
-			zstore=0;
-		}
-		*/
-
-		if (stores == i)
-		{
-			xstore=8;
-			ystore=16;
-			zstore=0;
-		}
-
-		int xpos = this->xpos_;
-		int ypos = this->ypos_;
-		int zpos = this->zpos_;
-		int xstore = this->storelist.front().xstore_;
-		int ystore = this->storelist.front().ystore_;
-		int zstore = this->storelist.front().zstore_;
-
-
-		storecomplete=0;
-		if(i==0){//begin if
-		  Floor[8][16][0]=this->RobotNum_;
-		  this->xpos_=8;
-		  this->ypos_=16;
-		  this->zpos_=0;
-		  TIME++;
-		  timecheck();
-		  this->movement(NorthWest);
-		}//end i==0 if
-
-	while(storecomplete==0){
+  int stores = 2;	//number of stores
+  
+  int i,xstore,ystore,zstore,storecomplete;
+  //moves robot to every store and returns the robot to the starting position
+  for(i=0;i<=stores;i++){    
+    if (stores == i)
+      {
+	xstore=8;
+	ystore=16;
+	zstore=0;
+      }
+    
+    int xpos = this->xpos_;
+    int ypos = this->ypos_;
+    int zpos = this->zpos_;
+    int xstore = this->storelist.front().xstore_;
+    int ystore = this->storelist.front().ystore_;
+    int zstore = this->storelist.front().zstore_;
+    
+    
+    storecomplete=0;
+    if(i==0){//begin if
+      Floor[8][16][0]=this->RobotNum_;
+      this->xpos_=8;
+      this->ypos_=16;
+      this->zpos_=0;
+      TIME++;
+      timecheck();
+      this->movement(NorthWest);
+    }//end i==0 if
+    
+    while(storecomplete==0){
       //printf("\n%d %d %d\n", xpos, ypos, zpos);
-		int xpos = this->xpos_;
-		int ypos = this->ypos_;
-		int zpos = this->zpos_;
-		int xstore = this->storelist.front().xstore_;
-		int ystore = this->storelist.front().ystore_;
-		int zstore = this->storelist.front().zstore_;
+      int xpos = this->xpos_;
+      int ypos = this->ypos_;
+      int zpos = this->zpos_;
+      int xstore = this->storelist.front().xstore_;
+      int ystore = this->storelist.front().ystore_;
+      int zstore = this->storelist.front().zstore_;
       //if bot position (3,13,X)
       if(xpos==3 && ypos==13){
 	//printf("\n Position %d %d %d\n", xpos, ypos, zpos);
