@@ -859,7 +859,7 @@ int Shopper::storecomplete(){
 	int xpos = this->storelist.front().xstore_;
 	int ypos = this->storelist.front().ystore_;
 	int zpos = this->storelist.front().zstore_;
-	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, this->xpos, this->ypos_, (this->zpos + 1), TIME);
+	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, this->xpos_, this->ypos_, (this->zpos + 1), TIME);
 	if (this->zpos == 0){
 		TIME++;
 		timecheck();
