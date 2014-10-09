@@ -56,7 +56,9 @@ public:
 	Shopper* listhead_;
 	Shopper* listtail_;
 	
-	void RRqueue();
+	RRqueue();
+	RRqueue(Shopper*);
+	void RunQueue();
 };
 int timecheck();
 
