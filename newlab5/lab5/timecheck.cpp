@@ -1,7 +1,7 @@
 #include "lab5.h"
 int timecheck(){
 	//initialize variables
-	int i, j, k, m, b, c, d;
+//	int i, j, k, m, b, c, d;
 	if (TIME % 25 == 0){
 		cout<<"next enters store at time " <<TIME <<endl;
 		/*
