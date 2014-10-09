@@ -49,7 +49,7 @@ void RRqueue::RunQueue()
 		ptr->storelist_->TimeSlice_=0;
 		ptr->slices++;
 		RemoveShopper();
-		cout<<"Shopper 1 leaves store (" <<ptr->xpos_ <<", " << ptr->ypos_ <<") after " << ptr->slices << "Time slices at Time" <<TIME << endl;;
+		cout<<"Shopper 1 leaves store (" <<ptr->xpos_ <<", " << ptr->ypos_ <<") after " << ptr->slices << " Time slices at Time " <<TIME << endl;;
 		ptr->slices = 0;
 		
 	}
