@@ -1,5 +1,6 @@
 #include "lab5.h"
 
+//Yo Karita
 //constructor for a shopper
 Shopper::Shopper()
 {
@@ -12,6 +13,7 @@ Shopper::Shopper()
 	this->nextshopper_ = nullptr;
 }
 
+//Yo Karita
 //constructor for a shopper with the bot number as an input
 Shopper::Shopper(int k)
 {
@@ -24,6 +26,7 @@ Shopper::Shopper(int k)
 	this->nextshopper_ = nullptr;
 }
 
+//Yo Karita
 //adds a store to the list of stores
 void Shopper::AddStore(Store* store)
 {
@@ -31,12 +34,14 @@ void Shopper::AddStore(Store* store)
 	else this->storelist_->AddStore(store);
 }
 
+//Yo Karita
 //removes a store from the list of stores
 void Shopper::RemoveStore()
 {
 	this->storelist_ = this->storelist_->pNext;
 }
 
+//Yo Karita
 //controls the movement of the shopper
 void Shopper::BotMove()
 {
@@ -463,8 +468,8 @@ void Shopper::BotMove()
   }//end i for loop
 }
 
-
-
+//Scott Iwanicki
+//moves the shopper in the given direction
 int Shopper::movement(int direction){
 	int j;
 	;
@@ -862,7 +867,7 @@ int Shopper::movement(int direction){
 	return 0;
 }
 
-
+//Scott Iwanicki
 //runs when a shopper reaches a store
 int Shopper::storecomplete(){
 	int xpos = this->storelist_->xstore_;
@@ -883,6 +888,7 @@ int Shopper::storecomplete(){
 	return 0;
 }
 
+//Yo Karita
 //adds a shopper to a list of shoppers
 void Shopper::AddShopper(Shopper* shopper)
 {
@@ -900,6 +906,7 @@ void Shopper::AddShopper(Shopper* shopper)
 	else this->nextshopper_ = shopper;
 }
 
+//Yo Karita
 //removes the shopper from a list of shoppers
 void Shopper::RemoveShopper(Shopper* shopper)
 {
