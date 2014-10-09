@@ -13,6 +13,7 @@ enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, Nort
 	StNorth, StSouth, StEast, StWest, StNorthWest, StNorthEast, StSouthEast, 
 	StSouthWest, NorthWest2, NorthEast2, SouthWest2, SouthEast2, End };
 
+//Yo Karita
 //Store class
 class Store
 {
@@ -27,7 +28,7 @@ public:
 	Store(Store*);
 };
 
-
+//Scott Iwanicki
 //Shopper class
 class Shopper
 {
@@ -53,6 +54,7 @@ public:
 
 };
 
+//Scott Iwanicki
 //RRqueue class
 class RRqueue
 {
