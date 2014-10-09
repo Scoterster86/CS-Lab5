@@ -868,7 +868,7 @@ int Shopper::storecomplete(){
 	int xpos = this->storelist_->xstore_;
 	int ypos = this->storelist_->ystore_;
 	int zpos = this->storelist_->zstore_;
-	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
+	printf("Shopper %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
 	//shopper enters round robin queue
 	RRqueue* ptr = new RRqueue(this);
 	//the shopper is processed at the round robin queue
