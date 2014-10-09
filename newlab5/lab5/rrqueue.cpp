@@ -7,6 +7,14 @@ RRqueue::RRqueue()
 	this->listtail_ = NULL;
 }
 
+RRqueue::RRqueue(Shopper* shopper)
+{
+
+	this->listhead_ = shopper;
+	this->listtail_ = shopper;
+}
+
+
 void RRqueue::AddShopper(Shopper* shopper)
 {
 	if(this->listhead_ ==NULL){
