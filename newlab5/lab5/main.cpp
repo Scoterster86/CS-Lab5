@@ -5,7 +5,7 @@ int TIME = 0;
 int TimeSlice = 1;
 int main(int argc, char* argv[])
 {
-	
+	//sets input values
 	int n = atoi(argv[1]);
 	int tmpTimeSlice = atoi(argv[2]);
 	TimeSlice = tmpTimeSlice;
@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 
 		shopper->AddStore(store);	//Add the store to the shopper's storelist
 	}
-
+	//shopper moves to each store and enters the RRqueue to be serviced
 	shopper->BotMove();
 	
 	return 0;
