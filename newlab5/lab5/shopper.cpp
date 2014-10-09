@@ -8,11 +8,11 @@ void Shopper::BotMove()
   //moves robot to every store and returns the robot to the starting position
   for(i=0;i<=stores;i++){    
 
-    
+    /*
     xstore = this->storelist_->xstore_;
     ystore = this->storelist_->ystore_;
     zstore = this->storelist_->zstore_;
-    
+    */
     
     storecomplete=0;
     if(i==0){//begin if
