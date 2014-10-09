@@ -20,10 +20,11 @@ void RRqueue::AddShopper(Shopper* shopper)
   
 }
 
-void RemoveShopper(){
+void RRqueue::RemoveShopper(){
 	this->headptr_ = this->headptr_->nextshopper_;
 }
-void RunQueue()
+
+void RRqueue::RunQueue()
 {
 	Shopper* = ptr;
 	ptr = this->headptr_;
