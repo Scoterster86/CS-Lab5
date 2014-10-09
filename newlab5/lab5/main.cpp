@@ -25,10 +25,11 @@ int main(int argc, char* argv[])
 	{
 
 		cin >> xpos >> ypos >> ts;
+		zpos=1;//sets 1 for lab5
 		Store* store = new Store();		//create a store
 		store->xstore_ = xpos;	// sets the location
 		store->ystore_ = ypos;
-		store->zstore_ = 1;	//sets 1 for lab5
+		store->zstore_ = zpos;	
 		store->TimeSlice_ = ts;	//sets the timeslice
 
 		shopper->AddStore(store);	//Add the store to the shopper's storelist
