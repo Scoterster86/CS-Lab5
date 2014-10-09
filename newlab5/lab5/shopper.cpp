@@ -874,7 +874,7 @@ int Shopper::storecomplete(){
 	//the shopper is processed at the round robin queue
 	while(this->storelist_->TimeSlice_ != 0)
 	{
-		TIME++;
+		TIME+= TimeSlice;
 		ptr->RunQueue();
 		timecheck();
 	}
