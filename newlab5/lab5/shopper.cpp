@@ -2,7 +2,7 @@
 
 void Shopper::BotMove()
 {
-	int stores = this->storelist_->GetSize();	//number of stores
+  int stores = this->storelist_->GetSize();	//number of stores
   
   int i,xstore,ystore,zstore,storecomplete;
   //moves robot to every store and returns the robot to the starting position
