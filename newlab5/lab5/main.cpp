@@ -3,7 +3,7 @@
 int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
 int TimeSlice = 1;
-//Yo Karita
+//Scott Iwanicki
 int main(int argc, char* argv[])
 {
 	//sets input values
