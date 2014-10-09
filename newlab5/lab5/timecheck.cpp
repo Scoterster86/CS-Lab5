@@ -19,7 +19,7 @@ int timecheck(){
 				if (i == -1 || i == WIDTH){//start if1
 					//creates the top/bottom border
 					for (j = 0; j <= (LENGTH * 5); j++){//start j for loop
-						//*5 to account for the 4 spaces allocated for the digit and a space
+						// *5 to account for the 4 spaces allocated for the digit and a space
 						if (j == LENGTH * 5){//start if2
 							printf("-\n");
 						}//end if2
