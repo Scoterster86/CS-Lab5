@@ -868,7 +868,9 @@ int Shopper::storecomplete(){
 	RRqueue* ptr = new RRqueue(this);
 	while(this->storelist_->TimeSlice_ != 0)
 	{
+		TIME++;
 		ptr->RunQueue();
+		timecheck();
 	}
 	RemoveStore();
 	return 0;
