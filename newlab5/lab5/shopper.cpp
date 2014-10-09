@@ -1,6 +1,6 @@
 #include "lab5.h"
 
-
+//constructor for a shopper
 Shopper::Shopper()
 {
 	this->RobotNum_ = 0;
@@ -12,6 +12,7 @@ Shopper::Shopper()
 	this->nextshopper_ = nullptr;
 }
 
+//constructor for a shopper with the bot number as an input
 Shopper::Shopper(int k)
 {
 	this->RobotNum_ = k;
@@ -23,17 +24,20 @@ Shopper::Shopper(int k)
 	this->nextshopper_ = nullptr;
 }
 
+//adds a store to the list of stores
 void Shopper::AddStore(Store* store)
 {
 	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;
 	else this->storelist_->AddStore(store);
 }
 
+//removes a store from the list of stores
 void Shopper::RemoveStore()
 {
 	this->storelist_ = this->storelist_->pNext;
 }
 
+//controls the movement of the shopper
 void Shopper::BotMove()
 {
   int stores = this->storelist_->GetSize();	//number of stores
@@ -49,7 +53,7 @@ void Shopper::BotMove()
     */
     
     storecomplete=0;
-    if(i==0){//begin if
+    if(i==0){//if the shopper just entered the store, place the shopper at A1
       Floor[8][16][0]=this->RobotNum_;
       this->xpos_=8;
       this->ypos_=16;
@@ -859,24 +863,30 @@ int Shopper::movement(int direction){
 }
 
 
-
+//runs when a shopper reaches a store
 int Shopper::storecomplete(){
 	int xpos = this->storelist_->xstore_;
 	int ypos = this->storelist_->ystore_;
 	int zpos = this->storelist_->zstore_;
 	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
+	//shopper enters round robin queue
 	RRqueue* ptr = new RRqueue(this);
+	//the shopper is processed at the round robin queue
 	while(this->storelist_->TimeSlice_ != 0)
 	{
 		TIME++;
 		ptr->RunQueue();
 		timecheck();
 	}
+	//removes the store from the shopper's list of stores
 	RemoveStore();
 	return 0;
 }
+
+//adds a shopper to a list of shoppers
 void Shopper::AddShopper(Shopper* shopper)
 {
+	//if the first shopper is empty, set the shopper as the head shopper
 	if (this->RobotNum_ == 0)
 	{
 		this->RobotNum_ = shopper->RobotNum_;
@@ -886,9 +896,11 @@ void Shopper::AddShopper(Shopper* shopper)
 		this->storelist_ = new Store();
 		this->nextshopper_ = nullptr;
 	}
+	//else set the shopper to the next shopper
 	else this->nextshopper_ = shopper;
 }
 
+//removes the shopper from a list of shoppers
 void Shopper::RemoveShopper(Shopper* shopper)
 {
 	shopper= shopper->nextshopper_;
