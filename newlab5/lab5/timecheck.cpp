@@ -4,7 +4,7 @@ int timecheck(){
 	//initialize variables
 //	int i, j, k, m, b, c, d;
 	if (TIME % 25 == 0){
-		cout<<"next enters store at time " <<TIME <<endl;
+		cout<<"next shopper enters store at time " <<TIME <<endl;
 		/*
 		for (m = 0; m <= 1; m++){
 			if (m == 0){
