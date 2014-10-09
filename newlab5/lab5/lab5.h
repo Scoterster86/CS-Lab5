@@ -61,7 +61,7 @@ public:
 	RRqueue(Shopper*);
 	void RunQueue();
 	void AddShopper(Shopper*);
-	void RemoveShopper(Shopper*);
+	void RemoveShopper();
 };
 int timecheck();
 
