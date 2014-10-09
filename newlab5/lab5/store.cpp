@@ -21,7 +21,7 @@ Store::Store()
 	this->pNext = nullptr;
 }
 
-//Scott Iwanicki
+//Yo Karita
 //Adds a store to the list of stores
 void Store::AddStore(Store* store)
 {
