@@ -46,7 +46,7 @@ public:
 	void BotMove();
 	int movement(int);
 	void AddShopper(Shopper*);
-	void RemoveShopper();
+	void RemoveShopper(Shopper*);
 	void RRqueue();
 };
 
