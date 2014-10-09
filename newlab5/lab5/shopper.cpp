@@ -866,7 +866,7 @@ int Shopper::storecomplete(){
 	int zpos = this->storelist_->zstore_;
 	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
 	RRqueue* ptr = new RRqueue(this);
-	while(this->storelist_->Timeslice != 0)
+	while(this->storelist_->TimeSlice != 0)
 	{
 		ptr->RunQueue();
 	}
