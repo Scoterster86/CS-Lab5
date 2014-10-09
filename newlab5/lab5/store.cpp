@@ -1,5 +1,6 @@
 #include "lab5.h"
 
+//Scott Iwanicki
 //constructor for Store with a store as an input
 Store::Store(Store* store)
 {
@@ -9,7 +10,7 @@ Store::Store(Store* store)
 	this->TimeSlice_ = store->TimeSlice_;
 	this->pNext = nullptr;
 }
-
+//Yo Karita
 //constructor for a store
 Store::Store()
 {
@@ -20,6 +21,7 @@ Store::Store()
 	this->pNext = nullptr;
 }
 
+//Scott Iwanicki
 //Adds a store to the list of stores
 void Store::AddStore(Store* store)
 {
@@ -32,6 +34,7 @@ void Store::AddStore(Store* store)
 	ptr->pNext = store;
 }
 
+//Yo Karita
 //Counts the number of stores in the list
 int Store::GetSize()
 {
