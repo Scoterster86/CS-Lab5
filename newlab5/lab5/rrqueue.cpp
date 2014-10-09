@@ -1,5 +1,6 @@
 #include "lab5.h"
 
+//Scott Iwanicki
 //constructor for the round robin queue
 RRqueue::RRqueue()
 {
@@ -8,6 +9,7 @@ RRqueue::RRqueue()
 	this->listtail_ = NULL;
 }
 
+//Scott Iwanicki
 //constructor of round robin queue with a shopper as an input
 RRqueue::RRqueue(Shopper* shopper)
 {
@@ -16,6 +18,7 @@ RRqueue::RRqueue(Shopper* shopper)
 	this->listtail_ = shopper;
 }
 
+//Scott Iwanicki
 //adds a shopper to the queue
 void RRqueue::AddShopper(Shopper* shopper)
 {
@@ -32,11 +35,13 @@ void RRqueue::AddShopper(Shopper* shopper)
   
 }
 
+//Scott Iwanicki
 //removes a shopper from the head of the list
 void RRqueue::RemoveShopper(){
 	this->listhead_ = this->listhead_->nextshopper_;
 }
 
+//Scott Iwanicki
 //processes the head of the list and removes it from the queue if its service is complete,
 //or inserts the shopper at the end of the queue
 void RRqueue::RunQueue()
