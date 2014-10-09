@@ -885,8 +885,3 @@ void Shopper::AddShopper(Shopper* shopper)
 	}
 	else this->nextshopper_ = shopper;
 }
-
-void Shopper::RemoveShopper()
-{
-	this=this->nextshopper_;;
-}
