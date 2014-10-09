@@ -9,7 +9,7 @@ void RRqueue::RRqueue()
 
 void RRqueue::AddShopper(Shopper* shopper)
 {
-	if(this->listhead ==NULL){
+	if(this->listhead_ ==NULL){
 	this->listhead_=shopper;
 	this->listtail_=shopper;
 	}
