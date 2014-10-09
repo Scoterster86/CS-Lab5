@@ -9,9 +9,9 @@ void Shopper::BotMove()
   for(i=0;i<=stores;i++){    
 
     
-    int xstore = this->storelist_->xstore_;
-	int ystore = this->storelist_->ystore_;
-	int zstore = this->storelist_->zstore_;
+    xstore = this->storelist_->xstore_;
+    ystore = this->storelist_->ystore_;
+    zstore = this->storelist_->zstore_;
     
     
     storecomplete=0;
