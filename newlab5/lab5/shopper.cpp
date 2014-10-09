@@ -440,11 +440,6 @@ void Shopper::RemoveStore()
 int Shopper::movement(int direction){
 	int j;
 	;
-	this->ypos_;
-	this->zpos_;
-
-
-
 	switch (direction){
 	case North:
 		//printf("N");
