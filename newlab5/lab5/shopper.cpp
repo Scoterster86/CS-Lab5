@@ -37,9 +37,9 @@ void Shopper::BotMove()
 	zstore=0;
       }
       else{
-        int xstore = this->storelist_->xstore_;
-        int ystore = this->storelist_->ystore_;
-        int zstore = this->storelist_->zstore_;
+        xstore = this->storelist_->xstore_;
+        ystore = this->storelist_->ystore_;
+        zstore = this->storelist_->zstore_;
       }
       //if bot position (3,13,X)
       if(xpos==3 && ypos==13){
