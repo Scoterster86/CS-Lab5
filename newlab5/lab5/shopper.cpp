@@ -600,7 +600,7 @@ int Shopper::movement(int direction){
 				this->xpos_--;
 			}
 			else if (j == 2){
-				storecomplete();
+				this->storecomplete();
 			}
 			else{
 				this->xpos_++;
@@ -619,7 +619,7 @@ int Shopper::movement(int direction){
 				this->xpos_++;
 			}
 			else if (j == 2){
-				storecomplete();
+				this->storecomplete();
 			}
 			else{
 				this->xpos_--;
@@ -863,13 +863,7 @@ int Shopper::storecomplete(){
 	int ypos = this->storelist_->ystore_;
 	int zpos = this->storelist_->zstore_;
 	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
-	while (this->storelist_->TimeSlice_ > 0)
-	{
-		this->storelist_->TimeSlice_ -= TimeSlice;
-		TIME += TimeSlice;
-		timecheck();
-	}
-	this->RemoveStore();
+	this->RRqueue();
 	return 0;
 }
 void Shopper::AddShopper(Shopper* shopper)
@@ -889,4 +883,18 @@ void Shopper::AddShopper(Shopper* shopper)
 void Shopper::RemoveShopper(Shopper* shopper)
 {
 	shopper= shopper->nextshopper_;
+}
+
+void Shopper::RRqueue()
+{
+	if(this->storelist_->TimeSlice_ > TimeSlice){
+		
+	}
+	while (this->storelist_->TimeSlice_ > 0)
+	{
+		this->storelist_->TimeSlice_ -= TimeSlice;
+		TIME += TimeSlice;
+		timecheck();
+	}
+	this->RemoveStore();
 }
