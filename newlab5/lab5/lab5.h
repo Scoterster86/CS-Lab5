@@ -34,9 +34,10 @@ public:
 	int RobotNum_;
 	int xpos_, ypos_, zpos_;
 	Store* storelist_;
-	Shopper* shopperlist_;
+	Shopper* nextshopper_;
 
 	Shopper();
+	Shopper(int);
 
 	void AddStore(Store* store);
 	void RemoveStore();
@@ -46,7 +47,8 @@ public:
 	int movement(int);
 	void AddShopper(Shopper*);
 	void RemoveShopper();
+	void RRqueue();
 };
 
 int timecheck();
-void RRqueue();
+

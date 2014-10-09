@@ -841,11 +841,21 @@ int Shopper::movement(int direction){
 
 Shopper::Shopper()
 {
-	this->RobotNum_ = 1;
+	this->RobotNum_ = 0;
 	this->xpos_ = 0;
 	this->ypos_ = 0;
 	this->zpos_ = 0;
 	this->storelist_ = new Store();
+	this->nextshopper_ = nullptr;
+}
+Shopper::Shopper(int k)
+{
+	this->RobotNum_ = k;
+	this->xpos_ = 0;
+	this->ypos_ = 0;
+	this->zpos_ = 0;
+	this->storelist_ = new Store();
+	this->nextshopper_ = nullptr;
 }
 
 int Shopper::storecomplete(){
@@ -861,4 +871,17 @@ int Shopper::storecomplete(){
 	}
 	this->RemoveStore();
 	return 0;
+}
+void Shopper::AddShopper(Shopper* shopper)
+{
+	if (this->RobotNum_ == 0)
+	{
+		this->RobotNum_ = shopper->RobotNum_;
+		this->xpos_ = shopper->xpos_;
+		this->ypos_ = shopper->ypos_;
+		this->zpos_ = shopper->zpos_;
+		this->storelist_ = new Store();
+		this->nextshopper_ = nullptr;
+	}
+	else this->nextshopper_ = shopper;
 }

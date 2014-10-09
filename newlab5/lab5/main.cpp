@@ -9,12 +9,21 @@ int main(int argc, char* argv[])
 	int n = atoi(argv[1]);
 	int tmpTimeSlice = atoi(argv[2]);
 	TimeSlice = tmpTimeSlice;
-	Shopper* shopper = new Shopper();	//create a shopper
+	
 
+
+	int NumOfShoppers = 1; // in lab5
+	Shopper* shopper = new Shopper();
 	int xpos=0, ypos=0, zpos=1, ts = 0;
-
-	for(int i = 0; i < n ; i++)
+	for (int i = 0; i < NumOfShoppers; i++)
 	{
+		Shopper* newshopper = new Shopper(++i);
+		shopper->AddShopper(newshopper);	//add a shopper
+	}
+	
+	for (int i = 0; i < n; i++)
+	{
+
 		cin >> xpos >> ypos >> ts;
 		Store* store = new Store();		//create a store
 		store->xstore_ = xpos;	// sets the location
@@ -26,5 +35,6 @@ int main(int argc, char* argv[])
 	}
 
 	shopper->BotMove();
+	
 	return 0;
 }
