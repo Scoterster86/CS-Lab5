@@ -887,16 +887,3 @@ void Shopper::RemoveShopper(Shopper* shopper)
 	shopper= shopper->nextshopper_;
 }
 
-void RRqueue::RRqueue()
-{
-	if(this->storelist_->TimeSlice_ > TimeSlice){
-		
-	}
-	while (this->storelist_->TimeSlice_ > 0)
-	{
-		this->storelist_->TimeSlice_ -= TimeSlice;
-		TIME += TimeSlice;
-		timecheck();
-	}
-	this->RemoveStore();
-}
