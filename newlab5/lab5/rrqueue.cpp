@@ -9,6 +9,7 @@ void RRqueue::RRqueue()
 
 void RRqueue::AddShopper(Shopper*)
 {
-  
+	this->listhead=Shopper*;
+	this->listtail=Shopper*;
   
 }
