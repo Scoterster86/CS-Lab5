@@ -1,0 +1,21 @@
+Scott Iwanicki and Yo Karita
+
+run using ./lab5
+
+main.cpp:
+  contains the main function
+  
+lab5.h:
+  contains all of the class definitions and global variables
+  
+shopper.cpp:
+  contains all of the functions cointained in the shopper class
+  
+store.cpp:
+  contains all of the functions cointained in the store class
+  
+timecheck.cpp:
+  contains the timecheck function, which for lab 5, does nothing
+
+rrqueue.cpp:
+  contains all of the functions cointained in the rrqueue class
