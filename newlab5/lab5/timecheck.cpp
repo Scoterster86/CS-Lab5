@@ -1,4 +1,5 @@
 #include "lab5.h"
+//will add next robot to the simulation
 int timecheck(){
 	//initialize variables
 //	int i, j, k, m, b, c, d;
