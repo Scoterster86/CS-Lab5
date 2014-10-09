@@ -345,9 +345,9 @@ void Shopper::BotMove()
 	    this->movement(StWest);
 	    storecomplete=1;
 	  }
-	  //if the target store is (12,6,1) move there and back to (12,8,1)
+	  //if the target store is (12,10,1) move there and back to (12,8,1)
 	  //and set storecomplete=1
-	  else if(xstore==14 && ystore==6 && zstore==1){
+	  else if(xstore==12 && ystore==10 && zstore==1){
 	    this->movement(StEast);
 	    storecomplete=1;
 	  }
