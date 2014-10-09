@@ -3,6 +3,8 @@ int timecheck(){
 	//initialize variables
 	int i, j, k, m, b, c, d;
 	if (TIME % 25 == 0){
+		cout<<"next enters store at time " <<TIME <<endl;
+		/*
 		for (m = 0; m <= 1; m++){
 			if (m == 0){
 				printf("\n FIRST FLOOR\n");
@@ -51,6 +53,7 @@ int timecheck(){
 				}//end d for loop
 			}//end c for loop
 		}//end b for loop
+		*/
 	}//end if
 	return 0;
 }
