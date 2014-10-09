@@ -860,15 +860,5 @@ int Shopper::storecomplete(){
 		timecheck();
 	}
 	this->RemoveStore();
-	if (zpos == 0){
-		TIME++;
-		timecheck();
-	}
-	else{
-		TIME++;
-		timecheck();
-		TIME++;
-		timecheck();
-	}
 	return 0;
 }
