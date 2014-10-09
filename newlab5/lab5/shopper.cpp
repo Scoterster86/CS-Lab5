@@ -854,15 +854,5 @@ int Shopper::storecomplete(){
 	int zpos = this->storelist_->zstore_;
 	printf("robot %d arrives at store S(%d,%d) on the %d Floor at time %d\n", this->RobotNum_, xpos, ypos, (zpos + 1), TIME);
 	this->RemoveStore();
-	if (zpos == 0){
-		TIME++;
-		timecheck();
-	}
-	else{
-		TIME++;
-		timecheck();
-		TIME++;
-		timecheck();
-	}
 	return 0;
 }
