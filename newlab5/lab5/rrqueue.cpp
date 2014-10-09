@@ -10,24 +10,24 @@ void RRqueue::RRqueue()
 void RRqueue::AddShopper(Shopper* shopper)
 {
 	if(this->listhead ==NULL){
-	this->listhead=shopper;
-	this->listtail=shopper;
+	this->listhead_=shopper;
+	this->listtail_=shopper;
 	}
 	else{
-	this->listtail->nextshopper_=shopper;
-	this->listtail = shopper;
+	this->listtail_->nextshopper_=shopper;
+	this->listtail_ = shopper;
 	}
   
 }
 
 void RRqueue::RemoveShopper(){
-	this->headptr_ = this->headptr_->nextshopper_;
+	this->listhead_ = this->listhead_->nextshopper_;
 }
 
 void RRqueue::RunQueue()
 {
-	Shopper* = ptr;
-	ptr = this->headptr_;
+	Shopper* ptr;
+	ptr = this->listhead_;
 	RemoveShopper();
 	if(ptr->storelist_->TimeSlice_ > TimeSlice)
 	{
