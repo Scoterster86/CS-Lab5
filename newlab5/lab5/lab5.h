@@ -47,8 +47,16 @@ public:
 	int movement(int);
 	void AddShopper(Shopper*);
 	void RemoveShopper(Shopper*);
-	void RRqueue();
+
 };
 
+class RRqueue
+{
+public:
+	Shopper* listhead_;
+	Shopper* listtail_;
+	
+	void RRqueue();
+}
 int timecheck();
 
