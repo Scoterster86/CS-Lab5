@@ -6,6 +6,7 @@ using namespace std;
 #define LENGTH 17
 #define WIDTH 17
 #define HEIGHT 2
+
 extern int TimeSlice;
 extern int TIME;
 extern int Floor[LENGTH][WIDTH][HEIGHT];

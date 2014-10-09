@@ -19,15 +19,17 @@ Store::Store()
 	this->pNext = nullptr;
 }
 
+///add a store to the storelist 
 void Store::AddStore(Store* store)
 {
 	Store* ptr = this;
 	
+	//look for the end of the storelist
 	while (ptr->pNext)
 	{
 		ptr = ptr->pNext;
 	}
-	ptr->pNext = store;
+	ptr->pNext = store;	//the end of store has a points to the next store
 }
 
 int Store::GetSize()
@@ -35,7 +37,7 @@ int Store::GetSize()
 
 	int n = 0;
 	Store* ptr = this;
-	while (ptr)
+	while (ptr)	//loop until it reaches to the end of the list
 	{
 		n++;
 		ptr = ptr->pNext;

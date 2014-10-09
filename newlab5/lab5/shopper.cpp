@@ -12,7 +12,7 @@ Shopper::Shopper()
 	this->nextshopper_ = nullptr;
 }
 
-Shopper::Shopper(int k)
+Shopper::Shopper(int k)	//constructor with robotnumber value
 {
 	this->RobotNum_ = k;
 	this->xpos_ = 0;
@@ -25,13 +25,13 @@ Shopper::Shopper(int k)
 
 void Shopper::AddStore(Store* store)
 {
-	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;
-	else this->storelist_->AddStore(store);
+	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;	//if the storelist is empty
+	else this->storelist_->AddStore(store);	//if the list is not empty, call Store::Addstore(Store)
 }
 
 void Shopper::RemoveStore()
 {
-	this->storelist_ = this->storelist_->pNext;
+	this->storelist_ = this->storelist_->pNext;	//change the pointer
 }
 
 void Shopper::BotMove()
@@ -875,10 +875,13 @@ int Shopper::storecomplete(){
 	RemoveStore();
 	return 0;
 }
+
+/// Add a shopper to the list
 void Shopper::AddShopper(Shopper* shopper)
 {
 	if (this->RobotNum_ == 0)
 	{
+		///sets values if the list is empty
 		this->RobotNum_ = shopper->RobotNum_;
 		this->xpos_ = shopper->xpos_;
 		this->ypos_ = shopper->ypos_;
@@ -886,7 +889,16 @@ void Shopper::AddShopper(Shopper* shopper)
 		this->storelist_ = new Store();
 		this->nextshopper_ = nullptr;
 	}
-	else this->nextshopper_ = shopper;
+	else//find the end of the list and connect the new shopper
+	{
+		Shopper* ptr = this;
+		while (ptr->nextshopper_ != nullptr)
+		{
+			ptr = ptr->nextshopper_;
+		}
+		ptr->nextshopper_ = shopper;
+	}
+	
 }
 
 void Shopper::RemoveShopper(Shopper* shopper)
