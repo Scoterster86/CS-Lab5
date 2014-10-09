@@ -9,6 +9,14 @@ void RRqueue::RRqueue()
 
 void RRqueue::AddShopper(Shopper*)
 {
+	Store* ptr = this;
+	
+	while (ptr->pNext)
+	{
+		ptr = ptr->pNext;
+	}
+	ptr->pNext = store;
+}
 	this->listhead=Shopper*;
 	this->listtail=Shopper*;
   
