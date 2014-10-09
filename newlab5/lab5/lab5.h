@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-
+//define global variables
 #define nullptr NULL
 #define LENGTH 17
 #define WIDTH 17
@@ -13,6 +13,7 @@ enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, Nort
 	StNorth, StSouth, StEast, StWest, StNorthWest, StNorthEast, StSouthEast, 
 	StSouthWest, NorthWest2, NorthEast2, SouthWest2, SouthEast2, End };
 
+//Store class
 class Store
 {
 public:
@@ -27,6 +28,7 @@ public:
 };
 
 
+//Shopper class
 class Shopper
 {
 public:
@@ -51,6 +53,7 @@ public:
 
 };
 
+//RRqueue class
 class RRqueue
 {
 public:
@@ -63,5 +66,6 @@ public:
 	void AddShopper(Shopper*);
 	void RemoveShopper();
 };
+//checks to see if the time is divisible by 25
 int timecheck();
 
