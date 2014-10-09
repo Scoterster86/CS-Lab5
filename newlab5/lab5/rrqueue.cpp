@@ -28,17 +28,18 @@ void RRqueue::RunQueue()
 {
 	Shopper* ptr;
 	ptr = this->listhead_;
-	RemoveShopper();
 	if(ptr->storelist_->TimeSlice_ > TimeSlice)
 	{
 		ptr->storelist_->TimeSlice_ -= TimeSlice;
 		ptr->slices++;
+		RemoveShopper();
 		this->AddShopper(ptr);
 	}
 	else
 	{
 		ptr->slices++;
-		cout<<"Shopper 1 leaves store (" <<ptr->xpos <<", " << ptr->ypos <<") after " << ptr->slices << "Time slices at Time" <<TIME endl;
+		RemoveShopper();
+		cout<<"Shopper 1 leaves store (" <<ptr->xpos_ <<", " << ptr->ypos_ <<") after " << ptr->slices << "Time slices at Time" <<TIME endl;
 		
 	}
 }
