@@ -7,17 +7,15 @@ void RRqueue::RRqueue()
 	this->listtail_ = NULL;
 }
 
-void RRqueue::AddShopper(Shopper*)
+void RRqueue::AddShopper(Shopper* shopper)
 {
-	Store* ptr = this;
-	
-	while (ptr->pNext)
-	{
-		ptr = ptr->pNext;
+	if(this->listhead ==NULL){
+	this->listhead=shopper;
+	this->listtail=shopper;
 	}
-	ptr->pNext = store;
-}
-	this->listhead=Shopper*;
-	this->listtail=Shopper*;
+	else{
+	this->listtail->nextshopper_=shopper;
+	this->listtail = shopper;
+	}
   
 }
