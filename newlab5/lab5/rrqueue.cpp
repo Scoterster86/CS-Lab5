@@ -1,6 +1,6 @@
 #include "lab5.h"
 
-void RRqueue::RRqueue()
+RRqueue::RRqueue()
 {
 
 	this->listhead_ = NULL;
