@@ -846,6 +846,7 @@ Shopper::Shopper()
 	this->ypos_ = 0;
 	this->zpos_ = 0;
 	this->storelist_ = new Store();
+	this->slices = 0;
 	this->nextshopper_ = nullptr;
 }
 Shopper::Shopper(int k)
@@ -855,6 +856,7 @@ Shopper::Shopper(int k)
 	this->ypos_ = 0;
 	this->zpos_ = 0;
 	this->storelist_ = new Store();
+	this->slices = 0;
 	this->nextshopper_ = nullptr;
 }
 
