@@ -57,6 +57,6 @@ public:
 	Shopper* listtail_;
 	
 	void RRqueue();
-}
+};
 int timecheck();
 
