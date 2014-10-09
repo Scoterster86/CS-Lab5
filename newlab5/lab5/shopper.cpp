@@ -888,5 +888,5 @@ void Shopper::AddShopper(Shopper* shopper)
 
 void Shopper::RemoveShopper(Shopper* shopper)
 {
-	shopper= shopper->nextshopper;
+	shopper= shopper->nextshopper_;
 }
