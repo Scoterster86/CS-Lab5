@@ -1,5 +1,39 @@
 #include "lab5.h"
 
+
+Shopper::Shopper()
+{
+	this->RobotNum_ = 0;
+	this->xpos_ = 0;
+	this->ypos_ = 0;
+	this->zpos_ = 0;
+	this->storelist_ = new Store();
+	this->slices = 0;
+	this->nextshopper_ = nullptr;
+}
+
+Shopper::Shopper(int k)
+{
+	this->RobotNum_ = k;
+	this->xpos_ = 0;
+	this->ypos_ = 0;
+	this->zpos_ = 0;
+	this->storelist_ = new Store();
+	this->slices = 0;
+	this->nextshopper_ = nullptr;
+}
+
+void Shopper::AddStore(Store* store)
+{
+	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;
+	else this->storelist_->AddStore(store);
+}
+
+void Shopper::RemoveStore()
+{
+	this->storelist_ = this->storelist_->pNext;
+}
+
 void Shopper::BotMove()
 {
   int stores = this->storelist_->GetSize();	//number of stores
@@ -425,16 +459,6 @@ void Shopper::BotMove()
   }//end i for loop
 }
 
-void Shopper::AddStore(Store* store)
-{
-	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;
-	else this->storelist_->AddStore(store);
-}
-
-void Shopper::RemoveStore()
-{
-	this->storelist_ = this->storelist_->pNext;
-}
 
 
 int Shopper::movement(int direction){
@@ -834,26 +858,7 @@ int Shopper::movement(int direction){
 	return 0;
 }
 
-Shopper::Shopper()
-{
-	this->RobotNum_ = 0;
-	this->xpos_ = 0;
-	this->ypos_ = 0;
-	this->zpos_ = 0;
-	this->storelist_ = new Store();
-	this->slices = 0;
-	this->nextshopper_ = nullptr;
-}
-Shopper::Shopper(int k)
-{
-	this->RobotNum_ = k;
-	this->xpos_ = 0;
-	this->ypos_ = 0;
-	this->zpos_ = 0;
-	this->storelist_ = new Store();
-	this->slices = 0;
-	this->nextshopper_ = nullptr;
-}
+
 
 int Shopper::storecomplete(){
 	int xpos = this->storelist_->xstore_;
