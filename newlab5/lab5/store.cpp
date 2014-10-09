@@ -1,5 +1,6 @@
 #include "lab5.h"
 
+//constructor for Store with a store as an input
 Store::Store(Store* store)
 {
 	this->xstore_ = store->xstore_;
@@ -9,7 +10,7 @@ Store::Store(Store* store)
 	this->pNext = nullptr;
 }
 
-
+//constructor for a store
 Store::Store()
 {
 	this->xstore_ = 0;
@@ -19,6 +20,7 @@ Store::Store()
 	this->pNext = nullptr;
 }
 
+//Adds a store to the list of stores
 void Store::AddStore(Store* store)
 {
 	Store* ptr = this;
@@ -30,6 +32,7 @@ void Store::AddStore(Store* store)
 	ptr->pNext = store;
 }
 
+//Counts the number of stores in the list
 int Store::GetSize()
 {
 
