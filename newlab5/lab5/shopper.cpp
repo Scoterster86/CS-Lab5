@@ -593,26 +593,26 @@ int Shopper::movement(int direction){
 		//case 8 Moves up a Floor, increments TIME by 3, and prints when the bot
 		//got on and off the elevator
 		this->zpos_++;
-		printf("robot %d got on elevator at time %d\n", this->RobotNum_, TIME);
+		printf("Shopper %d got on elevator at time %d\n", this->RobotNum_, TIME);
 		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		for (j = 0; j<3; j++){
 			TIME++;
 			timecheck();
 		}
-		printf("robot %d got off elevator at time %d\n", this->RobotNum_, TIME);
+		printf("Shopper %d got off elevator at time %d\n", this->RobotNum_, TIME);
 		break;
 	case Down:
 		//printf("Down");
 		//case 9 Moves down a Floor and increments TIME by 3, and prints when the bot
 		//got on and off the elevator
 		this->zpos_--;
-		printf("robot %d got on elevator at time %d\n", this->RobotNum_, TIME);
+		printf("Shopper %d got on elevator at time %d\n", this->RobotNum_, TIME);
 		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		for (j = 0; j<3; j++){
 			TIME++;
 			timecheck();
 		}
-		printf("robot %d got off elevator at time %d\n", this->RobotNum_, TIME);
+		printf("Shopper %d got off elevator at time %d\n", this->RobotNum_, TIME);
 		break;
 	case StNorth:
 		//printf("StN");
