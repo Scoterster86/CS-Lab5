@@ -2,12 +2,13 @@
 
 int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
+int TimeSlice = 1;
 int main(int argc, char* argv[])
 {
 	
 	int n = atoi(argv[1]);
-	int TimeSlice = atoi(argv[2]);
-	
+	int tmpTimeSlice = atoi(argv[2]);
+	TimeSlice = tmpTimeSlice;
 	Shopper* shopper = new Shopper();	//create a shopper
 
 	int xpos=0, ypos=0, zpos=1, ts = 0;
