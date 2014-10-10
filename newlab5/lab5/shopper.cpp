@@ -347,6 +347,7 @@ void Shopper::BotMove()
 		else{
 			this->movement(East);
 		}
+	}
 	else{
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
   			this->movement(North);
