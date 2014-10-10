@@ -656,9 +656,9 @@ int Shopper::movement(int direction){
 		break;
 	case West:
 		//case 2 Moves left 4 columns and increments TIME by 1 for each movement
-			this->ypos_--;
-			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
-		}
+		this->ypos_--;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		
 		break;
 	case SouthWest:
 		//printf("SW");
@@ -666,14 +666,13 @@ int Shopper::movement(int direction){
 		this->xpos_++;
 		this->ypos_--;
 		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
-		}
+		
 		break;
 	case South:
 		//printf("S");
 		//case 4 Moves down a row
-			this->xpos_++;
-			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
-		}
+		this->xpos_++;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		break;
 	case SouthEast:
 		//printf("SE");
@@ -685,15 +684,14 @@ int Shopper::movement(int direction){
 	case East:
 		//printf("E");
 		//case 6 Moves right a column
-			this->ypos_++;
-			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		this->ypos_++;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		break;
 	case NorthEast:
 		//printf("NE");
 		//case 7 Moves up a row and right a column
 		this->xpos_--;
 		this->ypos_++;
-
 		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		break;
 	case Up:
