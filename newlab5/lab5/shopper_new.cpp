@@ -45,408 +45,199 @@ void Shopper::RemoveStore()
 //controls the movement of the shopper
 void Shopper::BotMove()
 {
-  int stores = this->storelist_->GetSize();	//number of stores
+  //if the robot is in the bottom row
+  if(this->xpos_ == 16){
+  	if(this->ypos_ == 8){
+  		if(this->zpos_ == 0){
+  			this->movement(East);
+  		}
+  		else{//begin else
+  			if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_==1)||
+  			   (this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore_==1) {
+  				this->movement(West);
+  			}
+  			else{
+  				this->movement(North);
+  			}
+  		}//end else
+  	}
+  	else if(this->zpos_ == 0){
+  		if(this->ypos_ == 10){
+  			this->movement(NorthEast);
+  		}
+  		else{
+  			this->movement(East);
+  		}
+  	}
+  	else{
+  		if(this->ypos == 6){
+  			this->movement(NorthWest);
+  		}
+  		else{
+  			this->movement(West);	
+  		}
+  		
+  	}
+  }//end if xpos ==16
+
+
+  //if the robot is in the top row
+  else if(this->xpos_ == 0){
+  	if(this->ypos_ == 8){
+  		if(this->zpos_ == 1){
+  			this->movement(East);
+  		}
+  		else{//begin else
+  			if(this->storelist_->ystore_==4) {
+  				this->movement(West);
+  			}
+  			else{
+  				this->movement(South);
+  			}
+  		}//end else
+  	}//end if ypos==8
+  	else if(this->zpos_ == 0){
+  		if(this->ypos_ == 10){
+  			this->movement(SouthEast);
+  		}
+  		else{
+  			this->movement(East);
+  		}
+  	}
+  	else{
+  		if(this->ypos_ == 6){
+  			this->movement(NorthWest);
+  		}
+  		else{
+  			this->movement(West);	
+  		}
+  		
+  	}
+  }
   
-  int i,xstore,ystore,zstore,storecomplete;
-  //moves robot to every store and returns the robot to the starting position
-
-
-      int xpos = this->xpos_;
-      int ypos = this->ypos_;
-      int zpos = this->zpos_;
-      if (stores == i)
-      {
-	xstore=8;
-	ystore=16;
-	zstore=0;
-      }
-      else{
-        xstore = this->storelist_->xstore_;
-        ystore = this->storelist_->ystore_;
-        zstore = this->storelist_->zstore_;
-      }
-      //if bot position (3,13,X)
-      if(xpos==3 && ypos==13){
-	//printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is (3,12,0) move there and back to (3,13,0)
-	  if(xstore==4 && ystore==12 && zstore==0){
-	    this->movement(StSouthWest);
-	    storecomplete=1;
-	  }
-	  else{
-	    //moves robot from (3,15,0) to (0,8,0)
-	    this->movement(NorthWest2);
-	    // printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	  }//end else
+  
+  else if(this->ypos_ ==0){
+  	if(this->zpos_ ==0){
+  		if(this->xpos_ == 8){
+  			if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_==0)||
+  			   (this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_==0){
+  			   	this->movement(South);
+  			   }
+  			   else{
+  			   	this->movement(East);
+  			   }
+  		}
+  		if(this->xpos == 10){
+  			this->movement(SouthEast);
+  		}
+  		else{
+  			this->movement(South)
+  		}
+  	}
+  	else{//if zpos == 1
+  		if(this->xpos == 6){
+  			this->movement(NorthEast);
+  		}
+  		else{
+  			this->movement(North);
+  		}
+  	
+  	}
+  }
+  
+  //if the robot is in column 16
+  else if(this->ypos_ ==16){
+  	if(this->zpos_ ==1){//if on the second floor
+  		if(this->xpos_ == 8){
+  			if(this->storelist_->xstore_==12 && this->storelist_->zstore_==0){
+  			   	this->movement(South);
+  			   }
+  			   else{
+  			   	this->movement(West);
+  			   }
+  		}
+  		if(this->xpos == 10){
+  			this->movement(SouthWest);
+  		}
+  		else{
+  			this->movement(South)
+  		}
+  	}
+  	else{//if zpos == 0
+  		if(this->xpos == 6){
+  			this->movement(NorthWest);
+  		}
+  		else{
+  			this->movement(North);
+  		}
+  	
+  	}
+  }
+  
+  
+  else if(this->xpos_*10+this->ypos_ ==51 || this->xpos_*10+this->ypos_ ==42 || 
+  	    this->xpos_*10+this->ypos_ ==24 || this->xpos_*10+this->ypos_ ==15){
+	if(this->zpos_ ==0){
+		this->movement(SouthWest);
 	}
-	else{//zpos ==1
-	  //if the target store is (4,12,1) move there and back to (3,13,1)
-	  if(xstore==4 &&ystore==12 && zstore==1){
-	    //  printf("L57");
-            this->movement(StSouthWest);
-            storecomplete=1;
-          }
-	  else{//move SouthEast
-	    // printf("L62");
-	    this->movement(SouthEast2);
-	  }
-	}//end else
-      }//end if
-    
-
-      //if bot position (0,8,X)
-      else if(xpos==0 && ypos==8){
-	// printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the store is on the second Floor or the fastest route to the store is down
-	  if(zstore==1 || (zstore==0 && ystore>=6)){//begin zs1 || zs0 && ys>=6 if
-	    this->movement(South);
-	    // printf("South");
-	  }//end zs1 || zs0 && ys>=6 if
-	  else{//else continue moving around the outside
-	    this->movement(SouthWest);
-	  }//end else
+  	else{
+  		this->movement(NorthEast);
+  	}
+  }
+  
+  else if(this->xpos_*10+this->ypos_ ==21 || this->xpos_*10+this->ypos_ ==32 || 
+  	    this->xpos_*10+this->ypos_ ==44 || this->xpos_*10+this->ypos_ ==65){
+	if(this->zpos==0){
+		this->movement(NorthWest);
 	}
-	else{//else if zpos==1
-	  this->movement(SouthEast);
+	else{
+		this->movement(SouthEast);
 	}
-      }//end if
-      
-      
-      //if bot position (4,8,X)
-      else if(xpos==4 && ypos==8){
-	//	printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-          //if the target store is (4,6,0) move there and back to (4,8,0)
-	  if(xstore==4 && ystore==6 && zstore==0){
-	    this->movement(StWest);
-	    storecomplete=1;
-	  }//end x4,y6,z0 store if
-          //if the target store is (4,10,0) move there and back to (4,8,0)
-	  else if(xstore==4 && ystore==10 && zstore==0){//begin x4,y8,z0 pos if
-	    this->movement(StEast);
-	    storecomplete=1;
-	  }//end x4,y10,z0 if
-	  else{
-	    this->movement(South);
-	  }
+  }
+
+
+  else if(this->xpos_*10+this->ypos_ ==125 || this->xpos_*10+this->ypos_ ==134 || 
+  	    this->xpos_*10+this->ypos_ ==152 || this->xpos_*10+this->ypos_ ==161){
+	if(this->zpos==0){
+		this->movement(NorthEast);
 	}
-	else{//if zpos=1
-          //if the target store is (4,6,1) move there and back to (4,8,1)
-	  if(xstore==4 && ystore==6 && zstore==1){
-            this->movement(StWest);
-            storecomplete=1;
-          }
-          //if the target store is (4,10,1) move there and back to (4,8,1)
-          else if(xstore==4 && ystore==10 && zstore==1){
-            this->movement(StEast);
-            storecomplete=1;
-          }
-          else{
-	    this->movement(North);
-	  }
-	}//end else
-      }//end if
-    
-
-      //if bot position (3,3,x)
-      else if(xpos==3 && ypos==3){
-	//printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-          //if the target store is (4,4,0) move there and back to (3,3,0)
-	  if(xstore==4 && ystore==4 && zstore==0){
-	    this->movement(StSouthEast);
-	    storecomplete=1;
-	  }
-	  else{
-	    this->movement(SouthWest2);
-	  }//end else
+	else{
+		this->movement(SouthWest);
 	}
-	else{//if zpos=1
-          //if the target store is (4,4,1) move there and back to (3,3,1)
-	  if(xstore==4 && ystore==4 && zstore==1){
-            this->movement(StSouthEast);
-            storecomplete=1;
-          }
-          else{
-	    //  printf("\nL143\n");
-            this->movement(NorthEast2);
-          }
-        }//end else
-      }//end if
+  }
 
-
-      //if bot position (8,0,X)
-      else if(xpos==8 && ypos==0){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is (13,3,0) or (13,13,0) move SouthEast
-	  if((xstore==12 && ystore==4 && zstore==0)||(xstore==12 && ystore==12 && zstore==0)){
-	    this->movement(SouthEast);
-	  }//end store pos if
-	  else{//begin else
-	    this->movement(East);
-	  }
-	}//end else
-	else{//if zpos=1
-	  this->movement(NorthEast);
+  else if(this->xpos_*10+this->ypos_ ==111 || this->xpos_*10+this->ypos_ ==122 || 
+  	    this->xpos_*10+this->ypos_ ==144 || this->xpos_*10+this->ypos_ ==155){
+	if(this->zpos==0){
+		this->movement(SouthEast);
 	}
-      }//end xpos8 ypos0 zpos0 if
-
-
-      //if bot position (8,4,X)
-      else if(xpos==8 && ypos==4){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-          //if the target store is (6,4,0) move there and back to (8,4,0)
-	  if(xstore==6 && ystore==4 && zstore==0){
-	    this->movement(StNorth);
-	    storecomplete=1;
-	  }
-          //if the target store is (10,4,0) move there and back to (8,4,0)
-	  else if(xstore==10 && ystore==4 && zstore==0){
-	    this->movement(StSouth);
-	    storecomplete=1;
-	  }
-	  else{
-	    this->movement(East);
-	  }  
+	else{
+		this->movement(NorthWest);
 	}
-	else{//if zpos=1
-	  //if the target store is (6,4,1) move there and back to (8,4,1)
-          if(xstore==6 && ystore==4 && zstore==1){
-            this->movement(StNorth);
-            storecomplete=1;
-          }
-          //if the target store is (10,4,0) move there and back to (8,4,1)
-          else if(xstore==10 && ystore==4 && zstore==1){
-            this->movement(StSouth);
-            storecomplete=1;
-          }
-          else{
-            this->movement(West);
-          }
-	}//end else
-      }//end if
-
-
-      //if bot position (13,3,X)
-      else if(xpos==13 && ypos==3){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is (12,4,0) move there and back to (3,13,0)
-	  if(xstore==12 && ystore==4 && zstore==0){
-	    this->movement(StNorthEast);
-	    storecomplete=1;
-	  }
-	  else{
-	    this->movement(SouthEast2);
-	  }
-	}
-	else{//if zpos=1
-	  //if the target store is (12,4,1) move there and back to (13,3,1)
-	  if(xstore==12 && ystore==4 && zstore==1){
-            this->movement(StNorthEast);
-            storecomplete=1;
-          }
-          else{
-	    //	    printf("\nL221\n");
-            this->movement(NorthWest2);
-          }
-        }//end else
-      }//end if
-
-
-      //if bot position (8,8,X)
-      else if(xpos==8 && ypos==8){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is on the second Floor use the elevator
-	  if(zstore==1){
-	    this->movement(Up);
-	  }
-	  //if the target store is located at a position of (12,6<=,0) move South
-	  else if(xstore==12 && ystore>=6 && zstore==0){
-	    this->movement(South);
-	  }
-	  else{
-	    this->movement(East);
-	  }
-	}
-	else{//if zpos==1
-	  //if the target store is on the first Floor use the elevator
-          if(zstore==0){
-            this->movement(Down);
-          }
-          //if the target store is located at a position of (4,10>=,0) move West
-          else if(xstore<=10 && ystore==4 && zstore==1){
-            this->movement(West);
-          }
-          else{
-            this->movement(North);
-          }
-        }//end else
-      }//end if
-
-
-      //if bot position (16,8,0)
-      else if(xpos==16 && ypos==8){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  this->movement(NorthEast);
-	}
-	else{//if zpos=1
-	  //if the target store is (12,4,1) or (4,4,1) move NorthWest
-	  if((xstore==12 && ystore==4 && zstore==1)||(xstore==4 && ystore==4 && zstore==1)){
-	    this->movement(NorthWest);
-	  }
-	  else{
-	    this->movement(North);
-	  }
-	}//end else
-      }//end if
-
-
-      //if bot position (12,8,X)
-      else if(xpos==12 && ypos==8){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is located at a position of (12,6,0)
-	  //move to the store and back to (12,8,0) and set storecomplete=1
-	  if(xstore==12 && ystore==6 && zstore==0){
-	    this->movement(StWest);
-	    storecomplete=1;
-	  }
-	  //if the target store is (12,10,0) move there and back to (12,8,0)
-	  //and set storecomplete=1
-	  else if(xstore==12 && ystore==10 && zstore==0){
-	    this->movement(StEast);
-	    storecomplete=1;
-	  }
-	  else{
-	    this->movement(South);
-	  }
-	}
-	else{//if zpos==1
-	  //if the target store is (12,6,1) move there and back to (12,8,1)
-	  //and set storecomplete=1
-	  if(xstore==12 && ystore==6 && zstore==1){
-	    this->movement(StWest);
-	    storecomplete=1;
-	  }
-	  //if the target store is (12,10,1) move there and back to (12,8,1)
-	  //and set storecomplete=1
-	  else if(xstore==12 && ystore==10 && zstore==1){
-	    this->movement(StEast);
-	    storecomplete=1;
-	  }
-	  else{
-	    this->movement(North);
-	  }
-	}//end else
-      }//end if
-
-
-      //if bot position (8,12,X)
-      else if(xpos==8 && ypos==12){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is (6,12,0) move there and back to (8,12,0)
-	  //and set storecomplete=1
-	  if(xstore==6 && ystore==12 && zstore==0){
-	    this->movement(StNorth);
-	    storecomplete=1;
-	  }
-	  //if the target store is (10,12,0) move there and back to (8,12,0)
-	  //and set storecomplete=1
-	  else if(xstore==10 && ystore==12 && zstore==0){
-	    this->movement(StSouth);
-	    storecomplete=1;
-	  }
-	  else{
-	    this->movement(East);
-	  }
-	}
-	else{//if zpos==1
-	  //if the target store is (6,12,2) move there and back to (8,12,1)
-          //and set storecomplete=1
-	  if(xstore==6 && ystore==12 && zstore==1){
-            this->movement(StNorth);
-            storecomplete=1;
-          }
-	  //if the target store is (10,12,0) move there and back to (8,12,1)
-          //and set storecomplete=1
-          else if(xstore==10 && ystore==12 && zstore==1){
-            this->movement(StSouth);
-            storecomplete=1;
-          }
-          else{
-            this->movement(West);
-          }
-        }//end else
-      }//end if
-
-
-      //if bot position (13,13,X)
-      else if(xpos==13 && ypos==13){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is (12,12,0) move there and back to (13,13,0)
-          //and set storecomplete=1
-	  if(xstore==12 && ystore==12 && zstore==0){
-	    this->movement(StNorthWest);
-	    storecomplete=1;
-	  }
-	  else{
-	    //	    printf("\nL345\n");
-	    this->movement(NorthEast2);
-	  }
-	}
-	else{//if zpos==1
-	  //if the target store is (12,12,1) move there and back to (13,13,1)
-          //and set storecomplete=1
-	  if(xstore==12 && ystore==12 && zstore==1){
-	    this->movement(StNorthWest);
-	    storecomplete=1;
-	  }
-	  else{
-	    //  printf("\nL385\n");
-	    this->movement(SouthWest2);
-	  }
-	}
-      }//end if
-
-
-      //if bot position (8,16,X)
-      else if(xpos==8 && ypos==16){
-        //printf("\n Position %d %d %d\n", xpos, ypos, zpos);
-	if(zpos==0){
-	  //if the target store is (8,16,0) move there and back to (8,16,0)
-          //and set storecomplete=1
-	  if(xstore==8 && ystore==16 && zstore==0){
-	    storecomplete=1;
-	    TIME++;
-	    this->movement(End);
-	  }
-	  else{
-	    this->movement(NorthWest);
-	  }
-	}
-	else{//if zpos==1
-	  //if the target store is (12,X,1) move SouthWest
-	  if(xstore==12 && zstore==1){
-	    this->movement(SouthWest);
-	  }
-	  else{
-	    this->movement(West);
-	  }
-	}
-      }//end if
-
-
-    } //end while    
-  }//end i for loop
+  }
+  
+  //if the bot is at 3 3 Z
+  else if(this->xpos_ == 3 && this->ypos == 3){
+  	//if the bot is on the first floor
+  	if(this->zpos == 0){
+  		//if the next store is at (4,4,0)
+  		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+  			movement(SouthEast);
+  		}
+  		else{
+  			movement(SouthWest);
+  		}
+  	}
+  	else{
+  		//if the next store is at (4,4,1)
+  		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==y && this->storelist_->zstore == 1){
+  			movement(SouthEast);
+  		}
+  		else{
+  			movement(NorthEast);
+  		}
+  	}
+  }
 }
 
 //Scott Iwanicki
@@ -530,7 +321,7 @@ int Shopper::movement(int direction){
 		break;
 
 	case End:
-		//case 20 Removes bot from simulation and prints out a notification
+		//case 10 Removes bot from simulation and prints out a notification
 		printf("Shopper %d left the simulation at time %d\n", this->RobotNum_, TIME);
 		//[this->RobotNum_ - 1][2] = TIME;
 		TIME++;
