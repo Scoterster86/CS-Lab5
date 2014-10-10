@@ -336,22 +336,22 @@ void Shopper::BotMove()
   	}
  }
 
-  else if(this->xpos_ == 8 && this->ypo_ s==4){
+  else if(this->xpos_ == 8 && this->ypos_ ==4){
 	if(this->zpos_ == 0){
-		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
   			movement(North);
   		}
-		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
   			movement(South);
   		}
 		else{
 			this->movement(East);
 		}
 	else{
-		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
   			this->movement(North);
   		}
-		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
   			this->movement(South);
   		}
 		else{
@@ -362,7 +362,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 7 && this->ypos_ == 4){
 	if(this->zpos_ = 0){
-		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
 			this->movement(North);
 		}
 		else{
@@ -370,7 +370,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
 			this->movement(North);
 		}
 		else{
@@ -382,7 +382,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 9 && this->ypos_ == 4){
 	if(this->zpos_ = 0){
-		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
 			this->movement(South);
 		}
 		else{
@@ -390,7 +390,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
 			this->movement(South);
 		}
 		else{
@@ -399,20 +399,20 @@ void Shopper::BotMove()
 	}
   }
 
-  else if(this->xpos == 10 && this->ypos==4){
+  else if(this->xpos_ == 10 && this->ypos_==4){
 	this->movement(North);
   }
 
-  else if(this->xpos == 6 && this->ypos==4){
+  else if(this->xpos_ == 6 && this->ypos_==4){
 	this->movement(South);
   }
 
-  else if(this->xpos == 8 && this->ypos == 12){
+  else if(this->xpos_ == 8 && this->ypos_ == 12){
 	if(this->zpos_ ==0){
-		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
 			this->movement(North);
 		}
-		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
 			this->movement(South);
 		}
 		else{
@@ -420,10 +420,10 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
 			this->movement(South);
 		}
-		else(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+		else(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
 			this->movement(North);
 		}
 		else{
@@ -433,7 +433,7 @@ void Shopper::BotMove()
   }
   else if(this->xpos_ == 7 && this->ypos_ == 12){
 	if(this->zpos_ = 0){
-		if(this->storelist_->xstore_== 6 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_== 6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
 			this->movement(North);
 		}
 		else{
@@ -441,7 +441,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
 			this->movement(South);
 		}
 		else{
@@ -462,10 +462,10 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 12 && this->ypos_ == 8){
 	if(this->zpos_ ==0){
-		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
 		}
-		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
 			this->movement(East);
 		}
 		else{
@@ -473,10 +473,10 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
 			this->movement(West);
 		}
-		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 1){
+		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 1){
 			this->movement(East);
 		}
 		else{
@@ -487,7 +487,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 12 && this->ypos_ == 7){
 	if(this->zpos_ == 0){
-		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
 		}
 		else{
@@ -495,7 +495,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
 			this->movement(East);
 		}
 		else{
@@ -507,7 +507,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 12 && this->ypos_ ==9){
 	if(this->zpos_ == 0){
-		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
 			this->movement(East);
 		}
 		else{
@@ -515,7 +515,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
 			this->movement(West);
 		}
 		else{
@@ -524,20 +524,20 @@ void Shopper::BotMove()
 	}
   }
 
-  else if(this->xpos == 12 && this->ypos==6){
+  else if(this->xpos_ == 12 && this->ypos_==6){
 	this->movement(West);
   }
 
-  else if(this->xpos == 12 && this->ypos==10){
+  else if(this->xpos_ == 12 && this->ypos_==10){
 	this->movement(East);
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 8){
 	if(this->zpos_ ==0){
-		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
 		}
-		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
 			this->movement(East);
 		}
 		else{
@@ -545,10 +545,10 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
 			this->movement(West);
 		}
-		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore == 1){
+		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 1){
 			this->movement(East);
 		}
 		else{
@@ -559,7 +559,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 4 && this->ypos_ == 7){
 	if(this->zpos_ == 0){
-		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
 		}
 		else{
@@ -567,7 +567,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
 			this->movement(East);
 		}
 		else{
@@ -579,7 +579,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 4 && this->ypos_ ==9){
 	if(this->zpos_ == 0){
-		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
 			this->movement(East);
 		}
 		else{
@@ -587,7 +587,7 @@ void Shopper::BotMove()
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
 			this->movement(West);
 		}
 		else{
