@@ -333,7 +333,8 @@ void Shopper::BotMove()
 	}
 	else{
 		this->movement(West);
-  }
+  	}
+ }
 
   else if(this->xpos_ == 8 && this->ypo_ s==4){
 	if(this->zpos_ == 0){
