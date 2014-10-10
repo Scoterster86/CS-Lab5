@@ -264,7 +264,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 3 && this->ypos_ == 13){
   	//if the bot is on the first floor
-  	if(this->zpos == 0){
+  	if(this->zpos_ == 0){
   		//if the next store is at (12,12,0)
   		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
   			movement(NorthWest);
@@ -297,7 +297,7 @@ void Shopper::BotMove()
   	}
   	else{
   		//if the next store is at (12,4,1)
-  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1)){
+  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
   			movement(NorthEast);
   		}
   		else{
