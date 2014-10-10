@@ -38,6 +38,7 @@ public:
 	int xpos_, ypos_, zpos_;
 	Store* storelist_;
 	int slices;
+	int movement;
 	Shopper* nextshopper_;
 
 	Shopper();
