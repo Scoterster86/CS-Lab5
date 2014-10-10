@@ -433,7 +433,7 @@ void Shopper::BotMove()
 	}
   }
   else if(this->xpos_ == 7 && this->ypos_ == 12){
-	if(this->zpos_ = 0){
+	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_== 6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
 			this->movement(North);
 		}
