@@ -222,22 +222,414 @@ void Shopper::BotMove()
   	if(this->zpos == 0){
   		//if the next store is at (4,4,0)
   		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
-  			movement(SouthEast);
+  			this->movement(SouthEast);
   		}
   		else{
-  			movement(SouthWest);
+  			this->movement(SouthWest);
   		}
   	}
   	else{
   		//if the next store is at (4,4,1)
-  		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==y && this->storelist_->zstore == 1){
+  		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
   			movement(SouthEast);
   		}
   		else{
-  			movement(NorthEast);
+  			this->movement(NorthEast);
   		}
   	}
   }
+
+  else if(this->xpos_ == 3 && this->ypos == 13){
+  	//if the bot is on the first floor
+  	if(this->zpos == 0){
+  		//if the next store is at (4,12,0)
+  		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+  			movement(SouthWest);
+  		}
+  		else{
+  			this->movement(NorthWest);
+  		}
+  	}
+  	else{
+  		//if the next store is at (4,12,1)
+  		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==12 && this->storelist_->zstore == 1){
+  			movement(SouthWest);
+  		}
+  		else{
+  			this->movement(SouthEast);
+  		}
+  	}
+  }
+
+
+  else if(this->xpos_ == 3 && this->ypos == 13){
+  	//if the bot is on the first floor
+  	if(this->zpos == 0){
+  		//if the next store is at (12,12,0)
+  		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+  			movement(NorthWest);
+  		}
+  		else{
+  			this->movement(NorthEast);
+  		}
+  	}
+  	else{
+  		//if the next store is at (12,12,1)
+  		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore == 1){
+  			movement(NorthWest);
+  		}
+  		else{
+  			this->movement(SouthWest);
+  		}
+  	}
+  }
+
+  else if(this->xpos_ == 3 && this->ypos == 13){
+  	//if the bot is on the first floor
+  	if(this->zpos == 0){
+  		//if the next store is at (12,4,0)
+  		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+  			movement(NorthEast);
+  		}
+  		else{
+  			this->movement(SouthEast);
+  		}
+  	}
+  	else{
+  		//if the next store is at (12,4,1)
+  		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+  			movement(NorthEast);
+  		}
+  		else{
+  			this->movement(NorthWest);
+  		}
+  	}
+  }
+
+
+  else if(this->xpos_*10+this->ypos_ ==81 || this->xpos_*10+this->ypos_ ==82 || 
+  	    this->xpos_*10+this->ypos_ ==83 || this->xpos_*10+this->ypos_ ==85 ||
+	    this->xpos_*10+this->ypos_ ==86 || this->xpos_*10+this->ypos_ ==87 ||
+	    this->xpos_*10+this->ypos_ ==89 || this->xpos_*10+this->ypos_ ==90 ||
+	    this->xpos_*10+this->ypos_ ==91 || this->xpos_*10+this->ypos_ ==93 ||
+	    this->xpos_*10+this->ypos_ ==94 || this->xpos_*10+this->ypos_ ==95){
+	if(this->zpos_==0){
+		this->movement(East);
+	}
+	else{
+		this->movement(West);
+  }
+
+
+  else if(this->xpos_*10+this->ypos_ ==18 || this->xpos_*10+this->ypos_ ==28 || 
+  	    this->xpos_*10+this->ypos_ ==38 || this->xpos_*10+this->ypos_ ==58 ||
+	    this->xpos_*10+this->ypos_ ==68 || this->xpos_*10+this->ypos_ ==78 ||
+	    this->xpos_*10+this->ypos_ ==98 || this->xpos_*10+this->ypos_ ==108 ||
+	    this->xpos_*10+this->ypos_ ==118 || this->xpos_*10+this->ypos_ ==138 ||
+	    this->xpos_*10+this->ypos_ ==148 || this->xpos_*10+this->ypos_ ==158){
+	if(this->zpos_==0){
+		this->movement(East);
+	}
+	else{
+		this->movement(West);
+  }
+
+  else if(this->xpos_ == 8 && this->ypo_ s==4){
+	if(this->zpos_ == 0){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+  			movement(North);
+  		}
+		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+  			movement(South);
+  		}
+		else{
+			this->movement(East)
+		}
+	else{
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+  			this->movement(North);
+  		}
+		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+  			this->movement(South);
+  		}
+		else{
+			this->movement(West);
+		}
+	}
+  }
+
+  else if(this->xpos_ == 7 && this->ypos_ == 4){
+	if(this->zpos_ = 0){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+			this->movement(North);
+		}
+		else{
+			this->movement(South);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+			this->movement(North);
+		}
+		else{
+			this->movement(South);
+		}
+	}
+  }
+		
+
+  else if(this->xpos_ == 9 && this->ypos_ == 4){
+	if(this->zpos_ = 0){
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 0){
+			this->movement(South);
+		}
+		else{
+			this->movement(North);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+			this->movement(South);
+		}
+		else{
+			this->movement(North);
+		}
+	}
+  }
+
+  else if(this->xpos == 10 && this->ypos==4){
+	this->movement(North);
+  }
+
+  else if(this->xpos == 6 && this->ypos==4){
+	this->movement(South);
+  }
+
+  else if(this->xpos == 8 && this->ypos == 12){
+	if(this->zpos_ ==0){
+		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+			this->movement(North);
+		}
+		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+			this->movement(South);
+		}
+		else{
+			this->movement(East);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+			this->movement(South);
+		}
+		else(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore == 1){
+			this->movement(North);
+		}
+		else{
+			this->movement(West);
+		}
+	}
+  }
+  else if(this->xpos_ == 7 && this->ypos_ == 12){
+	if(this->zpos_ = 0){
+		if(this->storelist_->xstore_== 6 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0){
+			this->movement(North);
+		}
+		else{
+			this->movement(South);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore == 1){
+			this->movement(South);
+		}
+		else{
+			this->movement(North);
+		}
+	}
+  }
+
+  else if(this->xpos_ == 10 && this->ypos_ == 12){
+	this->movement(North);
+  }
+
+
+  else if(this->xpos_ == 6 && this->ypos_ == 12){
+	this->movement(South);
+  }
+
+
+  else if(this->xpos_ == 12 && this->ypos_ == 8){
+	if(this->zpos_ ==0){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+			this->movement(West);
+		}
+		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+			this->movement(East);
+		}
+		else{
+			this->moevement(South);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+			this->movement(West);
+		}
+		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 1){
+			this->movement(East);
+		}
+		else{
+			this->movement(North);
+		}
+	}
+  }
+
+  else if(this->xpos_ == 12 && this->ypos_ == 7){
+	if(this->zpos_ == 0){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+			this->movement(West);
+		}
+		else{
+			this->movement(East);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+			this->movement(East);
+		}
+		else{
+			this->movement(West);
+		}
+	}
+  }
+
+
+  else if(this->xpos_ == 12 && this->ypos_ ==9){
+	if(this->zpos_ == 0){
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+			this->movement(East);
+		}
+		else{
+			this->movement(West);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+			this->movement(West);
+		}
+		else{
+			this->movement(East);
+		}
+	}
+  }
+
+  else if(this->xpos == 12 && this->ypos==6){
+	this->movement(West);
+  }
+
+  else if(this->xpos == 12 && this->ypos==10){
+	this->movement(East);
+  }
+
+  else if(this->xpos_ == 4 && this->ypos_ == 8){
+	if(this->zpos_ ==0){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+			this->movement(West);
+		}
+		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+			this->movement(East);
+		}
+		else{
+			this->moevement(South);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+			this->movement(West);
+		}
+		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore == 1){
+			this->movement(East);
+		}
+		else{
+			this->movement(North);
+		}
+	}
+  }
+
+  else if(this->xpos_ == 4 && this->ypos_ == 7){
+	if(this->zpos_ == 0){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0){
+			this->movement(West);
+		}
+		else{
+			this->movement(East);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+			this->movement(East);
+		}
+		else{
+			this->movement(West);
+		}
+	}
+  }
+
+
+  else if(this->xpos_ == 4 && this->ypos_ ==9){
+	if(this->zpos_ == 0){
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0){
+			this->movement(East);
+		}
+		else{
+			this->movement(West);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore == 1){
+			this->movement(West);
+		}
+		else{
+			this->movement(East);
+		}
+	}
+  }
+
+  else if(this->xpos == 4 && this->ypos==6){
+	this->movement(West);
+  }
+
+  else if(this->xpos == 4 && this->ypos==10){
+	this->movement(East);
+  }
+
+  else if(this->xpos_ == 8 && this->ypos_ == 8)
+	if(this->zpos_ == 0){
+		if(this->storelist_->zstore_ == 1){
+			this->movement(up);
+		}
+		else if((this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0) ||
+			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0) ||
+			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0)){
+			this->movement(South);
+		}
+		else{
+			this->movement(East);
+		}
+	}
+	else{
+		if(this->storelist_->zstore_ == 0){
+			this->movement(Down);
+		}
+		else if((this->storelist_->xstore_== 10 && this->storelist_->ystore_== 4 && this->storelist_->zstore == 1) ||
+			  (this->storelist_->xstore_== 6 && this->storelist_->ystore_== 4 && this->storelist_->zstore == 1) ||
+			  (this->storelist_->xstore_== 4 && this->storelist_->ystore_== 4 && this->storelist_->zstore == 1)){
+			this->movement(South);
+		}
+		else{
+			this->movement(North);
+		}
+	}
+
 }
 
 //Scott Iwanicki
