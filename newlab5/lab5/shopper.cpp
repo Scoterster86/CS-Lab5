@@ -470,7 +470,7 @@ void Shopper::BotMove()
 			this->movement(East);
 		}
 		else{
-			this->moevement(South);
+			this->movement(South);
 		}
 	}
 	else{
@@ -542,7 +542,7 @@ void Shopper::BotMove()
 			this->movement(East);
 		}
 		else{
-			this->moevement(South);
+			this->movement(South);
 		}
 	}
 	else{
@@ -597,22 +597,22 @@ void Shopper::BotMove()
 	}
   }
 
-  else if(this->xpos == 4 && this->ypos==6){
+  else if(this->xpos_ == 4 && this->ypos_==6){
 	this->movement(West);
   }
 
-  else if(this->xpos == 4 && this->ypos==10){
+  else if(this->xpos_ == 4 && this->ypos_==10){
 	this->movement(East);
   }
 
   else if(this->xpos_ == 8 && this->ypos_ == 8)
 	if(this->zpos_ == 0){
 		if(this->storelist_->zstore_ == 1){
-			this->movement(up);
+			this->movement(Up);
 		}
-		else if((this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore == 0) ||
-			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore == 0) ||
-			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore == 0)){
+		else if((this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0) ||
+			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0) ||
+			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0)){
 			this->movement(South);
 		}
 		else{
@@ -623,9 +623,9 @@ void Shopper::BotMove()
 		if(this->storelist_->zstore_ == 0){
 			this->movement(Down);
 		}
-		else if((this->storelist_->xstore_== 10 && this->storelist_->ystore_== 4 && this->storelist_->zstore == 1) ||
-			  (this->storelist_->xstore_== 6 && this->storelist_->ystore_== 4 && this->storelist_->zstore == 1) ||
-			  (this->storelist_->xstore_== 4 && this->storelist_->ystore_== 4 && this->storelist_->zstore == 1)){
+		else if((this->storelist_->xstore_== 10 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
+			  (this->storelist_->xstore_== 6 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
+			  (this->storelist_->xstore_== 4 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1)){
 			this->movement(South);
 		}
 		else{
@@ -646,7 +646,7 @@ int Shopper::movement(int direction){
 		//Moves up a row
 			this->xpos_--;
 			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
-		}
+		
 		break;
 	case NorthWest:
 		//Moves up a row and left a colmun
