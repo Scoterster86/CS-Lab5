@@ -26,12 +26,12 @@ int main(int argc, char* argv[])
 				cin >> xpos >> ypos >> zpos >> ts;
 				Store* store = new Store();//create a store
 				Move* move = new Move();
-				move->xstore_ = xpos;	// sets the location
-				move->ystore_ = ypos;
-				move->zstore_ = zpos;	
+				store->xstore_ = xpos;	// sets the location
+				store->ystore_ = ypos;
+				store->zstore_ = zpos;	
 				store->TimeSlice_ = ts;	//sets the timeslice
 
-				newshopper->smove_AddStore(store);	//Add the store to the shopper's storelist
+				newshopper->smove_->AddStore(store);	//Add the store to the shopper's storelist
 			}
 		shopper->AddShopper(newshopper);	//add a shopper
 	}
@@ -39,13 +39,13 @@ int main(int argc, char* argv[])
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfShoppers !=0){
 		cout <<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
-		if(shopper->smove_->xpos_ != shopper->smove->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
-			|| shopper->smove_->zpos_ != shopper->smove->storelist_->zstore_){
+		if(shopper->smove_->xpos_ != shopper->smove_->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
+			|| shopper->smove_->zpos_ != shopper->smove_->storelist_->zstore_){
 				cout<<"Enter BotMove"<<endl;
 				shopper->smove_->BotMove();
 		}
 		else{
-			if(shopper->storelist_->xstore_ == 8 && shopper->storelist_->ystore_ == 16 && shopper->storelist_->zstore_ == 0){
+			if(shopper->smove_storelist_->xstore_ == 8 && shopper->smove_storelist_->ystore_ == 16 && shopper->smove_storelist_->zstore_ == 0){
 				shopper->smove_->movement(End);
 				NumOfShoppers--;
 			}
