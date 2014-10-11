@@ -9,7 +9,7 @@ using namespace std;
 extern int TimeSlice;
 extern int TIME;
 extern int Floor[LENGTH][WIDTH][HEIGHT];
-extern int NUmOfShoppers;
+extern int NumOfShoppers;
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
 
 
