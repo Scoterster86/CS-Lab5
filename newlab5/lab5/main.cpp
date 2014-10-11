@@ -2,7 +2,6 @@
 
 int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
-int TimeSlice = 1;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
@@ -44,7 +43,8 @@ int main(int argc, char* argv[])
 				Store* endStore = new Store();
 				shopper->addStore(endStore);
 			}
-		}	
+		}
+		Time++;
 	}
 	
 	return 0;
