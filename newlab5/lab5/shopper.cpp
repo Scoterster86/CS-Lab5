@@ -87,7 +87,7 @@ void Shopper::BotMove()
   else if(this->xpos_ == 0){
   	if(DEBUG)cout<<"Line 87"<<endl;
 
-  	else if(this->zpos_ == 0){
+  	else if(this->zpos_ == 0){ if(DEBUG)cout<<"Z=0"<<endl;
   		if(this->ypos_ == 6){
   			this->movement(SouthWest);
   		}
