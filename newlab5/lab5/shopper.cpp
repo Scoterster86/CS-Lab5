@@ -176,6 +176,7 @@ void Shopper::BotMove()
   			}
   		}
   		else{
+  			cout<<"enter N" <<endl;
   			this->movement(North);
   		}
   	
