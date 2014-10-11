@@ -3,20 +3,19 @@
 int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
 int TimeSlice =0;
-int NumOfShoppers =0;
+int NumOfRobots =0;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
 	//sets input values
 	TimeSlice = atoi(argv[1]);
 	int n, items;
-	int tempNumOfShoppers =0;
-	cin >> tempNumOfShoppers; // in lab5
-	cin >> n;
-	NumOfShoppers = tempNumOfShoppers;
+	int tempNumOfRobots =0;
+	cin >> tempNumOfRobots; // in lab5
+	NumOfRobots = tempNumOfRobots;
 	Shopper* shopper = new Shopper();
 	int xpos=0, ypos=0, zpos=0, ts = 0;
-	for (int i = 0; i < NumOfShoppers; i++)
+	for (int i = 0; i < NumOfRobots; i++)
 	{
 		Shopper* newshopper = new Shopper(++i);
 			for (int i = 0; i < n; i++)
