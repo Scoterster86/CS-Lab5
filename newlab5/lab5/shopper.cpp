@@ -174,10 +174,11 @@ void Shopper::BotMove()
   			if(this->storelist_->xstore_==8 && this->storelist_->ystore_ == 16 && this->storelist_->zstore_==0){
   				this->movement(End);
   			}
-  		}
-  		else{
-  			cout<<"enter N" <<endl;
-  			this->movement(North);
+  		
+  			else{
+  				cout<<"enter N" <<endl;
+  				this->movement(North);
+  			}
   		}
   	
   	}
