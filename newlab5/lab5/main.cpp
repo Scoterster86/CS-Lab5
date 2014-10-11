@@ -47,6 +47,7 @@ int main(int argc, char* argv[])
 		else{
 			if(shopper->smove_->storelist_->xstore_ == 8 && shopper->smove_->storelist_->ystore_ == 16 && shopper->smove_->storelist_->zstore_ == 0){
 				shopper->smove_->movement(End, shopper->RobotNum_);
+				RemoveShopper(shopper);
 				NumOfShoppers--;
 			}
 			else{
