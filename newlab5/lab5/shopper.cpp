@@ -16,7 +16,6 @@ Shopper::Shopper(int k)
 {
 	this->RobotNum_ = k;
 	this->smove_ = new Move();
-	this->storelist_ = new Store();
 	this->slices = 0;
 	this->nextshopper_ = nullptr;
 }
@@ -32,7 +31,7 @@ int Shopper::storecomplete(){
 	//shopper enters round robin queue
 	RRqueue* ptr = new RRqueue(this);
 	//the shopper is processed at the round robin queue
-	while(this->storelist_->TimeSlice_ != 0)
+	while(this->smove_storelist_->TimeSlice_ != 0)
 	{
 		TIME+= (TimeSlice/10);
 		ptr->RunQueue();
