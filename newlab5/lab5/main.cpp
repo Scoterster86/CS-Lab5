@@ -41,9 +41,11 @@ int main(int argc, char* argv[])
 		cout <<shopper->xpos_ <<shopper->ypos_ << shopper->zpos_ << endl;
 		if(shopper->xpos_ != shopper->storelist_->xstore_ && shopper->ypos_ != shopper->storelist_->ystore_
 			&& shopper->zpos_ != shopper->storelist_->zstore_){
+				cout<<"Enter BotMove"<<endl;
 				shopper->BotMove();
 		}
 		else{
+			cout<<"Remove Store"<<endl;
 			shopper->RemoveStore();
 			if(shopper->storelist_==NULL){
 				Store* endStore = new Store();
