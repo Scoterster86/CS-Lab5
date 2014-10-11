@@ -38,7 +38,7 @@ int main(int argc, char* argv[])
 	}
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfShoppers !=0){
-		cout <<shopper->xpos_ <<shopper->ypos_ << shopper->zpos << endl;
+		cout <<shopper->xpos_ <<shopper->ypos_ << shopper->zpos_ << endl;
 		if(shopper->xpos_ != shopper->storelist_->xstore_ && shopper->ypos_ != shopper->storelist_->ystore_
 			&& shopper->zpos_ != shopper->storelist_->zstore_){
 				shopper->BotMove();
