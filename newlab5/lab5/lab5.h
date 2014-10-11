@@ -75,6 +75,6 @@ public:
 	void BotMove();
 	int movement(int);
 	
-}
+};
 //checks to see if the time is divisible by 25
 int timecheck();
