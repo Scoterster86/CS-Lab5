@@ -7,13 +7,10 @@ int TimeSlice = 1;
 int main(int argc, char* argv[])
 {
 	//sets input values
-	int n = atoi(argv[1]);
-	int tmpTimeSlice = atoi(argv[2]);
-	TimeSlice = tmpTimeSlice;
-	
+	TimeSlice = atoi(argv[1]);
 
 
-	int NumOfShoppers = 1; // in lab5
+	cin >> NumOfShoppers; // in lab5
 	Shopper* shopper = new Shopper();
 	int xpos=0, ypos=0, zpos=1, ts = 0;
 	for (int i = 0; i < NumOfShoppers; i++)
@@ -43,8 +40,9 @@ int main(int argc, char* argv[])
 		}
 		else{
 			shopper->RemoveStore();
-			if(shopper->nextshopper_==NULL){
-				shopper->nextshopper_->
+			if(shopper->storelist_==NULL){
+				Store* endStore = new Store();
+				shopper->addStore(endStore);
 			}
 		}	
 	}
