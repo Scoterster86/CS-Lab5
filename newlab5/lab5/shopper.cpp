@@ -50,9 +50,9 @@ void Shopper::AddShopper(Shopper* shopper)
 	if (this->RobotNum_ == 0)
 	{
 		this->RobotNum_ = shopper->RobotNum_;
-		this->->smove_->xpos_ = shopper->smove_->xpos_;
+		this->smove_->xpos_ = shopper->smove_->xpos_;
 		this->smove_->ypos_ = shopper->smove_->ypos_;
-		this->smove->zpos_ = shopper->smove_->zpos_;
+		this->smove_->zpos_ = shopper->smove_->zpos_;
 		this->smove_->storelist_ = new Store();
 		this->nextshopper_ = nullptr;
 	}
