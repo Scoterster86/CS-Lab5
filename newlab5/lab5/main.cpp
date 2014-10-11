@@ -9,34 +9,39 @@ int main(int argc, char* argv[])
 {
 	//sets input values
 	TimeSlice = atoi(argv[1]);
-	int n, items;
+	int i,j,n, stores[12], items;
 	int tempNumOfRobots =0;
 	cin >> tempNumOfRobots; // in lab5
 	NumOfRobots = tempNumOfRobots;
 	Shopper* shopper = new Shopper();
 	int xpos=0, ypos=0, zpos=0, ts = 0;
-	for (int i = 0; i < NumOfRobots; i++)
+	for (i = 0; i < NumOfRobots; i++)
 	{
+		cin >> stores[i];
+	}
+	for(i = 0; i<NumOfRobots; i++){
 		Shopper* newshopper = new Shopper(++i);
-			for (int i = 0; i < n; i++)
-			{
-		
-				cout<<"in Store For Loop" <<endl;
-				cin >> xpos >> ypos >> zpos >> ts;
-				Store* store = new Store();//create a store
-				Move* move = new Move();
-				store->xstore_ = xpos;	// sets the location
-				store->ystore_ = ypos;
-				store->zstore_ = zpos;	
-				store->TimeSlice_ = ts;	//sets the timeslice
+		for (j = 0; j < n; j++)
+		{
+			cin >> xpos >> ypos >> zpos >> items;
+			Store* store = new Store();//create a store
+			Move* move = new Move();
+			store->xstore_ = xpos;	// sets the location
+			store->ystore_ = ypos;
+			store->zstore_ = zpos;
+			store->TimeSlice_ = 0;	//sets the timeslice
+			for(k =0; k < items; k++){
+				
+				cin >>item >>count
 
-				newshopper->smove_->AddStore(store);	//Add the store to the shopper's storelist
 			}
+			newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
+		}
 		shopper->AddShopper(newshopper);	//add a shopper
 	}
 	
 	//shopper moves to each store and enters the RRqueue to be serviced
-	while(NumOfShoppers !=0){
+	while(NumOfRobots !=0){
 		cout <<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
 		if(shopper->smove_->xpos_ != shopper->smove_->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
 			|| shopper->smove_->zpos_ != shopper->smove_->storelist_->zstore_){
