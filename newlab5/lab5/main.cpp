@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 			else{
 				shopper->smove_->RemoveStore();
 				cout<<"Removed Store-----------------------------"<<endl;
-				if(shopper->storelist_==NULL){
+				if(shopper->smove_->storelist_==NULL){
 					cout<<"Storelist NULL"<<endl;
 					Store* endStore = new Store();
 					endStore->xstore_ = 8;
