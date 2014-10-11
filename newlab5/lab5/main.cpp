@@ -49,17 +49,19 @@ int main(int argc, char* argv[])
 				shopper->RemoveShopper(shopper);
 				NumOfShoppers--;
 			}
-			shopper->RemoveStore();
-			cout<<"Removed Store-----------------------------"<<endl;
-			if(shopper->storelist_==NULL){
-				cout<<"Storelist NULL"<<endl;
-				Store* endStore = new Store();
-				endStore->xstore_ = 8;
-				endStore->ystore_ =16;
-				endStore->zstore_ = 0;
-				endStore->TimeSlice_ = 0;
-				shopper->storelist_ = endStore;
-				cout<<"Added Store"<<endl;
+			else{
+				shopper->RemoveStore();
+				cout<<"Removed Store-----------------------------"<<endl;
+				if(shopper->storelist_==NULL){
+					cout<<"Storelist NULL"<<endl;
+					Store* endStore = new Store();
+					endStore->xstore_ = 8;
+					endStore->ystore_ =16;
+					endStore->zstore_ = 0;
+					endStore->TimeSlice_ = 0;
+					shopper->storelist_ = endStore;
+					cout<<"Added Store"<<endl;
+				}
 			}
 		}
 		TIME++;
