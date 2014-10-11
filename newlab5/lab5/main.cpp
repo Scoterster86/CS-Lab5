@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 			shopper->RemoveStore();
 			if(shopper->storelist_==NULL){
 				Store* endStore = new Store();
-				shopper->addStore(endStore);
+				shopper->AddStore(endStore);
 			}
 		}
 		Time++;
