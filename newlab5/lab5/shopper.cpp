@@ -308,6 +308,29 @@ void Shopper::BotMove()
   		}
   	}
   }
+  
+      else if(this->xpos_ == 13 && this->ypos_ ==3){
+  	if(DEBUG)cout<<"Line 313"<<endl;
+  	//if the bot is on the first floor
+  	if(this->zpos_ == 0){
+  		//if the next store is at (12,4,0)
+  		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0)){
+  			this->movement(NorthEast);
+  		}
+  		else{
+  			this->movement(SouthEast);
+  		}
+  	}
+  	else{
+  		//if the next store is at (4,4,1)
+  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
+  			this->movement(NorthEast);
+  		}
+  		else{
+  			this->movement(NorthWest);
+  		}
+  	}
+  }
 
 
   else if(this->xpos_ == 4 && this->ypos_ == 12){
