@@ -5,7 +5,7 @@ int DEBUG =1;
 Shopper::Shopper()
 {
 	this->RobotNum_ = 0;
-	this->smove_-> new Move();
+	this->smove_ = new Move();
 	this->slices = 0;
 	this->nextshopper_ = nullptr;
 }
@@ -15,7 +15,7 @@ Shopper::Shopper()
 Shopper::Shopper(int k)
 {
 	this->RobotNum_ = k;
-	this->smove_-> new Move;
+	this->smove_ = new Move();
 	this->storelist_ = new Store();
 	this->slices = 0;
 	this->nextshopper_ = nullptr;
