@@ -42,11 +42,11 @@ int main(int argc, char* argv[])
 		if(shopper->smove_->xpos_ != shopper->smove_->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
 			|| shopper->smove_->zpos_ != shopper->smove_->storelist_->zstore_){
 				cout<<"Enter BotMove"<<endl;
-				shopper->smove_->BotMove();
+				shopper->smove_->BotMove(shopper->RobotNum_);
 		}
 		else{
 			if(shopper->smove_->storelist_->xstore_ == 8 && shopper->smove_->storelist_->ystore_ == 16 && shopper->smove_->storelist_->zstore_ == 0){
-				shopper->smove_->movement(End);
+				shopper->smove_->movement(End, shopper->RobotNum_);
 				NumOfShoppers--;
 			}
 			else{
