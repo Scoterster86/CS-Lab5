@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 				endStore->ystore_ =16;
 				endStore->zstore_ = 0;
 				endStore->TimeSlice_ = 0;
-				shopper->storelist_->endStore;
+				shopper->storelist_ = endStore;
 				cout<<"Added Store"<<endl;
 			}
 		}
