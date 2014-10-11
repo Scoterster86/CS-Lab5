@@ -192,7 +192,7 @@ void Shopper::BotMove()
   
   else if(this->xpos_*10+this->ypos_ ==51 || this->xpos_*10+this->ypos_ ==42 || 
   	    this->xpos_*10+this->ypos_ ==24 || this->xpos_*10+this->ypos_ ==15){
-  	    	if(DEBUG)cout<<"Line 198"<<cout;
+  	    	if(DEBUG)cout<<"Line 198"<<endl;
 	if(this->zpos_ ==0){
 		this->movement(SouthWest);
 	}
@@ -606,12 +606,12 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 4 && this->ypos_==6){
   	if(DEBUG)cout<<"Line 610"<<endl;
-	this->movement(West);
+	this->movement(Eastt);
   }
 
   else if(this->xpos_ == 4 && this->ypos_==10){
   	if(DEBUG)cout<<"Line 615"<<endl;
-	this->movement(East);
+	this->movement(West);
   }
 
   else if(this->xpos_ == 8 && this->ypos_ == 8){
