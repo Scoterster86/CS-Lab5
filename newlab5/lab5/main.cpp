@@ -4,6 +4,7 @@ int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
 int TimeSlice =0;
 int NumOfRobots =0;
+Shoppers* Shopperlist[9] = NULL;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
@@ -43,11 +44,12 @@ int main(int argc, char* argv[])
 			
 			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
 		}
-		shopper->AddShopper(newshopper);	//add a shopper
+		Shopperlist[i] = newshopper;	//add a shopper
 	}
 	shopper->RemoveShopper(shopper);
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfRobots !=0){
+		for(i=0; i<9; i++){}
 		cout <<"Robot: "<< shopper->RobotNum_ << "Pos: "<<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
 		cout <<"Store:" <<shopper->smove_->storelist_->xstore_ << " " <<shopper->smove_->storelist_->ystore_ << " " <<shopper->smove_->storelist_->zstore_ << endl;
 		if(shopper->smove_->xpos_ != shopper->smove_->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
