@@ -1,3 +1,5 @@
+#ifndef LAB5_H
+#define LAB5_H
 #include <iostream>
 
 using namespace std;
@@ -79,3 +81,4 @@ public:
 
 //checks to see if the time is divisible by 25
 int timecheck();
+#endif
