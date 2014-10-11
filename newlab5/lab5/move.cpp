@@ -771,7 +771,6 @@ int Move::movement(int direction, int RobotNum){
 	case End:
 		//case 10 Removes bot from simulation and prints out a notification
 		printf("Shopper %d left the simulation at time %d\n", RobotNum, TIME);
-		RemoveShopper(this);
 		break;
 	default:
 		break;
