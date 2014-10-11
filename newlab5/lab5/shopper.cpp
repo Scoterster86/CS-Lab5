@@ -532,12 +532,12 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 12 && this->ypos_==6){
   	if(DEBUG)cout<<"Line 533"<<endl;
-	this->movement(West);
+	this->movement(East);
   }
 
   else if(this->xpos_ == 12 && this->ypos_==10){
   	if(DEBUG)cout<<"Line 538"<<endl;
-	this->movement(East);
+	this->movement(West);
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 8){
