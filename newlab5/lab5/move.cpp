@@ -695,8 +695,6 @@ void Move::BotMove(int RobotNum)
 //Scott Iwanicki
 //moves the Object in the given direction
 int Move::movement(int direction, int RobotNum){
-	int j;
-	;
 	switch (direction){
 	case North:
 		//printf("N");
@@ -757,7 +755,7 @@ int Move::movement(int direction, int RobotNum){
 		//got on and off the elevator
 		this->zpos_++;
 		printf("Shopper %d got on elevator at time %d\n", RobotNum, TIME);
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		printf("Shopper %d got off elevator at time %d\n", RobotNum, TIME+3);
 		break;
 	case Down:
