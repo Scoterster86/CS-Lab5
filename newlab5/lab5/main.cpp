@@ -7,9 +7,10 @@ int main(int argc, char* argv[])
 {
 	//sets input values
 	TimeSlice = atoi(argv[1]);
-
+	int n;
 	int tempNumOfShoppers =0;
 	cin >> tempNumOfShoppers; // in lab5
+	cin >> n
 	NumOfShoppers = tempNumOfShoppers;
 	Shopper* shopper = new Shopper();
 	int xpos=0, ypos=0, zpos=1, ts = 0;
@@ -45,7 +46,7 @@ int main(int argc, char* argv[])
 				shopper->AddStore(endStore);
 			}
 		}
-		Time++;
+		TIME++;
 	}
 	
 	return 0;
