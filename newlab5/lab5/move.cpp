@@ -9,7 +9,7 @@ Move::Move()
 	this->xpos_ = 8;
 	this->ypos_ = 16;
 	this->zpos_ = 0;
-	this->storelist_ = new Store();
+	this->storelist_ = NULL;//new Store();
 }
 
 //Yo Karita
