@@ -41,7 +41,7 @@ int main(int argc, char* argv[])
 
 			}
 			
-			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore <<endl;
+			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
 		}
 		shopper->AddShopper(newshopper);	//add a shopper
 	}
