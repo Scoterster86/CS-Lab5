@@ -49,35 +49,39 @@ int main(int argc, char* argv[])
 	shopper->RemoveShopper(shopper);
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfRobots !=0){
-		for(i=0; i<9; i++){}
-		cout <<"Robot: "<< shopper->RobotNum_ << "Pos: "<<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
-		cout <<"Store:" <<shopper->smove_->storelist_->xstore_ << " " <<shopper->smove_->storelist_->ystore_ << " " <<shopper->smove_->storelist_->zstore_ << endl;
-		if(shopper->smove_->xpos_ != shopper->smove_->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
-			|| shopper->smove_->zpos_ != shopper->smove_->storelist_->zstore_){
-				cout<<"Enter BotMove"<<endl;
-				shopper->smove_->BotMove(shopper->RobotNum_);
-		}
-		else{
-			if(shopper->smove_->storelist_->xstore_ == 8 && shopper->smove_->storelist_->ystore_ == 16 && shopper->smove_->storelist_->zstore_ == 0){
-				shopper->smove_->movement(End, shopper->RobotNum_);
-				shopper->RemoveShopper(shopper);
-				NumOfRobots--;
-			}
-			else{
-				shopper->smove_->RemoveStore();
-				cout<<"Removed Store-----------------------------"<<endl;
-				if(shopper->smove_->storelist_==NULL){
-					cout<<"Storelist NULL"<<endl;
-					Store* endStore = new Store();
-					endStore->xstore_ = 8;
-					endStore->ystore_ =16;
-					endStore->zstore_ = 0;
-					endStore->TimeSlice_ = 0;
-					shopper->smove_->storelist_ = endStore;
-					cout<<"Added Store"<<endl;
+		for(i=0; i<9; i++){
+			if(Shopperlist[i]!=NULL){
+				cout <<"Robot: "<< shopper->RobotNum_ << "Pos: "<<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
+				cout <<"Store:" <<shopper->smove_->storelist_->xstore_ << " " <<shopper->smove_->storelist_->ystore_ << " " <<shopper->smove_->storelist_->zstore_ << endl;
+				if(shopper->smove_->xpos_ != shopper->smove_->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
+					|| shopper->smove_->zpos_ != shopper->smove_->storelist_->zstore_){
+						cout<<"Enter BotMove"<<endl;
+						shopper->smove_->BotMove(shopper->RobotNum_);
+				}
+				else{
+					if(shopper->smove_->storelist_->xstore_ == 8 && shopper->smove_->storelist_->ystore_ == 16 && shopper->smove_->storelist_->zstore_ == 0){
+						shopper->smove_->movement(End, shopper->RobotNum_);
+						Shopperlist[i] = NULL;
+						NumOfRobots--;
+					}
+					else{
+						shopper->smove_->RemoveStore();
+						cout<<"Removed Store-----------------------------"<<endl;
+						if(shopper->smove_->storelist_==NULL){
+							cout<<"Storelist NULL"<<endl;
+							Store* endStore = new Store();
+							endStore->xstore_ = 8;
+							endStore->ystore_ =16;
+							endStore->zstore_ = 0;
+							endStore->TimeSlice_ = 0;
+							shopper->smove_->storelist_ = endStore;
+							cout<<"Added Store"<<endl;
+						}
+					}
 				}
 			}
 		}
+	
 		timecheck();
 		TIME++;
 	}
