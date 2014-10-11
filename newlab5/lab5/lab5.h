@@ -11,7 +11,7 @@ using namespace std;
 extern int TimeSlice;
 extern int TIME;
 extern int Floor[LENGTH][WIDTH][HEIGHT];
-extern int NumOfShoppers;
+extern int NumOfRobots;
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
 
 
