@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 {
 	//sets input values
 	TimeSlice = atoi(argv[1]);
-	int n;
+	int n, items;
 	int tempNumOfShoppers =0;
 	cin >> tempNumOfShoppers; // in lab5
 	cin >> n;
@@ -38,14 +38,14 @@ int main(int argc, char* argv[])
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfShoppers !=0){
 		cout <<shopper->xpos_ <<" " <<shopper->ypos_ <<" "<< shopper->zpos_ << endl;
-		if(shopper->xpos_ != shopper->storelist_->xstore_ || shopper->ypos_ != shopper->storelist_->ystore_
-			|| shopper->zpos_ != shopper->storelist_->zstore_){
+		if(shopper->smove->xpos_ != shopper->smove->storelist_->xstore_ || shopper->smove->ypos_ != shopper->smove->storelist_->ystore_
+			|| shopper->smove->zpos_ != shopper->smove->storelist_->zstore_){
 				cout<<"Enter BotMove"<<endl;
-				shopper->BotMove();
+				shopper->smove_->BotMove();
 		}
 		else{
 			if(shopper->storelist_->xstore_ == 8 && shopper->storelist_->ystore_ == 16 && shopper->storelist_->zstore_ == 0){
-				shopper->movement(End);
+				shopper->smove_->movement(End);
 				NumOfShoppers--;
 			}
 			else{
@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
 					endStore->ystore_ =16;
 					endStore->zstore_ = 0;
 					endStore->TimeSlice_ = 0;
-					shopper->storelist_ = endStore;
+					shopper->smove->storelist_ = endStore;
 					cout<<"Added Store"<<endl;
 				}
 			}
