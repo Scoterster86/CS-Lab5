@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 		}
 		shopper->AddShopper(newshopper);	//add a shopper
 	}
-	
+	shopper->smove_->RemoveStore();
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfRobots !=0){
 		cout <<"Robot: "<< shopper->RobotNum_ << "Pos: "<<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
