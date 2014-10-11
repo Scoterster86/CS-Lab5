@@ -180,6 +180,10 @@ void Shopper::BotMove()
   				this->movement(North);
   			}
   		}
+  		else{
+  			cout<<"enter N" <<endl;
+  			this->movement(North);
+  		}
   	
   	}
   }
