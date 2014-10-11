@@ -213,6 +213,7 @@ void Shopper::BotMove()
   else if(this->xpos_*10+this->ypos_ ==125 || this->xpos_*10+this->ypos_ ==134 || 
   	    this->xpos_*10+this->ypos_ ==152 || this->xpos_*10+this->ypos_ ==161){
 	if(this->zpos_==0){
+		cout<<"enter NE" <<endl;
 		this->movement(NorthEast);
 	}
 	else{
