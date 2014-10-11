@@ -1,6 +1,39 @@
+#include "lab5.h"
+int DEBUG = 1;
+
+//Scott Iwanicki
+
+Move::Move()
+{
+
+	this->xpos_ = 8;
+	this->ypos_ = 16;
+	this->zpos_ = 0;
+	this->storelist_ = new Store();
+}
+
+//Yo Karita
+//adds a store to the list of stores
+void Move::AddStore(Store* store)
+{
+	if ((this->storelist_->xstore_ == 0 
+	   && this->storelist_->ystore_ == 0 
+	   && this->storelist_->zstore_ == 0)||
+	   this==NULL){this->storelist_ = store;}
+	else this->storelist_->AddStore(store);
+}
+
+//Yo Karita
+//removes a store from the list of stores
+void Move::RemoveStore()
+{
+	this->storelist_ = this->storelist_->pNext;
+}
+
+
 //Scott Iwanicki
 //controls the movement of the shopper
-void Shopper::BotMove()
+void Move::BotMove()
 {
 	if(DEBUG)cout<<"BotMove"<<endl;
   //if the robot is in the bottom row
@@ -660,8 +693,8 @@ void Shopper::BotMove()
 }
 
 //Scott Iwanicki
-//moves the shopper in the given direction
-int Shopper::movement(int direction){
+//moves the Object in the given direction
+int Move::movement(int direction){
 	int j;
 	;
 	switch (direction){
