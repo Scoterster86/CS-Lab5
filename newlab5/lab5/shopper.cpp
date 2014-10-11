@@ -319,10 +319,10 @@ void Shopper::BotMove()
 	    this->xpos_*10+this->ypos_ ==148 || this->xpos_*10+this->ypos_ ==158){
 	    	if(DEBUG)cout<<"Line 322"<<endl;
 	if(this->zpos_==0){
-		this->movement(East);
+		this->movement(South);
 	}
 	else{
-		this->movement(West);
+		this->movement(North);
   	}
  }
 
