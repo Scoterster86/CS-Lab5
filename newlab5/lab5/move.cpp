@@ -16,9 +16,12 @@ Move::Move()
 //adds a store to the list of stores
 void Move::AddStore(Store* store)
 {
-	if (this==NULL || (this->storelist_->xstore_ == 0 
-	   && this->storelist_->ystore_ == 0 
-	   && this->storelist_->zstore_ == 0)){this->storelist_ = store;}
+	if(this==NULL){
+//	if (this==NULL || (this->storelist_->xstore_ == 0 
+//	   && this->storelist_->ystore_ == 0 
+//	   && this->storelist_->zstore_ == 0)){
+		this->storelist_ = store;
+	}
 	else this->storelist_->AddStore(store);
 }
 
