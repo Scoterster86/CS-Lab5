@@ -527,7 +527,7 @@ void Move::BotMove(int RobotNum)
 			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(North. RobotNum);
+			this->movement(North, RobotNum);
 		}
 	}
   }
