@@ -45,12 +45,12 @@ int main(int argc, char* argv[])
 				shopper->smove_->BotMove();
 		}
 		else{
-			if(shopper->smove_storelist_->xstore_ == 8 && shopper->smove_storelist_->ystore_ == 16 && shopper->smove_storelist_->zstore_ == 0){
+			if(shopper->smove_->storelist_->xstore_ == 8 && shopper->smove_->storelist_->ystore_ == 16 && shopper->smove_->storelist_->zstore_ == 0){
 				shopper->smove_->movement(End);
 				NumOfShoppers--;
 			}
 			else{
-				shopper->RemoveStore();
+				shopper->smove_->RemoveStore();
 				cout<<"Removed Store-----------------------------"<<endl;
 				if(shopper->storelist_==NULL){
 					cout<<"Storelist NULL"<<endl;
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 					endStore->ystore_ =16;
 					endStore->zstore_ = 0;
 					endStore->TimeSlice_ = 0;
-					shopper->smove->storelist_ = endStore;
+					shopper->smove_->storelist_ = endStore;
 					cout<<"Added Store"<<endl;
 				}
 			}
