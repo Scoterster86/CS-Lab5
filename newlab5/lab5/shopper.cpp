@@ -99,11 +99,12 @@ void Shopper::BotMove()
   				this->movement(South);
   			}
 	  	}//end if ypos==8
+
   		else{
   			this->movement(West);
   		}
   	}
-  	else{
+  	else{//zpos =1
   		if(this->ypos_ == 10){
   			this->movement(SouthEast);
   		}
