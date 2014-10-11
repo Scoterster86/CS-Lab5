@@ -342,6 +342,16 @@ void Shopper::BotMove()
   	if(DEBUG)cout<<"Line 318"<<endl;
 	this->movement(NorthWest);
   }
+  
+    else if(this->xpos_ == 12 && this->ypos_ == 4){
+  	if(DEBUG)cout<<"Line 347"<<endl;
+ 	movement(SouthWest);
+  }
+  
+      else if(this->xpos_ == 12 && this->ypos_ == 12){
+  	if(DEBUG)cout<<"Line 348"<<endl;
+ 	movement(SouthEast);
+  }
 
 
   else if(this->xpos_*10+this->ypos_ ==81 || this->xpos_*10+this->ypos_ ==82 || 
