@@ -606,7 +606,7 @@ void Shopper::BotMove()
 
   else if(this->xpos_ == 4 && this->ypos_==6){
   	if(DEBUG)cout<<"Line 610"<<endl;
-	this->movement(Eastt);
+	this->movement(East);
   }
 
   else if(this->xpos_ == 4 && this->ypos_==10){
