@@ -285,15 +285,38 @@ void Shopper::BotMove()
   		}
   	}
   }
+  
+    else if(this->xpos_ == 13 && this->ypos_ ==13){
+  	if(DEBUG)cout<<"Line 290"<<endl;
+  	//if the bot is on the first floor
+  	if(this->zpos_ == 0){
+  		//if the next store is at (4,4,0)
+  		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0)){
+  			this->movement(NorthWest);
+  		}
+  		else{
+  			this->movement(NorthEast);
+  		}
+  	}
+  	else{
+  		//if the next store is at (4,4,1)
+  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
+  			this->movement(NorthWest);
+  		}
+  		else{
+  			this->movement(SouthWest);
+  		}
+  	}
+  }
 
 
   else if(this->xpos_ == 4 && this->ypos_ == 12){
-  	if(DEBUG)cout<<"Line 290"<<endl;
+  	if(DEBUG)cout<<"Line 314"<<endl;
  	movement(NorthEast);
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 4){
-  	if(DEBUG)cout<<"Line 295"<<endl;
+  	if(DEBUG)cout<<"Line 318"<<endl;
 	this->movement(NorthWest);
   }
 
@@ -304,7 +327,7 @@ void Shopper::BotMove()
 	    this->xpos_*10+this->ypos_ ==89 || this->xpos_*10+this->ypos_ ==90 ||
 	    this->xpos_*10+this->ypos_ ==91 || this->xpos_*10+this->ypos_ ==93 ||
 	    this->xpos_*10+this->ypos_ ==94 || this->xpos_*10+this->ypos_ ==95){
-	    	if(DEBUG)cout<<"Line 306"<<endl;
+	    	if(DEBUG)cout<<"Line 330"<<endl;
 	if(this->zpos_==0){
 		this->movement(East);
 	}
@@ -320,7 +343,7 @@ void Shopper::BotMove()
 	    this->xpos_*10+this->ypos_ ==98 || this->xpos_*10+this->ypos_ ==108 ||
 	    this->xpos_*10+this->ypos_ ==118 || this->xpos_*10+this->ypos_ ==138 ||
 	    this->xpos_*10+this->ypos_ ==148 || this->xpos_*10+this->ypos_ ==158){
-	    	if(DEBUG)cout<<"Line 322"<<endl;
+	    	if(DEBUG)cout<<"Line 346"<<endl;
 	if(this->zpos_==0){
 		this->movement(South);
 	}
@@ -330,7 +353,7 @@ void Shopper::BotMove()
  }
 
   else if(this->xpos_ == 8 && this->ypos_ ==4){
-  	if(DEBUG)cout<<"Line 332"<<endl;
+  	if(DEBUG)cout<<"Line 356"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
   			this->movement(North);
@@ -356,7 +379,7 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 7 && this->ypos_ == 4){
-  	if(DEBUG)cout<<"Line 358"<<endl;
+  	if(DEBUG)cout<<"Line 382"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
 			this->movement(North);
@@ -377,7 +400,7 @@ void Shopper::BotMove()
 		
 
   else if(this->xpos_ == 9 && this->ypos_ == 4){
-  	if(DEBUG)cout<<"Line 379"<<endl;
+  	if(DEBUG)cout<<"Line 403"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
 			this->movement(South);
@@ -397,17 +420,17 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 10 && this->ypos_==4){
-  	if(DEBUG)cout<<"Line 399"<<endl;
+  	if(DEBUG)cout<<"Line 423"<<endl;
 	this->movement(North);
   }
 
   else if(this->xpos_ == 6 && this->ypos_==4){
-  	if(DEBUG)cout<<"Line 404"<<endl;
+  	if(DEBUG)cout<<"Line 428"<<endl;
 	this->movement(South);
   }
 
   else if(this->xpos_ == 8 && this->ypos_ == 12){
-  	if(DEBUG)cout<<"Line 409"<<endl;
+  	if(DEBUG)cout<<"Line 433"<<endl;
 	if(this->zpos_ ==0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
 			this->movement(North);
@@ -432,7 +455,7 @@ void Shopper::BotMove()
 	}
   }
   else if(this->xpos_ == 7 && this->ypos_ == 12){
-  	if(DEBUG)cout<<"Line 434"<<endl;
+  	if(DEBUG)cout<<"Line 458"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_== 6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
 			this->movement(North);
@@ -452,19 +475,19 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 10 && this->ypos_ == 12){
-  	if(DEBUG)cout<<"Line 454"<<endl;
+  	if(DEBUG)cout<<"Line 478"<<endl;
 	this->movement(North);
   }
 
 
   else if(this->xpos_ == 6 && this->ypos_ == 12){
-  	if(DEBUG)cout<<"Line 459"<<endl;
+  	if(DEBUG)cout<<"Line 484"<<endl;
 	this->movement(South);
   }
 
 
   else if(this->xpos_ == 12 && this->ypos_ == 8){
-  	if(DEBUG)cout<<"Line 466"<<endl;
+  	if(DEBUG)cout<<"Line 490"<<endl;
 	if(this->zpos_ ==0){
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
@@ -490,7 +513,7 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 12 && this->ypos_ == 7){
-  	if(DEBUG)cout<<"Line 492"<<endl;
+  	if(DEBUG)cout<<"Line 516"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
@@ -511,7 +534,7 @@ void Shopper::BotMove()
 
 
   else if(this->xpos_ == 12 && this->ypos_ ==9){
-  	if(DEBUG)cout<<"Line 513"<<endl;
+  	if(DEBUG)cout<<"Line 537"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
 			this->movement(East);
@@ -531,17 +554,17 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 12 && this->ypos_==6){
-  	if(DEBUG)cout<<"Line 533"<<endl;
+  	if(DEBUG)cout<<"Line 557"<<endl;
 	this->movement(East);
   }
 
   else if(this->xpos_ == 12 && this->ypos_==10){
-  	if(DEBUG)cout<<"Line 538"<<endl;
+  	if(DEBUG)cout<<"Line 562"<<endl;
 	this->movement(West);
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 8){
-  	if(DEBUG)cout<<"Line 543"<<endl;
+  	if(DEBUG)cout<<"Line 567"<<endl;
 	if(this->zpos_ ==0){
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
@@ -567,7 +590,7 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 7){
-  	if(DEBUG)cout<<"Line 569"<<endl;
+  	if(DEBUG)cout<<"Line 593"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
 			this->movement(West);
@@ -588,7 +611,7 @@ void Shopper::BotMove()
 
 
   else if(this->xpos_ == 4 && this->ypos_ ==9){
-  	if(DEBUG)cout<<"Line 590"<<endl;
+  	if(DEBUG)cout<<"Line 614"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
 			this->movement(East);
@@ -608,17 +631,17 @@ void Shopper::BotMove()
   }
 
   else if(this->xpos_ == 4 && this->ypos_==6){
-  	if(DEBUG)cout<<"Line 610"<<endl;
+  	if(DEBUG)cout<<"Line 634"<<endl;
 	this->movement(East);
   }
 
   else if(this->xpos_ == 4 && this->ypos_==10){
-  	if(DEBUG)cout<<"Line 615"<<endl;
+  	if(DEBUG)cout<<"Line 639"<<endl;
 	this->movement(West);
   }
 
   else if(this->xpos_ == 8 && this->ypos_ == 8){
-  	if(DEBUG)cout<<"Line 620"<<endl;
+  	if(DEBUG)cout<<"Line 644"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->zstore_ == 1){
 			this->movement(Up);
