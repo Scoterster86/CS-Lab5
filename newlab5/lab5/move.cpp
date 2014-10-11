@@ -701,8 +701,8 @@ int Move::movement(int direction){
 	case North:
 		//printf("N");
 		//Moves up a row
-			this->xpos_--;
-			Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		this->xpos_--;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
 		
 		break;
 	case NorthWest:
