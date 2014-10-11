@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 {
 	//sets input values
 	TimeSlice = atoi(argv[1]);
-	int i,j,n, stores[12], items;
+	int i,j,n, stores[12], items, item, count;
 	int tempNumOfRobots =0;
 	cin >> tempNumOfRobots; // in lab5
 	NumOfRobots = tempNumOfRobots;
