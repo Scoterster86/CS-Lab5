@@ -4,7 +4,7 @@ int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
 int TimeSlice =0;
 int NumOfRobots =0;
-Shoppers* Shopperlist[9] = NULL;
+Shopper* Shopperlist[9] = NULL;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
