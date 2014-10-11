@@ -33,7 +33,7 @@ void Move::RemoveStore()
 
 //Scott Iwanicki
 //controls the movement of the shopper
-void Move::BotMove()
+void Move::BotMove(int RobotNum)
 {
 	if(DEBUG)cout<<"BotMove"<<endl;
   //if the robot is in the bottom row
@@ -41,32 +41,32 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 50" <<endl;
   	if(this->ypos_ == 8){
   		if(this->zpos_ == 0){
-  			this->movement(East);
+  			this->movement(East, RobotNum);
   		}
   		else{//begin else
   			if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_==1)||
   			   (this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore_==1)) {
-  				this->movement(West);
+  				this->movement(West, RobotNum);
   			}
   			else{
-  				this->movement(North);
+  				this->movement(North, RobotNum);
   			}
   		}//end else
   	}
   	else if(this->zpos_ == 0){
   		if(this->ypos_ == 10){
-  			this->movement(NorthEast);
+  			this->movement(NorthEast, RobotNum);
   		}
   		else{
-  			this->movement(East);
+  			this->movement(East, RobotNum);
   		}
   	}
   	else{
   		if(this->ypos_ == 6){
-  			this->movement(NorthWest);
+  			this->movement(NorthWest, RobotNum);
   		}
   		else{
-  			this->movement(West);	
+  			this->movement(West, RobotNum);	
   		}
   		
   	}
@@ -79,27 +79,27 @@ void Move::BotMove()
 
   	if(this->zpos_ == 0){ if(DEBUG)cout<<"Z=0"<<endl;
   		if(this->ypos_ == 6){
-  			this->movement(SouthWest);
+  			this->movement(SouthWest, RobotNum);
   		}
   		else if(this->ypos_ == 8){
   			if(this->storelist_->ystore_==4) {
-  				this->movement(West);
+  				this->movement(West, RobotNum);
   			}
   			else{
-  				this->movement(South);
+  				this->movement(South, RobotNum);
   			}
 	  	}//end if ypos==8
 
   		else{
-  			this->movement(West);
+  			this->movement(West, RobotNum);
   		}
   	}
   	else{//zpos =1
   		if(this->ypos_ == 10){
-  			this->movement(SouthEast);
+  			this->movement(SouthEast, RobotNum);
   		}
   		else{
-  			this->movement(East);	
+  			this->movement(East, RobotNum);	
   		}
   		
   	}
@@ -112,25 +112,25 @@ void Move::BotMove()
   		if(this->xpos_ == 8){
   			if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_==0)||
   			   (this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_==0)){
-  			   	this->movement(South);
+  			   	this->movement(South, RobotNum);
   			   }
   			   else{
-  			   	this->movement(East);
+  			   	this->movement(East, RobotNum);
   			   }
   		}
   		if(this->xpos_ == 10){
-  			this->movement(SouthEast);
+  			this->movement(SouthEast, RobotNum);
   		}
   		else{
-  			this->movement(South);
+  			this->movement(South, RobotNum);
   		}
   	}
   	else{//if zpos == 1
   		if(this->xpos_ == 6){
-  			this->movement(NorthEast);
+  			this->movement(NorthEast, RobotNum);
   		}
   		else{
-  			this->movement(North);
+  			this->movement(North, RobotNum);
   		}
   	
   	}
@@ -142,38 +142,38 @@ void Move::BotMove()
   	if(this->zpos_ ==1){//if on the second floor
   		if(this->xpos_ == 8){
   			if(this->storelist_->xstore_==12 && this->storelist_->zstore_==1){
-  			   	this->movement(South);
+  			   	this->movement(South, RobotNum);
   			   }
   			   else{
-  			   	this->movement(West);
+  			   	this->movement(West, RobotNum);
   			   }
   		}
   		else if(this->xpos_ == 10){
-  			this->movement(SouthWest);
+  			this->movement(SouthWest, RobotNum);
   		}
   		else{
-  			this->movement(South);
+  			this->movement(South, RobotNum);
   		}
   	}
   	else{//if zpos == 0
   		if(DEBUG)cout<<"Z==0" <<endl;
   		if(this->xpos_ == 6){
   			cout<<"enter NW" << endl;
-  			this->movement(NorthWest);
+  			this->movement(NorthWest, RobotNum);
   		}
   		else if(this->xpos_==8){
   			if(this->storelist_->xstore_==8 && this->storelist_->ystore_ == 16 && this->storelist_->zstore_==0){
-  				this->movement(End);
+  				this->movement(End, RobotNum);
   			}
   		
   			else{
   				if(DEBUG)cout<<"enter N" <<endl;
-  				this->movement(North);
+  				this->movement(North, RobotNum);
   			}
   		}
   		else{
   			if(DEBUG)cout<<"enter N" <<endl;
-  			this->movement(North);
+  			this->movement(North, RobotNum);
   		}
   	
   	}
@@ -184,10 +184,10 @@ void Move::BotMove()
   	    this->xpos_*10+this->ypos_ ==24 || this->xpos_*10+this->ypos_ ==15){
   	    	if(DEBUG)cout<<"Line 198"<<endl;
 	if(this->zpos_ ==0){
-		this->movement(SouthWest);
+		this->movement(SouthWest, RobotNum);
 	}
   	else{
-  		this->movement(NorthEast);
+  		this->movement(NorthEast, RobotNum);
   	}
   }
   
@@ -195,10 +195,10 @@ void Move::BotMove()
   	    (this->xpos_== 4 && this->ypos_ ==14) || this->xpos_*10+this->ypos_ ==65){
   	    	if(DEBUG)cout<<"line 205" <<endl;
 	if(this->zpos_==0){ 
-		this->movement(NorthWest);
+		this->movement(NorthWest, RobotNum);
 	}
 	else{
-		this->movement(SouthEast);
+		this->movement(SouthEast, RobotNum);
 	}
   }
 
@@ -208,10 +208,10 @@ void Move::BotMove()
   	    	if(DEBUG)cout<<"Line 220"<<endl;
 	if(this->zpos_==0){
 		cout<<"enter NE" <<endl;
-		this->movement(NorthEast);
+		this->movement(NorthEast, RobotNum);
 	}
 	else{
-		this->movement(SouthWest);
+		this->movement(SouthWest, RobotNum);
 	}
   }
 
@@ -219,10 +219,10 @@ void Move::BotMove()
   	    (this->xpos_ == 14 && this->ypos_ ==4) || (this->xpos_ == 15 && this->ypos_ == 5)){
   	    	if(DEBUG)cout<<"Line 232"<<endl;
 	if(this->zpos_==0){
-		this->movement(SouthEast);
+		this->movement(SouthEast, RobotNum);
 	}
 	else{
-		this->movement(NorthWest);
+		this->movement(NorthWest, RobotNum);
 	}
   }
   
@@ -233,19 +233,19 @@ void Move::BotMove()
   	if(this->zpos_ == 0){
   		//if the next store is at (4,4,0)
   		if((this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0)){
-  			this->movement(SouthEast);
+  			this->movement(SouthEast, RobotNum);
   		}
   		else{
-  			this->movement(SouthWest);
+  			this->movement(SouthWest, RobotNum);
   		}
   	}
   	else{
   		//if the next store is at (4,4,1)
   		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-  			this->movement(SouthEast);
+  			this->movement(SouthEast, RobotNum);
   		}
   		else{
-  			this->movement(NorthEast);
+  			this->movement(NorthEast, RobotNum);
   		}
   	}
   }
@@ -256,19 +256,19 @@ void Move::BotMove()
   	if(this->zpos_ == 0){
   		//if the next store is at (4,12,0)
   		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
-  			this->movement(SouthWest);
+  			this->movement(SouthWest, RobotNum);
   		}
   		else{
-  			this->movement(NorthWest);
+  			this->movement(NorthWest, RobotNum);
   		}
   	}
   	else{
   		//if the next store is at (4,12,1)
   		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
-  			this->movement(SouthWest);
+  			this->movement(SouthWest, RobotNum);
   		}
   		else{
-  			this->movement(SouthEast);
+  			this->movement(SouthEast, RobotNum);
   		}
   	}
   }
@@ -279,19 +279,19 @@ void Move::BotMove()
   	if(this->zpos_ == 0){
   		//if the next store is at (4,4,0)
   		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0)){
-  			this->movement(NorthWest);
+  			this->movement(NorthWest, RobotNum);
   		}
   		else{
-  			this->movement(NorthEast);
+  			this->movement(NorthEast, RobotNum);
   		}
   	}
   	else{
   		//if the next store is at (4,4,1)
   		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
-  			this->movement(NorthWest);
+  			this->movement(NorthWest, RobotNum);
   		}
   		else{
-  			this->movement(SouthWest);
+  			this->movement(SouthWest, RobotNum);
   		}
   	}
   }
@@ -302,19 +302,19 @@ void Move::BotMove()
   	if(this->zpos_ == 0){
   		//if the next store is at (12,4,0)
   		if((this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0)){
-  			this->movement(NorthEast);
+  			this->movement(NorthEast, RobotNum);
   		}
   		else{
-  			this->movement(SouthEast);
+  			this->movement(SouthEast, RobotNum);
   		}
   	}
   	else{
   		//if the next store is at (4,4,1)
   		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-  			this->movement(NorthEast);
+  			this->movement(NorthEast, RobotNum);
   		}
   		else{
-  			this->movement(NorthWest);
+  			this->movement(NorthWest, RobotNum);
   		}
   	}
   }
@@ -322,22 +322,22 @@ void Move::BotMove()
 
   else if(this->xpos_ == 4 && this->ypos_ == 12){
   	if(DEBUG)cout<<"Line 314"<<endl;
- 	movement(NorthEast);
+ 	movement(NorthEast, RobotNum);
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 4){
   	if(DEBUG)cout<<"Line 318"<<endl;
-	this->movement(NorthWest);
+	this->movement(NorthWest, RobotNum);
   }
   
     else if(this->xpos_ == 12 && this->ypos_ == 4){
   	if(DEBUG)cout<<"Line 347"<<endl;
- 	movement(SouthWest);
+ 	movement(SouthWest, RobotNum);
   }
   
       else if(this->xpos_ == 12 && this->ypos_ == 12){
   	if(DEBUG)cout<<"Line 348"<<endl;
- 	movement(SouthEast);
+ 	movement(SouthEast, RobotNum);
   }
 
 
@@ -349,10 +349,10 @@ void Move::BotMove()
 	    this->xpos_*10+this->ypos_ ==94 || this->xpos_*10+this->ypos_ ==95){
 	    	if(DEBUG)cout<<"Line 330"<<endl;
 	if(this->zpos_==0){
-		this->movement(East);
+		this->movement(East, RobotNum);
 	}
 	else{
-		this->movement(West);
+		this->movement(West, RobotNum);
 	}
   }
 
@@ -365,10 +365,10 @@ void Move::BotMove()
 	    this->xpos_*10+this->ypos_ ==148 || this->xpos_*10+this->ypos_ ==158){
 	    	if(DEBUG)cout<<"Line 346"<<endl;
 	if(this->zpos_==0){
-		this->movement(South);
+		this->movement(South, RobotNum);
 	}
 	else{
-		this->movement(North);
+		this->movement(North, RobotNum);
   	}
  }
 
@@ -376,24 +376,24 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 356"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-  			this->movement(North);
+  			this->movement(North, RobotNum);
   		}
 		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-  			this->movement(South);
+  			this->movement(South, RobotNum);
   		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-  			this->movement(North);
+  			this->movement(North, RobotNum);
   		}
 		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-  			this->movement(South);
+  			this->movement(South, RobotNum);
   		}
 		else{
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 	}
   }
@@ -402,18 +402,18 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 382"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 		else{
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 		else{
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 	}
   }
@@ -423,54 +423,54 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 403"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else{
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else{
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 	}
   }
 
   else if(this->xpos_ == 10 && this->ypos_==4){
   	if(DEBUG)cout<<"Line 423"<<endl;
-	this->movement(North);
+	this->movement(North, RobotNum);
   }
 
   else if(this->xpos_ == 6 && this->ypos_==4){
   	if(DEBUG)cout<<"Line 428"<<endl;
-	this->movement(South);
+	this->movement(South, RobotNum);
   }
 
   else if(this->xpos_ == 8 && this->ypos_ == 12){
   	if(DEBUG)cout<<"Line 433"<<endl;
 	if(this->zpos_ ==0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 		else{
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 	}
   }
@@ -478,31 +478,31 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 458"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_== 6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 		else{
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else{
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 	}
   }
 
   else if(this->xpos_ == 10 && this->ypos_ == 12){
   	if(DEBUG)cout<<"Line 478"<<endl;
-	this->movement(North);
+	this->movement(North, RobotNum);
   }
 
 
   else if(this->xpos_ == 6 && this->ypos_ == 12){
   	if(DEBUG)cout<<"Line 484"<<endl;
-	this->movement(South);
+	this->movement(South, RobotNum);
   }
 
 
@@ -510,24 +510,24 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 490"<<endl;
 	if(this->zpos_ ==0){
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 1){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(North);
+			this->movement(North. RobotNum);
 		}
 	}
   }
@@ -536,18 +536,18 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 516"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 	}
   }
@@ -557,54 +557,54 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 537"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
   }
 
   else if(this->xpos_ == 12 && this->ypos_==6){
   	if(DEBUG)cout<<"Line 557"<<endl;
-	this->movement(East);
+	this->movement(East, RobotNum);
   }
 
   else if(this->xpos_ == 12 && this->ypos_==10){
   	if(DEBUG)cout<<"Line 562"<<endl;
-	this->movement(West);
+	this->movement(West, RobotNum);
   }
 
   else if(this->xpos_ == 4 && this->ypos_ == 8){
   	if(DEBUG)cout<<"Line 567"<<endl;
 	if(this->zpos_ ==0){
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 1){
-			this->movement(East);
+			this->movement(East,RobotNum);
 		}
 		else{
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 	}
   }
@@ -613,18 +613,18 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 593"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
   }
@@ -634,58 +634,58 @@ void Move::BotMove()
   	if(DEBUG)cout<<"Line 614"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 1){
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 		else{
-			this->movement(West);
+			this->movement(West, RobotNum);
 		}
 	}
   }
 
   else if(this->xpos_ == 4 && this->ypos_==6){
   	if(DEBUG)cout<<"Line 634"<<endl;
-	this->movement(East);
+	this->movement(East, RobotNum);
   }
 
   else if(this->xpos_ == 4 && this->ypos_==10){
   	if(DEBUG)cout<<"Line 639"<<endl;
-	this->movement(West);
+	this->movement(West, RobotNum);
   }
 
   else if(this->xpos_ == 8 && this->ypos_ == 8){
   	if(DEBUG)cout<<"Line 644"<<endl;
 	if(this->zpos_ == 0){
 		if(this->storelist_->zstore_ == 1){
-			this->movement(Up);
+			this->movement(Up, RobotNum);
 		}
 		else if((this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0) ||
 			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0) ||
 			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0)){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else{
-			this->movement(East);
+			this->movement(East, RobotNum);
 		}
 	}
 	else{
 		if(this->storelist_->zstore_ == 0){
-			this->movement(Down);
+			this->movement(Down, RobotNum);
 		}
 		else if((this->storelist_->xstore_== 10 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
 			  (this->storelist_->xstore_== 6 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
 			  (this->storelist_->xstore_== 4 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1)){
-			this->movement(South);
+			this->movement(South, RobotNum);
 		}
 		else{
-			this->movement(North);
+			this->movement(North, RobotNum);
 		}
 	}
   }
@@ -694,7 +694,7 @@ void Move::BotMove()
 
 //Scott Iwanicki
 //moves the Object in the given direction
-int Move::movement(int direction){
+int Move::movement(int direction, int RobotNum){
 	int j;
 	;
 	switch (direction){
@@ -702,19 +702,19 @@ int Move::movement(int direction){
 		//printf("N");
 		//Moves up a row
 		this->xpos_--;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		
 		break;
 	case NorthWest:
 		//Moves up a row and left a colmun
 		this->xpos_--;
 		this->ypos_--;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		break;
 	case West:
 		//case 2 Moves left 4 columns and increments TIME by 1 for each movement
 		this->ypos_--;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		
 		break;
 	case SouthWest:
@@ -722,57 +722,57 @@ int Move::movement(int direction){
 		//case 3 Moves down a row and left a column
 		this->xpos_++;
 		this->ypos_--;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		
 		break;
 	case South:
 		//printf("S");
 		//case 4 Moves down a row
 		this->xpos_++;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		break;
 	case SouthEast:
 		//printf("SE");
 		//case 5 Moves down and to the right
 		this->xpos_++;
 		this->ypos_++;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		break;
 	case East:
 		//printf("E");
 		//case 6 Moves right a column
 		this->ypos_++;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		break;
 	case NorthEast:
 		//printf("NE");
 		//case 7 Moves up a row and right a column
 		this->xpos_--;
 		this->ypos_++;
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
 		break;
 	case Up:
 		//printf("Up");
 		//case 8 Moves up a Floor and prints when the bot
 		//got on and off the elevator
 		this->zpos_++;
-		printf("Shopper %d got on elevator at time %d\n", this->RobotNum_, TIME);
+		printf("Shopper %d got on elevator at time %d\n", RobotNum, TIME);
 		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
-		printf("Shopper %d got off elevator at time %d\n", this->RobotNum_, TIME+3);
+		printf("Shopper %d got off elevator at time %d\n", RobotNum, TIME+3);
 		break;
 	case Down:
 		//printf("Down");
 		//case 9 Moves down a Floor and prints when the bot
 		//got on and off the elevator
 		this->zpos_--;
-		printf("Shopper %d got on elevator at time %d\n", this->RobotNum_, TIME);
-		Floor[this->xpos_][this->ypos_][this->zpos_] = this->RobotNum_;
-		printf("Shopper %d got off elevator at time %d\n", this->RobotNum_, TIME+3);
+		printf("Shopper %d got on elevator at time %d\n", RobotNum, TIME);
+		Floor[this->xpos_][this->ypos_][this->zpos_] = RobotNum;
+		printf("Shopper %d got off elevator at time %d\n", RobotNum, TIME+3);
 		break;
 
 	case End:
 		//case 10 Removes bot from simulation and prints out a notification
-		printf("Shopper %d left the simulation at time %d\n", this->RobotNum_, TIME);
+		printf("Shopper %d left the simulation at time %d\n", RobotNum, TIME);
 		RemoveShopper(this);
 		break;
 	default:
