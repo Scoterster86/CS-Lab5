@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 				endStore->xstore_ = 8;
 				endStore->ystore_ =16;
 				endStore->zstore_ = 0;
-				endStore->TimeSlice = 0;
+				endStore->TimeSlice_ = 0;
 				shopper->AddStore(endStore);
 			}
 		}
