@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 	cin >> n;
 	NumOfShoppers = tempNumOfShoppers;
 	Shopper* shopper = new Shopper();
-	int xpos=0, ypos=0, zpos=1, ts = 0;
+	int xpos=0, ypos=0, zpos=0, ts = 0;
 	for (int i = 0; i < NumOfShoppers; i++)
 	{
 		Shopper* newshopper = new Shopper(++i);
@@ -26,8 +26,7 @@ int main(int argc, char* argv[])
 	{
 		
 		cout<<"in Store For Loop" <<endl;
-		cin >> xpos >> ypos >> ts;
-		zpos=1;//sets 1 for lab5
+		cin >> xpos >> ypos >> zpos >> ts;
 		Store* store = new Store();		//create a store
 		store->xstore_ = xpos;	// sets the location
 		store->ystore_ = ypos;
