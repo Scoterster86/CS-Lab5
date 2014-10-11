@@ -575,10 +575,10 @@ void Shopper::BotMove()
 	}
 	else{
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(East);
+			this->movement(West);
 		}
 		else{
-			this->movement(West);
+			this->movement(East);
 		}
 	}
   }
@@ -596,10 +596,10 @@ void Shopper::BotMove()
 	}
 	else{
 		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(West);
+			this->movement(East);
 		}
 		else{
-			this->movement(East);
+			this->movement(West);
 		}
 	}
   }
