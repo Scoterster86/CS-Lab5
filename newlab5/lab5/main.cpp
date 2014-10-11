@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
 			for(k =0; k < items; k++){
 				
 				cin >>item >>count;
+				cout <<"Item " <<item <<"Count " <<count <<endl;
 
 			}
 			newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
