@@ -51,6 +51,10 @@ int main(int argc, char* argv[])
 			if(shopper->storelist_==NULL){
 				cout<<"Storelist NULL"<<endl;
 				Store* endStore = new Store();
+				endstore->xstore_ = 8;
+				endstore->ystore_ =16;
+				endstore->zstore_ = 0;
+				endstore->TimeSlice = 0;
 				shopper->AddStore(endStore);
 			}
 		}
