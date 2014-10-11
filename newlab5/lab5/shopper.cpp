@@ -5,10 +5,7 @@ int DEBUG =1;
 Shopper::Shopper()
 {
 	this->RobotNum_ = 0;
-	this->smove_->xpos_ = 8;
-	this->smove_->ypos_ = 16;
-	this->smove_->zpos_ = 0;
-	this->smove_->storelist_ = new Store();
+	this->smove_-> new Move()
 	this->slices = 0;
 	this->nextshopper_ = nullptr;
 }
