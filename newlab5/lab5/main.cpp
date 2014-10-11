@@ -24,7 +24,7 @@ int main(int argc, char* argv[])
 	}
 	for(i = 0; i<NumOfRobots; i++){
 		Shopper* newshopper = new Shopper(++i);
-		for (j = 0; j < stores[i]; j++)
+		for (j = 0; j < stores[j]; j++)
 		{
 			cin >> xpos >> ypos >> zpos >> items;
 			cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 			
 			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
 		}
-		Shopperlist[i] = newshopper;	//add a shopper
+		Shopperlist[j] = newshopper;	//add a shopper
 	}
 	shopper->RemoveShopper(shopper);
 	//shopper moves to each store and enters the RRqueue to be serviced
