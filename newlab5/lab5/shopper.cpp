@@ -38,7 +38,7 @@ int Shopper::storecomplete(){
 		timecheck();
 	}
 	//removes the store from the shopper's list of stores
-	RemoveStore();
+	this->smove_->RemoveStore();
 	return 0;
 }
 
