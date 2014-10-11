@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 {
 	//sets input values
 	TimeSlice = atoi(argv[1]);
-	int i,j,n, stores[12], items, item, count;
+	int i,j,k, stores[12], items, item, count;
 	int tempNumOfRobots =0;
 	cin >> tempNumOfRobots; // in lab5
 	NumOfRobots = tempNumOfRobots;
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	}
 	for(i = 0; i<NumOfRobots; i++){
 		Shopper* newshopper = new Shopper(++i);
-		for (j = 0; j < n; j++)
+		for (j = 0; j < stores[i]; j++)
 		{
 			cin >> xpos >> ypos >> zpos >> items;
 			Store* store = new Store();//create a store
