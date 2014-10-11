@@ -33,13 +33,14 @@ int main(int argc, char* argv[])
 			store->ystore_ = ypos;
 			store->zstore_ = zpos;
 			store->TimeSlice_ = 0;	//sets the timeslice
+			newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
 			for(k =0; k < items; k++){
 				
 				cin >>item  >>count;
 				cout <<"Item " <<item <<"Count " <<count <<endl;
 
 			}
-			newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
+			
 			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore <<endl;
 		}
 		shopper->AddShopper(newshopper);	//add a shopper
