@@ -24,10 +24,11 @@ int main(int argc, char* argv[])
 		
 				cout<<"in Store For Loop" <<endl;
 				cin >> xpos >> ypos >> zpos >> ts;
-				Store* store = new Store();		//create a store
-				store->xstore_ = xpos;	// sets the location
-				store->ystore_ = ypos;
-				store->zstore_ = zpos;	
+				Store* store = new Store();//create a store
+				Move* move = new Move();
+				move->xstore_ = xpos;	// sets the location
+				move->ystore_ = ypos;
+				move->zstore_ = zpos;	
 				store->TimeSlice_ = ts;	//sets the timeslice
 
 				newshopper->smove_AddStore(store);	//Add the store to the shopper's storelist
