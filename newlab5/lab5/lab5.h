@@ -38,7 +38,7 @@ public:
 
 	int slices;
 	Shopper* nextshopper_;
-	Move smove_;
+	Move* smove_;
 	Shopper();
 	Shopper(int);
 
