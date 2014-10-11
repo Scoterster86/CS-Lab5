@@ -36,8 +36,8 @@ public:
 	
 	void AddStore(Store* store);
 	void RemoveStore();
-	void BotMove();
-	int movement(int);
+	void BotMove(int);
+	int movement(int, int);
 	
 };
 //Scott Iwanicki
