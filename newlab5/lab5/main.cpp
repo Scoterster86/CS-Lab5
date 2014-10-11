@@ -19,22 +19,22 @@ int main(int argc, char* argv[])
 	for (int i = 0; i < NumOfShoppers; i++)
 	{
 		Shopper* newshopper = new Shopper(++i);
+			for (int i = 0; i < n; i++)
+			{
+		
+				cout<<"in Store For Loop" <<endl;
+				cin >> xpos >> ypos >> zpos >> ts;
+				Store* store = new Store();		//create a store
+				store->xstore_ = xpos;	// sets the location
+				store->ystore_ = ypos;
+				store->zstore_ = zpos;	
+				store->TimeSlice_ = ts;	//sets the timeslice
+
+				newshopper->AddStore(store);	//Add the store to the shopper's storelist
+			}
 		shopper->AddShopper(newshopper);	//add a shopper
 	}
 	
-	for (int i = 0; i < n; i++)
-	{
-		
-		cout<<"in Store For Loop" <<endl;
-		cin >> xpos >> ypos >> zpos >> ts;
-		Store* store = new Store();		//create a store
-		store->xstore_ = xpos;	// sets the location
-		store->ystore_ = ypos;
-		store->zstore_ = zpos;	
-		store->TimeSlice_ = ts;	//sets the timeslice
-
-		shopper->AddStore(store);	//Add the store to the shopper's storelist
-	}
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfShoppers !=0){
 		cout <<shopper->xpos_ <<" " <<shopper->ypos_ <<" "<< shopper->zpos_ << endl;
