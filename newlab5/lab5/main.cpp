@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 			store->TimeSlice_ = 0;	//sets the timeslice
 			for(k =0; k < items; k++){
 				
-				cin >>item >>count
+				cin >>item >>count;
 
 			}
 			newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 			if(shopper->smove_->storelist_->xstore_ == 8 && shopper->smove_->storelist_->ystore_ == 16 && shopper->smove_->storelist_->zstore_ == 0){
 				shopper->smove_->movement(End, shopper->RobotNum_);
 				shopper->RemoveShopper(shopper);
-				NumOfShoppers--;
+				NumOfRobots--;
 			}
 			else{
 				shopper->smove_->RemoveStore();
