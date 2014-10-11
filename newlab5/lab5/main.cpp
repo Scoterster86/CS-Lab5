@@ -24,7 +24,8 @@ int main(int argc, char* argv[])
 	
 	for (int i = 0; i < n; i++)
 	{
-
+		
+		cout<<"in Store For Loop" <<endl;
 		cin >> xpos >> ypos >> ts;
 		zpos=1;//sets 1 for lab5
 		Store* store = new Store();		//create a store
@@ -37,6 +38,7 @@ int main(int argc, char* argv[])
 	}
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfShoppers !=0){
+		cout"in while loop" <<endl;
 		if(shopper->xpos_ != shopper->storelist_->xstore_ && shopper->ypos_ != shopper->storelist_->ystore_
 			&& shopper->zpos_ != shopper->storelist_->zstore_){
 				shopper->BotMove();
