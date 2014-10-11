@@ -206,7 +206,7 @@ void Shopper::BotMove()
   else if(this->xpos_*10+this->ypos_ ==21 || this->xpos_*10+this->ypos_ ==32 || 
   	    this->xpos_*10+this->ypos_ ==54 || this->xpos_*10+this->ypos_ ==65){
   	    	if(DEBUG)cout<<"line 205" <<endl;
-	if(this->zpos_==0){
+	if(this->zpos_==0){ 
 		this->movement(NorthWest);
 	}
 	else{
