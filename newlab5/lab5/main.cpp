@@ -30,16 +30,16 @@ int main(int argc, char* argv[])
 				store->zstore_ = zpos;	
 				store->TimeSlice_ = ts;	//sets the timeslice
 
-				newshopper->AddStore(store);	//Add the store to the shopper's storelist
+				newshopper->smove_AddStore(store);	//Add the store to the shopper's storelist
 			}
 		shopper->AddShopper(newshopper);	//add a shopper
 	}
 	
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfShoppers !=0){
-		cout <<shopper->xpos_ <<" " <<shopper->ypos_ <<" "<< shopper->zpos_ << endl;
-		if(shopper->smove->xpos_ != shopper->smove->storelist_->xstore_ || shopper->smove->ypos_ != shopper->smove->storelist_->ystore_
-			|| shopper->smove->zpos_ != shopper->smove->storelist_->zstore_){
+		cout <<shopper->smove_->xpos_ <<" " <<shopper->smove_->ypos_ <<" "<< shopper->smove_->zpos_ << endl;
+		if(shopper->smove_->xpos_ != shopper->smove->storelist_->xstore_ || shopper->smove_->ypos_ != shopper->smove_->storelist_->ystore_
+			|| shopper->smove_->zpos_ != shopper->smove->storelist_->zstore_){
 				cout<<"Enter BotMove"<<endl;
 				shopper->smove_->BotMove();
 		}
