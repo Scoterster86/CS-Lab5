@@ -28,6 +28,18 @@ public:
 	Store(Store*);
 };
 
+class Move
+{
+public:
+	int xpos_, ypos_, zpos_;
+	Store* storelist_;
+	
+	void AddStore(Store* store);
+	void RemoveStore();
+	void BotMove();
+	int movement(int);
+	
+};
 //Scott Iwanicki
 //Shopper class
 class Shopper
@@ -64,17 +76,6 @@ public:
 	void RemoveShopper();
 };
 
-class Move
-{
-public:
-	int xpos_, ypos_, zpos_;
-	Store* storelist_;
-	
-	void AddStore(Store* store);
-	void RemoveStore();
-	void BotMove();
-	int movement(int);
-	
-};
+
 //checks to see if the time is divisible by 25
 int timecheck();
