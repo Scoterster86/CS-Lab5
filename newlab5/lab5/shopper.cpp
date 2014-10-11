@@ -216,8 +216,8 @@ void Shopper::BotMove()
   }
 
 
-  else if(this->xpos_*10+this->ypos_ ==125 || this->xpos_*10+this->ypos_ ==134 || 
-  	    this->xpos_*10+this->ypos_ ==152 || this->xpos_*10+this->ypos_ ==161){
+  else if((this->xpos_ == 11 && this->ypos_ ==15) || (this->xpos_ == 12 && this->ypos_ ==14) || 
+  	    (this->xpos_ == 14 && this->ypos_ ==12) || (this->xpos_ == 15 && this->ypos_ ==11){
   	    	if(DEBUG)cout<<"Line 220"<<endl;
 	if(this->zpos_==0){
 		cout<<"enter NE" <<endl;
@@ -228,8 +228,8 @@ void Shopper::BotMove()
 	}
   }
 
-  else if(this->xpos_*10+this->ypos_ ==111 || this->xpos_*10+this->ypos_ ==122 || 
-  	    this->xpos_*10+this->ypos_ ==144 || this->xpos_*10+this->ypos_ ==155){
+  else if((this->xpos_ == 11 &&this->ypos_ ==1) || (this->xpos_ == 12 && this->ypos_ ==2) || 
+  	    (this->xpos_ == 14 && this->ypos_ ==4) || (this->xpos_ == 15 && this->ypos_ == 5)){
   	    	if(DEBUG)cout<<"Line 232"<<endl;
 	if(this->zpos_==0){
 		this->movement(SouthEast);
