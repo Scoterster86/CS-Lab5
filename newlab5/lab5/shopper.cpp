@@ -30,7 +30,10 @@ Shopper::Shopper(int k)
 //adds a store to the list of stores
 void Shopper::AddStore(Store* store)
 {
-	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;
+	if ((this->storelist_->xstore_ == 0 
+	   && this->storelist_->ystore_ == 0 
+	   && this->storelist_->zstore_ == 0)||
+	   this==NULL){this->storelist_ = store;}
 	else this->storelist_->AddStore(store);
 }
 
