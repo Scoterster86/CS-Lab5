@@ -49,10 +49,10 @@ void RRqueue::RunQueue()
 	Shopper* ptr;
 	ptr = this->listhead_;
 	//if the shopper needs more service
-	if(ptr->storelist_->TimeSlice_ > TimeSlice)
+	if(ptr->smove_->storelist_->TimeSlice_ > TimeSlice)
 	{
 		//remove a timeslice from the needed service
-		ptr->storelist_->TimeSlice_ -= TimeSlice;
+		ptr->smove_->storelist_->TimeSlice_ -= TimeSlice;
 		//increment slices
 		ptr->slices++;
 		//remove the shopper from the head of the queue
@@ -64,12 +64,12 @@ void RRqueue::RunQueue()
 	else
 	{
 		//set timeslice to 0
-		ptr->storelist_->TimeSlice_=0;
+		ptr->smove_->storelist_->TimeSlice_=0;
 		//increment slices
 		ptr->slices++;
 		//remove the shopper from the head of the list
 		RemoveShopper();
-		cout<<"Shopper 1 leaves store (" <<ptr->xpos_ <<", " << ptr->ypos_ <<") after " << ptr->slices << " Time slices at Time " <<TIME << endl;;
+		cout<<"Shopper 1 leaves store (" <<ptr->smove_->xpos_ <<", " << ptr->smove->ypos_ <<") after " << ptr->slices << " Time slices at Time " <<TIME << endl;;
 		//reset the number of slices
 		ptr->slices = 0;
 		
