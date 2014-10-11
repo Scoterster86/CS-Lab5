@@ -8,8 +8,9 @@ int main(int argc, char* argv[])
 	//sets input values
 	TimeSlice = atoi(argv[1]);
 
-
-	cin >> NumOfShoppers; // in lab5
+	int tempNumOfShoppers =0;
+	cin >> tempNumOfShoppers; // in lab5
+	NumOfShoppers = tempNumOfShoppers;
 	Shopper* shopper = new Shopper();
 	int xpos=0, ypos=0, zpos=1, ts = 0;
 	for (int i = 0; i < NumOfShoppers; i++)
