@@ -217,7 +217,7 @@ void Shopper::BotMove()
 
 
   else if((this->xpos_ == 11 && this->ypos_ ==15) || (this->xpos_ == 12 && this->ypos_ ==14) || 
-  	    (this->xpos_ == 14 && this->ypos_ ==12) || (this->xpos_ == 15 && this->ypos_ ==11){
+  	    (this->xpos_ == 14 && this->ypos_ ==12) || (this->xpos_ == 15 && this->ypos_ ==11)){
   	    	if(DEBUG)cout<<"Line 220"<<endl;
 	if(this->zpos_==0){
 		cout<<"enter NE" <<endl;
