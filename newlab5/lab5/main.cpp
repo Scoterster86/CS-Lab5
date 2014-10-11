@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 	for (i = 0; i < NumOfRobots; i++)
 	{
 		cin >> stores[i];
-		cout<< "Number of Stores" << stores[i];
+		cout<< "Number of Stores" << stores[i] <<endl;
 	}
 	for(i = 0; i<NumOfRobots; i++){
 		Shopper* newshopper = new Shopper(++i);
