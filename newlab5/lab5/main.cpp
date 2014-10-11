@@ -45,9 +45,8 @@ int main(int argc, char* argv[])
 				shopper->BotMove();
 		}
 		else{
-			cout<<"Remove Store"<<endl;
 			shopper->RemoveStore();
-			cout<<"Removed Store"<<endl;
+			cout<<"Removed Store-----------------------------"<<endl;
 			if(shopper->storelist_==NULL){
 				cout<<"Storelist NULL"<<endl;
 				Store* endStore = new Store();
@@ -56,6 +55,7 @@ int main(int argc, char* argv[])
 				endStore->zstore_ = 0;
 				endStore->TimeSlice_ = 0;
 				shopper->AddStore(endStore);
+				cout<<"Added Store"<<endl;
 			}
 		}
 		TIME++;
