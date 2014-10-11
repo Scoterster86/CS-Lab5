@@ -9,17 +9,17 @@ Move::Move()
 	this->xpos_ = 8;
 	this->ypos_ = 16;
 	this->zpos_ = 0;
-	this->storelist_ = NULL;//new Store();
+	this->storelist_ = new Store();
 }
 
 //Yo Karita
 //adds a store to the list of stores
 void Move::AddStore(Store* store)
 {
-	if(this==NULL){
-//	if (this==NULL || (this->storelist_->xstore_ == 0 
-//	   && this->storelist_->ystore_ == 0 
-//	   && this->storelist_->zstore_ == 0)){
+
+	if (this==NULL || (this->storelist_->xstore_ == 0 
+	   && this->storelist_->ystore_ == 0 
+	   && this->storelist_->zstore_ == 0)){
 		this->storelist_ = store;
 	}
 	else this->storelist_->AddStore(store);
