@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	//sets input values
 	TimeSlice = atoi(argv[1]);
 	int i,j,k, stores[12], items, count;
-	char item;
+	char item[2];
 	int tempNumOfRobots =0;
 	cin >> tempNumOfRobots; // in lab5
 	NumOfRobots = tempNumOfRobots;
@@ -35,7 +35,7 @@ int main(int argc, char* argv[])
 			store->TimeSlice_ = 0;	//sets the timeslice
 			for(k =0; k < items; k++){
 				
-				cin >>item >>count;
+				cin >>item  >>count;
 				cout <<"Item " <<item <<"Count " <<count <<endl;
 
 			}
