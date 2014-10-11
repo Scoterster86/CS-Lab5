@@ -22,7 +22,8 @@ void Move::AddStore(Store* store)
 	   && this->storelist_->zstore_ == 0)){
 		this->storelist_ = store;
 	}
-	else this->storelist_->AddStore(store);
+	this->storelist_ = store;
+	//else this->storelist_->AddStore(store);
 }
 
 //Yo Karita
