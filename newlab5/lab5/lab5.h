@@ -35,20 +35,16 @@ class Shopper
 public:
 
 	int RobotNum_;
-	int xpos_, ypos_, zpos_;
-	Store* storelist_;
+
 	int slices;
 	Shopper* nextshopper_;
-
+	Move smove_;
 	Shopper();
 	Shopper(int);
 
-	void AddStore(Store* store);
-	void RemoveStore();
+
 
 	int storecomplete();
-	void BotMove();
-	int movement(int);
 	void AddShopper(Shopper*);
 	void RemoveShopper(Shopper*);
 
@@ -68,5 +64,18 @@ public:
 	void AddShopper(Shopper*);
 	void RemoveShopper();
 };
+
+class Move
+{
+public:
+	int xpos_, ypos_, zpos_;
+	Store* storelist_;
+	
+	void AddStore(Store* store);
+	void RemoveStore();
+	void BotMove();
+	int movement(int);
+	
+}
 //checks to see if the time is divisible by 25
 int timecheck();
