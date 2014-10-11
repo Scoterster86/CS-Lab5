@@ -245,7 +245,7 @@ void Shopper::BotMove()
   	else{
   		//if the next store is at (4,4,1)
   		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-  			movement(SouthEast);
+  			this->movement(SouthEast);
   		}
   		else{
   			this->movement(NorthEast);
@@ -258,7 +258,7 @@ void Shopper::BotMove()
   	if(this->zpos_ == 0){
   		//if the next store is at (4,12,0)
   		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
-  			movement(SouthWest);
+  			this->movement(SouthWest);
   		}
   		else{
   			this->movement(NorthWest);
@@ -267,57 +267,21 @@ void Shopper::BotMove()
   	else{
   		//if the next store is at (4,12,1)
   		if(this->storelist_->xstore_==4 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
-  			movement(SouthWest);
-  		}
-  		else{
-  			this->movement(SouthEast);
-  		}
-  	}
-  }
-
-
-  else if(this->xpos_ == 3 && this->ypos_ == 13){
-  	//if the bot is on the first floor
-  	if(this->zpos_ == 0){
-  		//if the next store is at (12,12,0)
-  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
-  			movement(NorthWest);
-  		}
-  		else{
-  			this->movement(NorthEast);
-  		}
-  	}
-  	else{
-  		//if the next store is at (12,12,1)
-  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
-  			movement(NorthWest);
-  		}
-  		else{
   			this->movement(SouthWest);
   		}
-  	}
-  }
-
-  else if(this->xpos_ == 3 && this->ypos_ == 13){
-  	//if the bot is on the first floor
-  	if(this->zpos_ == 0){
-  		//if the next store is at (12,4,0)
-  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-  			movement(NorthEast);
-  		}
   		else{
   			this->movement(SouthEast);
   		}
   	}
-  	else{
-  		//if the next store is at (12,4,1)
-  		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
-  			movement(NorthEast);
-  		}
-  		else{
-  			this->movement(NorthWest);
-  		}
-  	}
+  }
+
+
+  else if(this->xpos_ == 4 && this->ypos_ == 12){
+ 	movement(NorthEast);
+  }
+
+  else if(this->xpos_ == 4 && this->ypos_ == 4){
+	this->movement(NorthWest);
   }
 
 
@@ -353,10 +317,10 @@ void Shopper::BotMove()
   else if(this->xpos_ == 8 && this->ypos_ ==4){
 	if(this->zpos_ == 0){
 		if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-  			movement(North);
+  			this->movement(North);
   		}
 		else if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 0){
-  			movement(South);
+  			this->movement(South);
   		}
 		else{
 			this->movement(East);
