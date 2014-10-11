@@ -149,7 +149,7 @@ void Shopper::BotMove()
   else if(this->ypos_ ==16){
   	if(this->zpos_ ==1){//if on the second floor
   		if(this->xpos_ == 8){
-  			if(this->storelist_->xstore_==12 && this->storelist_->zstore_==0){
+  			if(this->storelist_->xstore_==12 && this->storelist_->zstore_==1){
   			   	this->movement(South);
   			   }
   			   else{
@@ -166,6 +166,11 @@ void Shopper::BotMove()
   	else{//if zpos == 0
   		if(this->xpos_ == 6){
   			this->movement(NorthWest);
+  		}
+  		else if(this->xpos_==8){
+  			if(this->storelist_->xstore_==8 && this->storelist_->ystore_ == 16 && this->storelist_->zstore_==0){
+  				this->movement(End);
+  			}
   		}
   		else{
   			this->movement(North);
