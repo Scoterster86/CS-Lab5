@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 		}
 		else{
 			if(shopper->storelist_->xstore_ == 8 || shopper->storelist_->ystore_ == 16 || shopper->storelist_->zstore_ == 0){
-				RemoveShopper(shopper);
+				shopper->RemoveShopper();
 				NumOfShoppers--;
 			}
 			shopper->RemoveStore();
