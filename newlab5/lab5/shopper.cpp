@@ -45,6 +45,7 @@ void Shopper::RemoveStore()
 //controls the movement of the shopper
 void Shopper::BotMove()
 {
+	if(DEBUG)cout"BotMove"<<endl;
   //if the robot is in the bottom row
   if(this->xpos_ == 16){
   	if(DEBUG)cout<<"Line 50" <<endl;
