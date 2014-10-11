@@ -36,7 +36,18 @@ int main(int argc, char* argv[])
 		shopper->AddStore(store);	//Add the store to the shopper's storelist
 	}
 	//shopper moves to each store and enters the RRqueue to be serviced
-	shopper->BotMove();
+	while(NumOfShoppers !=0){
+		if(shopper->xpos_ != shopper->storelist_->xstore_ && shopper->ypos_ != shopper->storelist_->ystore_
+			&& shopper->zpos_ != shopper->storelist_->zstore_){
+				shopper->BotMove();
+		}
+		else{
+			shopper->RemoveStore();
+			if(shopper->nextshopper_==NULL){
+				shopper->nextshopper_->
+			}
+		}	
+	}
 	
 	return 0;
 }
