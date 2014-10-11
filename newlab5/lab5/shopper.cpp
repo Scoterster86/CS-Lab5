@@ -94,7 +94,7 @@ void Shopper::BotMove()
   		if(this->ypos_ == 6){
   			this->movement(SouthWest);
   		}
-  		if(this->ypos_ == 8){
+  		else if(this->ypos_ == 8){
   			if(this->storelist_->ystore_==4) {
   				this->movement(West);
   			}
