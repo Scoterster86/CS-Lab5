@@ -35,13 +35,12 @@ class Shopper
 public:
 
 	int RobotNum_;
-
 	int slices;
 	Shopper* nextshopper_;
 	Move* smove_;
+	
 	Shopper();
 	Shopper(int);
-
 
 
 	int storecomplete();
