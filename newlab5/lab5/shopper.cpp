@@ -86,33 +86,29 @@ void Shopper::BotMove()
   //if the robot is in the top row
   else if(this->xpos_ == 0){
   	if(DEBUG)cout<<"Line 87"<<endl;
-  	if(this->ypos_ == 8){
-  		if(this->zpos_ == 1){
-  			this->movement(East);
+
+  	else if(this->zpos_ == 0){
+  		if(this->ypos_ == 6){
+  			this->movement(SouthWest);
   		}
-  		else{//begin else
+  		if(this->ypos_ == 8){
   			if(this->storelist_->ystore_==4) {
   				this->movement(West);
   			}
   			else{
   				this->movement(South);
   			}
-  		}//end else
-  	}//end if ypos==8
-  	else if(this->zpos_ == 0){
+	  	}//end if ypos==8
+  		else{
+  			this->movement(West);
+  		}
+  	}
+  	else{
   		if(this->ypos_ == 10){
   			this->movement(SouthEast);
   		}
   		else{
-  			this->movement(East);
-  		}
-  	}
-  	else{
-  		if(this->ypos_ == 6){
-  			this->movement(NorthWest);
-  		}
-  		else{
-  			this->movement(West);	
+  			this->movement(East);	
   		}
   		
   	}
