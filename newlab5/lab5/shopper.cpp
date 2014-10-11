@@ -31,7 +31,7 @@ int Shopper::storecomplete(){
 	//shopper enters round robin queue
 	RRqueue* ptr = new RRqueue(this);
 	//the shopper is processed at the round robin queue
-	while(this->smove_storelist_->TimeSlice_ != 0)
+	while(this->smove_->storelist_->TimeSlice_ != 0)
 	{
 		TIME+= (TimeSlice/10);
 		ptr->RunQueue();
