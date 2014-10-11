@@ -69,7 +69,7 @@ void RRqueue::RunQueue()
 		ptr->slices++;
 		//remove the shopper from the head of the list
 		RemoveShopper();
-		cout<<"Shopper 1 leaves store (" <<ptr->smove_->xpos_ <<", " << ptr->smove->ypos_ <<") after " << ptr->slices << " Time slices at Time " <<TIME << endl;;
+		cout<<"Shopper 1 leaves store (" <<ptr->smove_->xpos_ <<", " << ptr->smove_->ypos_ <<") after " << ptr->slices << " Time slices at Time " <<TIME << endl;;
 		//reset the number of slices
 		ptr->slices = 0;
 		
