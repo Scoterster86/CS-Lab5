@@ -47,7 +47,9 @@ int main(int argc, char* argv[])
 		else{
 			cout<<"Remove Store"<<endl;
 			shopper->RemoveStore();
+			cout<<"Removed Store"<<endl;
 			if(shopper->storelist_==NULL){
+				cout<<"Storelist NULL"<<endl;
 				Store* endStore = new Store();
 				shopper->AddStore(endStore);
 			}
