@@ -162,6 +162,7 @@ void Shopper::BotMove()
   			   }
   		}
   		if(this->xpos_ == 10){
+  			if(DEBUG)cout<<"153 move SW"<<endl;
   			this->movement(SouthWest);
   		}
   		else{
