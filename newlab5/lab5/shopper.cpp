@@ -147,6 +147,7 @@ void Shopper::BotMove()
   
   //if the robot is in column 16
   else if(this->ypos_ ==16){
+  	cout<<"Y=16" <<endl;
   	if(this->zpos_ ==1){//if on the second floor
   		if(this->xpos_ == 8){
   			if(this->storelist_->xstore_==12 && this->storelist_->zstore_==1){
@@ -164,7 +165,9 @@ void Shopper::BotMove()
   		}
   	}
   	else{//if zpos == 0
+  		cout<<"Z==0" <<endl;
   		if(this->xpos_ == 6){
+  			cout<<"enter NW" << endl;
   			this->movement(NorthWest);
   		}
   		else if(this->xpos_==8){
