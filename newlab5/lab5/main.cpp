@@ -2,6 +2,8 @@
 
 int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
+int TimeSlice =0;
+int NumOfShoppers =0;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
