@@ -36,6 +36,7 @@ public:
 	int xpos_, ypos_, zpos_;
 	Store* storelist_;
 	
+	Move();
 	void AddStore(Store* store);
 	void RemoveStore();
 	void BotMove(int);
