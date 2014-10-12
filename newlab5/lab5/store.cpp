@@ -8,6 +8,7 @@ Store::Store(Store* store)
 	this->ystore_ = store->ystore_;
 	this->zstore_ = store->zstore_;
 	this->TimeSlice_ = store->TimeSlice_;
+	this->items_= nullptr;
 	this->pNext = nullptr;
 }
 //Yo Karita
