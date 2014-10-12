@@ -14,6 +14,7 @@ extern int Floor[LENGTH][WIDTH][HEIGHT];
 extern int NumOfRobots;
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
 
+class Store;
 //Yo Karita
 //class for the items
 class Item
