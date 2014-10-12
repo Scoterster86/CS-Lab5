@@ -14,6 +14,22 @@ extern int Floor[LENGTH][WIDTH][HEIGHT];
 extern int NumOfRobots;
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
 
+//Yo Karita
+//class for the items
+class Item
+{
+ public:
+  //the item's product code
+  string ProductCode_;
+  int amount_;
+  Item* nextItem_;
+  //pointer to the list of stores with the item inside
+  Store* pStore;
+
+  //determines the location of the item in a binary tree
+  int HasPriority(Item);
+  Item();
+};
 
 //Yo Karita
 //Store class
@@ -21,6 +37,7 @@ class Store
 {
 public:
 	int xstore_, ystore_, zstore_;
+	Item* items_;
 	Store* pNext;
 	int TimeSlice_;
 
