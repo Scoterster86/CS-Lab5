@@ -45,7 +45,6 @@ public:
 
 	void AddStore(Store*);
 	int GetSize();
-	void createStores();
 	Store();
 	Store(Store*);
 	Store(int, int ,int);
