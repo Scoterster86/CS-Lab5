@@ -23,6 +23,16 @@ Store::Store()
 	this->pNext = nullptr;
 }
 
+Store::Store(int x, int y, int z)
+{
+	this->xstore_ = x;
+	this->ystore_ = y;
+	this->zstore_ = z;
+	this->TimeSlice_ = 0;
+	this->items_= nullptr;
+	this->pNext = nullptr;
+}
+
 //Yo Karita
 //Adds a store to the list of stores
 void Store::AddStore(Store* store)
@@ -49,4 +59,12 @@ int Store::GetSize()
 		ptr = ptr->pNext;
 	}
 	return n;
+}
+
+//Scott Iwanicki
+void Store::createStores(){
+	this->xpos_=4;
+	this->ypos_=4;
+	this->zpos_=0;
+	this->addStore(Store(6, 4, 0));
 }
