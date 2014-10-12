@@ -10,18 +10,6 @@ Item::Item()
   this->pStore = nullptr;
 }
 
-//Yo Karita
-//default constructor for a store
-Store::Store()
-{
-  this->xstore_ = 0;
-  this->ystore_ = 0;
-  this->zstore_ = 0;
-  this->items_ = nullptr;
-  this->pNext = nullptr;
-
-}
-
 //Scott Iwanicki
 //determines the priority of the item
 int Item::HasPriority(Item item)
@@ -34,4 +22,16 @@ int Item::HasPriority(Item item)
 
   //else if the item's product code is a higher priority return -1
   else  return -1;
+}
+
+//Scott Iwanicki
+void Item::AddItem(Item* item)
+{
+	Item* ptr = this;
+	
+	while (ptr->nextItem_)
+	{
+		ptr = ptr->nextItem_;
+	}
+	ptr->nextItem_ = item;
 }
