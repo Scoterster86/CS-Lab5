@@ -10,7 +10,6 @@ Move::Move()
 	this->ypos_ = 16;
 	this->zpos_ = 0;
 	this->wait_=0;
-	this>arrival_=0
 	this->storelist_ = new Store();
 }
 
