@@ -691,6 +691,9 @@ void Move::BotMove(int RobotNum)
 		}
 	}
   }
+  else{
+  	exit;
+  }
 
 }
 
