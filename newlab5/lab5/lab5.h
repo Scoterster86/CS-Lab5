@@ -82,7 +82,7 @@ public:
 
 
 	int storecomplete();
-	void AddShopper(Shopper*);
+	void AddShopper(Shopper*, Shopper*);
 	void RemoveShopper(Shopper*);
 
 };
