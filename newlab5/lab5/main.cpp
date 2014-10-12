@@ -20,14 +20,14 @@ int main(int argc, char* argv[])
 	for (i = 0; i < NumOfRobots; i++)
 	{
 		cin >> stores[i];
-		cout<< "Number of Stores" << stores[i] <<endl;
+		//cout<< "Number of Stores" << stores[i] <<endl;
 	}
 	for(i = 0; i<NumOfRobots; i++){
 		Shopper* newshopper = new Shopper(++i);
 		for (j = 0; j < stores[j]; j++)
 		{
 			cin >> xpos >> ypos >> zpos >> items;
-			cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
+			//cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
 			Store* store = new Store();//create a store
 			store->xstore_ = xpos;	// sets the location
 			store->ystore_ = ypos;
@@ -37,12 +37,13 @@ int main(int argc, char* argv[])
 			for(k =0; k < items; k++){
 				
 				cin >>item  >>count;
-				cout <<"Item " <<item <<"Count " <<count <<endl;
+				//cout <<"Item " <<item <<"Count " <<count <<endl;
 
 			}
 			
-			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
+			//cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
 		}
+		cout<<i<<endl;
 		Shopperlist[i] = newshopper;	//add a shopper
 	}
 	//shopper moves to each store and enters the RRqueue to be serviced
