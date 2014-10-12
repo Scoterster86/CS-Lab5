@@ -500,6 +500,25 @@ void Move::BotMove(int RobotNum)
   	if(DEBUG)cout<<"Line 478"<<endl;
 	this->movement(North, RobotNum);
   }
+    else if(this->xpos_ == 9 && this->ypos_ == 12){
+  	if(DEBUG)cout<<"Line 480"<<endl;
+  	if(this->zpos_ == 0){
+			if(this->storelist_->xstore_== 10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 0){
+			this->movement(South, RobotNum);
+		}
+		else{
+			this->movement(North, RobotNum);
+		}
+	}
+	else{
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
+			this->movement(South, RobotNum);
+		}
+		else{
+			this->movement(North, RobotNum);
+		}
+	}
+  }
 
 
   else if(this->xpos_ == 6 && this->ypos_ == 12){
