@@ -19,7 +19,7 @@ BinaryTree::BinaryTree(Item item)
 
 //Scott Iwanicki
 //adds an item to the binary tree
-void BinaryTree::AddItem(Item* item, Store* store)
+void BinaryTree::AddItem(Item* item, Store* store, Store* head)
 {
 
   /// if there is no items
@@ -35,13 +35,13 @@ void BinaryTree::AddItem(Item* item, Store* store)
   if (this->node_.HasPriority(*item) == 0)
     {
 
-      this->node_.pStore->AddStore(store);
-      this->node_.pStore = headstoreptr;
+      this->node_.pStore->AddStore(store, head);
+      this->node_.pStore = head;
     }
   /// if the node has higher priority,
   else if (this->node_.HasPriority(*item) == 1)
     {
-      if(this->left_) this->left_->AddItem(item, store);
+      if(this->left_) this->left_->AddItem(item, store, head);
       else
         {
           BinaryTree* newTree = new BinaryTree(*item);
@@ -56,7 +56,7 @@ void BinaryTree::AddItem(Item* item, Store* store)
   else if (this->node_.HasPriority(*item) == -1)
     {
       if (this->right_){
-         this->right_->AddItem(item, store);   
+         this->right_->AddItem(item, store, head);   
       }
       else{
           BinaryTree* newTree = new BinaryTree(*item);
