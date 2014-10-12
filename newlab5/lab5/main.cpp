@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 				if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_
 					|| Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_){
 						cout<<"Enter BotMove"<<endl;
-						Shopperlist[i]r->smove_->BotMove(Shopperlist[i]->RobotNum_);
+						Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
 				}
 				else{
 					if(Shopperlist[i]->smove_->storelist_->xstore_ == 8 && Shopperlist[i]->smove_->storelist_->ystore_ == 16 && Shopperlist[i]->smove_->storelist_->zstore_ == 0){
