@@ -362,8 +362,8 @@ void Move::BotMove(int RobotNum)
   else if((this->xpos_ == 10 && this->ypos_ ==8) || (this->xpos_ == 2 && this->ypos_ ==8) || 
   	    (this->xpos_ == 3 && this->ypos_ ==8) || (this->xpos_ == 5 && this->ypos_ ==8) ||
 	    (this->xpos_ == 6 && this->ypos_ ==8) || (this->xpos_ == 7 &&this->ypos_ ==8) ||
-	    (this->xpos_ == 9 && this->ypos_ ==8) || (this->xpos_==10 this->ypos_ ==8) ||
-	    (this->xpos_==11 && this->ypos_ ==8) || (this->xpos_*13+this->ypos_ ==8) ||
+	    (this->xpos_ == 9 && this->ypos_ ==8) || (this->xpos_==10 && this->ypos_ ==8) ||
+	    (this->xpos_==11 && this->ypos_ ==8) || (this->xpos_ 13 && this->ypos_ ==8) ||
 	    (this->xpos_ == 14 && this->ypos_ ==8) || (this->xpos_ 15 && this->ypos_ ==8)){
 	    	if(DEBUG)cout<<"Line 346"<<endl;
 	if(this->zpos_==0){
