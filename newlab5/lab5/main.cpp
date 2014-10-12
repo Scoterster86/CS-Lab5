@@ -76,7 +76,7 @@ int main(int argc, char* argv[])
 	  Item* newitem = new Item();
 	  newitem->ProductCode_ = item;
 	  newitem->amount_ = count;
-	  store->items_->AddItem(newitem)
+	  store->items_->AddItem(newitem);
 	  //cout <<"Item " <<item <<"Count " <<count <<endl;
 	  
 	}
