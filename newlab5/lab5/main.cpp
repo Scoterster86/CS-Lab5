@@ -97,8 +97,9 @@ int main(int argc, char* argv[])
 	      if(Shopperlist[i]->smove_->storelist_->items_ == NULL){    
 	         Shopperlist[i]->smove_->RemoveStore();
 	      }
+	      
 	      else{
-		RoboMall->AddItem(Shopperlist[i]->smove_->items_ , Shopperlist[i]->smove_->items"store")
+		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->items"store")
 	      }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
