@@ -15,6 +15,7 @@ extern int NumOfRobots;
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
 
 class Store;
+extern Store*headstoreptr;
 //Yo Karita
 //class for the items
 class Item
