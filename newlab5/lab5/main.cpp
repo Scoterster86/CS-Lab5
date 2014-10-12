@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
 		}
 		for(i=0; i<9; i++){
 			if(Shopperlist[i]!=NULL){
-				cout<<"Shopper" <<Shopperlist[i]->RobotNum_ << "  " <<Shopperlist[i]->smove_->storelist_->xstore_ << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
+				cout<<"Shopper" <<Shopperlist[i]->RobotNum_ << "  " <<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
 			}
 		}
 		timecheck();
