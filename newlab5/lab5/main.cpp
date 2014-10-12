@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 	while(NumOfRobots !=0){
 		for(i=0; i<9; i++){
 			if(Shopperlist[i]!=NULL){
-				cout <<"Robot: "<< i/*shopper->RobotNum_*/ << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
+				cout <<"Robot: "<< Shopperlist[i]->RobotNum_ << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
 				cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_ << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
 				if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_
 					|| Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_){
