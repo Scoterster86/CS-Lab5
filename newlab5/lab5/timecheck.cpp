@@ -17,9 +17,9 @@ int timecheck(){
 				//initiates for loop for first and last iteration of i
 				if (i == -1 || i == WIDTH){//start if1
 					//creates the top/bottom border
-					for (j = 0; j <= (LENGTH * 8); j++){//start j for loop
+					for (j = 0; j <= (LENGTH * 10); j++){//start j for loop
 						// *5 to account for the 4 spaces allocated for the digit and a space
-						if (j == LENGTH * 8){//start if2
+						if (j == LENGTH * 10){//start if2
 							printf("-\n");
 						}//end if2
 						else{
