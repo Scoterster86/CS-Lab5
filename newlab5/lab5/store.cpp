@@ -53,7 +53,7 @@ void Store::AddStorelist(Store* store)
 void Store::AddStore(Store* store)
 {
   //if the store location is (0,0,0) set the first store in the list
-  if (this->xstore_] == 0 && this->xstore_ == 0 && this->zstore_ == 0)
+  if (this->xstore_ == 0 && this->xstore_ == 0 && this->zstore_ == 0)
     {
       this->xstore_ = store->xstore_;
       this->ystore_ = store->ystore_;
@@ -73,12 +73,12 @@ void Store::AddStore(Store* store)
   //sets the previous pointer to null
   Store* pPrev = nullptr;
 
-  //loops until pCurrent is null or then the current product amount is greater than the store's prodcut amount or if the stores are\
- the same
+  //loops until pCurrent is null or then the current product amount 
+  //is greater than the store's prodcut amount or if the stores are the same
   while (pCurrent && (this->productamount_ > store->productamount_) && (
   	(this->xstore_ =! store->xstore_) ||
         (this->ystore_ =! store->ystore_)||
-        (this->zstore_=! store->storez_)) )
+        (this->zstore_=! store->zstore_)) )
     {
       //sets the previous pointer to the current pointer
       pPrev = pCurrent;
