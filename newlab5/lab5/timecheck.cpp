@@ -17,9 +17,9 @@ int timecheck(){
 				//initiates for loop for first and last iteration of i
 				if (i == -1 || i == WIDTH){//start if1
 					//creates the top/bottom border
-					for (j = 0; j <= (LENGTH * 6); j++){//start j for loop
+					for (j = 0; j <= (LENGTH * 8); j++){//start j for loop
 						// *5 to account for the 4 spaces allocated for the digit and a space
-						if (j == LENGTH * 6){//start if2
+						if (j == LENGTH * 8){//start if2
 							printf("-\n");
 						}//end if2
 						else{
@@ -35,7 +35,7 @@ int timecheck(){
 						}
 						//prints out the current row of the array
 						else if (0 <= k && k<LENGTH){
-							printf("%6d ", Floor[i][k][m]);
+							printf("%8d ", Floor[i][k][m]);
 						}
 						//prints out the right border of the array
 						else{
