@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
 						NumOfRobots--;
 					}
 					else{
-						Shopperlist[i]r->smove_->RemoveStore();
+						Shopperlist[i]->smove_->RemoveStore();
 						cout<<"Removed Store-----------------------------"<<endl;
 						if(Shopperlist[i]->smove_->storelist_==NULL){
 							cout<<"Storelist NULL"<<endl;
