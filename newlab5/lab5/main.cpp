@@ -49,7 +49,8 @@ int main(int argc, char* argv[])
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfRobots !=0){
 		for(i=0; i<9; i++){
-			if(Shopperlist[i]!=NULL || /*(Shopperlist[i]->smove_->wait_ <=TIME)*/){
+			if(Shopperlist[i]!=NULL){
+			   if(Shopperlist[i]->smove_->wait_ <=TIME){
 				cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
 				cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_ << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
 				if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_
@@ -78,6 +79,7 @@ int main(int argc, char* argv[])
 						}
 					}
 				}
+			   }
 			}
 		}
 		for(i=0; i<9; i++){
