@@ -18,37 +18,37 @@ int main(int argc, char* argv[])
   		storeptr->ystore_=4;
   		storeptr->zstore_=0;
 	Store* newStore1 = new Store();
-	this->AddStore(newStore1);
+	storeptr->AddStore(newStore1);
 	
 	Store* newStore2 = new Store(10, 4, 0);
-	this->AddStore(newStore2);
+	storeptr->AddStore(newStore2);
 	
 	Store* newStore3 = new Store(12, 4, 0);
-	this->AddStore(newStore3);
+	storeptr->AddStore(newStore3);
 	
 	Store* newStore4 = new Store(12, 6, 0);
-	this->AddStore(newStore4);
+	storeptr->AddStore(newStore4);
 	
 	Store* newStore5 = new Store(4, 6, 0);
-	this->AddStore(newStore5);
+	storeptr->AddStore(newStore5);
 	
 	Store* newStore6 = new Store(4, 10, 0);
-	this->AddStore(newStore6);
+	storeptr->AddStore(newStore6);
 	
 	Store* newStore7 = new Store(12, 10, 0);
-	this->AddStore(newStore7);
+	storeptr->AddStore(newStore7);
 	
 	Store* newStore8 = new Store(12, 12, 0);
-	this->AddStore(newStore8);
+	storeptr->AddStore(newStore8);
 	
 	Store* newStore9 = new Store(10, 12, 0);
-	this->AddStore(newStore9);
+	storeptr->AddStore(newStore9);
 	
 	Store* newStore10 = new Store(6, 12, 0);
-	this->AddStore(newStore10);
+	storeptr->AddStore(newStore10);
 	
 	Store* newStore11 = new Store(4, 12, 0);
-	this->AddStore(newStore11);
+	storeptr->AddStore(newStore11);
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
   NumOfRobots = tempNumOfRobots;
