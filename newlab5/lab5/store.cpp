@@ -63,8 +63,8 @@ int Store::GetSize()
 
 //Scott Iwanicki
 void Store::createStores(){
-	this->xpos_=4;
-	this->ypos_=4;
-	this->zpos_=0;
+	this->xstore_=4;
+	this->ystore_=4;
+	this->zstore_=0;
 	this->addStore(Store(6, 4, 0));
 }
