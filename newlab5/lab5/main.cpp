@@ -29,7 +29,6 @@ int main(int argc, char* argv[])
 			cin >> xpos >> ypos >> zpos >> items;
 			cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
 			Store* store = new Store();//create a store
-			Move* move = new Move();
 			store->xstore_ = xpos;	// sets the location
 			store->ystore_ = ypos;
 			store->zstore_ = zpos;
@@ -46,7 +45,6 @@ int main(int argc, char* argv[])
 		}
 		Shopperlist[j] = newshopper;	//add a shopper
 	}
-	shopper->RemoveShopper(shopper);
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfRobots !=0){
 		for(i=0; i<9; i++){
