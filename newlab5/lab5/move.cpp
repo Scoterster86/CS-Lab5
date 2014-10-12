@@ -1,5 +1,5 @@
 #include "lab5.h"
-int DEBUG = 0;
+int DEBUG = 1;
 
 //Scott Iwanicki
 
