@@ -161,7 +161,7 @@ void Move::BotMove(int RobotNum)
   	else{//if zpos == 0
   		if(DEBUG)cout<<"Z==0" <<endl;
   		if(this->xpos_ == 6){
-  			cout<<"enter NW" << endl;
+  			if(DEBUG)cout<<"enter NW" << endl;
   			this->movement(NorthWest, RobotNum);
   		}
   		else if(this->xpos_==8){
