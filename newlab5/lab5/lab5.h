@@ -40,6 +40,7 @@ class Store
 public:
 	int xstore_, ystore_, zstore_;
 	Item* items_;
+	int productamount_;
 	Store* pNext;
 	int TimeSlice_;
 
