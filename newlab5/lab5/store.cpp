@@ -66,5 +66,5 @@ void Store::createStores(){
 	this->xstore_=4;
 	this->ystore_=4;
 	this->zstore_=0;
-	this->addStore(Store(6, 4, 0));
+	this->AddStore(Store(6, 4, 0));
 }
