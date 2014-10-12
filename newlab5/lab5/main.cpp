@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
 				cout<<"Shopper" <<Shopperlist[i]->RobotNum_ << "  " <<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
 			}
 		}
-		cout <<" " << endl;
+		cout <<"Test " << endl;
 		timecheck();
 		TIME++;
 	}
