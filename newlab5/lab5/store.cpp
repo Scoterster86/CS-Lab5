@@ -37,7 +37,7 @@ Store::Store(int x, int y, int z)
 
 //Yo Karita
 //Adds a store to the list of stores
-void Store::AddStore(Store* store)
+void Store::AddStorelist(Store* store)
 {
 	Store* ptr = this;
 	
