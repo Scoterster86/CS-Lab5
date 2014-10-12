@@ -12,8 +12,43 @@ int main(int argc, char* argv[])
   TimeSlice = atoi(argv[1]);
   int i,j,k, stores[12], items, count, location;
   char item[2];
-  Store* storeptr = new Store;
-  storeptr->createStores();
+  //creates the 24 stores
+  	Store* storeptr = new Store;
+  		storeptr->xstore_=4;
+  		storeptr->ystore_=4;
+  		storeptr->zstore_=0;
+	Store* newStore1 = new Store();
+	this->AddStore(newStore1);
+	
+	Store* newStore2 = new Store(10, 4, 0);
+	this->AddStore(newStore2);
+	
+	Store* newStore3 = new Store(12, 4, 0);
+	this->AddStore(newStore3);
+	
+	Store* newStore4 = new Store(12, 6, 0);
+	this->AddStore(newStore4);
+	
+	Store* newStore5 = new Store(4, 6, 0);
+	this->AddStore(newStore5);
+	
+	Store* newStore6 = new Store(4, 10, 0);
+	this->AddStore(newStore6);
+	
+	Store* newStore7 = new Store(12, 10, 0);
+	this->AddStore(newStore7);
+	
+	Store* newStore8 = new Store(12, 12, 0);
+	this->AddStore(newStore8);
+	
+	Store* newStore9 = new Store(10, 12, 0);
+	this->AddStore(newStore9);
+	
+	Store* newStore10 = new Store(6, 12, 0);
+	this->AddStore(newStore10);
+	
+	Store* newStore11 = new Store(4, 12, 0);
+	this->AddStore(newStore11);
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
   NumOfRobots = tempNumOfRobots;
