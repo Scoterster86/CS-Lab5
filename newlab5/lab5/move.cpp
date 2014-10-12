@@ -465,10 +465,10 @@ void Move::BotMove(int RobotNum)
 		}
 	}
 	else{
-		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
+		if(this->storelist_->xstore_==10 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
 			this->movement(South, RobotNum);
 		}
-		else if(this->storelist_->xstore_==6 && this->storelist_->ystore_==4 && this->storelist_->zstore_ == 1){
+		else if(this->storelist_->xstore_==6 && this->storelist_->ystore_==12 && this->storelist_->zstore_ == 1){
 			this->movement(North, RobotNum);
 		}
 		else{
