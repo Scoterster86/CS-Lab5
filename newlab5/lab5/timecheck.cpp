@@ -5,7 +5,6 @@ int timecheck(){
 	//initialize variables
 	int i, j, k, m, b, c, d;
 	if (TIME % 25 == 0){
-		
 		for (m = 0; m <= 1; m++){
 			if (m == 0){
 				printf("\n FIRST FLOOR\n");
