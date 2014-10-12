@@ -120,7 +120,7 @@ void Move::BotMove(int RobotNum)
   			   	this->movement(East, RobotNum);
   			   }
   		}
-  		if(this->xpos_ == 10){
+  		else if(this->xpos_ == 10){
   			this->movement(SouthEast, RobotNum);
   		}
   		else{
@@ -184,7 +184,7 @@ void Move::BotMove(int RobotNum)
   
   else if(this->xpos_*10+this->ypos_ ==51 || this->xpos_*10+this->ypos_ ==42 || 
   	    this->xpos_*10+this->ypos_ ==24 || this->xpos_*10+this->ypos_ ==15){
-  	    	if(DEBUG)cout<<"Line 198"<<endl;
+  	if(DEBUG)cout<<"Line 198"<<endl;
 	if(this->zpos_ ==0){
 		this->movement(SouthWest, RobotNum);
 	}
