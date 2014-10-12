@@ -14,10 +14,10 @@ Item::Item()
 //default constructor for a store
 Store::Store()
 {
-  this->store_location_[0] = 0;
-  this->store_location_[1] = 0;
-  this->store_location_[2] = 0;
-  this->productamount_ = 0;
+  this->xstore_ = 0;
+  this->ystore_ = 0;
+  this->zstore_ = 0;
+  this->items_ = nullptr;
   this->pNext = nullptr;
 
 }
