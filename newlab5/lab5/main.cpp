@@ -54,6 +54,7 @@ int main(int argc, char* argv[])
 		if(Shopperlist[i]->smove_->wait_ % 25 ==0 && TIME % 25 ==0){
 		  cout<<"Robot "<<Shopperlist[i]->RobotNum_ 
 		      <<" enters the simulation at time" <<TIME <<endl;
+		      Shopperlist[i]->smove_->wait_=1;
 		}
 	  cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
 	       << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " 
