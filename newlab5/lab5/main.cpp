@@ -10,8 +10,10 @@ int main(int argc, char* argv[])
 {
   //sets input values
   TimeSlice = atoi(argv[1]);
-  int i,j,k, stores[12], items, count;
+  int i,j,k, stores[12], items, count, location;
   char item[2];
+  Store* storeptr = new Store;
+  storeptr->createStores();
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
   NumOfRobots = tempNumOfRobots;
@@ -36,6 +38,10 @@ int main(int argc, char* argv[])
 	for(k =0; k < items; k++){
 	  
 	  cin >>item  >>count;
+	  Item* newitem = new Item();
+	  newitem->ProductCode_ = item;
+	  newitem->amount_ = count;
+	  store->items_->AddItem(newitem)
 	  //cout <<"Item " <<item <<"Count " <<count <<endl;
 	  
 	}
@@ -63,29 +69,39 @@ int main(int argc, char* argv[])
 	       << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " 
 	       <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
 	  */
+	  //if the robot isn't at a store
 	  if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || 
 	     Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_ ||
 	     Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_)
 	  {
 	    Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
 	  }
+	  //if the robot is at a "store"
 	  else{
+	  	//if the store is A1, remove the robot from the simulation
 	    if(Shopperlist[i]->smove_->storelist_->xstore_ == 8 && 
 	       Shopperlist[i]->smove_->storelist_->ystore_ == 16 && 
 	       Shopperlist[i]->smove_->storelist_->zstore_ == 0)
 	    {
 	      Shopperlist[i]->smove_->movement(End, Shopperlist[i]->RobotNum_);
 	      Shopperlist[i] = NULL;
+	      //decriments the number of robots in the simulation
 	      NumOfRobots--;
 	    }
+	    //if the robot is at a store
 	    else{
 	      cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("
 	          << Shopperlist[i]->smove_->storelist_->xstore_ << ", "
 	          <<Shopperlist[i]->smove_->storelist_->ystore_ << ", " 
 	          <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
-	          
-	      Shopperlist[i]->smove_->RemoveStore();
-	      
+	      //if the robot is out of items to add to the store, remove the store from the list of stores
+	      if(Shopperlist[i]->smove_->items_ == NULL){    
+	         Shopperlist[i]->smove_->RemoveStore();
+	      }
+	      else{
+		cout<<"this"<<endl;
+	      }
+	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
 		//	cout<<"Storelist NULL"<<endl;
 		Store* endStore = new Store();
