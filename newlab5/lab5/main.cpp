@@ -56,8 +56,8 @@ int main(int argc, char* argv[])
 	       << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " 
 	       <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
 	  //cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_ 
-	       << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " 
-	       <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
+	  //     << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " 
+	  //     <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
 
 	  if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_
 	     || Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_){
