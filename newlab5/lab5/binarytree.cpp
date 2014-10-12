@@ -41,7 +41,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
   /// if the node has higher priority,
   else if (this->node_.HasPriority(*item) == 1)
     {
-      if(this->left_) this->left_->AddItem(item, store, head);
+      if(this->left_) this->left_->AddItem(item, store. head);
       else
         {
           BinaryTree* newTree = new BinaryTree(*item);
