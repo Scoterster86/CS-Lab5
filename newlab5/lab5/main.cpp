@@ -9,6 +9,7 @@ Shopper* Shopperlist[9];
 int main(int argc, char* argv[])
 {
   //sets input values
+  BinaryTree* RoboMall = new BinaryTree();
   TimeSlice = atoi(argv[1]);
   int i,j,k, stores[12], items, count, location;
   char item[2];
@@ -97,7 +98,7 @@ int main(int argc, char* argv[])
 	         Shopperlist[i]->smove_->RemoveStore();
 	      }
 	      else{
-		cout<<"this"<<endl;
+		RoboMall->AddItem(Shopperlist[i]->smove_->items_ , Shopperlist[i]->smove_->items"store")
 	      }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
