@@ -46,6 +46,7 @@ public:
 	void createStores();
 	Store();
 	Store(Store*);
+	Store(int, int ,int);
 };
 
 class Move
