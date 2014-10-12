@@ -692,7 +692,7 @@ void Move::BotMove(int RobotNum)
 	}
   }
   else{
-  	exit();
+  	cout<<endl endl endl endl endl endl endl;
   }
 
 }
