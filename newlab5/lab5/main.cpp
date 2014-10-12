@@ -59,18 +59,27 @@ int main(int argc, char* argv[])
 	  //     << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " 
 	  //     <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
 
-	  if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_
-	     || Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_){
+	  if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || 
+	     Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_ ||
+	     Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_)
+	  {
 	    Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
 	  }
 	  else{
-	    if(Shopperlist[i]->smove_->storelist_->xstore_ == 8 && Shopperlist[i]->smove_->storelist_->ystore_ == 16 && Shopperlist[i]->smove_->storelist_->zstore_ == 0){
+	    if(Shopperlist[i]->smove_->storelist_->xstore_ == 8 && 
+	       Shopperlist[i]->smove_->storelist_->ystore_ == 16 && 
+	       Shopperlist[i]->smove_->storelist_->zstore_ == 0)
+	    {
 	      Shopperlist[i]->smove_->movement(End, Shopperlist[i]->RobotNum_);
 	      Shopperlist[i] = NULL;
 	      NumOfRobots--;
 	    }
 	    else{
-	      cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("<< Shopperlist[i]->smove_->storelist_->xstore_ << ", "<<Shopperlist[i]->smove_->storelist_->ystore_ << ", " <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
+	      cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("
+	          << Shopperlist[i]->smove_->storelist_->xstore_ << ", "
+	          <<Shopperlist[i]->smove_->storelist_->ystore_ << ", " 
+	          <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
+	          
 	      Shopperlist[i]->smove_->RemoveStore();
 	      
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
