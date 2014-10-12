@@ -50,7 +50,7 @@ void Store::AddStorelist(Store* store)
 
 //Yo Karita
 //adds a store to the list of stores
-void Store::AddStore(Store* store)
+void Store::AddStore(Store* store, Store* headstoreptr)
 {
   //if the store location is (0,0,0) set the first store in the list
   if (this->xstore_ == 0 && this->xstore_ == 0 && this->zstore_ == 0)
