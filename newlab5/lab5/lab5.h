@@ -33,7 +33,7 @@ public:
 class Move
 {
 public:
-	int xpos_, ypos_, zpos_, wait;
+	int xpos_, ypos_, zpos_, wait_;
 	Store* storelist_;
 	
 	Move();
