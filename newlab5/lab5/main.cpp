@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 			
 			cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
 		}
-		Shopperlist[j] = newshopper;	//add a shopper
+		Shopperlist[i] = newshopper;	//add a shopper
 	}
 	//shopper moves to each store and enters the RRqueue to be serviced
 	while(NumOfRobots !=0){
