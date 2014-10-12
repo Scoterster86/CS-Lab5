@@ -5,6 +5,7 @@ int TIME = 0;
 int TimeSlice =0;
 int NumOfRobots =0;
 Shopper* Shopperlist[9];
+Shopper* headstoreptr = NULL;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
@@ -99,7 +100,7 @@ int main(int argc, char* argv[])
 	      }
 	      
 	      else{
-		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_);
+		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_, headstoreptr);
 	      }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
