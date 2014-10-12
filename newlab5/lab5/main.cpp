@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 		//cout<< "Number of Stores" << stores[i] <<endl;
 	}
 	for(i = 0; i<NumOfRobots; i++){
-		Shopper* newshopper = new Shopper(++i);
+		Shopper* newshopper = new Shopper(i+1);
 		for (j = 0; j < stores[j]; j++)
 		{
 			cin >> xpos >> ypos >> zpos >> items;
