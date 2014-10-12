@@ -86,6 +86,7 @@ int main(int argc, char* argv[])
 			if(Shopperlist[i]!=NULL){
 				cout<<"Shopper" <<Shopperlist[i]->RobotNum_ << "  " <<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
 			}
+			cout<<endl;
 		}
 		timecheck();
 		TIME++;
