@@ -359,12 +359,12 @@ void Move::BotMove(int RobotNum)
   }
 
 
-  else if(this->xpos_*10+this->ypos_ ==18 || this->xpos_*10+this->ypos_ ==28 || 
-  	    this->xpos_*10+this->ypos_ ==38 || this->xpos_*10+this->ypos_ ==58 ||
-	    this->xpos_*10+this->ypos_ ==68 || this->xpos_*10+this->ypos_ ==78 ||
-	    this->xpos_*10+this->ypos_ ==98 || this->xpos_*10+this->ypos_ ==108 ||
-	    this->xpos_*10+this->ypos_ ==118 || this->xpos_*10+this->ypos_ ==138 ||
-	    this->xpos_*10+this->ypos_ ==148 || this->xpos_*10+this->ypos_ ==158){
+  else if(this->xpos_ == 10 && this->ypos_ ==8) || (this->xpos_ == 2 && this->ypos_ ==8) || 
+  	    (this->xpos_ == 3 && this->ypos_ ==8) || (this->xpos_ == 5 && this->ypos_ ==8) ||
+	    (this->xpos_ == 6 && this->ypos_ ==8) || (this->xpos_ == 7 &&this->ypos_ ==8) ||
+	    (this->xpos_ == 9 && this->ypos_ ==8) || (this->xpos_==10 this->ypos_ ==8) ||
+	    (this->xpos_==11 && this->ypos_ ==8) || (this->xpos_*13+this->ypos_ ==8) ||
+	    (this->xpos_ == 14 && this->ypos_ ==8) || (this->xpos_ 15 && this->ypos_ ==8){
 	    	if(DEBUG)cout<<"Line 346"<<endl;
 	if(this->zpos_==0){
 		this->movement(South, RobotNum);
@@ -703,7 +703,7 @@ void Move::BotMove(int RobotNum)
 		else if((this->storelist_->xstore_== 10 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
 			  (this->storelist_->xstore_== 6 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
 			  (this->storelist_->xstore_== 4 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1)){
-			this->movement(South, RobotNum);
+			this->movement(East, RobotNum);
 		}
 		else{
 			this->movement(North, RobotNum);
