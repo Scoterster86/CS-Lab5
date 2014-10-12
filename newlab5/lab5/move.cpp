@@ -210,7 +210,7 @@ void Move::BotMove(int RobotNum)
   	    (this->xpos_ == 14 && this->ypos_ ==12) || (this->xpos_ == 15 && this->ypos_ ==11)){
   	    	if(DEBUG)cout<<"Line 220"<<endl;
 	if(this->zpos_==0){
-		cout<<"enter NE" <<endl;
+		if(DEBUG)cout<<"enter NE" <<endl;
 		this->movement(NorthEast, RobotNum);
 	}
 	else{
