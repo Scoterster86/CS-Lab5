@@ -99,6 +99,33 @@ public:
 	void RemoveShopper();
 };
 
+//Scott Iwanicki
+//binary tree class
+class BinaryTree
+{
+  //an item as the node of the tree
+  Item node_;
+  //pointer to the left branch of the tree
+  BinaryTree* left_;
+  //pointer to the right branch of the tree
+  BinaryTree* right_;
+
+ public:
+  //adds an item to the binary tree
+  void AddItem(Item*, Store*);
+  //prints the binary tree
+  void PrintBinaryTree();
+  //adds an item to the left branch of the binary tree
+  void AddLeft(Item);
+  //adds an item to the right branch of the binary tree
+  void AddRight(Item);
+  //default constructor for the binary tree
+  BinaryTree();
+  //deafault constructor for the binary tree with an item to be inserted
+  BinaryTree(Item);
+};
+
+
 
 //checks to see if the time is divisible by 25
 int timecheck();
