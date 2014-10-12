@@ -19,6 +19,7 @@ Store::Store()
 	this->ystore_ = 0;
 	this->zstore_ = 0;
 	this->TimeSlice_ = 0;
+	this->items_= nullptr;
 	this->pNext = nullptr;
 }
 
