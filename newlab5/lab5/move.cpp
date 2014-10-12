@@ -687,6 +687,7 @@ void Move::BotMove(int RobotNum)
 	if(this->zpos_ == 0){
 		if(this->storelist_->zstore_ == 1){
 			this->movement(Up, RobotNum);
+			this->wait = TIME+3;
 		}
 		else if((this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 0) ||
 			  (this->storelist_->xstore_==12 && this->storelist_->ystore_==10 && this->storelist_->zstore_ == 0) ||
@@ -700,6 +701,7 @@ void Move::BotMove(int RobotNum)
 	else{
 		if(this->storelist_->zstore_ == 0){
 			this->movement(Down, RobotNum);
+			this->wait = TIME+3;
 		}
 		else if((this->storelist_->xstore_== 10 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
 			  (this->storelist_->xstore_== 6 && this->storelist_->ystore_== 4 && this->storelist_->zstore_ == 1) ||
