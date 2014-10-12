@@ -51,11 +51,11 @@ int main(int argc, char* argv[])
 		for(i=0; i<9; i++){
 			if(Shopperlist[i]!=NULL){
 			   if(Shopperlist[i]->smove_->wait_ <=TIME){
-				cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
-				cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_ << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
+				//cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" " <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
+				//cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_ << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " " <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
 				if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ || Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_
 					|| Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_){
-						cout<<"Enter BotMove"<<endl;
+						//cout<<"Enter BotMove"<<endl;
 						Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
 				}
 				else{
@@ -66,16 +66,16 @@ int main(int argc, char* argv[])
 					}
 					else{
 						Shopperlist[i]->smove_->RemoveStore();
-						cout<<"Removed Store-----------------------------"<<endl;
+						//cout<<"Removed Store-----------------------------"<<endl;
 						if(Shopperlist[i]->smove_->storelist_==NULL){
-							cout<<"Storelist NULL"<<endl;
+						//	cout<<"Storelist NULL"<<endl;
 							Store* endStore = new Store();
 							endStore->xstore_ = 8;
 							endStore->ystore_ =16;
 							endStore->zstore_ = 0;
 							endStore->TimeSlice_ = 0;
 							Shopperlist[i]->smove_->storelist_ = endStore;
-							cout<<"Added Store"<<endl;
+						//	cout<<"Added Store"<<endl;
 						}
 					}
 				}
