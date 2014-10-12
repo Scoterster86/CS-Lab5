@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     for(i=0; i<9; i++){
       if(Shopperlist[i]!=NULL){
 	if(Shopperlist[i]->smove_->wait_ <=TIME){
-		if(Shopperlist[i]->smove_->wait_ % 25 ==0){
+		if(Shopperlist[i]->smove_->wait_ % 25 ==0 && TIME % 25 ==0){
 		  cout<<"Robot "<<Shopperlist[i]->RobotNum_ 
 		      <<" enters the simulation at time" <<TIME <<endl;
 		}
