@@ -15,8 +15,7 @@ int main(int argc, char* argv[])
 	int tempNumOfRobots =0;
 	cin >> tempNumOfRobots; // in lab5
 	NumOfRobots = tempNumOfRobots;
-	Shopper* shopper = new Shopper();
-	int xpos=2, ypos=3, zpos=4, ts = 0;
+	int xpos=0, ypos=0, zpos=0, ts = 0;
 	for (i = 0; i < NumOfRobots; i++)
 	{
 		cin >> stores[i];
