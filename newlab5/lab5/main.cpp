@@ -65,8 +65,9 @@ int main(int argc, char* argv[])
 						NumOfRobots--;
 					}
 					else{
+						cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("<< Shopperlist[i]->smove_->storelist_->xstore_ << ", "<<Shopperlist[i]->smove_->storelist_->ystore_ << ", " <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
 						Shopperlist[i]->smove_->RemoveStore();
-						//cout<<"Removed Store-----------------------------"<<endl;
+						
 						if(Shopperlist[i]->smove_->storelist_==NULL){
 						//	cout<<"Storelist NULL"<<endl;
 							Store* endStore = new Store();
