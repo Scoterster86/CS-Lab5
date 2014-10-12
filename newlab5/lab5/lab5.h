@@ -115,10 +115,6 @@ class BinaryTree
   void AddItem(Item*, Store*);
   //prints the binary tree
   void PrintBinaryTree();
-  //adds an item to the left branch of the binary tree
-  void AddLeft(Item);
-  //adds an item to the right branch of the binary tree
-  void AddRight(Item);
   //default constructor for the binary tree
   BinaryTree();
   //deafault constructor for the binary tree with an item to be inserted
