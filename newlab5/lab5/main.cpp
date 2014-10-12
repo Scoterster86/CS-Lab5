@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
 	      }
 	      
 	      else{
-		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->items"store")
+		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->_storelist_);
 	      }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
