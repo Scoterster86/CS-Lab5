@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 			//cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
 		}
 		cout<<i<<endl;
-		newshopper->smove_->wait_ = 25 +i*25;
+		newshopper->smove_->wait_ = i*25;
 		Shopperlist[i] = newshopper;	//add a shopper
 	}
 	//shopper moves to each store and enters the RRqueue to be serviced
