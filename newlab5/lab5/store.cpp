@@ -49,6 +49,71 @@ void Store::AddStorelist(Store* store)
 }
 
 //Yo Karita
+//adds a store to the list of stores
+void Store::AddStore(Store* store)
+{
+  //if the store location is (0,0,0) set the first store in the list
+  if (this->xstore_] == 0 && this->xstore_ == 0 && this->zstore_ == 0)
+    {
+      this->xstore_ = store->xstore_;
+      this->ystore_ = store->ystore_;
+      this->zstore_ = store->zstore_;
+
+      this->productamount_ += store->productamount_;
+
+      headstoreptr = store;
+      return;
+    }
+ //sets the head pointer of the list to the first store in the list
+  headstoreptr = this;
+
+  //sets the currento pointer to the first store in the list
+  Store* pCurrent = this;
+
+  //sets the previous pointer to null
+  Store* pPrev = nullptr;
+
+  //loops until pCurrent is null or then the current product amount is greater than the store's prodcut amount or if the stores are\
+ the same
+  while (pCurrent && (this->productamount_ > store->productamount_) && (
+  	(this->xstore_ =! store->xstore_) ||
+        (this->ystore_ =! store->ystore_)||
+        (this->zstore_=! store->storez_)) )
+    {
+      //sets the previous pointer to the current pointer
+      pPrev = pCurrent;
+
+      //sets the current pointer to the next store in the list
+      pCurrent = pCurrent->pNext;
+    }
+  //if the store already exsists in the list
+  if((this->xstore_ = store->xstore_) &&
+     (this->ystore_ = store->ystore_)&&
+     (this->zstore_ = store->zstore_))
+    {
+      //add the new product amount to the total product amount
+      this->productamount_ += store->productamount_;
+      return;
+    }
+  //if the previous pointer isn't null instert the store between the previous and current store
+  if (pPrev)
+    {
+      //set the previous store's next pointer to the store
+      pPrev->pNext = store;
+      //set the store's next pointer to the current store
+      store->pNext = pCurrent;
+    }
+  //if the previous pointer is null
+  else
+    {
+      //set the store's next pointer as the previous head of the list
+      store->pNext = this;
+      //set the head pointer of the list to the store
+      headstoreptr = store;
+    }
+}
+
+//Yo Karita
 //Counts the number of stores in the list
 int Store::GetSize()
 {
