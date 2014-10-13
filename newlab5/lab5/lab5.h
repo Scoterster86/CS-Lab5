@@ -16,7 +16,7 @@ enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, Nort
 class Item;
 class BinaryTree;
 class ItemList;
-Store* headstoreptr;
+
 class Store
 {
 public:
@@ -133,3 +133,4 @@ public:
 	BinaryTree(Item);
 };
 extern BinaryTree RoboMall;
+Store* headstoreptr;
