@@ -34,7 +34,7 @@ int main(int argc, char* argv[])
 	store->ystore_ = ypos;
 	store->zstore_ = zpos;
 	store->TimeSlice_ = 0;	//sets the timeslice
-	newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
+	newshopper->smove_->AddStorelist(store);//Add the store to the shopper's storelist
 	for(k =0; k < items; k++){
 	  
 	  cin >>item  >>count;
