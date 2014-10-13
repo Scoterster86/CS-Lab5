@@ -1,6 +1,7 @@
 #ifndef LAB5_H
 #define LAB5_H
 #include <iostream>
+#include <string>
 
 using namespace std;
 //define global variables
@@ -12,6 +13,9 @@ extern int TimeSlice;
 extern int TIME;
 extern int Floor[LENGTH][WIDTH][HEIGHT];
 extern int NumOfRobots;
+class BinaryTree;
+extern  BinaryTree* RoboMall;
+
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
 
 class Store;
@@ -32,8 +36,16 @@ class Item
   int HasPriority(Item);
   void AddItem(Item*);
   Item();
+  Item(string, int);
 };
 
+class ItemList
+{
+public:
+	Item* item_;
+	ItemList* nextitem_;
+	Store* FindStore(BinaryTree);
+};
 //Yo Karita
 //Store class
 class Store
@@ -67,41 +79,7 @@ public:
         int movement(int, int);
 
 };
-//Scott Iwanicki
-//Shopper class
-class Shopper
-{
-public:
 
-        int RobotNum_;
-        int slices;
-        Shopper* nextshopper_;
-        Move* smove_;
-
-        Shopper();
-        Shopper(int);
-
-
-        int storecomplete();
-        void AddShopper(Shopper*);
-        void RemoveShopper(Shopper*);
-
-};
-
-//Scott Iwanicki
-//RRqueue class
-class RRqueue
-{
-public:
-        Shopper* listhead_;
-        Shopper* listtail_;
-
-        RRqueue();
-        RRqueue(Shopper*);
-        void RunQueue();
-        void AddShopper(Shopper*);
-        void RemoveShopper();
-};
 
 //Scott Iwanicki
 //binary tree class
@@ -125,10 +103,48 @@ public:
   //deafault constructor for the binary tree with an item to be inserted
   BinaryTree(Item*);
 };
+//Scott Iwanicki
+//Shopper class
+class Shopper
+{
+public:
+
+	int RobotNum_;
+	int slices;
+	Shopper* nextshopper_;
+	Move* smove_;
+	ItemList* itemlist_;
+
+	Shopper();
+	Shopper(int);
+
+
+	int storecomplete();
+	void AddShopper(Shopper*);
+	void RemoveShopper(Shopper*);
+	
+	void AddStore(BinaryTree*);
+	void AddItem(string, int);
+};
+//Scott Iwanicki
+//RRqueue class
+class RRqueue
+{
+public:
+	Shopper* listhead_;
+	Shopper* listtail_;
+
+	RRqueue();
+	RRqueue(Shopper*);
+	void RunQueue();
+	void AddShopper(Shopper*);
+	void RemoveShopper();
+};
 
 
 
 //checks to see if the time is divisible by 25
 int timecheck();
+
 #endif
 

@@ -1,4 +1,5 @@
 #include "lab5.h"
+
 //Yo Karita
 //constructor for a shopper
 Shopper::Shopper()
@@ -64,4 +65,47 @@ void Shopper::AddShopper(Shopper* shopper)
 void Shopper::RemoveShopper(Shopper* shopper)
 {
         shopper= shopper->nextshopper_;
+}
+
+void Shopper::AddItem(string productcode, int amount)
+{
+	Item* newitem = new Item(productcode, amount);
+	ItemList* temp = this->itemlist_;
+	while (temp)
+	{
+		temp = this->itemlist_->nextitem_;
+	}
+	temp->item_ = newitem;
+	temp->nextitem_ = nullptr;
+}
+
+
+////reads a shopper's itemlist and add a store which has most amount of the item to the storelist in Move class. 
+void Shopper::AddStore(BinaryTree* tree)
+{
+	ItemList* temp = this->itemlist_;
+	while (temp)
+	{
+		this->smove_->AddStore(temp->FindStore(*tree));
+		temp = temp->nextitem_;
+	}
+}
+///Find the store which has most
+Store* ItemList::FindStore(BinaryTree tree)
+{
+	BinaryTree* currentp = new BinaryTree();
+	currentp = &tree;
+	if (tree.node_->HasPriority(*(this->item_)) == 0)
+	{
+
+		return tree.node_->pStore;
+	}
+	else if (tree.node_->HasPriority(*(this->item_)) == 1)
+	{
+		this->FindStore(*(currentp->left_));
+	}
+	else
+	{
+		this->FindStore(*(currentp->right_));
+	}
 }

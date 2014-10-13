@@ -76,7 +76,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="move.cpp" />
+    <ClCompile Include="rrqueue.cpp" />
     <ClCompile Include="shopper.cpp" />
     <ClCompile Include="store.cpp" />
     <ClCompile Include="timecheck.cpp" />
