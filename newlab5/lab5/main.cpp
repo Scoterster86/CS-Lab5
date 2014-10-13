@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
   TimeSlice = atoi(argv[1]);
   cout<<"this"<<endl;
   BinaryTree* RoboMall;// = new BinaryTree();
+  new BinaryTree();
   cout<<"this"<<endl;
   int i,j,k, stores[12], items, count, location;
   char item[2];
