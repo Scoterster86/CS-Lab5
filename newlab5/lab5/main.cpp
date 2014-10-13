@@ -13,8 +13,7 @@ int main(int argc, char* argv[])
   cout<<"this"<<endl;
   TimeSlice = atoi(argv[1]);
   cout<<"this"<<endl;
-  BinaryTree* RoboMall;// = new BinaryTree();
-  new BinaryTree();
+  BinaryTree* RoboMall = new BinaryTree();
   cout<<"this"<<endl;
   int i,j,k, stores[12], items, count, location;
   char item[2];
@@ -38,6 +37,7 @@ int main(int argc, char* argv[])
 	store->xstore_ = xpos;	// sets the location
 	store->ystore_ = ypos;
 	store->zstore_ = zpos;
+	store->items_ = new Item();
 	store->TimeSlice_ = 0;	//sets the timeslice
 	newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
 	//cout<<"Added Store" <<endl;
