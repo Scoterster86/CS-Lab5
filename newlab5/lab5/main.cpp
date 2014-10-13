@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
   cout<<"this"<<endl;
   TimeSlice = atoi(argv[1]);
   cout<<"that"<<endl;
-  BinaryTree* RoboMall = new BinaryTree();
+  //BinaryTree* RoboMall = new BinaryTree();
   int i,j,k, stores[12], items, count, location;
   char item[2];
   cout<<endl;
@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
 	      //}
 	      
 	      //else{
-		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_, headstoreptr);
+	//	RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_, headstoreptr);
 	     // }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
