@@ -21,7 +21,7 @@ Store::Store()
 	this->zstore_ = 0;
 	this->TimeSlice_ = 0;
 	this->productamount_ = 0;
-	this->items_= new Item();
+	this->items_= NULL;
 	this->pNext = nullptr;
 }
 
