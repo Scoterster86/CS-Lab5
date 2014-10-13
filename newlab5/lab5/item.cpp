@@ -33,5 +33,6 @@ void Item::AddItem(Item* item)
 	{
 		ptr = ptr->nextItem_;
 	}
+	cout<<"ASDF" <<endl;
 	ptr->nextItem_ = item;
 }
