@@ -128,3 +128,21 @@ int Store::GetSize()
 	return n;
 }
 
+
+//Yo Karita
+//prints out the stores
+void Store::PrintStores()
+{
+  //sets the current pointer to this
+  Store* pCurrent = this;
+
+  //while the current pointer isn't null
+  while (pCurrent)
+    {
+      //print out the store location and the product amount
+      cout << "(" << pCurrent->store_location_[0] << ", " << pCurrent->store_location_[1] << ", " <<\
+ pCurrent->store_location_[2] << ")Total items: " << pCurrent->productamount_ << "   ";
+      pCurrent = pCurrent->pNext;
+    }
+  cout << endl;
+}
