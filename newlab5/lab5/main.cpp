@@ -11,9 +11,9 @@ int main(int argc, char* argv[])
 {
   //sets input values
   cout<<"this"<<endl;
-  BinaryTree* RoboMall = new BinaryTree();
   TimeSlice = atoi(argv[1]);
   cout<<"that"<<endl;
+  BinaryTree* RoboMall = new BinaryTree();
   int i,j,k, stores[12], items, count, location;
   char item[2];
   cout<<endl;
