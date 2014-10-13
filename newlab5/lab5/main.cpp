@@ -103,9 +103,9 @@ int main(int argc, char* argv[])
 	         Shopperlist[i]->smove_->RemoveStore();
 	      //}
 	      
-	      else{
-		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_, headstoreptr);
-	      }
+	      //else{
+	//	RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_, headstoreptr);
+	     // }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
 		//	cout<<"Storelist NULL"<<endl;
