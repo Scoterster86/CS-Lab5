@@ -7,16 +7,18 @@ Shopper::Shopper()
         this->smove_ = new Move();
         this->slices = 0;
         this->nextshopper_ = nullptr;
+        this->storelist_ = nullptr;
 }
 
 //Yo Karita
 //constructor for a shopper with the bot number as an input
 Shopper::Shopper(int k)
-{
+{ 
         this->RobotNum_ = k;
         this->smove_ = new Move();
         this->slices = 0;
         this->nextshopper_ = nullptr;
+        this->storelist_ = nullptr;
 }
 
 
