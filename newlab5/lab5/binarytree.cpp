@@ -3,8 +3,9 @@
 //default constructor for a binary tree
 BinaryTree::BinaryTree()
 {
-  Item item = Item();
-  this->node_ = item;
+  cout<<"Why";
+  this->node_ = Item();
+  cout<<" Fail"<<endl;
   this->left_ = nullptr;
   this->right_ = nullptr;
 }
