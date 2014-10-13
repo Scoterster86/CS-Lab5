@@ -13,13 +13,15 @@ extern int Floor[LENGTH][WIDTH][HEIGHT];
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, 
 	StNorth, StSouth, StEast, StWest, StNorthWest, StNorthEast, StSouthEast, 
 	StSouthWest, NorthWest2, NorthEast2, SouthWest2, SouthEast2, End };
-
+extern BinaryTree RoboMall;
+Store* headstoreptr;
 class Store
 {
 public:
 	int xstore_, ystore_, zstore_;
 	Store* pNext;
 	int TimeSlice_;
+	int ProductAmount_;
 
 	void AddStore(Store*);
 	int GetSize();
@@ -38,6 +40,8 @@ public:
 	int slices;
 	Shopper* nextshopper_;
 
+	Item* itemlist_;
+
 	Shopper();
 	Shopper(int);
 
@@ -49,6 +53,7 @@ public:
 	int movement(int);
 	void AddShopper(Shopper*);
 	void RemoveShopper(Shopper*);
+	Store FindStore(BinaryTree);
 
 };
 
@@ -66,3 +71,25 @@ public:
 };
 int timecheck();
 
+class Item
+{
+public:
+	string ProductCode_;
+	Store* pStore;
+	int HasPriority(Item);
+	Item();
+};
+
+class BinaryTree
+{
+public:
+	Item node_;
+	BinaryTree* left_;
+	BinaryTree* right_;
+	void AddItem(Item*, Store*);
+	void PrintBinaryTree();
+	void AddLeft(Item);
+	void AddRight(Item);
+	BinaryTree();
+	BinaryTree(Item);
+};

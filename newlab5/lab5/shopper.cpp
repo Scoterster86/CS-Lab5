@@ -906,3 +906,22 @@ void Shopper::RemoveShopper(Shopper* shopper)
 	shopper= shopper->nextshopper_;
 }
 
+Store Shopper::FindStore(BinaryTree tree)
+{
+	BinaryTree* currentp = new BinaryTree();
+	currentp = &tree;
+	if (tree.node_.HasPriority(*(this->itemlist_)) == 0)
+	{
+
+		return *(tree.node_.pStore);
+	}
+	else if (tree.node_.HasPriority(*(this->itemlist_)) == 1)
+	{ 
+		this->FindStore(*(currentp->left_));
+	}
+	else
+	{
+		this->FindStore(*(currentp->right_));
+	}
+}
+

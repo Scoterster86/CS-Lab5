@@ -1,8 +1,11 @@
 #include "lab5.h"
+//will add next robot to the simulation
 int timecheck(){
 	//initialize variables
-	int i, j, k, m, b, c, d;
+//	int i, j, k, m, b, c, d;
 	if (TIME % 25 == 0){
+		cout<<"next shopper enters store at time " <<TIME <<endl;
+		/*
 		for (m = 0; m <= 1; m++){
 			if (m == 0){
 				printf("\n FIRST FLOOR\n");
@@ -16,7 +19,7 @@ int timecheck(){
 				if (i == -1 || i == WIDTH){//start if1
 					//creates the top/bottom border
 					for (j = 0; j <= (LENGTH * 5); j++){//start j for loop
-						//*5 to account for the 4 spaces allocated for the digit and a space
+						// *5 to account for the 4 spaces allocated for the digit and a space
 						if (j == LENGTH * 5){//start if2
 							printf("-\n");
 						}//end if2
@@ -51,6 +54,7 @@ int timecheck(){
 				}//end d for loop
 			}//end c for loop
 		}//end b for loop
+		*/
 	}//end if
 	return 0;
 }
