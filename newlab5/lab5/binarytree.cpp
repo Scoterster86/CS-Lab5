@@ -3,7 +3,8 @@
 //default constructor for a binary tree
 BinaryTree::BinaryTree()
 {
-  this->node_ = Item();
+  item = Item();
+  this->node_ = item;
   this->left_ = nullptr;
   this->right_ = nullptr;
 }
