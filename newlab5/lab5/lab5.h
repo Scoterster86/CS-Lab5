@@ -123,7 +123,7 @@ public:
   //default constructor for the binary tree
   BinaryTree();
   //deafault constructor for the binary tree with an item to be inserted
-  BinaryTree(Item);
+  BinaryTree(Item*);
 };
 
 
