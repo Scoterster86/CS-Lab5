@@ -15,6 +15,7 @@ enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, Nort
 	StSouthWest, NorthWest2, NorthEast2, SouthWest2, SouthEast2, End };
 class Item;
 class BinaryTree;
+class ItemList;
 Store* headstoreptr;
 class Store
 {
