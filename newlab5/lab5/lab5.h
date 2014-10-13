@@ -40,6 +40,7 @@ class Item
 {
 public:
 	string ProductCode_;
+	int amount_;
 	Store* pStore;
 	int HasPriority(Item);
 	Item();
