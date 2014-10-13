@@ -119,6 +119,8 @@ public:
 	Item* node_;
 	BinaryTree* left_;
 	BinaryTree* right_;
+	
+	BinaryTree(Item*);
 	void AddItem(Item*, Store*);
 	void PrintBinaryTree();
 	void AddLeft(Item);
