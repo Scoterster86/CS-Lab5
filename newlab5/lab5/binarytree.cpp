@@ -22,7 +22,7 @@ BinaryTree::BinaryTree(Item item)
 //adds an item to the binary tree
 void BinaryTree::AddItem(Item* item, Store* store, Store* head)
 {
-
+  store->productamount_ = item->ProductAmount_;
   /// if there is no items
   if (this->node_->ProductCode_ == "")
     {
@@ -62,6 +62,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
          this->right_->AddItem(item, store, head);   
       }
       else{
+        cout<<"BT line 65"<<endl;
           BinaryTree* newTree = new BinaryTree(*item);
           this->right_ = newTree;
           this->right_->node_->pStore = store;
