@@ -14,6 +14,7 @@ int main(int argc, char* argv[])
   TimeSlice = atoi(argv[1]);
   int i,j,k, stores[12], items, count, location;
   char item[2];
+  cout<<endl;
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
   NumOfRobots = tempNumOfRobots;
