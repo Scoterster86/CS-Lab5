@@ -35,11 +35,11 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
   /// if node has same productcode
   if (this->node_.HasPriority(*item) == 0)
     {
-
+    cout<<"BT line 38" <<endl;
       this->node_.pStore->AddStore(store, head);
       this->node_.pStore = head;
     }
-    cout<<"BT line 42" <<endl;
+    
   /// if the node has higher priority,
   else if (this->node_.HasPriority(*item) == 1)
     {
@@ -53,10 +53,11 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
         }
 
     }
-cout<<"BT line 56" <<endl;
+
   /// if the node has lower priority,
   else if (this->node_.HasPriority(*item) == -1)
     {
+      cout<<"BT line 60" <<endl;
       if (this->right_){
          this->right_->AddItem(item, store, head);   
       }
