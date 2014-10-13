@@ -13,14 +13,14 @@ extern int Floor[LENGTH][WIDTH][HEIGHT];
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, 
 	StNorth, StSouth, StEast, StWest, StNorthWest, StNorthEast, StSouthEast, 
 	StSouthWest, NorthWest2, NorthEast2, SouthWest2, SouthEast2, End };
-
+class Item;
 Store* headstoreptr;
 class Store
 {
 public:
 	int xstore_, ystore_, zstore_;
 	Store* pNext;
-	        Item* items_;
+	Item* items_;
         int productamount_;
 
 	int TimeSlice_;
@@ -36,7 +36,15 @@ public:
 
 
 };
-
+class Item
+{
+public:
+	string ProductCode_;
+	Store* pStore;
+	int HasPriority(Item);
+	Item();
+	Item(string);
+};
 class Move
 {
 public:
@@ -94,15 +102,7 @@ public:
 };
 int timecheck();
 
-class Item
-{
-public:
-	string ProductCode_;
-	Store* pStore;
-	int HasPriority(Item);
-	Item();
-	Item(string);
-};
+
 
 class ItemList
 {
