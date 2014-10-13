@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
   //sets input values
   TimeSlice = atoi(argv[1]);
   BinaryTree* RoboMall = new BinaryTree();
-  RoboMall->node_ = new Item();
+  RoboMall->node_ = Item();
   int i,j,k, stores[12], items, count, location;
   char item[2];
   cout<<endl;
