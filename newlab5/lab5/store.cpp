@@ -50,7 +50,7 @@ void Store::AddStorelist(Store* store)
 
 //Yo Karita
 //adds a store to the list of stores
-void Store::AddStore(Store* store, Store* headstoreptr)
+void Store::AddStore(Store* store, Store* head)
 {
   //if the store location is (0,0,0) set the first store in the list
   if (this->xstore_ == 0 && this->xstore_ == 0 && this->zstore_ == 0)
@@ -61,7 +61,7 @@ void Store::AddStore(Store* store, Store* headstoreptr)
 
       this->productamount_ += store->productamount_;
 
-      headstoreptr = store;
+      head = store;
       return;
     }
  //sets the head pointer of the list to the first store in the list
@@ -109,7 +109,7 @@ void Store::AddStore(Store* store, Store* headstoreptr)
       //set the store's next pointer as the previous head of the list
       store->pNext = this;
       //set the head pointer of the list to the store
-      headstoreptr = store;
+      heads = store;
     }
 }
 
