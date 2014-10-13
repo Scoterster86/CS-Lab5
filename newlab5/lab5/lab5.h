@@ -70,6 +70,7 @@ public:
 	int xpos_, ypos_, zpos_;
 	Move* smove_;
 	Store* storelist_;
+	Item* itemlist_;
 	int slices;
 	Shopper* nextshopper_;
 
