@@ -124,7 +124,7 @@ public:
 	
 	BinaryTree(Item*);
 	void AddItem(Item*, Store*);
-	AddItem(Item*, Store*, Store*);
+	void AddItem(Item*, Store*, Store*);
 	void PrintBinaryTree();
 	void AddLeft(Item);
 	void AddRight(Item);
