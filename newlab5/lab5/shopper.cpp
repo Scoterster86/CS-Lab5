@@ -7,7 +7,6 @@ Shopper::Shopper()
         this->smove_ = new Move();
         this->slices = 0;
         this->nextshopper_ = nullptr;
-        this->storelist_ = nullptr;
 }
 
 //Yo Karita
@@ -18,7 +17,6 @@ Shopper::Shopper(int k)
         this->smove_ = new Move();
         this->slices = 0;
         this->nextshopper_ = nullptr;
-        this->storelist_ = nullptr;
 }
 
 
