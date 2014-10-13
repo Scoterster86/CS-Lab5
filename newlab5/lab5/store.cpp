@@ -9,7 +9,7 @@ Store::Store(Store* store)
 	this->zstore_ = store->zstore_;
 	this->productamount_ = store->productamount_;
 	this->TimeSlice_ = store->TimeSlice_;
-	this->items_= new Item();
+	this->items_= NULL;
 	this->pNext = nullptr;
 }
 //Yo Karita
