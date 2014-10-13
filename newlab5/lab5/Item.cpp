@@ -16,6 +16,8 @@ Item::Item(string string)
 	pStore = nullptr;
 }
 
+
+
 //Scott Iwanicki
 //determines the priority of the item
 int Item::HasPriority(Item item)
@@ -29,23 +31,22 @@ int Item::HasPriority(Item item)
   //else if the item's product code is a higher priority return -1
   else  return -1;
 }
-/*
+
 //Scott Iwanicki
 void Item::AddItem(Item* item)
 {
-	Item* ptr = this;
-	if(ptr->ProductCode_ == ""){
-		ptr->ProductCode_ = item->ProductCode_;
-		ptr->amount_ = item->amount_;
-		ptr->nextItem_ = new Item();
-	}
-	else{
-	while (ptr->nextItem_)
-	{
-		ptr = ptr->nextItem_;
-	}
+        Item* ptr = this;
+        if(ptr->ProductCode_ == ""){
+                ptr->ProductCode_ = item->ProductCode_;
+                ptr->amount_ = item->amount_;
+                ptr->nextItem_ = new Item();
+        }
+        else{
+        while (ptr->nextItem_)
+        {
+                ptr = ptr->nextItem_;
+        }
 
-	ptr->nextItem_ = item;
-	}
+        ptr->nextItem_ = item;
+        }
 }
-*/
