@@ -46,7 +46,7 @@ public:
 	int TimeSlice_;
 
 	void AddStorelist(Store*);
-	void AddStore(Store*);
+	void AddStore(Store*, Store*);
 	int GetSize();
 	Store();
 	Store(Store*);
