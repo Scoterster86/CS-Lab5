@@ -109,7 +109,7 @@ void Store::AddStore(Store* store, Store* head)
       //set the store's next pointer as the previous head of the list
       store->pNext = this;
       //set the head pointer of the list to the store
-      heads = store;
+      head = store;
     }
 }
 
