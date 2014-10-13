@@ -109,7 +109,7 @@ class BinaryTree
 {
 public:
   //an item as the node of the tree
-  Item node_;
+  Item* node_;
   //pointer to the left branch of the tree
   BinaryTree* left_;
   //pointer to the right branch of the tree
