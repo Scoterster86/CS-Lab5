@@ -29,15 +29,11 @@ void Item::AddItem(Item* item)
 {
 	Item* ptr = this;
 	cout<<"Adding Item" <<endl;
-	if(ptr){
-		this = item
-	}
-	else{
-	   while (ptr->nextItem_)
-	   {
+
+	while (ptr->nextItem_)
+	{
 		ptr = ptr->nextItem_;
-	   }
-	   cout<<"ASDF" <<endl;
-	   ptr->nextItem_ = item;
 	}
+	cout<<"ASDF" <<endl;
+	ptr->nextItem_ = item;
 }
