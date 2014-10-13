@@ -107,6 +107,7 @@ public:
 //binary tree class
 class BinaryTree
 {
+public:
   //an item as the node of the tree
   Item node_;
   //pointer to the left branch of the tree
@@ -114,7 +115,7 @@ class BinaryTree
   //pointer to the right branch of the tree
   BinaryTree* right_;
 
- public:
+ 
   //adds an item to the binary tree
   void AddItem(Item*, Store*, Store*);
   //prints the binary tree
