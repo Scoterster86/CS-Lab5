@@ -140,8 +140,8 @@ void Store::PrintStores()
   while (pCurrent)
     {
       //print out the store location and the product amount
-      cout << "(" << pCurrent->store_location_[0] << ", " << pCurrent->store_location_[1] << ", " <<\
- pCurrent->store_location_[2] << ")Total items: " << pCurrent->productamount_ << "   ";
+      cout << "(" << pCurrent->xstore_ << ", " << pCurrent->ystore_ << ", " <<\
+ pCurrent->zstore_ << ")Total items: " << pCurrent->productamount_ << "   ";
       pCurrent = pCurrent->pNext;
     }
   cout << endl;
