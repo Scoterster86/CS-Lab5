@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
 	store->zstore_ = zpos;
 	store->TimeSlice_ = 0;	//sets the timeslice
 	newshopper->smove_->AddStore(store);//Add the store to the shopper's storelist
+	cout<<"Added Store" <<endl;
 	for(k =0; k < items; k++){
 	  
 	  cin >>item  >>count;
@@ -43,11 +44,11 @@ int main(int argc, char* argv[])
 	  newitem->ProductCode_ = item;
 	  newitem->amount_ = count;
 	  store->items_->AddItem(newitem);
-	  //cout <<"Item " <<item <<"Count " <<count <<endl;
+	  cout <<"Item " <<item <<"Count " <<count <<endl;
 	  
 	}
 	
-	//cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
+	cout <<"Store Coords:" << newshopper->smove_->storelist_->xstore_ <<endl;
       }
     cout<<i<<endl;
     newshopper->smove_->wait_ = i*25;
