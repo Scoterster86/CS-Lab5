@@ -27,13 +27,14 @@ public:
 	int TimeSlice_;
 	int ProductAmount_;
 
+
+        Store();
+        Store(Store*);
+        Store(int, int ,int);
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
         int GetSize();
         void PrintStores();
-        Store();
-        Store(Store*);
-        Store(int, int ,int);
 
 
 };
