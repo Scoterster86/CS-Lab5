@@ -144,5 +144,5 @@ void Store::PrintStores()
  pCurrent->zstore_ << ")Total items: " << pCurrent->productamount_ << "   ";
       pCurrent = pCurrent->pNext;
     }
-  cout << endl;
+  cout<<"Exit PrintStores" << endl;
 }
