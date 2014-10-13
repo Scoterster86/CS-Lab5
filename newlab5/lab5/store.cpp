@@ -9,7 +9,7 @@ Store::Store(Store* store)
 	this->zstore_ = store->zstore_;
 	this->productamount_ = store->productamount_;
 	this->TimeSlice_ = store->TimeSlice_;
-	this->items_= nullptr;
+	this->items_= new Item();
 	this->pNext = nullptr;
 }
 //Yo Karita
@@ -21,7 +21,7 @@ Store::Store()
 	this->zstore_ = 0;
 	this->TimeSlice_ = 0;
 	this->productamount_ = 0;
-	this->items_= nullptr;
+	this->items_= new Item();
 	this->pNext = nullptr;
 }
 
@@ -31,7 +31,7 @@ Store::Store(int x, int y, int z)
 	this->ystore_ = y;
 	this->zstore_ = z;
 	this->TimeSlice_ = 0;
-	this->items_= nullptr;
+	this->items_= new Item();
 	this->pNext = nullptr;
 }
 
