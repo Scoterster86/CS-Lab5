@@ -102,12 +102,13 @@ int main(int argc, char* argv[])
 	          <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
 	      //if the robot is out of items to add to the store, remove the store from the list of stores
 	      //if(Shopperlist[i]->smove_->storelist_->items_ == NULL){    
-	         Shopperlist[i]->smove_->RemoveStore();
+	         
 	      //}
 	      
 	      //else{
 		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ , Shopperlist[i]->smove_->storelist_, headstoreptr);
 		RoboMall->PrintBinaryTree();
+		Shopperlist[i]->smove_->RemoveStore();
 	     // }
 	      //if there are no more stores in the robots list
 	      if(Shopperlist[i]->smove_->storelist_==NULL){
