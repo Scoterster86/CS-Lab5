@@ -23,6 +23,7 @@ public:
 	int xstore_, ystore_, zstore_;
 	Store* pNext;
 	Item* items_;
+	ItemList* itemlist_;
         int productamount_;
 
 	int TimeSlice_;
