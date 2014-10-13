@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
   BinaryTree* RoboMall = new BinaryTree();
   RoboMall->node_ = Item();
   int i,j,k, stores[12], items, count, location;
-  char item[2];
+  string item;
   cout<<endl;
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
