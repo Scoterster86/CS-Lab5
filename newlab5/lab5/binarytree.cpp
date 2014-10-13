@@ -4,7 +4,6 @@
 BinaryTree::BinaryTree()
 {
   this->node_ = Item();
-  this->node_->nextItem_ = new Item;
   this->left_ = nullptr;
   this->right_ = nullptr;
 }
