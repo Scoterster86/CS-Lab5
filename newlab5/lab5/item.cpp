@@ -28,13 +28,12 @@ int Item::HasPriority(Item item)
 void Item::AddItem(Item* item)
 {
 	Item* ptr = this;
-	cout<<"Adding Item" <<endl;
 
 	while (ptr->nextItem_)
 	{
 		ptr = ptr->nextItem_;
 	}
-	cout<<"ASDF" <<endl;
+
 	ptr->nextItem_ = item;
 
 }
