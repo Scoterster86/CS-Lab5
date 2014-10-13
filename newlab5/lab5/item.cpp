@@ -6,7 +6,7 @@ Item::Item()
 {
   this->ProductCode_ == "";
   this->amount_=0;
-  this->nextItem_ = new Item();
+  this->nextItem_ = NULL;
   this->pStore = nullptr;
 }
 
