@@ -75,6 +75,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
 //prints out the binary tree
 void BinaryTree::PrintBinaryTree()
 {
+  cout<<"Enters printBT" <<endl;
   //exits the function when this is NULL
   if (this == nullptr) return;
 
