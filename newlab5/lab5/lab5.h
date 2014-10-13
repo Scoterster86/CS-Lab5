@@ -115,7 +115,7 @@ class BinaryTree
 
  public:
   //adds an item to the binary tree
-  void AddItem(Item*, Store*);
+  void AddItem(Item*, Store*, Store*);
   //prints the binary tree
   void PrintBinaryTree();
   //default constructor for the binary tree
