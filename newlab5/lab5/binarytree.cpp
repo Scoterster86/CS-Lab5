@@ -10,9 +10,9 @@ BinaryTree::BinaryTree()
 
 //Scott Iwanicki
 //default constructor for a binary tree with an item
-BinaryTree::BinaryTree(Item item)
+BinaryTree::BinaryTree(Item* item)
 {
-  this->node_ = &item;
+  this->node_ = item;
   this->left_ = nullptr;
   this->right_ = nullptr;
 }
@@ -63,7 +63,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
       }
       else{
         cout<<"BT line 65"<<endl;
-          BinaryTree* newTree = new BinaryTree(*item);
+          BinaryTree* newTree = new BinaryTree(item);
           this->right_ = newTree;
           this->right_->node_->pStore = store;
           //this->right_->node_.pStore->AddStore(store);
