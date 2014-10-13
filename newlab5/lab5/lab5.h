@@ -48,6 +48,7 @@ public:
 	void AddStorelist(Store*);
 	void AddStore(Store*, Store*);
 	int GetSize();
+	void PrintStores();
 	Store();
 	Store(Store*);
 	Store(int, int ,int);
