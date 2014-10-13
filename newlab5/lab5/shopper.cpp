@@ -1,37 +1,22 @@
 #include "lab5.h"
-
-
+//Yo Karita
+//constructor for a shopper
 Shopper::Shopper()
 {
-	this->RobotNum_ = 0;
-	this->xpos_ = 0;
-	this->ypos_ = 0;
-	this->zpos_ = 0;
-	this->storelist_ = new Store();
-	this->slices = 0;
-	this->nextshopper_ = nullptr;
+        this->RobotNum_ = 0;
+        this->smove_ = new Move();
+        this->slices = 0;
+        this->nextshopper_ = nullptr;
 }
 
-Shopper::Shopper(int k)	//constructor with robotnumber value
+//Yo Karita
+//constructor for a shopper with the bot number as an input
+Shopper::Shopper(int k)
 {
-	this->RobotNum_ = k;
-	this->xpos_ = 0;
-	this->ypos_ = 0;
-	this->zpos_ = 0;
-	this->storelist_ = new Store();
-	this->slices = 0;
-	this->nextshopper_ = nullptr;
-}
-
-void Shopper::AddStore(Store* store)
-{
-	if (this->storelist_->xstore_ == 0 && this->storelist_->ystore_ == 0 && this->storelist_->zstore_ == 0)this->storelist_ = store;	//if the storelist is empty
-	else this->storelist_->AddStore(store);	//if the list is not empty, call Store::Addstore(Store)
-}
-
-void Shopper::RemoveStore()
-{
-	this->storelist_ = this->storelist_->pNext;	//change the pointer
+        this->RobotNum_ = k;
+        this->smove_ = new Move();
+        this->slices = 0;
+        this->nextshopper_ = nullptr;
 }
 
 
@@ -56,65 +41,27 @@ int Shopper::storecomplete(){
         return 0;
 }
 
-
-
-/// Add a shopper to the list
+//Yo Karita
+//adds a shopper to a list of shoppers
 void Shopper::AddShopper(Shopper* shopper)
 {
-	if (this->RobotNum_ == 0)
-	{
-		///sets values if the list is empty
-		this->RobotNum_ = shopper->RobotNum_;
-		this->xpos_ = shopper->xpos_;
-		this->ypos_ = shopper->ypos_;
-		this->zpos_ = shopper->zpos_;
-		this->storelist_ = new Store();
-		this->nextshopper_ = nullptr;
-	}
-	else//find the end of the list and connect the new shopper
-	{
-		Shopper* ptr = this;
-		while (ptr->nextshopper_ != nullptr)
-		{
-			ptr = ptr->nextshopper_;
-		}
-		ptr->nextshopper_ = shopper;
-	}
-	
+        //if the first shopper is empty, set the shopper as the head shopper
+        if (this->RobotNum_ == 0)
+        {
+                this->RobotNum_ = shopper->RobotNum_;
+                this->smove_->xpos_ = shopper->smove_->xpos_;
+                this->smove_->ypos_ = shopper->smove_->ypos_;
+                this->smove_->zpos_ = shopper->smove_->zpos_;
+                this->smove_->storelist_ = new Store();
+                this->nextshopper_ = nullptr;
+        }
+        //else set the shopper to the next shopper
+        else this->nextshopper_ = shopper;
 }
 
+//Yo Karita
+//removes the shopper from a list of shoppers
 void Shopper::RemoveShopper(Shopper* shopper)
 {
-	shopper= shopper->nextshopper_;
-}
-
-Store Shopper::FindStore(BinaryTree tree)
-{
-	BinaryTree* currentp = new BinaryTree();
-	currentp = &tree;
-	if (tree.node_.HasPriority(*(this->itemlist_)) == 0)
-	{
-
-		return *(tree.node_.pStore);
-	}
-	else if (tree.node_.HasPriority(*(this->itemlist_)) == 1)
-	{ 
-		this->FindStore(*(currentp->left_));
-	}
-	else
-	{
-		this->FindStore(*(currentp->right_));
-	}
-}
-
-void Shopper::AddItem(string itemcode)
-{
-	Item* item = new Item(itemcode);
-
-	ItemList* temp = this->itemlist_;
-	while (temp)
-	{
-		temp = this->itemlist_->nextItem;
-	}
-	this->itemlist_->item = *item;
+        shopper= shopper->nextshopper_;
 }
