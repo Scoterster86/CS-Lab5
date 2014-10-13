@@ -64,7 +64,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
       else{
           BinaryTree* newTree = new BinaryTree(*item);
           this->right_ = newTree;
-          this->right_->node_.pStore = store;
+          this->right_->node_->pStore = store;
           //this->right_->node_.pStore->AddStore(store);
        }
     }
