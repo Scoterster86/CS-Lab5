@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
     for (j = 0; j < stores[j]; j++)
       {
 	cin >> xpos >> ypos >> zpos >> items;
-	//cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
+	cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
 	Store* store = new Store();//create a store
 	store->xstore_ = xpos;	// sets the location
 	store->ystore_ = ypos;
