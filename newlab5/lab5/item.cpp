@@ -30,7 +30,7 @@ void Item::AddItem(Item* item)
 	Item* ptr = this;
 	cout<<"Adding Item" <<endl;
 	if(ptr == NULL){
-		this->item
+		this->item;
 	}
 	else{
 	while (ptr->nextItem_)
