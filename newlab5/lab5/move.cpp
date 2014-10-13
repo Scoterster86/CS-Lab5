@@ -31,6 +31,7 @@ void Move::AddStore(Store* store)
 void Move::RemoveStore()
 {
 	this->storelist_ = this->storelist_->pNext;
+	cout<<"RM Store" <<endl;
 }
 
 
