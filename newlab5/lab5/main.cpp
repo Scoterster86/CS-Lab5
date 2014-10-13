@@ -5,6 +5,7 @@ int TIME = 0;
 int TimeSlice =0;
 int NumOfRobots =0;
 Shopper* Shopperlist[9];
+Store* headstoreptr = NULL;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
@@ -44,6 +45,7 @@ int main(int argc, char* argv[])
           Item* newitem = new Item();
           newitem->ProductCode_ = item;
           newitem->amount_ = count;
+          newitem->nextItem_ = new Item();
           //cout<<"Add item" <<endl;
           store->items_->AddItem(newitem);
           cout <<"Item " <<store->items_->ProductCode_ <<"Count " <<store->items_->amount_ <<endl;
@@ -92,7 +94,7 @@ int main(int argc, char* argv[])
               //decriments the number of robots in the simulation
               NumOfRobots--;
             }
-           //if the robot is at a store
+            //if the robot is at a store
             else{
               cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("
                   << Shopperlist[i]->smove_->storelist_->xstore_ << ", "
