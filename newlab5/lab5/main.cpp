@@ -44,7 +44,6 @@ int main(int argc, char* argv[])
           Item* newitem = new Item();
           newitem->ProductCode_ = item;
           newitem->amount_ = count;
-          newitem->nextItem_ = new Item();
           //cout<<"Add item" <<endl;
           store->items_->AddItem(newitem);
           cout <<"Item " <<store->items_->ProductCode_ <<"Count " <<store->items_->amount_ <<endl;
