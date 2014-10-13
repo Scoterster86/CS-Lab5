@@ -20,13 +20,35 @@ class Store
 public:
 	int xstore_, ystore_, zstore_;
 	Store* pNext;
+	        Item* items_;
+        int productamount_;
+
 	int TimeSlice_;
 	int ProductAmount_;
 
-	void AddStore(Store*);
-	int GetSize();
-	Store();
-	Store(Store*);
+        void AddStorelist(Store*);
+        void AddStore(Store*, Store*);
+        int GetSize();
+        void PrintStores();
+        Store();
+        Store(Store*);
+        Store(int, int ,int);
+
+
+};
+
+class Move
+{
+public:
+        int xpos_, ypos_, zpos_, wait_;
+        Store* storelist_;
+
+        Move();
+        void AddStore(Store* store);
+        void RemoveStore();
+        void BotMove(int);
+        int movement(int, int);
+
 };
 
 
@@ -50,7 +72,6 @@ public:
 	void AddItem(string);
 
 	int storecomplete();
-	void BotMove();
 	int movement(int);
 	void AddShopper(Shopper*);
 	void RemoveShopper(Shopper*);
