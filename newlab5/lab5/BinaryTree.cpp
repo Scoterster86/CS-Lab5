@@ -1,104 +1,94 @@
 #include "lab5.h"
+//Scott Iwanicki
+//default constructor for a binary tree
 BinaryTree::BinaryTree()
 {
-	this->node_ = Item();
-	this->left_ = nullptr;
-	this->right_ = nullptr;
+  this->node_ = new Item();
+  this->left_ = nullptr;
+  this->right_ = nullptr;
 }
+
+//Scott Iwanicki
+//default constructor for a binary tree with an item
 BinaryTree::BinaryTree(Item item)
 {
-	this->node_ = item;
-	this->left_ = nullptr;
-	this->right_ = nullptr;
-}
-int Item::HasPriority(Item item)
-{
-	if (this->ProductCode_.compare(item.ProductCode_) == 0) return 0;
-	else if (this->ProductCode_.compare(item.ProductCode_) > 0) return 1;
-	else  return -1;
+  this->node_ = &item;
+  this->left_ = nullptr;
+  this->right_ = nullptr;
 }
 
-void BinaryTree::AddItem(Item* item, Store* store)
+
+//Scott Iwanicki
+//adds an item to the binary tree
+void BinaryTree::AddItem(Item* item, Store* store, Store* head)
 {
+  store->productamount_ = item->amount_;
+  /// if there is no items
+  if (this->node_->ProductCode_ == "")
+    {
+      this->node_ = item;
+      this->node_->pStore = store;
+      //this->node_.pStore->AddStore(store);
+      return;
+    }
+  cout<<"BT line 34" <<endl;
+  /// if node has same productcode
+  if (this->node_->HasPriority(*item) == 0)
+    {
+    cout<<"BT line 38" <<endl;
+      this->node_->pStore->AddStore(store, head);
+      this->node_->pStore = head;
+    }
+    
+  /// if the node has higher priority,
+  else if (this->node_->HasPriority(*item) == 1)
+    {
+      if(this->left_) this->left_->AddItem(item, store, head);
+      else
+        {
+          BinaryTree* newTree = new BinaryTree(*item);
+          this->left_ = newTree;
+          this->left_->node_->pStore = store;
+          //this->left_->node_.pStore->AddStore(store);
+        }
 
-	/// if there is no items
-	if (this->node_.ProductCode_ == "")
-	{
-		this->node_ = *item;
-		this->node_.pStore = store;
-		//this->node_.pStore->AddStore(store);
-		return;
-	}
+    }
 
-	/// if node has same productcode
-	if (this->node_.HasPriority(*item) == 0)
-	{
-
-		this->node_.pStore->AddStore(store);
-		this->node_.pStore = headstoreptr;
-	}
-	/// if the node has higher priority, 
-	else if (this->node_.HasPriority(*item) == 1)
-	{
-		if (this->left_) this->left_->AddItem(item, store);
-		else
-		{
-			BinaryTree* newTree = new BinaryTree(*item);
-			this->left_ = newTree;
-			this->left_->node_.pStore = store;
-			//this->left_->node_.pStore->AddStore(store);
-		}
-
-	}
-
-	/// if the node has lower priority, 
-	else if (this->node_.HasPriority(*item) == -1)
-	{
-		if (this->right_)this->right_->AddItem(item, store);
-		else
-		{
-			BinaryTree* newTree = new BinaryTree(*item);
-			this->right_ = newTree;
-			this->right_->node_.pStore = store;
-			//this->right_->node_.pStore->AddStore(store);
-		}
-	}
+  /// if the node has lower priority,
+  else if (this->node_->HasPriority(*item) == -1)
+    {
+      cout<<"BT line 60" <<endl;
+      if (this->right_){
+         this->right_->AddItem(item, store, head);   
+      }
+      else{
+        cout<<"BT line 65"<<endl;
+          BinaryTree* newTree = new BinaryTree(*item);
+          this->right_ = newTree;
+          this->right_->node_->pStore = store;
+          //this->right_->node_.pStore->AddStore(store);
+       }
+    }
 }
 
-void Store::AddStore(Store* store)
+//Scott Iwanicki
+//prints out the binary tree
+void BinaryTree::PrintBinaryTree()
 {
-	if (this->xstore_ == 0 && this->ystore_ == 0 && this->zstore_ == 0)
-	{
-		this->xstore_ = store->xstore_;
-		this->ystore_ = store->ystore_;
-		this->zstore_ = store->zstore_;
 
-		this->ProductAmount_ += store->ProductAmount_;
+  //exits the function when this is NULL
+  if (this == nullptr) return;
+  cout<<"Enters printBT" <<endl;
+  //prints out the left branch of the binary tree
+  this->left_->PrintBinaryTree();
 
-		headstoreptr = store;
-		return;
-	}
-	headstoreptr = this;
+  //prints out the current node
+  cout << this->node_->ProductCode_ << ": ";
 
-	Store* pCurrent = this;
-	Store* pPrev = nullptr;
-	while (pCurrent && (this->ProductAmount_ > store->ProductAmount_))
-	{
-		pPrev = pCurrent;
-		pCurrent = pCurrent->pNext;
-	}
+  //prints out the current node's list of stores
+  this->node_->pStore->PrintStores();
 
-	if (pPrev)
-	{
-		pPrev->pNext = store;
-		store->pNext = pCurrent;
-	}
-	else
-	{
-		store->pNext = this;
-		headstoreptr = store;
-	}
-
-	store->ProductAmount_ += store->ProductAmount_;
+  //prints out the right branch of the binary tree
+  this->right_->PrintBinaryTree();
 }
 
