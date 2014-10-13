@@ -40,13 +40,14 @@ public:
 	int slices;
 	Shopper* nextshopper_;
 
-	Item* itemlist_;
+	ItemList* itemlist_;
 
 	Shopper();
 	Shopper(int);
 
-	void AddStore(Store* store);
+	void AddStore(Store*);
 	void RemoveStore();
+	void AddItem(string);
 
 	int storecomplete();
 	void BotMove();
@@ -78,6 +79,14 @@ public:
 	Store* pStore;
 	int HasPriority(Item);
 	Item();
+	Item(string);
+};
+
+class ItemList
+{
+public:
+	Item item;
+	ItemList* nextItem;
 };
 
 class BinaryTree

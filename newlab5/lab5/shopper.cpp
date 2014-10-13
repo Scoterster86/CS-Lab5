@@ -925,3 +925,14 @@ Store Shopper::FindStore(BinaryTree tree)
 	}
 }
 
+void Shopper::AddItem(string itemcode)
+{
+	Item* item = new Item(itemcode);
+
+	ItemList* temp = this->itemlist_;
+	while (temp)
+	{
+		temp = this->itemlist_->nextItem;
+	}
+	this->itemlist_->item = *item;
+}

@@ -5,9 +5,15 @@
 Item::Item()
 {
   this->ProductCode_ == "";
-  this->amount_=0;
-  this->nextItem_ = nullptr;
+ // this->amount_=0;
+ // this->nextItem_ = nullptr;
   this->pStore = new Store();
+}
+Item::Item(string string)
+{
+	this->ProductCode_ == string;
+	this->pStore = new Store();
+	pStore = nullptr;
 }
 
 //Scott Iwanicki
@@ -23,7 +29,7 @@ int Item::HasPriority(Item item)
   //else if the item's product code is a higher priority return -1
   else  return -1;
 }
-
+/*
 //Scott Iwanicki
 void Item::AddItem(Item* item)
 {
@@ -42,3 +48,4 @@ void Item::AddItem(Item* item)
 	ptr->nextItem_ = item;
 	}
 }
+*/
