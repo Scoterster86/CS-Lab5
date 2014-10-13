@@ -9,14 +9,6 @@ Item::Item()
   this->nextItem_ = nullptr;
   this->pStore = new Store();
 }
-Item::Item(string string)
-{
-	this->ProductCode_ == string;
-	this->pStore = new Store();
-	pStore = nullptr;
-}
-
-
 
 //Scott Iwanicki
 //determines the priority of the item
