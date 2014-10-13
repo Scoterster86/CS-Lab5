@@ -26,7 +26,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
   /// if there is no items
   if (this->node_.ProductCode_ == "")
     {
-      this->node_ = *item;
+      this->node_ = item;
       this->node_.pStore = store;
       //this->node_.pStore->AddStore(store);
       return;
