@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
 	      
 	      //else{
 	      cout<<Shopperlist[i]->smove_->storelist_->items_->ProductCode_ <<endl;
-	      *Store treestore = new Store(Shopperlist[i]->smove_->storelist_);
+	      Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
 	      	
 		RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
 		RoboMall->PrintBinaryTree();
