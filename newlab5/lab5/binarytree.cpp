@@ -3,9 +3,7 @@
 //default constructor for a binary tree
 BinaryTree::BinaryTree()
 {
-  cout<<"Why"<<flush;
   this->node_ = Item();
-  cout<<" Fail"<<endl;
   this->left_ = nullptr;
   this->right_ = nullptr;
 }
