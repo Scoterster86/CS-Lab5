@@ -65,7 +65,7 @@ void Store::AddStore(Store* store, Store* head)
       return;
     }
  //sets the head pointer of the list to the first store in the list
-  headstoreptr = this;
+  head = this;
 
   //sets the currento pointer to the first store in the list
   Store* pCurrent = this;
