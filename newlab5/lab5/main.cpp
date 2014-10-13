@@ -5,7 +5,7 @@ int TIME = 0;
 int TimeSlice =0;
 int NumOfRobots =0;
 Shopper* Shopperlist[9];
-Shopper* headstoreptr = NULL;
+Store* headstoreptr = NULL;
 //Scott Iwanicki
 int main(int argc, char* argv[])
 {
