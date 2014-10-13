@@ -1,3 +1,4 @@
+#include "lab5.h"
 //Scott Iwanicki
 //default constructor for a binary tree
 BinaryTree::BinaryTree()
