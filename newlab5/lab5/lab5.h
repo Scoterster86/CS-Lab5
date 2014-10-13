@@ -114,7 +114,7 @@ public:
 class BinaryTree
 {
 public:
-	Item node_;
+	Item* node_;
 	BinaryTree* left_;
 	BinaryTree* right_;
 	void AddItem(Item*, Store*);
