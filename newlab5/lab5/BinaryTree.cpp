@@ -36,10 +36,8 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
   if (this->node_->HasPriority(*item) == 0)
     {
     cout<<"BT line 38" <<endl;
-    /*
       this->node_->pStore->AddStore(store, head);
       this->node_->pStore = head;
-      */
     }
     
   /// if the node has higher priority,
