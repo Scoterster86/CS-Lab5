@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     }
   for(i = 0; i<NumOfRobots; i++){
     Shopper* newshopper = new Shopper(i+1);
-    for (j = 0; j < stores[j]; j++)
+    for (j = 0; j < stores[i]; j++)
       {
         cin >> xpos >> ypos >> zpos >> items;
         cout <<xpos << " " <<ypos <<" " <<zpos <<endl;
@@ -101,19 +101,19 @@ int main(int argc, char* argv[])
                   <<Shopperlist[i]->smove_->storelist_->ystore_ << ", "
                   <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
               //if the robot is out of items to add to the store, remove the store from the list of stores
-              //if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
+              if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
+                cout<<"end Print"<<endl;
+                Shopperlist[i]->smove_->RemoveStore();
+              }
 
-              //}
-
-              //else{
+            else{
               Shopperlist[i]->smove_->storelist_->PrintStores();
               Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
 
                 RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
                 RoboMall->PrintBinaryTree();
-                cout<<"end Print"<<endl;
-                Shopperlist[i]->smove_->RemoveStore();
-             // }
+
+              }
               //if there are no more stores in the robots list
               if(Shopperlist[i]->smove_->storelist_==NULL){
                 //      cout<<"Storelist NULL"<<endl;
