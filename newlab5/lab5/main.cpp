@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
               //}
 
               //else{
-              Shopperlist[i]->smove_->storelist_->printstores();
+              Shopperlist[i]->smove_->storelist_->PrintStores();
               Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
 
                 RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
