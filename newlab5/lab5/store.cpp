@@ -87,14 +87,16 @@ void Store::AddStore(Store* store, Store* head)
       pCurrent = pCurrent->pNext;
     }
   //if the store already exsists in the list
-  if((this->xstore_ = store->xstore_) &&
-     (this->ystore_ = store->ystore_)&&
-     (this->zstore_ = store->zstore_))
-    {
-      //add the new product amount to the total product amount
-      this->productamount_ += store->productamount_;
-      return;
+  if(pCurrent != NULL){
+     if((pCurrent->xstore_ = store->xstore_) &&
+        (pCurrent->ystore_ = store->ystore_)&&
+        (pCurrent->zstore_ = store->zstore_))
+       {
+         //add the new product amount to the total product amount
+         pCurrent->productamount_ += store->productamount_;
+        return;
     }
+  }
   //if the previous pointer isn't null instert the store between the previous and current store
   if (pPrev != NULL)
     {
@@ -106,6 +108,7 @@ void Store::AddStore(Store* store, Store* head)
   //if the previous pointer is null
   else
     {
+            cout<<"pPrev is null"<<endl;
       //set the store's next pointer as the previous head of the list
       store->pNext = this;
       //set the head pointer of the list to the store
