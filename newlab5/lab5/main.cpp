@@ -111,6 +111,7 @@ int main(int argc, char* argv[])
 
                 RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
                 RoboMall->PrintBinaryTree();
+                cout<<"end Print"<<endl
                 Shopperlist[i]->smove_->RemoveStore();
              // }
               //if there are no more stores in the robots list
