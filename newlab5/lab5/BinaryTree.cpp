@@ -87,7 +87,7 @@ void BinaryTree::PrintBinaryTree()
 
   //prints out the current node's list of stores
   this->node_->pStore->PrintStores();
-
+  cout<<endl;
   //prints out the right branch of the binary tree
   this->right_->PrintBinaryTree();
 }
