@@ -75,10 +75,10 @@ void Store::AddStore(Store* store, Store* head)
 
   //loops until pCurrent is null or then the current product amount
   //is greater than the store's prodcut amount or if the stores are the same
-  while (pCurrent && (this->productamount_ > store->productamount_) && (
-        (this->xstore_ =! store->xstore_) ||
-        (this->ystore_ =! store->ystore_)||
-        (this->zstore_=! store->zstore_)) )
+  while (pCurrent && (pCurrent->productamount_ > store->productamount_) && (
+        (pCurrent->xstore_ =! store->xstore_) ||
+        (pCurrent->ystore_ =! store->ystore_)||
+        (pCurrent->zstore_=! store->zstore_)) )
     {
       //sets the previous pointer to the current pointer
       pPrev = pCurrent;
