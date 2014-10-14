@@ -96,7 +96,7 @@ void Store::AddStore(Store* store, Store* head)
       return;
     }
   //if the previous pointer isn't null instert the store between the previous and current store
-  if (pPrev)
+  if (pPrev != NULL)
     {
       //set the previous store's next pointer to the store
       pPrev->pNext = store;
