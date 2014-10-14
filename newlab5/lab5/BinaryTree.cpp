@@ -37,6 +37,7 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
     {
     cout<<"BT line 38" <<endl;
       this->node_->pStore->AddStore(store, head);
+      cout<<"added Store"<<endl;
       this->node_->pStore = head;
     }
     
