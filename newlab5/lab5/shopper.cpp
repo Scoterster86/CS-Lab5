@@ -106,8 +106,11 @@ Store* ItemList::FindStore(BinaryTree tree)
 	{
 		this->FindStore(*(currentp->left_));
 	}
-	else
+	else if(tree.node_->HasPriority(*(this->item_)) == -1)
 	{
 		this->FindStore(*(currentp->right_));
+	}
+	else{
+		return NULL;
 	}
 }
