@@ -136,7 +136,7 @@ int main(int argc, char* argv[])
                 endStore->ystore_ =16;
                 endStore->zstore_ = 0;
                 endStore->TimeSlice_ = 0;
-                Shopperlist[i]->smove_->storelist_->AddStore(endStore);
+                Shopperlist[i]->smove_->AddStore(endStore);
                 //cout<<"Added Store"<<endl;
               }
             }
