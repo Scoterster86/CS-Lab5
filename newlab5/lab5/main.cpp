@@ -162,7 +162,7 @@ int main(int argc, char* argv[])
   for(i=1; i<=NumOfShoppers; i++){
     Shopper* nextShopper = new Shopper(i);
     cin >>arrival >>numOfItems;
-    newshopper->smove_->wait_ = arrival;
+    nextShopper->smove_->wait_ = arrival;
     //for every store
     for(j=0; j<numOfItems; j++){
       //get the item id and the amount of that item
@@ -185,7 +185,7 @@ int main(int argc, char* argv[])
         newStore->xstore_ = foundStore->xstore_;
         newStore->ystore_ = foundStore->ystore_;
         newStore->zstore_ = foundStore->zstore_;
-        nextShopper->smove_->AddStore(store);//Add the store to the shopper's storelist
+        nextShopper->smove_->AddStore(newstore);//Add the store to the shopper's storelist
       }
     }
   }
