@@ -66,6 +66,8 @@ public:
         int TimeSlice_;
         Queue* queue_;
 	Queue* endQueue_;
+	RRqueue* rrqueue;
+        Queue* queue = NULL;
 
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
@@ -76,6 +78,7 @@ public:
         Store();
         Store(Store*);
         Store(int, int ,int);
+
 };
 
 class Move
