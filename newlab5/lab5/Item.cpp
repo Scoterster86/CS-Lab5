@@ -39,7 +39,7 @@ void Item::AddItem(Item* item)
         if(ptr->ProductCode_ == ""){
                 ptr->ProductCode_ = item->ProductCode_;
                 ptr->amount_ = item->amount_;
-                ptr->nextItem_ = new Item();
+                ptr->nextItem_ = NULL);
         }
         else{
         while (ptr->nextItem_)
