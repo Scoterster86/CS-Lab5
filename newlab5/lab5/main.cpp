@@ -200,6 +200,7 @@ int main(int argc, char* argv[])
       }
     }
     Shoppers->AddShopper(nextShopper);
+    /*
     Shopper* ptr = Shoppers->listhead_;
     cout<<"while loop"<<endl;
     while(ptr){
@@ -214,8 +215,91 @@ int main(int argc, char* argv[])
           
         }
           
-        }
+        }*/
   }
+   while(NumOfRobots !=0){
+    for(i=0; i<9; i++){
+      if(Shopperlist[i]!=NULL){
+        if(Shopperlist[i]->smove_->wait_ <=TIME){
+                if(Shopperlist[i]->smove_->wait_ % 25 ==0 && TIME % 25 ==0){
+                  cout<<"Robot "<<Shopperlist[i]->RobotNum_
+                      <<" enters the simulation at time " <<TIME <<endl;
+                      Shopperlist[i]->smove_->wait_=-1;
+                }
+                /*
+          cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
+               << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" "
+               <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
+          cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_
+               << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " "
+               <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
+          */
+          //if the robot isn't at a store
+          if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ ||
+             Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_ ||
+             Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_)
+          {
+            //cout<<"Move"<<endl;
+            Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
+          }
+          //if the robot is at a "store"
+          else{
+                //if the store is A1, remove the robot from the simulation
+            if(Shopperlist[i]->smove_->storelist_->xstore_ == 8 &&
+               Shopperlist[i]->smove_->storelist_->ystore_ == 16 &&
+               Shopperlist[i]->smove_->storelist_->zstore_ == 0)
+            {
+              Shopperlist[i]->smove_->movement(End, Shopperlist[i]->RobotNum_);
+              Shopperlist[i] = NULL;
+              //decriments the number of robots in the simulation
+              NumOfRobots--;
+            }
+            //if the robot is at a store
+            else{
+              if(Shopperlist[i]->enteredstore_ == 0){
+                 cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("
+                    << Shopperlist[i]->smove_->storelist_->xstore_ << ", "
+                    <<Shopperlist[i]->smove_->storelist_->ystore_ << ", "
+                    <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
+                    Shopperlist[i]->enteredstore_ = 1;
+              }
+              //if the robot is out of items to add to the store, remove the store from the list of stores
+              if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
+                
+                Shopperlist[i]->smove_->RemoveStore();
+                Shopperlist[i]->enteredstore_ = 0;
+              }
+
+            else{
+              //Shopperlist[i]->smove_->storelist_->items_->PrintItems();
+              //cout<<endl;
+             // Shopperlist[i]->smove_->storelist_->PrintStores();
+              //cout<<endl;
+              Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
+              
+                RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
+                //RoboMall->PrintBinaryTree();
+                Shopperlist[i]->smove_->storelist_->RemoveItem();
+                //cout<<"end Print"<<endl;
+
+              }
+              //if there are no more stores in the robots list
+              if(Shopperlist[i]->smove_->storelist_==NULL){
+                //cout<<"Storelist NULL"<<endl;
+                Store* endStore = new Store();
+                endStore->xstore_ = 8;
+                endStore->ystore_ =16;
+                endStore->zstore_ = 0;
+                endStore->TimeSlice_ = 0;
+                Shopperlist[i]->smove_->storelist_ = endStore;
+                //cout<<"Added Store"<<endl;
+              }
+            }
+          }
+        }
+      }
+    }
+  while()
 
   return 0;
 }
