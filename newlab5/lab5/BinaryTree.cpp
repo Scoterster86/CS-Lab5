@@ -1,7 +1,7 @@
 #include "lab5.h"
 //Scott Iwanicki
 //default constructor for a binary tree
-int DB = 1;
+int DB = 0;
 BinaryTree::BinaryTree()
 {
   this->node_ = new Item();
