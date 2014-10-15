@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 //define global variables
 #define nullptr NULL
