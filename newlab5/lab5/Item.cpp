@@ -109,6 +109,7 @@ cout<<this->pStore->xstore_ <<endl;
         return;
     }
   }
+  cout<<this->pStore->xstore_ <<endl;
   //if the previous pointer isn't null instert the store between the previous and current store
   if (pPrev != NULL)
     {
