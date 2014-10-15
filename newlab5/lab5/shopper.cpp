@@ -82,7 +82,8 @@ void Shopper::AddItem(string productcode, int amount)
 }
 
 
-////reads a shopper's itemlist and add a store which has most amount of the item to the storelist in Move class. 
+//reads a shopper's itemlist and add a store which has most amount of the item to the storelist in Move class. 
+/*
 void Shopper::AddStore(BinaryTree* tree)
 {
 	ItemList* temp = this->itemlist_;
@@ -92,4 +93,4 @@ void Shopper::AddStore(BinaryTree* tree)
 		temp = temp->nextitem_;
 	}
 }
-
+*/
