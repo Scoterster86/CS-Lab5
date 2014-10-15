@@ -159,6 +159,7 @@ int main(int argc, char* argv[])
   //END ROBOT simulations
   //Begin Shopper simulation
   cout<<"Begin Shoppers"<<endl;
+  Queue* Shoppers = new Queue;
   cin >> NumOfShoppers;
   for(i=1; i<=NumOfShoppers; i++){
     Shopper* nextShopper = new Shopper(i);
@@ -196,16 +197,16 @@ int main(int argc, char* argv[])
         cout<<"Adding store"<<endl;
         nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
         
-        cout<<"Printing Items"<<endl;
-        Store* ptr = nextShopper->smove_->storelist_;
-        while(ptr){
-          ptr->items_->PrintItems();
-          ptr= ptr->pNext;
-          
-        }
       }
     }
-    
+    Shoppers->AddShopper(nextShopper);
+    Shopper* ptr = Shoppers->listhead_;
+    while(ptr){
+          cout<<ptr->RobotNum_ << endl;
+          ptr->smove_->items_->PrintItems();
+          ptr= ptr->nextshopper_;
+          
+        }
   }
 
   return 0;
