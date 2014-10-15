@@ -67,7 +67,7 @@ public:
         Queue* queue_;
 	Queue* endQueue_;
 	RRqueue* rrqueue;
-        Queue* queue = NULL;
+        Queue* storequeue = NULL;
 
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
