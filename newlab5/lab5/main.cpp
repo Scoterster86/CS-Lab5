@@ -183,9 +183,9 @@ int main(int argc, char* argv[])
 			//add the item to the new store
 			newStore->items_ = newitem;
 			cout << "OKD" << endl;
+			int xs, ys, zs;
 			//finds the store with the most of the item added
-			Store* foundStore = new Store();
-			int testd= newStore->FindStore(*RoboMall)->xstore_;
+			Store* foundStore = newStore->FindStore(*RoboMall, xs, ys, zs);
 			cout<<"found store1"<< testd <<endl;
 			//if a store containing the item was found
 			if (foundStore != NULL){
