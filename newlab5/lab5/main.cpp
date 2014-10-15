@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
               }
 
             else{
-              Shopperlist[i]->smove_->items_->PrintItems();
+              Shopperlist[i]->smove_->storelist->items_->PrintItems();
               Shopperlist[i]->smove_->storelist_->PrintStores();
               Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
               
