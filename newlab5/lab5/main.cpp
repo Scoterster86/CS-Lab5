@@ -224,7 +224,7 @@ int main(int argc, char* argv[])
         store1->zstore_ = 0;
         StoreList->AddStorelist(store1);
         
-	Store* store2 ->new Store();//create a store
+	Store* store2 = new Store();//create a store
         store2->xstore_ = 10;  // sets the location
         store2->ystore_ = 4;
         store2->zstore_ = 0;
