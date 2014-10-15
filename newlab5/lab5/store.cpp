@@ -174,6 +174,7 @@ Store* Store::FindStore(BinaryTree tree)
 		cout<<"right branch"<<endl;
 	}
 	else{
+		cout<<"didn't find store"<<endl;
 		return NULL;
 	}
 }
