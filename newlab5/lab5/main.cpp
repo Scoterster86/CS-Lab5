@@ -160,22 +160,32 @@ int main(int argc, char* argv[])
   //Begin Shopper simulation
   cin >> NumOfShoppers;
   for(i=1; i<=NumOfShoppers; i++){
-    Shopper* newshopper = new Shopper(i);
+    Shopper* nextShopper = new Shopper(i);
     cin >>arrival >>numOfStores;
+    newshopper->smove_->wait_ = arrival;
+    //for every store
     for(j=0; j<numOfStores; j++){
+      //get the item id and the amount of that item
       cin >>item  >>count;
+      //make a new item
       Item* newitem = new Item();
+          //set the item's values to the inserted values
           newitem->ProductCode_ = item;
           newitem->amount_ = count;
           newitem->nextItem_ = NULL;
+      //create a new store
       Store* newStore = new Store();
+      //add the item to the new store
       newStore->items_->AddItem(newitem);
+      //finds the store with the most of the item added
       Store* foundStore = newStore->FindStore(*RoboMall);
+      //if a store containing the item was found
       if(foundStore !=NULL){
+        //sets the new store's location to the store with the most items
         newStore->xstore_ = foundStore->xstore_;
-        newStore->ystore_ =foundStore->ystore_;
+        newStore->ystore_ = foundStore->ystore_;
         newStore->zstore_ = foundStore->zstore_;
-        
+        nextShopper->smove_->AddStore(store);//Add the store to the shopper's storelist
       }
       
     }
