@@ -158,147 +158,136 @@ int main(int argc, char* argv[])
   }
   //END ROBOT simulations
   //Begin Shopper simulation
-  cout<<"Begin Shoppers"<<endl;
-  Queue* Shoppers = new Queue;
-  cin >> NumOfShoppers;
-  for(i=1; i<=NumOfShoppers; i++){
-    Shopper* nextShopper = new Shopper(i);
-    cin >>arrival >>numOfItems;
-    //cout<<"adding arrival time"<<endl;
-    nextShopper->smove_->wait_ = arrival;
-    //cout<<"added arrival time"<<endl;
-    //for every store
-    for(j=0; j<numOfItems; j++){
-      //get the item id and the amount of that item
-      cin >>item  >>count;
-      //make a new item
-      Item* newitem = new Item();
-          //set the item's values to the inserted values
-          newitem->ProductCode_ = item;
-          newitem->amount_ = count;
-          //cout<<"set item and count"<<endl;
-          newitem->nextItem_ = NULL;
-      //create a new store
-      Store* newStore = new Store();
-      //add the item to the new store
-      
-      newStore->items_=newitem;
-      cout<<" "<<endl;
-      //finds the store with the most of the item added
-      Store* foundStore = newStore->FindStore(*RoboMall);
-     //cout<<"found store1"<<endl;
-      //if a store containing the item was found
-      if(foundStore !=NULL){
-        //cout<<"found a store"<<endl;
-        //sets the new store's location to the store with the most items
-        newStore->xstore_ = foundStore->xstore_;
-        newStore->ystore_ = foundStore->ystore_;
-        newStore->zstore_ = foundStore->zstore_;
-        cout<<"Adding store"<<endl;
-        nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
-        
-      }
-    }
-    Shoppers->AddShopper(nextShopper);
-    /*
-    Shopper* ptr = Shoppers->listhead_;
-    cout<<"while loop"<<endl;
-    while(ptr){
-          cout<<ptr->RobotNum_ << endl;
-              cout<<"in while loop"<<endl;
-
-          ptr= ptr->nextshopper_;
-          Store* str = nextShopper->smove_->storelist_;
-        while(str){
-          str->items_->PrintItems();
-          str= str->pNext;
-          
-        }
-          
-        }*/
-  }
-  shop_time =0;
-    while(Shoppers){
-      Shopper* currentShopperptr = Shoppers->listhead_;
-      while(currentShopperptr){
-        if(currentShopperptr->smove_->wait_ <=TIME){
-                if(currentShopperptr->smove_->wait_ ==shop_time){
-                  cout<<"Shopper "<<currentShopperptr->RobotNum_
-                      <<" enters the simulation at time " <<TIME <<endl;
-                      currentShopperptr->smove_->wait_=-1;
-                }
-                /*
-          cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
-               << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" "
-               <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
-          cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_
-               << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " "
-               <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
-          */
-          //if the robot isn't at a store
-          if(currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
-             currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
-             currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
-          {
-            //cout<<"Move"<<endl;
-            currentShopperptr->smove_->BotMove(currentShopperptr->RobotNum_);
-          }
-          //if the robot is at a "store"
-          else{
-                //if the store is A1, remove the robot from the simulation
-            if(Shopperlist[i]->smove_->storelist_->xstore_ == 8 &&
-               Shopperlist[i]->smove_->storelist_->ystore_ == 16 &&
-               Shopperlist[i]->smove_->storelist_->zstore_ == 0)
-            {
-              Shopperlist[i]->smove_->movement(End, Shopperlist[i]->RobotNum_);
-              Shopperlist[i] = NULL;
-              //decriments the number of robots in the simulation
-              NumOfRobots--;
-            }
-            //if the robot is at a store
-            else{
-              if(currentShopperptr->enteredstore_ == 0){
-                 cout<<"Shopper " <<currentShopperptr->RobotNum_<<" arrives at store("
-                    << currentShopperptr->smove_->storelist_->xstore_ << ", "
-                    <<currentShopperptr->smove_->storelist_->ystore_ << ", "
-                    <<currentShopperptr->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
-                    currentShopperptr->enteredstore_ = 1;
-              }
-              //if the robot is out of items to add to the store, remove the store from the list of stores
-              if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
-                
-                Shopperlist[i]->smove_->RemoveStore();
-                Shopperlist[i]->enteredstore_ = 0;
-              }
-
-            else{
-              //Shopperlist[i]->smove_->storelist_->items_->PrintItems();
-              //cout<<endl;
-             // Shopperlist[i]->smove_->storelist_->PrintStores();
-              //cout<<endl;
-              Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
-              
-                RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
-                //RoboMall->PrintBinaryTree();
-                Shopperlist[i]->smove_->storelist_->RemoveItem();
-                //cout<<"end Print"<<endl;
-
-              }
-              //if there are no more stores in the robots list
-              if(Shopperlist[i]->smove_->storelist_==NULL){
-                //cout<<"Storelist NULL"<<endl;
-                Store* endStore = new Store();
-                endStore->xstore_ = 8;
-                endStore->ystore_ =16;
-                endStore->zstore_ = 0;
-                endStore->TimeSlice_ = 0;
-                Shopperlist[i]->smove_->storelist_ = endStore;
-                //cout<<"Added Store"<<endl;
-              }
-            }
-          }
-    }
-
-  return 0;
-}
-
+	cout << "Begin Shoppers" << endl;
+	Queue* Shoppers = new Queue;
+	cin >> NumOfShoppers;
+	for (i = 1; i <= NumOfShoppers; i++){
+		Shopper* nextShopper = new Shopper(i);
+		cin >> arrival >> numOfItems;
+		//cout<<"adding arrival time"<<endl;
+		nextShopper->smove_->wait_ = arrival;
+		//cout<<"added arrival time"<<endl;
+		//for every store
+		for (j = 0; j<numOfItems; j++){
+			//get the item id and the amount of that item
+			cin >> item >> count;
+			//make a new item
+			Item* newitem = new Item();
+			//set the item's values to the inserted values
+			newitem->ProductCode_ = item;
+			newitem->amount_ = count;
+			//cout<<"set item and count"<<endl;
+			newitem->nextItem_ = NULL;
+			//create a new store
+			Store* newStore = new Store();
+			//add the item to the new store
+			newStore->items_ = newitem;
+			cout << " " << endl;
+			//finds the store with the most of the item added
+			Store* foundStore = newStore->FindStore(*RoboMall);
+			//cout<<"found store1"<<endl;
+			//if a store containing the item was found
+			if (foundStore != NULL){
+				//cout<<"found a store"<<endl;
+				//sets the new store's location to the store with the most items
+				newStore->xstore_ = foundStore->xstore_;
+				newStore->ystore_ = foundStore->ystore_;
+				newStore->zstore_ = foundStore->zstore_;
+				cout << "Adding store" << endl;
+				nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
+			}
+		}
+		Shoppers->AddShopper(nextShopper);
+		/*
+		Shopper* ptr = Shoppers->listhead_;
+		cout<<"while loop"<<endl;
+		while(ptr){
+		cout<<ptr->RobotNum_ << endl;
+		cout<<"in while loop"<<endl;
+		ptr= ptr->nextshopper_;
+		Store* str = nextShopper->smove_->storelist_;
+		while(str){
+		str->items_->PrintItems();
+		str= str->pNext;
+		}
+		}*/
+	}
+	shop_time = 0;
+	while (Shoppers){
+		Shopper* currentShopperptr = Shoppers->listhead_;
+		while (currentShopperptr){
+			if (currentShopperptr->smove_->wait_ <= TIME){
+				if (currentShopperptr->smove_->wait_ == shop_time){
+					cout << "Shopper " << currentShopperptr->RobotNum_
+						<< " enters the simulation at time " << TIME << endl;
+					currentShopperptr->smove_->wait_ = -1;
+				}
+				/*
+				cout <<"Robot: "<< currentShopperptr->RobotNum_<< endl
+				<< "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
+				<<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
+				cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
+				<< " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
+				<<currentShopperptr->smove_->storelist_->zstore_ << endl;
+				*/
+				//if the robot isn't at a store
+				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
+					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
+					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
+				{
+					//cout<<"Move"<<endl;
+					currentShopperptr->smove_->BotMove(currentShopperptr->RobotNum_);
+				}
+				//if the robot is at a "store"
+				else{
+					//if the store is A1, remove the robot from the simulation
+					if (currentShopperptr->smove_->storelist_->xstore_ == 8 &&
+						currentShopperptr->smove_->storelist_->ystore_ == 16 &&
+						currentShopperptr->smove_->storelist_->zstore_ == 0)
+					{
+						currentShopperptr->smove_->movement(End, currentShopperptr->RobotNum_);
+						currentShopperptr = NULL;
+						//decriments the number of robots in the simulation
+						NumOfRobots--;
+					}
+					//if the robot is at a store
+					else{
+						if (currentShopperptr->enteredstore_ == 0){
+							cout << "Shopper " << currentShopperptr->RobotNum_ << " arrives at store("
+								<< currentShopperptr->smove_->storelist_->xstore_ << ", "
+								<< currentShopperptr->smove_->storelist_->ystore_ << ", "
+								<< currentShopperptr->smove_->storelist_->zstore_ << ") at time " << TIME << endl;
+							currentShopperptr->enteredstore_ = 1;
+						}
+						//if the robot is out of items to add to the store, remove the store from the list of stores
+						if (currentShopperptr->smove_->storelist_->items_ == NULL){
+							currentShopperptr->smove_->RemoveStore();
+							currentShopperptr->enteredstore_ = 0;
+						}
+						else{
+							//currentShopperptr->smove_->storelist_->items_->PrintItems();
+							//cout<<endl;
+							// currentShopperptr->smove_->storelist_->PrintStores();
+							//cout<<endl;
+							Store* treestore = new Store(currentShopperptr->smove_->storelist_);
+							RoboMall->AddItem(currentShopperptr->smove_->storelist_->items_, treestore, headstoreptr);
+							//RoboMall->PrintBinaryTree();
+							currentShopperptr->smove_->storelist_->RemoveItem();
+							//cout<<"end Print"<<endl;
+						}
+						//if there are no more stores in the robots list
+						if (currentShopperptr->smove_->storelist_ == NULL){
+							//cout<<"Storelist NULL"<<endl;
+							Store* endStore = new Store();
+							endStore->xstore_ = 8;
+							endStore->ystore_ = 16;
+							endStore->zstore_ = 0;
+							endStore->TimeSlice_ = 0;
+							currentShopperptr->smove_->storelist_ = endStore;
+							//cout<<"Added Store"<<endl;
+						}
+					}
+				}
+			}
+			return 0;
+		}
