@@ -197,10 +197,10 @@ int main(int argc, char* argv[])
         nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
         
         cout<<"Printing Items"<<endl;
-        Store* pNext = nextShopper->smove_->storelist_;
-        while(pNext){
-          pNext->items_->PrintItems();
-          pNext= pNext->items_->nextItem_ ;
+        Store* ptr = nextShopper->smove_->storelist_;
+        while(ptr){
+          ptr->items_->PrintItems();
+          ptr= ptr->pNext;
           
         }
       }
