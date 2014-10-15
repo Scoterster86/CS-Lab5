@@ -379,7 +379,7 @@ int main(int argc, char* argv[])
 							currentShopperptr->enteredstore_ = 0;
 						}
 						else{
-							if(currentShopperptr)
+							if(currentShopperptr){};
 							Store* treestore = new Store(currentShopperptr->smove_->storelist_);
 							RoboMall->AddItem(currentShopperptr->smove_->storelist_->items_, treestore, headstoreptr);
 							//RoboMall->PrintBinaryTree();
