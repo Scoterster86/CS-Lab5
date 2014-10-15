@@ -182,7 +182,7 @@ Store* Store::FindStore(BinaryTree tree, int & x, int & y, int & z)
 	else if(tree.node_->HasPriority(*(this->items_)) == -1)
 	{
 		cout<<"right branch"<<endl;
-		if(currentp->right_ != NULL)this->FindStore(*(currentp->right_) x, y,z);
+		if(currentp->right_ != NULL)this->FindStore(*(currentp->right_), x, y,z);
 		
 	}
 	}
