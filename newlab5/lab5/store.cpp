@@ -157,6 +157,7 @@ void Store::RemoveItem()
 ///Find the store which has most of an item
 Store* Store::FindStore(BinaryTree tree)
 {
+	cout<<"in FindStore"<<endl;
 	BinaryTree* currentp = &tree;
 	if(tree.node_ != NULL){
 	if (tree.node_->HasPriority(*(this->items_)) == 0)
