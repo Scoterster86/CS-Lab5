@@ -10,10 +10,11 @@ Store* headstoreptr = NULL;
 int main(int argc, char* argv[])
 {
   //sets input values
+  int shop_time =0;
   TimeSlice = atoi(argv[1]);
   BinaryTree* RoboMall = new BinaryTree();
   //RoboMall->node_ = new Item();
-  int i,j,k, stores[12], items, count, location;
+  int i,j,k, stores[12], items, count, location,NumOfShoppers,numOfStores, arrival;
   string item;
   //cout<<endl;
   int tempNumOfRobots =0;
@@ -68,7 +69,7 @@ int main(int argc, char* argv[])
                 if(Shopperlist[i]->smove_->wait_ % 25 ==0 && TIME % 25 ==0){
                   cout<<"Robot "<<Shopperlist[i]->RobotNum_
                       <<" enters the simulation at time " <<TIME <<endl;
-                      Shopperlist[i]->smove_->wait_=1;
+                      Shopperlist[i]->smove_->wait_=-1;
                 }
                 /*
           cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
@@ -143,6 +144,7 @@ int main(int argc, char* argv[])
         }
       }
     }
+
     /*
     for(i=0; i<9; i++){
       if(Shopperlist[i]!=NULL){
@@ -153,6 +155,30 @@ int main(int argc, char* argv[])
     */
     //timecheck();
     TIME++;
+  }
+  //END ROBOT simulations
+  //Begin Shopper simulation
+  cin >> NumOfShoppers;
+  for(i=1; i<=NumOfShoppers; i++){
+    Shopper* newshopper = new Shopper(i);
+    cin >>arrival >>numOfStores;
+    for(j=0; j<numOfStores; j++){
+      cin >>item  >>count;
+      Item* newitem = new Item();
+          newitem->ProductCode_ = item;
+          newitem->amount_ = count;
+          newitem->nextItem_ = NULL;
+      Store* newStore = new Store();
+      newStore->items_->AddItem(newitem);
+      Store* foundStore = newStore->FindStore(RoboMall);
+      if(foundStore !=NULL){
+        newStore->xstore_ = foundStore->xstore_;
+        newStore->ystore_ =foundStore->ystore_;
+        newStore->zstore_ = foundStore->zstore_;
+        
+      }
+      
+    }
   }
 
   return 0;
