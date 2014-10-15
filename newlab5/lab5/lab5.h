@@ -36,6 +36,7 @@ class Item
   int HasPriority(Item);
   void AddItem(Item*);
   void PrintItems();
+  void RemoveItem(Item*);
   Item();
   Item(string, int);
 };
