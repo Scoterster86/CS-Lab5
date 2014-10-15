@@ -168,13 +168,13 @@ Store* Store::FindStore(BinaryTree tree)
 	else if (tree.node_->HasPriority(*(this->items_)) == 1)
 	{
 		cout<<"left branch"<<endl;
-		this->FindStore(*(currentp->left_));
+		if(currentp->left_ != NULL)this->FindStore(*(currentp->left_));
 		
 	}
 	else if(tree.node_->HasPriority(*(this->items_)) == -1)
 	{
 		cout<<"right branch"<<endl;
-		this->FindStore(*(currentp->right_));
+		if(currentp->right_ != NULL)this->FindStore(*(currentp->right_));
 		
 	}
 	}
