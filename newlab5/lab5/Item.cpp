@@ -50,3 +50,19 @@ void Item::AddItem(Item* item)
         ptr->nextItem_ = item;
         }
 }
+
+
+//prints items
+void Store::PrintItems()
+{
+  //sets the current pointer to this
+  Item* pCurrent = this;
+
+  //while the current pointer isn't null
+  while (pCurrent)
+    {
+      //print out the store location and the product amount
+      cout << "(" << pCurrent->ProductCode_ << ", " << pCurrent->amount_ << ") ";
+      pCurrent = pCurrent->pNext;
+    }
+}
