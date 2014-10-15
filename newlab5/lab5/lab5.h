@@ -128,7 +128,7 @@ public:
 	void AddShopper(Shopper*);
 	void RemoveShopper(Shopper*);
 	
-	void AddStore(BinaryTree*);
+	//void AddStore(BinaryTree*);
 	void AddItem(string, int);
 };
 //Scott Iwanicki
