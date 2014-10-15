@@ -183,3 +183,15 @@ Store* Store::FindStore(BinaryTree tree)
 		return new Store();
 	}
 }
+/*
+void Store::addItem(Item* item){
+	if(this->items_ ==NULL){
+		this->items_=item;
+	}
+	else{
+		Item* pCurrent = this->items_;
+		Item* pNext = NULL;
+		while(pCurrent &&)
+		
+	}
+}
