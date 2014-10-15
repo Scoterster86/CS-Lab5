@@ -217,14 +217,15 @@ int main(int argc, char* argv[])
           
         }*/
   }
-   while(NumOfRobots !=0){
-    for(i=0; i<9; i++){
-      if(Shopperlist[i]!=NULL){
-        if(Shopperlist[i]->smove_->wait_ <=TIME){
-                if(Shopperlist[i]->smove_->wait_ % 25 ==0 && TIME % 25 ==0){
-                  cout<<"Robot "<<Shopperlist[i]->RobotNum_
+  shop_time =0;
+    while(Shoppers){
+      Shopper* currentShopperptr = Shoppers->listhead_;
+      while(currentShopperptr){
+        if(currentShopperptr->smove_->wait_ <=TIME){
+                if(currentShopperptr->smove_->wait_ ==shop_time){
+                  cout<<"Shopper "<<currentShopperptr->RobotNum_
                       <<" enters the simulation at time " <<TIME <<endl;
-                      Shopperlist[i]->smove_->wait_=-1;
+                      currentShopperptr->smove_->wait_=-1;
                 }
                 /*
           cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
@@ -235,12 +236,12 @@ int main(int argc, char* argv[])
                <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
           */
           //if the robot isn't at a store
-          if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ ||
-             Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_ ||
-             Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_)
+          if(currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
+             currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
+             currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
           {
             //cout<<"Move"<<endl;
-            Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
+            currentShopperptr->smove_->BotMove(currentShopperptr->RobotNum_);
           }
           //if the robot is at a "store"
           else{
@@ -256,12 +257,12 @@ int main(int argc, char* argv[])
             }
             //if the robot is at a store
             else{
-              if(Shopperlist[i]->enteredstore_ == 0){
-                 cout<<"Robot " <<Shopperlist[i]->RobotNum_<<" arrives at store("
-                    << Shopperlist[i]->smove_->storelist_->xstore_ << ", "
-                    <<Shopperlist[i]->smove_->storelist_->ystore_ << ", "
-                    <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
-                    Shopperlist[i]->enteredstore_ = 1;
+              if(currentShopperptr->enteredstore_ == 0){
+                 cout<<"Shopper " <<currentShopperptr->RobotNum_<<" arrives at store("
+                    << currentShopperptr->smove_->storelist_->xstore_ << ", "
+                    <<currentShopperptr->smove_->storelist_->ystore_ << ", "
+                    <<currentShopperptr->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
+                    currentShopperptr->enteredstore_ = 1;
               }
               //if the robot is out of items to add to the store, remove the store from the list of stores
               if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
@@ -296,10 +297,7 @@ int main(int argc, char* argv[])
               }
             }
           }
-        }
-      }
     }
-  while()
 
   return 0;
 }
