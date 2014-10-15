@@ -98,7 +98,7 @@ void Item::AddStore(Store* store)
       pPrev = pCurrent;
 
       //sets the current pointer to the next store in the list
-      pCurrent = pCurrent->pNext;
+      pCurrent = pCurrent->pStore;
     }
   //if the store already exsists in the list
   if(pCurrent != NULL){
@@ -115,18 +115,18 @@ void Item::AddStore(Store* store)
   if (pPrev != NULL)
     {
       //set the previous store's next pointer to the store
-      pPrev->pNext = store;
+      pPrev->pStore = store;
       //set the store's next pointer to the current store
-      store->pNext = pCurrent;
+      store->pStore = pCurrent;
     }
   //if the previous pointer is null
   else
     {
             cout<<"pPrev is null"<<endl;
       //set the store's next pointer as the previous head of the list
-      store->pNext = this->pNext;
+      store->pStore = this->pStore;
       //set the head pointer of the list to the store
-      this->pNext=store;
+      this->pStore=store;
     }
 }
 
