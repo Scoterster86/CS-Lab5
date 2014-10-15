@@ -198,7 +198,7 @@ int main(int argc, char* argv[])
         
         Store* pNext = nextShopper->smove_->storelist_;
         while(pNext){
-          pNext->ProductCode_->PrintItems();
+          pNext->items_->PrintItems();
         }
       }
     }
