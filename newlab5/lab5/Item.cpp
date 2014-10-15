@@ -103,6 +103,7 @@ void Item::AddStore(Store* store)
         (pCurrent->ystore_ == store->ystore_)&&
         (pCurrent->zstore_ == store->zstore_))
        {
+       	cout<<"Add items to same store"<<endl;
          //add the new product amount to the total product amount
          pCurrent->productamount_ += store->productamount_;
         return;
@@ -115,10 +116,12 @@ void Item::AddStore(Store* store)
       pPrev->pNext  = store;
       //set the store's next pointer to the current store
       store->pNext  = pCurrent;
+      cout<<"pPrev isn't null"<<endl;
     }
   else{
   	store->pNext = pCurrent;
   	this->pStore=store;
+  	cout<<"pPrev is null"<<endl;
   }  
 }
 
