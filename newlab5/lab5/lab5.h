@@ -82,7 +82,7 @@ public:
 
         Move();
         void AddStore(Store*);
-        //void AddStoreShopper(Store*);
+        void AddStoreShopper(Store*);
         void RemoveStore();
         void BotMove(int);
         int movement(int, int);
