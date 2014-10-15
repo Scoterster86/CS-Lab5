@@ -107,6 +107,9 @@ int main(int argc, char* argv[])
                 
                 Shopperlist[i]->smove_->RemoveStore();
                 Shopperlist[i]->smove_->storelist_=new Store();
+                Shopperlist[i]->smove_->storelist_->xstore_ = 8;
+                Shopperlist[i]->smove_->storelist_->ystore_ =16;
+                Shopperlist[i]->smove_->storelist_->zstore_ = 0;
               }
 
             else{
