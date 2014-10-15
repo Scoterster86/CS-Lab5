@@ -170,7 +170,7 @@ int main(int argc, char* argv[])
           newitem->nextItem_ = NULL;
       Store* newStore = new Store();
       newStore->items_->AddItem(newitem);
-      Store* foundStore = newStore->FindStore(&RoboMall);
+      Store* foundStore = newStore->FindStore(*RoboMall);
       if(foundStore !=NULL){
         newStore->xstore_ = foundStore->xstore_;
         newStore->ystore_ =foundStore->ystore_;
