@@ -51,7 +51,10 @@ void Item::AddItem(Item* item)
         }
 }
 
-
+void Item::RemoveItem(Item* item)
+{
+        item= item->nextItem_;
+}
 //prints items
 void Item::PrintItems()
 {
