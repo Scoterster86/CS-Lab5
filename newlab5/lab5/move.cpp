@@ -567,10 +567,10 @@ void Move::BotMove(int RobotNum)
 	}
 	else{
 		if(this->storelist_->xstore_==12 && this->storelist_->ystore_==6 && this->storelist_->zstore_ == 1){
-			this->movement(East, RobotNum);
+			this->movement(West, RobotNum);
 		}
 		else{
-			this->movement(West, RobotNum);
+			this->movement(East, RobotNum);
 		}
 	}
   }
