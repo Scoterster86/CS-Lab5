@@ -81,7 +81,8 @@ public:
         Store* storelist_;
 
         Move();
-        void AddStore(Store* store);
+        void AddStore(Store*);
+        void AddStoreShopper(Store*);
         void RemoveStore();
         void BotMove(int);
         int movement(int, int);
