@@ -6,7 +6,6 @@ Queue::Queue()
 	this->listtail_ = nullptr;
 }
 
-
 ///change the pointer to the next shopper in the queue
 void Queue::RemoveShopper()
 {
