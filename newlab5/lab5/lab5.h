@@ -118,6 +118,7 @@ public:
 	Shopper* nextshopper_;
 	Move* smove_;
 	ItemList* itemlist_;
+	int enteredstore_;
 
 	Shopper();
 	Shopper(int);
