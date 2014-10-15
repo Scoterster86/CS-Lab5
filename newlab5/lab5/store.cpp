@@ -88,9 +88,9 @@ void Store::AddStore(Store* store, Store* head)
     }
   //if the store already exsists in the list
   if(pCurrent != NULL){
-     if((pCurrent->xstore_ = store->xstore_) &&
-        (pCurrent->ystore_ = store->ystore_)&&
-        (pCurrent->zstore_ = store->zstore_))
+     if((pCurrent->xstore_ == store->xstore_) &&
+        (pCurrent->ystore_ == store->ystore_)&&
+        (pCurrent->zstore_ == store->zstore_))
        {
          //add the new product amount to the total product amount
          pCurrent->productamount_ += store->productamount_;
