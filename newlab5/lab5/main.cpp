@@ -193,6 +193,7 @@ int main(int argc, char* argv[])
         newStore->xstore_ = foundStore->xstore_;
         newStore->ystore_ = foundStore->ystore_;
         newStore->zstore_ = foundStore->zstore_;
+        cout<<"Adding store"<<endl;
         nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
         
         cout<<"Printing Items"<<endl;
