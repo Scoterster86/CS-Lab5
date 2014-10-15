@@ -14,6 +14,7 @@ extern int TIME;
 extern int Floor[LENGTH][WIDTH][HEIGHT];
 extern int NumOfRobots;
 class BinaryTree;
+class Queue;
 extern  BinaryTree* RoboMall;
 
 enum direction { North, NorthWest, West, SouthWest, South, SouthEast, East, NorthEast, Up, Down, End };
