@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
   //RoboMall->node_ = new Item();
   int i,j,k, stores[12], items, count, location;
   string item;
-  cout<<endl;
+  //cout<<endl;
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
   NumOfRobots = tempNumOfRobots;
@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
           //cout<<"Add item" <<endl;
           store->items_->AddItem(newitem);
           //store->items_->PrintItems();
-          cout<<endl;
+          //cout<<endl;
           //cout <<"Item " <<store->items_->ProductCode_ <<"Count " <<store->items_->amount_ <<endl;
 
         }
