@@ -36,7 +36,7 @@ class Item
   int HasPriority(Item);
   void AddItem(Item*);
   void PrintItems();
-  void RemoveItem(Item*);
+  
   Item();
   Item(string, int);
 };
@@ -63,6 +63,7 @@ public:
         void AddStore(Store*, Store*);
         int GetSize();
         void PrintStores();
+        void RemoveItem();
         Store();
         Store(Store*);
         Store(int, int ,int);
