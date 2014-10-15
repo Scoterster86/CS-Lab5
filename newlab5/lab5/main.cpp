@@ -218,122 +218,143 @@ int main(int argc, char* argv[])
         StoreList->ystore_ = 4;
         StoreList->zstore_ = 0;
         
-	Store* store = new Store();//create a store
-        store->xstore_ = 6;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 0;
-        StoreList->AddStorelist(store);
+	Store* store1 = new Store();//create a store
+        store1->xstore_ = 6;  // sets the location
+        store1->ystore_ = 4;
+        store1->zstore_ = 0;
+        StoreList->AddStorelist(store1);
         
-	Store* store ->new Store();//create a store
-        store->xstore_ = 10;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 0;
+	Store* store2 ->new Store();//create a store
+        store2->xstore_ = 10;  // sets the location
+        store2->ystore_ = 4;
+        store2->zstore_ = 0;
+        StoreList->AddStorelist(store2);
         
-        Store* store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 0;
+        Store* store3 = new Store();//create a store
+        store3->xstore_ = 12;  // sets the location
+        store3->ystore_ = 4;
+        store3->zstore_ = 0;
+        StoreList->AddStorelist(store3);
         
-        Store* store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 6;
-        store->zstore_ = 0;
+        Store* store4 = new Store();//create a store
+        store4->xstore_ = 4;  // sets the location
+        store4->ystore_ = 6;
+        store4->zstore_ = 0;
+        StoreList->AddStorelist(store4);
         
-        Store* store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 6;
-        store->zstore_ = 0;
+        Store* store5 = new Store();//create a store
+        store5->xstore_ = 12;  // sets the location
+        store5->ystore_ = 6;
+        store5->zstore_ = 0;
+        StoreList->AddStorelist(store5);
         
-        Store* store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 10;
-        store->zstore_ = 0;
+        Store* store6 = new Store();//create a store
+        store6->xstore_ = 4;  // sets the location
+        store6->ystore_ = 10;
+        store6->zstore_ = 0;
+        StoreList->AddStorelist(store6);
         
-        Store* store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 10;
-        store->zstore_ = 0;
+        Store* store7 = new Store();//create a store
+        store7->xstore_ = 12;  // sets the location
+        store7->ystore_ = 10;
+        store7->zstore_ = 0;
+        StoreList->AddStorelist(store7);
         
-        store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 0;
+        Store* store8 = new Store();//create a store
+        store8->xstore_ = 4;  // sets the location
+        store8->ystore_ = 12;
+        store8->zstore_ = 0;
+        StoreList->AddStorelist(store8);
         
-        store = new Store();//create a store
-        store->xstore_ = 6;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 0;
+        Store* store9 = new Store();//create a store
+        store9->xstore_ = 6;  // sets the location
+        store9->ystore_ = 12;
+        store9->zstore_ = 0;
+        StoreList->AddStorelist(store9);
         
-        store = new Store();//create a store
-        store->xstore_ = 10;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 0;
+        Store* store10 = new Store();//create a store
+        store10->xstore_ = 10;  // sets the location
+        store10->ystore_ = 12;
+        store10->zstore_ = 0;
+        StoreList->AddStorelist(store10);
         
-        store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 0;
+        Store* store11 = new Store();//create a store
+        store11->xstore_ = 12;  // sets the location
+        store11->ystore_ = 12;
+        store11->zstore_ = 0;
+        StoreList->AddStorelist(store11);
 
-	store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 1;
+	Store* store12 = new Store();//create a store
+        store12->xstore_ = 4;  // sets the location
+        store12->ystore_ = 4;
+        store12->zstore_ = 1;
+        StoreList->AddStorelist(store12);
         
-	store = new Store();//create a store
-        store->xstore_ = 6;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 1;
-        StoreList->AddStorelist(store);
+	Store* store13 = new Store();//create a store
+        store13->xstore_ = 6;  // sets the location
+        store13->ystore_ = 4;
+        store13->zstore_ = 1;
+        StoreList->AddStorelist(store13);
         
-	store = new Store();//create a store
-        store->xstore_ = 10;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 1;
+	Store* store14 = new Store();//create a store
+        store14->xstore_ = 10;  // sets the location
+        store14->ystore_ = 4;
+        store14->zstore_ = 1;
+        StoreList->AddStorelist(store14);
         
-        store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 1;
+        Store* store15 = new Store();//create a store
+        store15->xstore_ = 12;  // sets the location
+        store15->ystore_ = 4;
+        store15->zstore_ = 1;
+        StoreList->AddStorelist(store15);
         
-        store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 6;
-        store->zstore_ = 1;
+        Store* store16 = new Store();//create a store
+        store16->xstore_ = 4;  // sets the location
+        store16->ystore_ = 6;
+        store16->zstore_ = 1;
+        StoreList->AddStorelist(store16);
         
-        store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 6;
-        store->zstore_ = 1;
+        Store* store17 = new Store();//create a store
+        store17->xstore_ = 12;  // sets the location
+        store17->ystore_ = 6;
+        store17->zstore_ = 1;
+        StoreList->AddStorelist(store17);
         
-        store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 10;
-        store->zstore_ = 1;
+        Store* store18 = new Store();//create a store
+        store18->xstore_ = 4;  // sets the location
+        store18->ystore_ = 10;
+        store18->zstore_ = 1;
+        StoreList->AddStorelist(store18);
         
-        store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 10;
-        store->zstore_ = 1;
+        Store* store19 = new Store();//create a store
+        store19->xstore_ = 12;  // sets the location
+        store19->ystore_ = 10;
+        store19->zstore_ = 1;
+        StoreList->AddStorelist(store19);
         
-        store = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 1;
+        Store* store20 = new Store();//create a store
+        store20->xstore_ = 4;  // sets the location
+        store20->ystore_ = 12;
+        store20->zstore_ = 1;
+        StoreList->AddStorelist(store20);
         
-        store = new Store();//create a store
-        store->xstore_ = 6;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 1;
+        Store* store21 = new Store();//create a store
+        store21->xstore_ = 6;  // sets the location
+        store21->ystore_ = 12;
+        store21->zstore_ = 1;
+        StoreList->AddStorelist(store21);
         
-        store = new Store();//create a store
-        store->xstore_ = 10;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 1;
+        Store* store22 = new Store();//create a store
+        store22->xstore_ = 10;  // sets the location
+        store22->ystore_ = 12;
+        store22->zstore_ = 1;
+        StoreList->AddStorelist(store22);
         
-        store = new Store();//create a store
-        store->xstore_ = 12;  // sets the location
-        store->ystore_ = 12;
-        store->zstore_ = 1;
+        Store* store23 = new Store();//create a store
+        store23->xstore_ = 12;  // sets the location
+        store23->ystore_ = 12;
+        store23->zstore_ = 1;
+        StoreList->AddStorelist(store23);
 
 	shop_time = 0;
 	while (Shoppers){
