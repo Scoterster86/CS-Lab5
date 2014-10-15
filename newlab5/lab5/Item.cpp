@@ -69,7 +69,7 @@ void Item::PrintItems()
 void Item::AddStore(Store* store)
 {
   //if the store location is (0,0,0) set the first store in the list
-  if (this->xstore_ == 0 && this->xstore_ == 0 && this->zstore_ == 0)
+  if (this->pStore->xstore_ == 0 && this->pStore->xstore_ == 0 && this->pStore->zstore_ == 0)
     {
       this->pStore->xstore_ = store->xstore_;
       this->pStore->ystore_ = store->ystore_;
