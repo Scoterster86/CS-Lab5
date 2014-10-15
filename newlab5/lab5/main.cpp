@@ -104,16 +104,18 @@ int main(int argc, char* argv[])
                   <<Shopperlist[i]->smove_->storelist_->zstore_ <<") at time "<< TIME <<endl;
               //if the robot is out of items to add to the store, remove the store from the list of stores
               if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
-                cout<<"end Print"<<endl;
+                
                 Shopperlist[i]->smove_->RemoveStore();
               }
 
             else{
+              Shopperlist[i]->smove_->->items_->PrintItems();
               Shopperlist[i]->smove_->storelist_->PrintStores();
               Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
-
+              
                 RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
                 RoboMall->PrintBinaryTree();
+                cout<<"end Print"<<endl;
 
               }
               //if there are no more stores in the robots list
