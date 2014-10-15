@@ -17,7 +17,7 @@ void Queue::AddShopper(Shopper* shopper)
 {
 	Shopper* temp = this->listhead_;
 	if(temp != NULL){
-	this->listtail_->nextshopper_=shopper
+	this->listtail_->nextshopper_=shopper;
 	this->listtail_ = shopper;
 	}
 	else{
