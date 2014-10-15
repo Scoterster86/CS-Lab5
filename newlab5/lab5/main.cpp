@@ -190,7 +190,8 @@ int main(int argc, char* argv[])
 			if (foundStore != NULL){
 				cout<<"found a store"<<endl;
 				//sets the new store's location to the store with the most items
-				newStore->xstore_ = foundStore->xstore_;
+				newStore->xstore_ = 5; //foundStore->xstore_;
+				cout<<"xstore"<<endl;
 				newStore->ystore_ = foundStore->ystore_;
 				newStore->zstore_ = foundStore->zstore_;
 				cout << "Adding store" << endl;
