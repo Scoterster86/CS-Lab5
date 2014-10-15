@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
               if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
                 
                 Shopperlist[i]->smove_->RemoveStore();
-                Shopperlist[i]->smove_=new Store();
+                Shopperlist[i]->smove_->storelist_=new Store();
               }
 
             else{
