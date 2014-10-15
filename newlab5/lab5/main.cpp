@@ -182,10 +182,10 @@ int main(int argc, char* argv[])
       //add the item to the new store
       
       newStore->items_=newitem;
-     // cout<<"added item"<<endl;
+      cout<<"added item"<<endl;
       //finds the store with the most of the item added
       Store* foundStore = newStore->FindStore(*RoboMall);
-     //cout<<"found store1"<<endl;
+     cout<<"found store1"<<endl;
       //if a store containing the item was found
       if(foundStore !=NULL){
         cout<<"found a store"<<endl;
@@ -195,13 +195,13 @@ int main(int argc, char* argv[])
         newStore->zstore_ = foundStore->zstore_;
         cout<<"Adding store"<<endl;
         nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
-        /*
+        
         cout<<"Printing Items"<<endl;
         Store* pNext = nextShopper->smove_->storelist_;
         while(pNext){
           pNext->items_->PrintItems();
           
-        }*/
+        }
       }
     }
     
