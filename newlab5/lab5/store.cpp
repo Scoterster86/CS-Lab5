@@ -158,6 +158,7 @@ void Store::RemoveItem()
 Store* Store::FindStore(BinaryTree tree)
 {
 	BinaryTree* currentp = &tree;
+	if(currentp != NULL){
 	if (tree.node_->HasPriority(*(this->items_)) == 0)
 	{
 		cout<<"found item"<<endl;
@@ -172,6 +173,7 @@ Store* Store::FindStore(BinaryTree tree)
 	{
 		this->FindStore(*(currentp->right_));
 		cout<<"right branch"<<endl;
+	}
 	}
 	else{
 		cout<<"didn't find store"<<endl;
