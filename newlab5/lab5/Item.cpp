@@ -127,16 +127,3 @@ void Item::AddStore(Store* store)
     }
 }
 
-//Yo Karita
-//Counts the number of stores in the list
-int Store::GetSize()
-{
-       int n = 0;
-        Store* ptr = this;
-        while (ptr)
-        {
-                n++;
-                ptr = ptr->pNext;
-        }
-        return n;
-}
