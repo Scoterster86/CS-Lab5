@@ -12,6 +12,8 @@ Store::Store(Store* store)
         this->TimeSlice_ = store->TimeSlice_;
         this->items_= NULL;
         this->pNext = nullptr;
+        this->rrqueue = NULL;
+        this->queue = NULL;
 }
 //Yo Karita
 //constructor for a store
@@ -24,6 +26,8 @@ Store::Store()
         this->productamount_ = 0;
         this->items_= NULL;
         this->pNext = nullptr;
+        this->rrqueue = NULL;
+        this->queue = NULL;
 }
 
 Store::Store(int x, int y, int z)
