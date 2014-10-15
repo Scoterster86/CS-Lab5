@@ -1,5 +1,6 @@
 #include "lab5.h"
 
+
 //Yo Karita
 //constructor for a shopper
 Shopper::Shopper()
