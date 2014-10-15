@@ -13,7 +13,7 @@ void Queue::RemoveShopper()
 	this->listhead_ = this->listhead_->nextshopper_;
 }
 
-
+///Get a shopper pointer and put it at the end of the list
 void Queue::AddShopper(Shopper* shopper)
 {
 	Shopper* temp = this->listhead_;
