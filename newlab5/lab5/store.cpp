@@ -185,7 +185,7 @@ Store* Store::FindStore(BinaryTree tree)
 	}
 	}
 	else{
-		//cout<<"didn't find store"<<endl;
+		cout<<"didn't find store"<<endl;
 		return new Store();
 	}
 }
