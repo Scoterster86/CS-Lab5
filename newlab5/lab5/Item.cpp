@@ -63,6 +63,6 @@ void Store::PrintItems()
     {
       //print out the store location and the product amount
       cout << "(" << pCurrent->ProductCode_ << ", " << pCurrent->amount_ << ") ";
-      pCurrent = pCurrent->pNext;
+      pCurrent = pCurrent->nextItem_;
     }
 }
