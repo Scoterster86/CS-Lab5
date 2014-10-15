@@ -66,7 +66,7 @@ void Move::AddStoreShopper(Store* store)
        {
        	//cout<<"Add items to same store"<<endl;
          //add the new product amount to the total product amount
-         pCurrent->items_->AddItem(item);;
+         pCurrent->items_->AddItem(store->items_);;
         return;
     }
   }
@@ -82,8 +82,8 @@ void Move::AddStoreShopper(Store* store)
     }
   else{
   	//cout<<this->pStore->xstore_ <<endl;
-  	store->pNext = this->pStore;
-  	this->pStore=store;
+  	store->pNext = this->storelist_;
+  	this->storelist_=store;
   	//cout<<"pPrev is null"<<endl;
   }  
 }
