@@ -214,7 +214,7 @@ int main(int argc, char* argv[])
 		   Store* std = nextShopper->smove_->storelist_;
 		   while(std){
 		      std->items_->PrintItems();
-		      std= str->pNext;
+		      std= std->pNext;
 		   }
 		}
 	}
