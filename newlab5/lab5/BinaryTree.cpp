@@ -1,6 +1,7 @@
 #include "lab5.h"
 //Scott Iwanicki
 //default constructor for a binary tree
+int DB = 1;
 BinaryTree::BinaryTree()
 {
   this->node_ = new Item();
@@ -31,13 +32,13 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
       //this->node_.pStore->AddStore(store);
       return;
     }
-  cout<<"BT line 34" <<endl;
+  if(DB)cout<<"BT line 34" <<endl;
   /// if node has same productcode
   if (this->node_->HasPriority(*item) == 0)
     {
-    cout<<"BT line 38" <<endl;
+    if(DB)cout<<"BT line 38" <<endl;
       this->node_->AddStore(store);
-      cout<<"added Store"<<endl;
+      if(DB)cout<<"added Store"<<endl;
     }
     
   /// if the node has higher priority,
@@ -57,12 +58,12 @@ void BinaryTree::AddItem(Item* item, Store* store, Store* head)
   /// if the node has lower priority,
   else if (this->node_->HasPriority(*item) == -1)
     {
-      cout<<"BT line 60" <<endl;
+      if(DB)cout<<"BT line 60" <<endl;
       if (this->right_){
          this->right_->AddItem(item, store, head);   
       }
       else{
-        cout<<"BT line 65"<<endl;
+        if(DB)cout<<"BT line 65"<<endl;
           BinaryTree* newTree = new BinaryTree(item);
           this->right_ = newTree;
           this->right_->node_->pStore = store;
