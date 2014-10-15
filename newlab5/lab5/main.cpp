@@ -187,7 +187,6 @@ int main(int argc, char* argv[])
         newStore->zstore_ = foundStore->zstore_;
         nextShopper->smove_->AddStore(store);//Add the store to the shopper's storelist
       }
-      
     }
   }
 
