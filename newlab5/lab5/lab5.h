@@ -35,6 +35,7 @@ class Item
   //determines the location of the item in a binary tree
   int HasPriority(Item);
   void AddItem(Item*);
+  void PrintItems();
   Item();
   Item(string, int);
 };
