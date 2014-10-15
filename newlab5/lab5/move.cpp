@@ -66,7 +66,7 @@ void Move::AddStore(Store* store)
        {
        	//cout<<"Add items to same store"<<endl;
          //add the new product amount to the total product amount
-         pCurrent->productamount_ += store->productamount_;
+         pCurrent->addItem(store->items_);
         return;
     }
   }
