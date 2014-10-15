@@ -92,25 +92,4 @@ void Shopper::AddStore(BinaryTree* tree)
 		temp = temp->nextitem_;
 	}
 }
-///Find the store which has most
-Store* ItemList::FindStore(BinaryTree tree)
-{
-	BinaryTree* currentp = new BinaryTree();
-	currentp = &tree;
-	if (tree.node_->HasPriority(*(this->item_)) == 0)
-	{
 
-		return tree.node_->pStore;
-	}
-	else if (tree.node_->HasPriority(*(this->item_)) == 1)
-	{
-		this->FindStore(*(currentp->left_));
-	}
-	else if(tree.node_->HasPriority(*(this->item_)) == -1)
-	{
-		this->FindStore(*(currentp->right_));
-	}
-	else{
-		return NULL;
-	}
-}
