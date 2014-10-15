@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
   TimeSlice = atoi(argv[1]);
   BinaryTree* RoboMall = new BinaryTree();
   //RoboMall->node_ = new Item();
-  int i,j,k, stores[12], items, count,NumOfShoppers,numOfStores, arrival;
+  int i,j,k, stores[12], items, count,NumOfShoppers,numOfItems, arrival;
   string item;
   //cout<<endl;
   int tempNumOfRobots =0;
@@ -130,14 +130,14 @@ int main(int argc, char* argv[])
               }
               //if there are no more stores in the robots list
               if(Shopperlist[i]->smove_->storelist_==NULL){
-                //      cout<<"Storelist NULL"<<endl;
+                //cout<<"Storelist NULL"<<endl;
                 Store* endStore = new Store();
                 endStore->xstore_ = 8;
                 endStore->ystore_ =16;
                 endStore->zstore_ = 0;
                 endStore->TimeSlice_ = 0;
                 Shopperlist[i]->smove_->storelist_ = endStore;
-                //      cout<<"Added Store"<<endl;
+                //cout<<"Added Store"<<endl;
               }
             }
           }
@@ -161,10 +161,10 @@ int main(int argc, char* argv[])
   cin >> NumOfShoppers;
   for(i=1; i<=NumOfShoppers; i++){
     Shopper* nextShopper = new Shopper(i);
-    cin >>arrival >>numOfStores;
+    cin >>arrival >>numOfItems;
     newshopper->smove_->wait_ = arrival;
     //for every store
-    for(j=0; j<numOfStores; j++){
+    for(j=0; j<numOfItems; j++){
       //get the item id and the amount of that item
       cin >>item  >>count;
       //make a new item
