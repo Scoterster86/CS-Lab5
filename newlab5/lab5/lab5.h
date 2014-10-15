@@ -156,7 +156,8 @@ public:
 	Shopper* listtail_;
 
 	Queue();
-	Queue::Queue(Shopper*);
+	void RemoveShopper();
+	void AddShopper(Shopper*);
 };
 
 
