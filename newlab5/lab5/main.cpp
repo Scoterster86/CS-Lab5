@@ -111,7 +111,7 @@ int main(int argc, char* argv[])
             else{
               //Shopperlist[i]->smove_->storelist_->items_->PrintItems();
               //cout<<endl;
-             // Shopperlist[i]->smove_->storelist_->PrintStores();
+              Shopperlist[i]->smove_->storelist_->PrintStores();
               //cout<<endl;
               Store* treestore = new Store(Shopperlist[i]->smove_->storelist_);
               
