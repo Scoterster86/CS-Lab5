@@ -52,7 +52,7 @@ void Shopper::AddShopper(Shopper* shopper)
         //if the first shopper is empty, set the shopper as the head shopper
         if (this->RobotNum_ == 0)
         {
-        	cout<<"empy list"
+        	cout<<"empy list"<<endl;
                 this->RobotNum_ = shopper->RobotNum_;
                 this->smove_->xpos_ = shopper->smove_->xpos_;
                 this->smove_->ypos_ = shopper->smove_->ypos_;
