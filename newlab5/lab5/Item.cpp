@@ -53,7 +53,7 @@ void Item::AddItem(Item* item)
 
 
 //prints items
-void Store::PrintItems()
+void Item::PrintItems()
 {
   //sets the current pointer to this
   Item* pCurrent = this;
