@@ -185,7 +185,7 @@ int main(int argc, char* argv[])
         newStore->xstore_ = foundStore->xstore_;
         newStore->ystore_ = foundStore->ystore_;
         newStore->zstore_ = foundStore->zstore_;
-        nextShopper->smove_->AddStore(newstore);//Add the store to the shopper's storelist
+        nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
       }
     }
   }
