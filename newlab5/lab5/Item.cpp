@@ -97,6 +97,7 @@ cout<<this->pStore->xstore_ <<endl;
       //sets the current pointer to the next store in the list
       pCurrent = pCurrent->pNext;
     }
+    cout<<this->pStore->xstore_ <<endl;
   //if the store already exsists in the list
   if(pCurrent != NULL){
      if((pCurrent->xstore_ == store->xstore_) &&
