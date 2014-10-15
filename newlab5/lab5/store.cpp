@@ -160,7 +160,7 @@ void Store::RemoveItem()
 }
 
 ///Find the store which has most of an item
-Store* Store::FindStore(BinaryTree tree, int x, int y, int z)
+Store* Store::FindStore(BinaryTree tree, int & x, int & y, int & z)
 {
 	cout<<"in FindStore"<<endl;
 	BinaryTree* currentp = &tree;
