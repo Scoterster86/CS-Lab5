@@ -47,7 +47,6 @@ class ItemList
 public:
 	Item* item_;
 	ItemList* nextitem_;
-	Store* FindStore(BinaryTree);
 };
 //Yo Karita
 //Store class
@@ -62,6 +61,7 @@ public:
 
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
+        Store* FindStore(BinaryTree);
         int GetSize();
         void PrintStores();
         void RemoveItem();
