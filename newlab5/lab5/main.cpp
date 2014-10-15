@@ -196,6 +196,11 @@ int main(int argc, char* argv[])
 				newStore->zstore_ = zs;
 				cout << "Adding store" << endl;
 				nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
+				Store* str = nextShopper->smove_->storelist_;
+				 while(str){
+				   str->items_->PrintItems();
+				   str= str->pNext;
+				 }
 			}
 		}
 		Shoppers->AddShopper(nextShopper);
@@ -206,11 +211,11 @@ int main(int argc, char* argv[])
 		   cout<<ptr->RobotNum_ << endl;
 		   cout<<"in while loop"<<endl;
 		   ptr= ptr->nextshopper_;
-		   Store* str = nextShopper->smove_->storelist_;
+		   Store* std = nextShopper->smove_->storelist_;
 		   while(str){
-		      str->items_->PrintItems();
-		      str= str->pNext;
-		}
+		      std->items_->PrintItems();
+		      std= str->pNext;
+		   }
 		}
 	}
 	
