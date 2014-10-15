@@ -163,9 +163,9 @@ int main(int argc, char* argv[])
   for(i=1; i<=NumOfShoppers; i++){
     Shopper* nextShopper = new Shopper(i);
     cin >>arrival >>numOfItems;
-    cout<<"adding arrival time"<<endl;
+    //cout<<"adding arrival time"<<endl;
     nextShopper->smove_->wait_ = arrival;
-    cout<<"added arrival time"<<endl;
+    //cout<<"added arrival time"<<endl;
     //for every store
     for(j=0; j<numOfItems; j++){
       //get the item id and the amount of that item
@@ -175,7 +175,7 @@ int main(int argc, char* argv[])
           //set the item's values to the inserted values
           newitem->ProductCode_ = item;
           newitem->amount_ = count;
-          cout<<"set item and count"<<endl;
+          //cout<<"set item and count"<<endl;
           newitem->nextItem_ = NULL;
       //create a new store
       Store* newStore = new Store();
