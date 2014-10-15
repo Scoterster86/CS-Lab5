@@ -58,6 +58,8 @@ public:
         int productamount_;
         Store* pNext;
         int TimeSlice_;
+        Queue* queue_;
+	Queue* endQueue_;
 
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
@@ -146,6 +148,16 @@ public:
 	void RemoveShopper();
 };
 
+
+class Queue
+{
+public:
+	Shopper* shopperPtr_;
+	Queue* nextShopper;
+
+	Queue();
+	Queue::Queue(Shopper*);
+};
 
 
 //checks to see if the time is divisible by 25
