@@ -26,6 +26,68 @@ void Move::AddStore(Store* store)
 	else this->storelist_->AddStorelist(store);
 }
 
+void Move::AddStore(Store* store)
+{
+  //if the store location is (0,0,0) set the first store in the list
+  if (this->storelist_->xstore_ == 0 && this->storelist_->xstore_ == 0 && this->storelist_->zstore_ == 0)
+    {
+      this->storelist_->xstore_ = store->xstore_;
+      this->storelist_->ystore_ = store->ystore_;
+      this->storelist_->zstore_ = store->zstore_;
+	//cout<<"Added to empty list"<<endl;
+      this->storelist_->items_ = store->items_;
+      return;
+    }
+  //sets the currento pointer to the first store in the list
+  Store* pCurrent = this->storelist_;
+//cout<<this->pStore->xstore_ <<endl;
+  //sets the previous pointer to null
+  Store* pPrev = nullptr;
+
+  //loops until pCurrent is null or then the current product amount
+  //is greater than the store's prodcut amount or if the stores are the same
+  while (pCurrent && (pCurrent->productamount_ > store->productamount_) && (
+        (pCurrent->xstore_ != store->xstore_) ||
+        (pCurrent->ystore_ != store->ystore_)||
+        (pCurrent->zstore_ != store->zstore_)) )
+    {
+      //sets the previous pointer to the current pointer
+      pPrev = pCurrent;
+      
+      //sets the current pointer to the next store in the list
+      pCurrent = pCurrent->pNext;
+    }
+    //cout<<this->pStore->xstore_ <<endl;
+  //if the store already exsists in the list
+  if(pCurrent != NULL){
+     if((pCurrent->xstore_ == store->xstore_) &&
+        (pCurrent->ystore_ == store->ystore_)&&
+        (pCurrent->zstore_ == store->zstore_))
+       {
+       	//cout<<"Add items to same store"<<endl;
+         //add the new product amount to the total product amount
+         pCurrent->productamount_ += store->productamount_;
+        return;
+    }
+  }
+  //cout<<this->pStore->xstore_ <<endl;
+  //if the previous pointer isn't null instert the store between the previous and current store
+  if (pPrev != NULL)
+    {
+      //set the previous store's next pointer to the store
+      pPrev->pNext  = store;
+      //set the store's next pointer to the current store
+      store->pNext  = pCurrent;
+      //cout<<"pPrev isn't null"<<endl;
+    }
+  else{
+  	//cout<<this->pStore->xstore_ <<endl;
+  	store->pNext = this->pStore;
+  	this->pStore=store;
+  	//cout<<"pPrev is null"<<endl;
+  }  
+}
+
 //Yo Karita
 //removes a store from the list of stores
 void Move::RemoveStore()
