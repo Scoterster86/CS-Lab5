@@ -188,6 +188,8 @@ Store* Store::FindStore(BinaryTree tree, int & x, int & y, int & z)
 	}
 	else{
 		//cout<<"didn't find store"<<endl;
+		x = -1;
+		return tree.node_->pStore;
 		return new Store();
 	}
 }
