@@ -214,9 +214,9 @@ int main(int argc, char* argv[])
 	}
 	
 	Store* StoreList = new Store();//create a store
-        store->xstore_ = 4;  // sets the location
-        store->ystore_ = 4;
-        store->zstore_ = 0;
+        Storelist->xstore_ = 4;  // sets the location
+        Storelist->ystore_ = 4;
+        Storelist->zstore_ = 0;
         
 	store = new Store();//create a store
         store->xstore_ = 6;  // sets the location
