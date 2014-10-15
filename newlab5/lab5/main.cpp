@@ -218,38 +218,38 @@ int main(int argc, char* argv[])
         StoreList->ystore_ = 4;
         StoreList->zstore_ = 0;
         
-	store = new Store();//create a store
+	Store* store = new Store();//create a store
         store->xstore_ = 6;  // sets the location
         store->ystore_ = 4;
         store->zstore_ = 0;
         StoreList->AddStorelist(store);
         
-	store ->(new Store());//create a store
+	Store* store ->new Store();//create a store
         store->xstore_ = 10;  // sets the location
         store->ystore_ = 4;
         store->zstore_ = 0;
         
-        store = new Store();//create a store
+        Store* store = new Store();//create a store
         store->xstore_ = 12;  // sets the location
         store->ystore_ = 4;
         store->zstore_ = 0;
         
-        store = new Store();//create a store
+        Store* store = new Store();//create a store
         store->xstore_ = 4;  // sets the location
         store->ystore_ = 6;
         store->zstore_ = 0;
         
-        store = new Store();//create a store
+        Store* store = new Store();//create a store
         store->xstore_ = 12;  // sets the location
         store->ystore_ = 6;
         store->zstore_ = 0;
         
-        store = new Store();//create a store
+        Store* store = new Store();//create a store
         store->xstore_ = 4;  // sets the location
         store->ystore_ = 10;
         store->zstore_ = 0;
         
-        store = new Store();//create a store
+        Store* store = new Store();//create a store
         store->xstore_ = 12;  // sets the location
         store->ystore_ = 10;
         store->zstore_ = 0;
