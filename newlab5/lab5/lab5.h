@@ -152,8 +152,8 @@ public:
 class Queue
 {
 public:
-	Shopper* shopperPtr_;
-	Queue* nextShopper;
+	Shopper* listhead_;
+	Shopper* listtail_;
 
 	Queue();
 	Queue::Queue(Shopper*);
