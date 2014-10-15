@@ -70,13 +70,13 @@ int main(int argc, char* argv[])
                       <<" enters the simulation at time " <<TIME <<endl;
                       Shopperlist[i]->smove_->wait_=1;
                 }
-          /*cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
+          cout <<"Robot: "<< Shopperlist[i]->RobotNum_<< endl
                << "Pos: "<<Shopperlist[i]->smove_->xpos_ <<" "
                <<Shopperlist[i]->smove_->ypos_ <<" "<< Shopperlist[i]->smove_->zpos_ << endl;
           cout <<"Store:" <<Shopperlist[i]->smove_->storelist_->xstore_
                << " " <<Shopperlist[i]->smove_->storelist_->ystore_ << " "
                <<Shopperlist[i]->smove_->storelist_->zstore_ << endl;
-          */
+          
           //if the robot isn't at a store
           if(Shopperlist[i]->smove_->xpos_ != Shopperlist[i]->smove_->storelist_->xstore_ ||
              Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_ ||
@@ -106,10 +106,6 @@ int main(int argc, char* argv[])
               if(Shopperlist[i]->smove_->storelist_->items_ == NULL){
                 
                 Shopperlist[i]->smove_->RemoveStore();
-                Shopperlist[i]->smove_->storelist_=new Store();
-                Shopperlist[i]->smove_->storelist_->xstore_ = 8;
-                Shopperlist[i]->smove_->storelist_->ystore_ =16;
-                Shopperlist[i]->smove_->storelist_->zstore_ = 0;
               }
 
             else{
