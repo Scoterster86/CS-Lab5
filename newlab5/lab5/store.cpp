@@ -168,6 +168,7 @@ Store* Store::FindStore(BinaryTree tree)
 	if (tree.node_->HasPriority(*(this->items_)) == 0)
 	{
 	cout<<"found item"<<endl;
+	
 		return tree.node_->pStore;
 	}
 	else if (tree.node_->HasPriority(*(this->items_)) == 1)
