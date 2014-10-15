@@ -204,6 +204,8 @@ int main(int argc, char* argv[])
     cout<<"while loop"<<endl;
     while(ptr){
           cout<<ptr->RobotNum_ << endl;
+              cout<<"in while loop"<<endl;
+
           ptr= ptr->nextshopper_;
           Store* str = nextShopper->smove_->storelist_;
         while(str){
