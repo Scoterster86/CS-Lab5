@@ -128,3 +128,15 @@ void Item::AddStore(Store* store)
   }  
 }
 
+
+/// Add the head store of the storelist if it still has products. If it's empty, remove it.
+void Item::RemoveStore()
+{
+	Store* temp = this->pStore;
+	this->pStore = this->pStore->pNext;
+
+	if (temp->productamount_ > 0)
+	{
+		this->AddStore(temp);
+	}
+}
