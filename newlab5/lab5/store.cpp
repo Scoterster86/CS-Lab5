@@ -147,3 +147,9 @@ void Store::PrintStores()
       pCurrent = pCurrent->pNext;
     }
 }
+
+
+void Store::RemoveItem()
+{
+        this->items_= this->items_->nextItem_;
+}
