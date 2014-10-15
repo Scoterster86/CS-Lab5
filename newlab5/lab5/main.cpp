@@ -14,13 +14,13 @@ int main(int argc, char* argv[])
   TimeSlice = atoi(argv[1]);
   BinaryTree* RoboMall = new BinaryTree();
   //RoboMall->node_ = new Item();
-  int i,j,k, stores[12], items, count, location,NumOfShoppers,numOfStores, arrival;
+  int i,j,k, stores[12], items, count,NumOfShoppers,numOfStores, arrival;
   string item;
   //cout<<endl;
   int tempNumOfRobots =0;
   cin >> tempNumOfRobots; // in lab5
   NumOfRobots = tempNumOfRobots;
-  int xpos=0, ypos=0, zpos=0, ts = 0;
+  int xpos=0, ypos=0, zpos=0;
   for (i = 0; i < NumOfRobots; i++)
     {
       cin >> stores[i];
