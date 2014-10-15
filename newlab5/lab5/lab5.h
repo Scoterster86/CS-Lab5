@@ -38,6 +38,7 @@ class Item
   void AddItem(Item*);
   void AddStore(Store*);
   void PrintItems();
+  void RemoveStore();
   
   Item();
   Item(string, int);
