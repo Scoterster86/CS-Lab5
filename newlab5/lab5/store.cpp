@@ -27,7 +27,7 @@ Store::Store()
         this->items_= NULL;
         this->pNext = nullptr;
         this->rrqueue = NULL;
-        this->queue = NULL;
+        this->storequeue = NULL;
 }
 
 Store::Store(int x, int y, int z)
