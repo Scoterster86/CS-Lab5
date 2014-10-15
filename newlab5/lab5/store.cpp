@@ -1,5 +1,6 @@
 #include "lab5.h"
 
+
 //Yo Karita
 //constructor for Store with a store as an input
 Store::Store(Store* store)
