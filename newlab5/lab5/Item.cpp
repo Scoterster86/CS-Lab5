@@ -74,7 +74,7 @@ void Item::AddStore(Store* store)
       this->pStore->xstore_ = store->xstore_;
       this->pStore->ystore_ = store->ystore_;
       this->pStore->zstore_ = store->zstore_;
-
+	cout<<"Added to empty list"<<endl;
       this->pStore->productamount_ += store->productamount_;
       return;
     }
