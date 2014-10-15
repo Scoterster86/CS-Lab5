@@ -12,3 +12,15 @@ void Queue::RemoveShopper()
 {
 	this->listhead_ = this->listhead_->nextshopper_;
 }
+
+
+void Queue::AddShopper(Shopper* shopper)
+{
+	Shopper* temp = this->listhead_;
+	while (temp)
+	{
+		temp = temp->nextshopper_;
+	}
+	temp = shopper;
+	this->listtail_ = temp;
+}
