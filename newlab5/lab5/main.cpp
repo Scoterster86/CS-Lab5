@@ -196,7 +196,7 @@ int main(int argc, char* argv[])
         nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
         
         
-        Store* pNext = nextShopper->smove_->storelist_
+        Store* pNext = nextShopper->smove_->storelist_;
         while(pNext){
           pNext->ProductCode_->PrintItems();
         }
