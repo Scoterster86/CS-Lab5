@@ -9,6 +9,7 @@ RRqueue::RRqueue()
         this->listtail_ = NULL;
 }
 
+
 //Scott Iwanicki
 //constructor of round robin queue with a shopper as an input
 RRqueue::RRqueue(Shopper* shopper)
