@@ -31,6 +31,8 @@ class Item
   string ProductCode_;
   int amount_;
   Item* nextItem_;
+  RRqueue* rrqueue;
+  Queue* queue;
   //pointer to the list of stores with the item inside
   Store* pStore;
 
