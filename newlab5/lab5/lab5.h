@@ -71,7 +71,7 @@ public:
 
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
-        Store* FindStore(BinaryTree, int*, int*, int*);
+        Store* FindStore(BinaryTree, int &, int &, int &);
         int GetSize();
         void PrintStores();
         void RemoveItem();
