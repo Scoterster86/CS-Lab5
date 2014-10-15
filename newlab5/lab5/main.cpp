@@ -49,6 +49,7 @@ int main(int argc, char* argv[])
           //cout<<"Add item" <<endl;
           store->items_->AddItem(newitem);
           store->items_->PrintItems();
+          cout<<endl;
           //cout <<"Item " <<store->items_->ProductCode_ <<"Count " <<store->items_->amount_ <<endl;
 
         }
