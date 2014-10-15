@@ -87,9 +87,9 @@ cout<<this->pStore->xstore_ <<endl;
   //loops until pCurrent is null or then the current product amount
   //is greater than the store's prodcut amount or if the stores are the same
   while (pCurrent && (pCurrent->productamount_ > store->productamount_) && (
-        (pCurrent->xstore_ =! store->xstore_) ||
-        (pCurrent->ystore_ =! store->ystore_)||
-        (pCurrent->zstore_=! store->zstore_)) )
+        (pCurrent->xstore_ != store->xstore_) ||
+        (pCurrent->ystore_ != store->ystore_)||
+        (pCurrent->zstore_ != store->zstore_)) )
     {
       //sets the previous pointer to the current pointer
       pPrev = pCurrent;
