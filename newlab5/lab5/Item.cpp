@@ -116,5 +116,9 @@ void Item::AddStore(Store* store)
       //set the store's next pointer to the current store
       store->pNext  = pCurrent;
     }
+  else{
+  	store->pNext = pCurrent;
+  	this->pStore=store;
+  }  
 }
 
