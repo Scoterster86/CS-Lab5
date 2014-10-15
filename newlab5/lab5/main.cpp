@@ -212,7 +212,7 @@ int main(int argc, char* argv[])
 		   cout<<"in while loop"<<endl;
 		   ptr= ptr->nextshopper_;
 		   Store* std = nextShopper->smove_->storelist_;
-		   while(str){
+		   while(std){
 		      std->items_->PrintItems();
 		      std= str->pNext;
 		   }
