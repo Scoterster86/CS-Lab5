@@ -65,3 +65,81 @@ void Item::PrintItems()
       pCurrent = pCurrent->nextItem_;
     }
 }
+
+void Item::AddStore(Store* store)
+{
+  //if the store location is (0,0,0) set the first store in the list
+  if (this->xstore_ == 0 && this->xstore_ == 0 && this->zstore_ == 0)
+    {
+      this->pStore->xstore_ = store->xstore_;
+      this->pStore->ystore_ = store->ystore_;
+      this->pStore->zstore_ = store->zstore_;
+
+      this->pStore->productamount_ += store->productamount_;
+      return;
+    }
+ //sets the head pointer of the list to the first store in the list
+  head = this;
+
+  //sets the currento pointer to the first store in the list
+  Store* pCurrent = this->pStore;
+
+  //sets the previous pointer to null
+  Store* pPrev = nullptr;
+
+  //loops until pCurrent is null or then the current product amount
+  //is greater than the store's prodcut amount or if the stores are the same
+  while (pCurrent && (pCurrent->productamount_ > store->productamount_) && (
+        (pCurrent->xstore_ =! store->xstore_) ||
+        (pCurrent->ystore_ =! store->ystore_)||
+        (pCurrent->zstore_=! store->zstore_)) )
+    {
+      //sets the previous pointer to the current pointer
+      pPrev = pCurrent;
+
+      //sets the current pointer to the next store in the list
+      pCurrent = pCurrent->pNext;
+    }
+  //if the store already exsists in the list
+  if(pCurrent != NULL){
+     if((pCurrent->xstore_ == store->xstore_) &&
+        (pCurrent->ystore_ == store->ystore_)&&
+        (pCurrent->zstore_ == store->zstore_))
+       {
+         //add the new product amount to the total product amount
+         pCurrent->productamount_ += store->productamount_;
+        return;
+    }
+  }
+  //if the previous pointer isn't null instert the store between the previous and current store
+  if (pPrev != NULL)
+    {
+      //set the previous store's next pointer to the store
+      pPrev->pNext = store;
+      //set the store's next pointer to the current store
+      store->pNext = pCurrent;
+    }
+  //if the previous pointer is null
+  else
+    {
+            cout<<"pPrev is null"<<endl;
+      //set the store's next pointer as the previous head of the list
+      store->pNext = this->pNext;
+      //set the head pointer of the list to the store
+      this->pNext=store;
+    }
+}
+
+//Yo Karita
+//Counts the number of stores in the list
+int Store::GetSize()
+{
+       int n = 0;
+        Store* ptr = this;
+        while (ptr)
+        {
+                n++;
+                ptr = ptr->pNext;
+        }
+        return n;
+}
