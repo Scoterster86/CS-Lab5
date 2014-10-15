@@ -26,7 +26,7 @@ void Move::AddStore(Store* store)
 	else this->storelist_->AddStorelist(store);
 }
 
-void Move::AddStore(Store* store)
+void Move::AddStoreShopper(Store* store)
 {
   //if the store location is (0,0,0) set the first store in the list
   if (this->storelist_->xstore_ == 0 && this->storelist_->xstore_ == 0 && this->storelist_->zstore_ == 0)
