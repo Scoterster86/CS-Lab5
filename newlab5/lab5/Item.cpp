@@ -74,7 +74,7 @@ void Item::AddStore(Store* store)
       this->pStore->xstore_ = store->xstore_;
       this->pStore->ystore_ = store->ystore_;
       this->pStore->zstore_ = store->zstore_;
-	cout<<"Added to empty list"<<endl;
+	//cout<<"Added to empty list"<<endl;
       this->pStore->productamount_ += store->productamount_;
       return;
     }
@@ -104,13 +104,13 @@ void Item::AddStore(Store* store)
         (pCurrent->ystore_ == store->ystore_)&&
         (pCurrent->zstore_ == store->zstore_))
        {
-       	cout<<"Add items to same store"<<endl;
+       	//cout<<"Add items to same store"<<endl;
          //add the new product amount to the total product amount
          pCurrent->productamount_ += store->productamount_;
         return;
     }
   }
-  cout<<this->pStore->xstore_ <<endl;
+  //cout<<this->pStore->xstore_ <<endl;
   //if the previous pointer isn't null instert the store between the previous and current store
   if (pPrev != NULL)
     {
@@ -118,13 +118,13 @@ void Item::AddStore(Store* store)
       pPrev->pNext  = store;
       //set the store's next pointer to the current store
       store->pNext  = pCurrent;
-      cout<<"pPrev isn't null"<<endl;
+      //cout<<"pPrev isn't null"<<endl;
     }
   else{
   	//cout<<this->pStore->xstore_ <<endl;
   	store->pNext = this->pStore;
   	this->pStore=store;
-  	cout<<"pPrev is null"<<endl;
+  	//cout<<"pPrev is null"<<endl;
   }  
 }
 
