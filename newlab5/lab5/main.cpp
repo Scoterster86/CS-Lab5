@@ -176,7 +176,7 @@ int main(int argc, char* argv[])
 			//set the item's values to the inserted values
 			newitem->ProductCode_ = item;
 			newitem->amount_ = count;
-			//cout<<"set item and count"<<endl;
+			cout<<"set item and count"<<endl;
 			newitem->nextItem_ = NULL;
 			//create a new store
 			Store* newStore = new Store();
@@ -185,10 +185,10 @@ int main(int argc, char* argv[])
 			cout << " " << endl;
 			//finds the store with the most of the item added
 			Store* foundStore = newStore->FindStore(*RoboMall);
-			//cout<<"found store1"<<endl;
+			cout<<"found store1"<<endl;
 			//if a store containing the item was found
 			if (foundStore != NULL){
-				//cout<<"found a store"<<endl;
+				cout<<"found a store"<<endl;
 				//sets the new store's location to the store with the most items
 				newStore->xstore_ = foundStore->xstore_;
 				newStore->ystore_ = foundStore->ystore_;
