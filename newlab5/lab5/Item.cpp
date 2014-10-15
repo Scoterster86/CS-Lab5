@@ -119,7 +119,7 @@ void Item::AddStore(Store* store)
       cout<<"pPrev isn't null"<<endl;
     }
   else{
-  	cout<<this->pNext->xstore_ <<endl;
+  	cout<<this->pStore->xstore_ <<endl;
   	store->pNext = this->pStore;
   	this->pStore=store;
   	cout<<"pPrev is null"<<endl;
