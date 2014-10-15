@@ -153,3 +153,26 @@ void Store::RemoveItem()
 {
         this->items_= this->items_->nextItem_;
 }
+
+///Find the store which has most of an item
+Store* ItemList::FindStore(BinaryTree tree)
+{
+	BinaryTree* currentp = new BinaryTree();
+	currentp = &tree;
+	if (tree.node_->HasPriority(*(this->item_)) == 0)
+	{
+
+		return tree.node_->pStore;
+	}
+	else if (tree.node_->HasPriority(*(this->item_)) == 1)
+	{
+		this->FindStore(*(currentp->left_));
+	}
+	else if(tree.node_->HasPriority(*(this->item_)) == -1)
+	{
+		this->FindStore(*(currentp->right_));
+	}
+	else{
+		return NULL;
+	}
+}
