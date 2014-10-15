@@ -201,7 +201,7 @@ int main(int argc, char* argv[])
     }
     Shoppers->AddShopper(nextShopper);
     Shopper* ptr = Shoppers->listhead_;
-    cout"while loop"<<endl;
+    cout<<"while loop"<<endl;
     while(ptr){
           cout<<ptr->RobotNum_ << endl;
           ptr= ptr->nextshopper_;
