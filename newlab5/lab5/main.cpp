@@ -82,6 +82,7 @@ int main(int argc, char* argv[])
              Shopperlist[i]->smove_->ypos_ != Shopperlist[i]->smove_->storelist_->ystore_ ||
              Shopperlist[i]->smove_->zpos_ != Shopperlist[i]->smove_->storelist_->zstore_)
           {
+            cout<<"Move"<<endl;
             Shopperlist[i]->smove_->BotMove(Shopperlist[i]->RobotNum_);
           }
           //if the robot is at a "store"
