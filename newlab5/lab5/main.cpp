@@ -212,6 +212,129 @@ int main(int argc, char* argv[])
 		}
 		}*/
 	}
+	
+	Store* StoreList = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 0;
+        
+	store = new Store();//create a store
+        store->xstore_ = 6;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 0;
+        StoreList->AddStorelist(store);
+        
+	store = new Store();//create a store
+        store->xstore_ = 10;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 6;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 6;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 10;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 10;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 6;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 10;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 0;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 0;
+
+	store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 1;
+        
+	store = new Store();//create a store
+        store->xstore_ = 6;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 1;
+        StoreList->AddStorelist(store);
+        
+	store = new Store();//create a store
+        store->xstore_ = 10;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 4;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 6;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 6;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 10;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 10;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 4;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 6;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 10;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 1;
+        
+        store = new Store();//create a store
+        store->xstore_ = 12;  // sets the location
+        store->ystore_ = 12;
+        store->zstore_ = 1;
+
 	shop_time = 0;
 	while (Shoppers){
 		Shopper* currentShopperptr = Shoppers->listhead_;
@@ -229,9 +352,9 @@ int main(int argc, char* argv[])
 					//cout<<"Move"<<endl;
 					currentShopperptr->smove_->BotMove(currentShopperptr->RobotNum_);
 				}
-				//if the robot is at a "store"
+				//if the shopper is at a "store"
 				else{
-					//if the store is A1, remove the robot from the simulation
+					//if the store is A1, remove the shopper from the simulation
 					if (currentShopperptr->smove_->storelist_->xstore_ == 8 &&
 						currentShopperptr->smove_->storelist_->ystore_ == 16 &&
 						currentShopperptr->smove_->storelist_->zstore_ == 0)
@@ -250,12 +373,13 @@ int main(int argc, char* argv[])
 								<< currentShopperptr->smove_->storelist_->zstore_ << ") at time " << TIME << endl;
 							currentShopperptr->enteredstore_ = 1;
 						}
-						//if the shopper is out of items to add to the store, remove the store from the list of stores
+						//if the shopper is out of items to remove from the store, remove the store from the list of stores
 						if (currentShopperptr->smove_->storelist_->items_ == NULL){
 							currentShopperptr->smove_->RemoveStore();
 							currentShopperptr->enteredstore_ = 0;
 						}
 						else{
+							if(currentShopperptr)
 							Store* treestore = new Store(currentShopperptr->smove_->storelist_);
 							RoboMall->AddItem(currentShopperptr->smove_->storelist_->items_, treestore, headstoreptr);
 							//RoboMall->PrintBinaryTree();
