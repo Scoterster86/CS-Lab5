@@ -20,6 +20,6 @@ void Queue::AddShopper(Shopper* shopper)
 	{
 		temp = temp->nextshopper_;
 	}
-	temp = shopper;
+	this->listhead_ = shopper;
 	this->listtail_ = temp;
 }
