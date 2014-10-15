@@ -191,9 +191,9 @@ int main(int argc, char* argv[])
 			if (foundStore != NULL){
 				cout<<"found a store"<<endl;
 				//sets the new store's location to the store with the most items
-				newStore->xstore_ = foundStore->xstore_;
-				newStore->ystore_ = foundStore->ystore_;
-				newStore->zstore_ = foundStore->zstore_;
+				newStore->xstore_ = xs;
+				newStore->ystore_ = ys;
+				newStore->zstore_ = zs;
 				cout << "Adding store" << endl;
 				nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
 			}
