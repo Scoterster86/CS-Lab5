@@ -93,7 +93,7 @@ void Item::AddStore(Store* store)
     {
       //sets the previous pointer to the current pointer
       pPrev = pCurrent;
-
+      cout<<this->pStore->xstore_ <<endl;
       //sets the current pointer to the next store in the list
       pCurrent = pCurrent->pNext ;
     }
