@@ -158,11 +158,14 @@ int main(int argc, char* argv[])
   }
   //END ROBOT simulations
   //Begin Shopper simulation
+  cout<<"Begin Shoppers"<<endl;
   cin >> NumOfShoppers;
   for(i=1; i<=NumOfShoppers; i++){
     Shopper* nextShopper = new Shopper(i);
     cin >>arrival >>numOfItems;
+    cout<<"adding arrival time"<<endl;
     nextShopper->smove_->wait_ = arrival;
+    cout<<"added arrival time"<<endl;
     //for every store
     for(j=0; j<numOfItems; j++){
       //get the item id and the amount of that item
@@ -172,15 +175,19 @@ int main(int argc, char* argv[])
           //set the item's values to the inserted values
           newitem->ProductCode_ = item;
           newitem->amount_ = count;
+          cout<<"set item and count"<<endl;
           newitem->nextItem_ = NULL;
       //create a new store
       Store* newStore = new Store();
       //add the item to the new store
       newStore->items_->AddItem(newitem);
+      cout<<"added item"<<endl;
       //finds the store with the most of the item added
       Store* foundStore = newStore->FindStore(*RoboMall);
+      cout<<"found store1"<<endl;
       //if a store containing the item was found
       if(foundStore !=NULL){
+        cout<<"found a store"<<endl;
         //sets the new store's location to the store with the most items
         newStore->xstore_ = foundStore->xstore_;
         newStore->ystore_ = foundStore->ystore_;
