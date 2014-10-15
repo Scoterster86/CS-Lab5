@@ -2,12 +2,13 @@
 
 Queue::Queue()
 {
-	this->shopperPtr_ = nullptr;
-	this->nextShopper = nullptr;
+	this->listhead_ = nullptr;
+	this->listtail_ = nullptr;
 }
 
-Queue::Queue(Shopper* shopperPtr)
+
+///change the pointer to the next shopper in the queue
+void Queue::RemoveShopper()
 {
-	this->shopperPtr_ = shopperPtr;
-	this->nextShopper = nullptr;
+	this->listhead_ = this->listhead_->nextshopper_;
 }
