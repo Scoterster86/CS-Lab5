@@ -222,15 +222,6 @@ int main(int argc, char* argv[])
 						<< " enters the simulation at time " << TIME << endl;
 					currentShopperptr->smove_->wait_ = -1;
 				}
-				/*
-				cout <<"Robot: "<< currentShopperptr->RobotNum_<< endl
-				<< "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
-				<<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
-				cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
-				<< " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
-				<<currentShopperptr->smove_->storelist_->zstore_ << endl;
-				*/
-				//if the robot isn't at a store
 				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
 					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
 					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
@@ -259,16 +250,12 @@ int main(int argc, char* argv[])
 								<< currentShopperptr->smove_->storelist_->zstore_ << ") at time " << TIME << endl;
 							currentShopperptr->enteredstore_ = 1;
 						}
-						//if the robot is out of items to add to the store, remove the store from the list of stores
+						//if the shopper is out of items to add to the store, remove the store from the list of stores
 						if (currentShopperptr->smove_->storelist_->items_ == NULL){
 							currentShopperptr->smove_->RemoveStore();
 							currentShopperptr->enteredstore_ = 0;
 						}
 						else{
-							//currentShopperptr->smove_->storelist_->items_->PrintItems();
-							//cout<<endl;
-							// currentShopperptr->smove_->storelist_->PrintStores();
-							//cout<<endl;
 							Store* treestore = new Store(currentShopperptr->smove_->storelist_);
 							RoboMall->AddItem(currentShopperptr->smove_->storelist_->items_, treestore, headstoreptr);
 							//RoboMall->PrintBinaryTree();
