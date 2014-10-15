@@ -115,7 +115,7 @@ int main(int argc, char* argv[])
               
                 RoboMall->AddItem(Shopperlist[i]->smove_->storelist_->items_ ,treestore , headstoreptr);
                 RoboMall->PrintBinaryTree();
-                Shopperlist[i]->smove_->storelist_->items_->RemoveItem(Shopperlist[i]->smove_->storelist_->items_);
+                Shopperlist[i]->smove_->storelist_->RemoveItem();
                 cout<<"end Print"<<endl;
 
               }
