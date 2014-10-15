@@ -195,7 +195,7 @@ int main(int argc, char* argv[])
         newStore->zstore_ = foundStore->zstore_;
         nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
         
-        
+        cout<<"Printing Items"<<endl;
         Store* pNext = nextShopper->smove_->storelist_;
         while(pNext){
           pNext->items_->PrintItems();
