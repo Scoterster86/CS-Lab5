@@ -409,20 +409,27 @@ int main(int argc, char* argv[])
 							currentShopperptr->enteredstore_ = 0;
 						}
 						else{
-							//if the shopper is in the queue
+							//find the store that the shopper is at
 							Store* currentStore = currentShopperptr->smove_->storelist_->FindStore(StoreList);
+							//if the shopper is already in the queue
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr->smove_->storelist_)){
+								//if the shopper is at the head of the store
 								if(currentShopperptr->RoboNum_ = currentStore->storequeue->listhead_->RoboNum_){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
-										
+										currentStore->storequeue->RunQueue();
 									}
 								}
 							}
-							Store* treestore = new Store(currentShopperptr->smove_->storelist_);
-							RoboMall->AddItem(currentShopperptr->smove_->storelist_->items_, treestore, headstoreptr);
-							//RoboMall->PrintBinaryTree();
-							currentShopperptr->smove_->storelist_->RemoveItem();
-							//cout<<"end Print"<<endl;
+							else{
+								//add the shopper to the queue
+								currentStore->storequeue->AddShopper(currentShopperptr);
+								//if the shopper is at the head of the store
+								if(currentShopperptr->RoboNum_ = currentStore->storequeue->listhead_->RoboNum_){
+									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
+										currentStore->storequeue->RunQueue();
+									}
+								}
+							}
 						}
 						//if there are no more stores in the robots list
 						if (currentShopperptr->smove_->storelist_ == NULL){
