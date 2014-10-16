@@ -378,14 +378,14 @@ int main(int argc, char* argv[])
 						<< " enters the simulation at time " << TIME << endl;
 					currentShopperptr->smove_->delay_ = -1;
 				}
-				/*
+				if(TIME>1200){
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
                <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
           cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
                << " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
                <<currentShopperptr->smove_->storelist_->zstore_ << endl;
-				*/
+				}
 				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
 					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
 					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
