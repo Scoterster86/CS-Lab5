@@ -7,6 +7,7 @@ Queue::Queue()
 	this->listtail_ = nullptr;
 }
 
+//Yo Karita
 //removes the shopper at the head of the list
 void Queue::RemoveShopper()
 {
