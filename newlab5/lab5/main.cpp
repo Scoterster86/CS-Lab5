@@ -187,7 +187,7 @@ int main(int argc, char* argv[])
 			int *ys = new int;
 			int *zs = new int;
 			//finds the store with the most of the item added
-			Store* foundStore = newStore->FindStore(*RoboMall, *xs, *ys, *zs);
+			newStore->FindStore(*RoboMall, *xs, *ys, *zs);
 			cout<<"found store1" <<endl;
 			//if a store containing the item was found
 			if (*xs != -1){
