@@ -431,7 +431,7 @@ int main(int argc, char* argv[])
 								if(Debug)cout<<"added shopper"<<endl;
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
-									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
+									if(currentShopperptr->smove_->storelist_->zstore_ == 1){
 										currentStore->storequeue->RunQueue();
 									}
 								}
