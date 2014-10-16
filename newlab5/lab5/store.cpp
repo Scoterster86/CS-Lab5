@@ -208,9 +208,9 @@ Store* Store::FindStore(Store* store){
 int Store::ShopperinQueue(Shopper* shopper){
 	Shopper* shopperlist = this->storequeue->listhead_;
 	while(shopperlist && (shopperlist->RobotNum_ != shopper->RobotNum_)){
-		shopperlist = shopperlist->pNext;
+		shopperlist = shopperlist->nextshopper_;
 	}
-	if(shoperlist){
+	if(shoperlist == NULL){
 		return 0;
 	}
 	else{
