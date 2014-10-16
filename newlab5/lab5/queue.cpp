@@ -77,7 +77,7 @@ void Queue::RunQueue()
         ptr->smove_->storelist_->items_->itemsleft_ --;
         //if the store is on the first floor
         if(ptr->smove_->storelist_->zstore_ == 0){
-        	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
+        	//cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
         //	cout<<"Store is z=0"<<endl;
         	//if the shopper is done with that item 
         	if(ptr->smove_->storelist_->items_->itemsleft_==0){
@@ -99,7 +99,7 @@ void Queue::RunQueue()
         }
         //if the store is on the second floor
         else{
-        	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
+        	//cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
         	//if the timeslice is up or if the shopper is out of the item
         	if((ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_ % TimeSlice == 0 )
         		|| (ptr->smove_->storelist_->items_->itemsleft_ == 0)){
