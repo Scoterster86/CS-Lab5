@@ -378,7 +378,7 @@ int main(int argc, char* argv[])
 						<< " enters the simulation at time " << TIME << endl;
 					currentShopperptr->smove_->delay_ = -1;
 				}
-				if(TIME>1200){
+				if(TIME>1900){
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
                <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
@@ -395,7 +395,7 @@ int main(int argc, char* argv[])
 				}
 				//if the shopper is at a "store"
 				else{
-					cout<<"At a store"<<endl;
+					//cout<<"At a store"<<endl;
 					//if the store is A1, remove the shopper from the simulation
 					if (currentShopperptr->smove_->storelist_->xstore_ == 8 &&
 						currentShopperptr->smove_->storelist_->ystore_ == 16 &&
@@ -406,7 +406,7 @@ int main(int argc, char* argv[])
 					}
 					//if the robot is at a store
 					else{
-						cout<<"At a store2"<<endl;
+						//cout<<"At a store2"<<endl;
 						if (currentShopperptr->enteredstore_ == 0){
 							cout << "Shopper " << currentShopperptr->RobotNum_ << " arrives at store("
 								<< currentShopperptr->smove_->storelist_->xstore_ << ", "
@@ -426,7 +426,7 @@ int main(int argc, char* argv[])
 							//if the shopper is already in the queue
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
-								if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
+								//if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									currentStore->storequeue->RunQueue();
 								}
@@ -434,7 +434,7 @@ int main(int argc, char* argv[])
 								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
-								  	cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
+								  	//cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
 								  	currentStore->storequeue->listhead_ = NULL;
 								  }
 								}
@@ -443,16 +443,16 @@ int main(int argc, char* argv[])
 								//if(Debug)cout<<"shopper not in queue"<<endl;
 								//add the shopper to the queue
 								currentStore->storequeue->AddShopper(currentShopperptr);
-								if(Debug){cout<<"added shopper"<< " Head of list: "<<currentStore->storequeue->listhead_->RobotNum_
+								/* if(Debug){cout<<"added shopper"<< " Head of list: "<<currentStore->storequeue->listhead_->RobotNum_
 											<<" "<<currentStore->storequeue->listhead_->smove_->xpos_
 											<<" "<<currentStore->storequeue->listhead_->smove_->ypos_
 											<<" "<<currentStore->storequeue->listhead_->smove_->zpos_<<endl;
 								}
-								
+								*/
 								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
-								  	cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
+								  	//cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
 								  	currentStore->storequeue->listhead_ = NULL;
 								  }
 								//if the shopper is at the head of the store
