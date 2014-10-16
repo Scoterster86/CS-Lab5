@@ -60,6 +60,7 @@ void Queue::RunQueue()
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
         				this->listhead_ = this->listhead_->nextshopper_;
+        				ptr->smove_->RemoveStore();
         			}
         			else{
 					this->listtail_->nextshopper_ = this->listhead_;
