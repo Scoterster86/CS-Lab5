@@ -438,7 +438,7 @@ int main(int argc, char* argv[])
 								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ||){
-								  	currentStore->listhead_ = this->listhead_->nextInQueue_;
+								  	currentStore->storequeue->listhead_ = this->storequeue->listhead_->nextInQueue_;
 								  }
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
