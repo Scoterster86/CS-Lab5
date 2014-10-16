@@ -60,8 +60,10 @@ void Queue::RunQueue()
         	}
         }
         else{
+        	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
         	if((ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_ % TimeSlice == 0 )
         		|| (ptr->smove_->storelist_->items_->itemsleft_ == 0)){
+        			cout<<"TimeSlice Up/Out of Items"<<endl;
         		if(ptr->smove_->storelist_->items_->itemsleft_ == 0){
         			this->listtail_->nextInQueue_ = this->listhead_;
         			this->listtail_ = this->listhead_;
