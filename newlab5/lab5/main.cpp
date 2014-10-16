@@ -404,6 +404,7 @@ int main(int argc, char* argv[])
 					}
 					//if the robot is at a store
 					else{
+						cout<<"At a store"<<endl;
 						if (currentShopperptr->enteredstore_ == 0){
 							cout << "Shopper " << currentShopperptr->RobotNum_ << " arrives at store("
 								<< currentShopperptr->smove_->storelist_->xstore_ << ", "
