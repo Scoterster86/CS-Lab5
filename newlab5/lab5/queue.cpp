@@ -85,6 +85,11 @@ void Queue::RunQueue()
         				cout<<"Remove Store for queue";
         				ptr->smove_->RemoveStore();
         			}
+        			else if(ptr->smove_->storelist_->items_->ProductCode_  == ""){
+        				this->listhead_ = this->listhead_->nextInQueue_;
+        				cout<<"Remove Store for queue";
+        				ptr->smove_->RemoveStore();
+        			}
         	}
         }
         else{
