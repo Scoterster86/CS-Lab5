@@ -434,7 +434,7 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
-			currentShopperptr = currentShopperptr->listhead_;
+			currentShopperptr = currentShopperptr->nextshopper_;
 			
 		}
 	}
