@@ -9,7 +9,7 @@ Queue::Queue()
 ///change the pointer to the next shopper in the queue
 void Queue::RemoveShopper()
 {
-	this->listhead_ = this->listhead_->nextshopper_;
+	this->listhead_ = this->listhead_->nextInQueue_;
 }
 
 ///Get a shopper pointer and put it at the end of the list
@@ -17,7 +17,7 @@ void Queue::AddShopper(Shopper* shopper)
 {
 	if(this->listhead_ != NULL){
 	//cout<<"Adding Shopper to end of list"<<endl;
-	this->listtail_->nextshopper_= shopper;
+	this->listtail_->nextInQueue_= shopper;
 	this->listtail_ = shopper;
 	}
 	else{
@@ -42,7 +42,7 @@ void Queue::RunQueue()
         	if(ptr->smove_->storelist_->items_->itemsleft_==0){
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
-        				this->listhead_ = this->listhead_->nextshopper_;
+        				this->listhead_ = this->listhead_->nextInQueue_;
         				ptr->smove_->RemoveStore();
         			}
         	}
@@ -51,21 +51,21 @@ void Queue::RunQueue()
         	if((ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_ % TimeSlice == 0 )
         		|| (ptr->smove_->storelist_->items_->itemsleft_ == 0)){
         		if(ptr->smove_->storelist_->items_->itemsleft_ == 0){
-        			this->listtail_->nextshopper_ = this->listhead_;
+        			this->listtail_->nextInQueue_ = this->listhead_;
         			this->listtail_ = this->listhead_;
-        			this->listhead_ = this->listhead_->nextshopper_;
+        			this->listhead_ = this->listhead_->nextInQueue_;
         			
         		}
         		else{
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
-        				this->listhead_ = this->listhead_->nextshopper_;
+        				this->listhead_ = this->listhead_->nextInQueue_;
         				ptr->smove_->RemoveStore();
         			}
         			else{
-					this->listtail_->nextshopper_ = this->listhead_;
+					this->listtail_->nextInQueue_ = this->listhead_;
         				this->listtail_ = this->listhead_;
-        				this->listhead_ = this->listhead_->nextshopper_;
+        				this->listhead_ = this->listhead_->nextInQueue_;
         			}
         		}
         	}
