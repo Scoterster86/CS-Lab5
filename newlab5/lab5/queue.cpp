@@ -28,6 +28,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 		return prevPtr;
 		}
 		else{
+			cout<<"Remove first shopper in list"<<endl;
 			this->listhead_ = this->listhead_->nextshopper_ ;
 		}
 	}
