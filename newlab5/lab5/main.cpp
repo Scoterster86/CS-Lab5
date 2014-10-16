@@ -372,10 +372,12 @@ int main(int argc, char* argv[])
 	while (Shoppers){
 		Shopper* currentShopperptr = Shoppers->listhead_;
 		while (currentShopperptr){
-			if (currentShopperptr->smove_->wait_ == shop_time){
-				cout << "Shopper " << currentShopperptr->RobotNum_
-					<< " enters the simulation at time " << TIME << endl;
-				currentShopperptr->smove_->wait_ = -1;
+			if (currentShopperptr->smove_->wait_ <= shop_time){
+				if (currentShopperptr->smove_->wait_ == shop_time){
+					cout << "Shopper " << currentShopperptr->RobotNum_
+						<< " enters the simulation at time " << TIME << endl;
+					currentShopperptr->smove_->wait_ = -1;
+				}
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
                <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
