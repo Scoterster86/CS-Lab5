@@ -63,11 +63,11 @@ void Shopper::AddShopper(Shopper* shopper)
         }
         //else set the shopper to the next shopper
         else{
-        	Shopper* headptr = this->nextshopper;
+        	Shopper* headptr = this->nextshopper_;
         	Shopper* tailptr = NULL;
         	while(headptr !=NULL){
         		tailptr= headptr;
-        		headptr=headptr->nextshopper;
+        		headptr=headptr->nextshopper_;
         		
         	}
         	if(tailptr !=NULL){
@@ -76,6 +76,7 @@ void Shopper::AddShopper(Shopper* shopper)
         	else{
         		this->nextshopper_=shopper;
         	}
+        }
 }
 
 //Yo Karita
