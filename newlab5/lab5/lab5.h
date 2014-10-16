@@ -169,6 +169,7 @@ public:
 	Shopper* listtail_;
 
 	Queue();
+	void RunQueue();
 	void RemoveShopper();
 	void AddShopper(Shopper*);
 };
