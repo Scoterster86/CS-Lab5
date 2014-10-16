@@ -424,7 +424,7 @@ int main(int argc, char* argv[])
 							if(currentStore ==NULL)if(Debug)cout<<"found store"<<endl;
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
-								if(Debug)cout<<"shopper in queue"<<endl;
+								if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
 										currentStore->storequeue->RunQueue();
