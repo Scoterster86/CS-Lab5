@@ -12,6 +12,18 @@ void Queue::RemoveShopper()
 	this->listhead_ = this->listhead_->nextInQueue_;
 }
 
+void Queue::AddShopper(Shopper* shopper, int i){
+	if(this->listhead_ != NULL){
+	//cout<<"Adding Shopper to end of list"<<endl;
+	this->listtail_->nextshopper_= shopper;
+	this->listtail_ = shopper;
+	}
+	else{
+	//cout<<"Setting shopper to head of list"<<endl;
+		this->listhead_=shopper;
+		this->listtail_=shopper;
+	}	
+}
 ///Get a shopper pointer and put it at the end of the list
 void Queue::AddShopper(Shopper* shopper)
 {
