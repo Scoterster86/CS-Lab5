@@ -193,6 +193,17 @@ Store* Store::FindStore(BinaryTree tree, int & x, int & y, int & z)
 		return new Store();
 	}
 }
+
+Store* Store::FindStore(Store* store){
+	Store* storelist = store;
+	while(storelist && (storelist->xstore_ != this->xstore_ ||
+			storelist->ystore_ != this->ystore_ ||
+			storelist->zstore_ != this->zstore_)){
+		storelist = storelist->pNext;
+		
+	}
+	return storelist;
+}
 /*
 void Store::addItem(Item* item){
 	if(this->items_ ==NULL){
