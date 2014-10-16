@@ -205,12 +205,13 @@ int main(int argc, char* argv[])
 				   str= str->pNext;
 				 }*/
 		Shopper* ptr = Shoppers->listhead_;
+		
 		cout<<"while loop"<<endl;
 		while(ptr){
 		   cout<<ptr->RobotNum_ << endl;
 		   cout<<"in while loop"<<endl;
 		   ptr= ptr->nextshopper_;
-		   Store* std = nextShopper->smove_->storelist_;
+		   Store* std = ptr->smove_->storelist_;
 		   while(std){
 		      std->items_->PrintItems();
 		      std= std->pNext;
