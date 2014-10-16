@@ -431,8 +431,9 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
-			currentShopperptr = currentShopperptr->nextshopper_;
-			
+			if(currentShopperptr !=NULL){
+			   currentShopperptr = currentShopperptr->nextshopper_;
+			}
 		}
 		shop_time++;
 		TIME++;
