@@ -45,13 +45,13 @@ void Queue::RunQueue()
         	}
         }
         else{
-        	if(( 23 % TimeSlice = 0 )
+        	if((ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_ % TimeSlice == 0 )
         		|| (ptr->smove_->storelist_->items_->itemsleft_ == 0)){
         		if(ptr->smove_->storelist_->items_->itemsleft_ == 0){
         			this->listtail_->nextshopper_ = this->listhead_;
         			this->listtail_ = this->listhead_;
         			this->listhead_ = this->listhead_->nextshopper_;
-        			ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_;
+        			
         		}
         		else{
         			ptr->smove_->storelist_->RemoveItem();
