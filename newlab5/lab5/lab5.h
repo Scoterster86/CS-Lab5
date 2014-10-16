@@ -132,6 +132,7 @@ public:
 	int RobotNum_;
 	int slices;
 	Shopper* nextshopper_;
+	Shopper* nextInQueue_;
 	Move* smove_;
 	ItemList* itemlist_;
 	int enteredstore_;
