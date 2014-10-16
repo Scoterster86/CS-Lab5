@@ -176,6 +176,7 @@ int main(int argc, char* argv[])
 			//set the item's values to the inserted values
 			newitem->ProductCode_ = item;
 			newitem->amount_ = count;
+			newitem->itemsleft_= count;
 			//cout<<"set item and count"<<endl;
 			newitem->nextItem_ = NULL;
 			//create a new store
@@ -392,8 +393,6 @@ int main(int argc, char* argv[])
 					{
 						currentShopperptr->smove_->movement(End, currentShopperptr->RobotNum_);
 						currentShopperptr = NULL;
-						//decriments the number of robots in the simulation
-						NumOfRobots--;
 					}
 					//if the robot is at a store
 					else{
@@ -410,7 +409,15 @@ int main(int argc, char* argv[])
 							currentShopperptr->enteredstore_ = 0;
 						}
 						else{
-							if(currentShopperptr){}
+							//if the shopper is in the queue
+							Store* currentStore = currentShopperptr->smove_->storelist_->FindStore(StoreList);
+							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr->smove_->storelist_)){
+								if(currentShopperptr->RoboNum_ = currentStore->storequeue->listhead_->RoboNum_){
+									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
+										
+									}
+								}
+							}
 							Store* treestore = new Store(currentShopperptr->smove_->storelist_);
 							RoboMall->AddItem(currentShopperptr->smove_->storelist_->items_, treestore, headstoreptr);
 							//RoboMall->PrintBinaryTree();
