@@ -72,6 +72,7 @@ public:
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
         Store* FindStore(BinaryTree, int &, int &, int &);
+	int ShopperinQueue(Shopper*);
         int GetSize();
         void PrintStores();
         void RemoveItem();
@@ -134,7 +135,6 @@ public:
 
 	Shopper();
 	Shopper(int);
-
 
 	int storecomplete();
 	void AddShopper(Shopper*);
