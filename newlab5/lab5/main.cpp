@@ -373,6 +373,12 @@ int main(int argc, char* argv[])
 		Shopper* currentShopperptr = Shoppers->listhead_;
 		while (currentShopperptr){
 			if (currentShopperptr->smove_->wait_ <= TIME){
+				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
+               << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
+               <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
+          cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
+               << " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
+               <<currentShopperptr->smove_->storelist_->zstore_ << endl;
 				if (currentShopperptr->smove_->wait_ == shop_time){
 					cout << "Shopper " << currentShopperptr->RobotNum_
 						<< " enters the simulation at time " << TIME << endl;
