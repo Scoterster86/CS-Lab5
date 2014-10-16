@@ -16,12 +16,12 @@ void Queue::RemoveShopper()
 void Queue::AddShopper(Shopper* shopper)
 {
 	if(this->listhead_ != NULL){
-		cout<<"Adding Shopper to end of list"<<endl;
+	//cout<<"Adding Shopper to end of list"<<endl;
 	this->listtail_->nextshopper_= shopper;
 	this->listtail_ = shopper;
 	}
 	else{
-		cout<<"Setting shopper to head of list"<<endl;
+	//cout<<"Setting shopper to head of list"<<endl;
 		this->listhead_=shopper;
 		this->listtail_=shopper;
 	}
