@@ -51,7 +51,7 @@ void Queue::RunQueue()
         			this->listtail_->nextshopper_ = this->listhead_;
         			this->listtail_ = this->listhead_;
         			this->listhead_ = this->listhead_->nextshopper_;
-        			int derp = (ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_);
+        			ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_;
         		}
         		else{
         			ptr->smove_->storelist_->RemoveItem();
