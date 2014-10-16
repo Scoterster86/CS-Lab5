@@ -430,7 +430,7 @@ int main(int argc, char* argv[])
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									currentStore->storequeue->RunQueue();
 								}
-								if(currentStore->storequeue != NULL){
+								if(currentStore->storequeue->listhead_ != NULL){
 								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
