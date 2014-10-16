@@ -434,7 +434,7 @@ int main(int argc, char* argv[])
 								if(Debug)cout<<"shopper not in queue"<<endl;
 								//add the shopper to the queue
 								currentStore->storequeue->AddShopper(currentShopperptr);
-								if(Debug)cout<<"added shopper"<< " Head of list: "<<currentStore->storequeue->listhead_  <<endl;
+								if(Debug)cout<<"added shopper"<< " Head of list: "<<currentStore->storequeue->listhead_->RobotNum_  <<endl;
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 1){
