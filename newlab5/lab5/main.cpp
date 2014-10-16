@@ -369,7 +369,7 @@ int main(int argc, char* argv[])
         StoreList->AddStorelist(store23);
 
 	shop_time = 0;
-	while (Shoppers){
+	while (Shoppers->listhead_ != NULL){
 		Shopper* currentShopperptr = Shoppers->listhead_;
 		while (currentShopperptr){
 			if (currentShopperptr->smove_->delay_ <= shop_time){
