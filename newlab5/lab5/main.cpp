@@ -447,7 +447,7 @@ int main(int argc, char* argv[])
 								  	currentStore->storequeue->listhead_ = NULL;
 								  }
 								//if the shopper is at the head of the store
-								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
+								else if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 1){
 										currentStore->storequeue->RunQueue();
 									}
