@@ -85,13 +85,13 @@ void Queue::RunQueue()
         		//if there are no more items in the shopper's list
         		if(ptr->smove_->storelist_->items_ == NULL){
         			this->listhead_ = this->listhead_->nextInQueue_;
-        			cout<<"Remove Store for queue";
+        			cout<<"Remove Store for queue"<<endl;
         			ptr->smove_->RemoveStore();
         			ptr->enteredstore_ = 0;
         		}
         		else if(ptr->smove_->storelist_->items_->ProductCode_  == ""){
         			this->listhead_ = this->listhead_->nextInQueue_;
-        			cout<<"Remove Store for queue";
+        			cout<<"Remove Store for queue"<<endl;
         			ptr->smove_->RemoveStore();
         			ptr->enteredstore_ = 0;
         		}
