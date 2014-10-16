@@ -210,12 +210,13 @@ int main(int argc, char* argv[])
 		while(ptr){
 		   cout<<ptr->RobotNum_ << endl;
 		   cout<<"in while loop"<<endl;
-		   ptr= ptr->nextshopper_;
+		   
 		   Store* std = ptr->smove_->storelist_;
 		   while(std){
 		      std->items_->PrintItems();
 		      std= std->pNext;
 		   }
+		   ptr= ptr->nextshopper_;
 		}
 			}
 		}
