@@ -225,7 +225,7 @@ int main(int argc, char* argv[])
 		}
 		*/
 	}
-	
+	//creates a list of all the stores
 	Store* StoreList = new Store();//create a store
         StoreList->xstore_ = 4;  // sets the location
         StoreList->ystore_ = 4;
@@ -369,16 +369,23 @@ int main(int argc, char* argv[])
         store23->zstore_ = 1;
         StoreList->AddStorelist(store23);
 
+	//sets shop time to 0
 	shop_time = 0;
+	//while the list of shoppers isn't null
 	while (Shoppers->listhead_ != NULL){
+		//set the shopper ptr to the head of the list
 		Shopper* currentShopperptr = Shoppers->listhead_;
+		//while current shopper ptr isn't null
 		while (currentShopperptr){
+			//if the shopper ahsn't arrived at the mall yet
 			if (currentShopperptr->smove_->delay_ <= shop_time){
+				//if the shopper just entered the mall
 				if (currentShopperptr->smove_->delay_ == shop_time){
 					cout << "Shopper " << currentShopperptr->RobotNum_
 						<< " enters the simulation at time " << TIME << endl;
 					currentShopperptr->smove_->delay_ = -1;
 				}
+				/*
 				if(TIME>1900){
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
@@ -386,12 +393,15 @@ int main(int argc, char* argv[])
           cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
                << " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
                <<currentShopperptr->smove_->storelist_->zstore_ << endl;
-				}
+               
+				}*/
+				//if the shopper isn't at a store
 				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
 					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
 					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
 				{
 					//cout<<"Move"<<endl;
+					//move one space
 					currentShopperptr->smove_->BotMove(currentShopperptr->RobotNum_);
 				}
 				//if the shopper is at a "store"
@@ -431,13 +441,15 @@ int main(int argc, char* argv[])
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									currentStore->storequeue->RunQueue();
 								}
+								//if the store queue isn't null
 								if(currentStore->storequeue->listhead_ != NULL){
-								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
-								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
-								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
-								  	//cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
-								  	currentStore->storequeue->listhead_ = NULL;
-								  }
+									//if the head of the queue is no longer in the store
+									if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
+										 currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
+										 currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
+								  		//cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
+								  		currentStore->storequeue->listhead_ = NULL;
+								  	}
 								}
 							}
 							else{
@@ -450,10 +462,12 @@ int main(int argc, char* argv[])
 											<<" "<<currentStore->storequeue->listhead_->smove_->zpos_<<endl;
 								}
 								*/
+								//if the head of the queue is no longer in the store
 								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
 								  	//cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
+								  	//empty the queue
 								  	currentStore->storequeue->listhead_ = NULL;
 								  }
 								//if the shopper is at the head of the store
@@ -478,10 +492,13 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
+			//if the shopper pointer isn't null
 	   	   if(currentShopperptr !=NULL){
+	   	   	//set the shopper pointer to the next shopper in the list
 		      currentShopperptr = currentShopperptr->nextshopper_;
 		   }
 		}
+		//increment shop time and TIME
 		shop_time++;
 		TIME++;
 	}
