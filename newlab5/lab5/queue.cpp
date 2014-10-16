@@ -1,4 +1,5 @@
 #include "lab5.h"
+//Scott Iwanicki
 //constructor for queue
 Queue::Queue()
 {
@@ -12,6 +13,7 @@ void Queue::RemoveShopper()
 	this->listhead_ = this->listhead_->nextInQueue_;
 }
 
+//Scott Iwanicki
 //removes a shopper from the list
 Shopper* Queue::RemoveShopper(Shopper* shopper){
 	Shopper* currentPtr =this->listhead_;
@@ -43,6 +45,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 	}
 }
 
+//Scott Iwanicki
 //adds a shopper to a queue
 void Queue::AddShopper(Shopper* shopper, int i){
 	//if the list is emput
@@ -60,6 +63,7 @@ void Queue::AddShopper(Shopper* shopper, int i){
 	}	
 }
 
+//Scott Iwanicki
 ///Get a shopper pointer and put it at the end of the list
 void Queue::AddShopper(Shopper* shopper)
 {
