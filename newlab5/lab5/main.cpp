@@ -204,11 +204,7 @@ int main(int argc, char* argv[])
 				   str->items_->PrintItems();
 				   str= str->pNext;
 				 }*/
-			}
-		}
-		Shoppers->AddShopper(nextShopper);
-		
-		Shopper* ptr = Shoppers->listhead_;
+				 		Shopper* ptr = Shoppers->listhead_;
 		cout<<"while loop"<<endl;
 		while(ptr){
 		   cout<<ptr->RobotNum_ << endl;
@@ -220,6 +216,11 @@ int main(int argc, char* argv[])
 		      std= std->pNext;
 		   }
 		}
+			}
+		}
+		Shoppers->AddShopper(nextShopper);
+		
+
 	}
 	
 	Store* StoreList = new Store();//create a store
