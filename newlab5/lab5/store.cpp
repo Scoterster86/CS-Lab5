@@ -207,7 +207,7 @@ Store* Store::FindStore(Store* store){
 
 int Store::ShopperinQueue(Shopper* shopper){
 	if(this->storequeue != NULL){
-		cout<<"queue not null"<<endl;
+	//	cout<<"queue not null"<<endl;
 	Shopper* shopperlist = this->storequeue->listhead_;
 	while(shopperlist && (shopperlist->RobotNum_ != shopper->RobotNum_)){
 		shopperlist = shopperlist->nextshopper_;
