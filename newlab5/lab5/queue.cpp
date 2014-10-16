@@ -12,6 +12,22 @@ void Queue::RemoveShopper()
 	this->listhead_ = this->listhead_->nextInQueue_;
 }
 
+Shopper* Queue::RemoveShopper(Shopper* shopper){
+	Store* currentPtr =this->listhead_;
+	Store* prevPtr
+	while(currentPtr && currentPtr->RobotNum_ != shopper->RobotNum_){
+		prevPtr = currentPtr;
+		currentPtr = currentPtr->nextInQueue;
+	}
+	if(currentPtr){
+		return NULL;
+	}
+	else{
+		prevPtr->nextInQueue = currentPtr->nextInQueue;
+		return prevPtr;
+	}
+}
+
 void Queue::AddShopper(Shopper* shopper, int i){
 	if(this->listhead_ != NULL){
 	//cout<<"Adding Shopper to end of list"<<endl;
