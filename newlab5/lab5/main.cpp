@@ -372,18 +372,17 @@ int main(int argc, char* argv[])
 	while (Shoppers){
 		Shopper* currentShopperptr = Shoppers->listhead_;
 		while (currentShopperptr){
-			if (currentShopperptr->smove_->wait_ <= TIME){
+			if (currentShopperptr->smove_->wait_ == shop_time){
+				cout << "Shopper " << currentShopperptr->RobotNum_
+					<< " enters the simulation at time " << TIME << endl;
+				currentShopperptr->smove_->wait_ = -1;
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
                <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
           cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
                << " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
                <<currentShopperptr->smove_->storelist_->zstore_ << endl;
-				if (currentShopperptr->smove_->wait_ == shop_time){
-					cout << "Shopper " << currentShopperptr->RobotNum_
-						<< " enters the simulation at time " << TIME << endl;
-					currentShopperptr->smove_->wait_ = -1;
-				}
+				
 				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
 					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
 					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
@@ -457,9 +456,7 @@ int main(int argc, char* argv[])
 					}
 				}
 			}
-			if(currentShopperptr !=NULL){
-			   currentShopperptr = currentShopperptr->nextshopper_;
-			}
+		currentShopperptr = currentShopperptr->nextshopper_;
 		}
 		shop_time++;
 		TIME++;
