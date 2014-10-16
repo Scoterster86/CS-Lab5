@@ -18,7 +18,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 	cout<<"Remove Shopper"<<endl;
 	while(currentPtr && currentPtr->RobotNum_ != shopper->RobotNum_){
 		prevPtr = currentPtr;
-		currentPtr = currentPtr->nextInQueue_ ;
+		currentPtr = currentPtr->nextshopper_ ;
 		cout<<"removing shopper"<<endl;
 	}
 	if(currentPtr == NULL){
@@ -28,7 +28,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 	else{
 		if(prevPtr != NULL){
 			cout<<"Prev Ptr not null"<<endl;
-		prevPtr->nextInQueue_ = currentPtr->nextInQueue_ ;
+		prevPtr->nextshopper_ = currentPtr->nextshopper_ ;
 		return currentPtr->nextshopper_;
 		}
 		else{
