@@ -86,12 +86,17 @@ void Shopper::RemoveShopper(Shopper* shopper)
         shopper= shopper->nextshopper_;
 }
 
+//adds an item to the list of items
 void Shopper::AddItem(string productcode, int amount)
 {
+	//create the item
 	Item* newitem = new Item(productcode, amount);
+	//set temp to the shopper's item list
 	ItemList* temp = this->itemlist_;
+	//while temp isn't null
 	while (temp)
 	{
+		//set temp to the next item
 		temp = this->itemlist_->nextitem_;
 	}
 	temp->item_ = newitem;
