@@ -209,6 +209,7 @@ int main(int argc, char* argv[])
 			}
 		}
 		Shoppers->AddShopper(nextShopper, 1);
+		/*
 		Shopper* ptr = Shoppers->listhead_;
 		cout<<"while loop"<<endl;
 		while(ptr){
@@ -222,7 +223,7 @@ int main(int argc, char* argv[])
 		   }
 		   ptr= ptr->nextshopper_;
 		}
-
+		*/
 	}
 	
 	Store* StoreList = new Store();//create a store
