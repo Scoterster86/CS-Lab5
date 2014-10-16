@@ -13,7 +13,7 @@ Store::Store(Store* store)
         this->items_= NULL;
         this->pNext = nullptr;
         this->rrqueue = NULL;
-        this->storequeue = NULL;
+        this->storequeue = new Queue();
 }
 //Yo Karita
 //constructor for a store
