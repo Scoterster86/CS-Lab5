@@ -26,12 +26,14 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 	}
 	else{
 		if(prevPtr != NULL){
+			cout<<"Prev Ptr not null"<<endl;
 		prevPtr->nextInQueue_ = currentPtr->nextshopper_ ;
 		return prevPtr;
 		}
 		else{
 			cout<<"Remove first shopper in list"<<endl;
 			this->listhead_ = this->listhead_->nextshopper_ ;
+			return this->listhead_;
 		}
 	}
 }
