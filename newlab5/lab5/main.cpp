@@ -443,7 +443,7 @@ int main(int argc, char* argv[])
 								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
-								  	cout"REMOVE HEAD SHOPPER"<<endl;
+								  	cout<<"REMOVE HEAD SHOPPER"<<endl;
 								  	currentStore->storequeue->listhead_ = currentStore->storequeue->listhead_->nextInQueue_;
 								  }
 								//if the shopper is at the head of the store
