@@ -204,12 +204,10 @@ int main(int argc, char* argv[])
 				   str->items_->PrintItems();
 				   str= str->pNext;
 				 }*/
-		Shopper* ptr = Shoppers->listhead_;
-		
-
 			}
 		}
 		Shoppers->AddShopper(nextShopper);
+		Shopper* ptr = Shoppers->listhead_;
 		cout<<"while loop"<<endl;
 		while(ptr){
 		   cout<<ptr->RobotNum_ << endl;
