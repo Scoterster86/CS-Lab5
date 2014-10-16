@@ -444,7 +444,7 @@ int main(int argc, char* argv[])
 								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
 								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
 								  	cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
-								  	currentStore->storequeue->listhead_ = currentStore->storequeue->listhead_->nextInQueue_;
+								  	currentStore->storequeue->listhead_ = NULL;
 								  }
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
