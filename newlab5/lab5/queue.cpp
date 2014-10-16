@@ -38,6 +38,8 @@ void Queue::RunQueue()
         //if the shopper needs more service
         ptr->smove_->storelist_->items_->itemsleft_ --;
         if(ptr->smove_->storelist_->zstore_ == 0){
+        	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
+        	cout<<"Store is z=0"<<endl;
         	if(ptr->smove_->storelist_->items_->itemsleft_==0){
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
