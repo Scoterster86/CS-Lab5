@@ -376,9 +376,6 @@ int main(int argc, char* argv[])
 						<< " enters the simulation at time " << TIME << endl;
 					currentShopperptr->smove_->wait_ = -1;
 				}
-				cout<<currentShopperptr->smove_->xpos_ << " "<<currentShopperptr->smove_->ypos_ <<" "
-					<<currentShopperptr->smove_->zpos_ <<endl << currentShopperptr->smove_->storelist_->xstore_ 
-					<<currentShopperptr->smove_->storelist_->ystore_ <<currentShopperptr->smove_->storelist_->zstore_ <<endl;
 				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
 					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
 					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
@@ -437,6 +434,8 @@ int main(int argc, char* argv[])
 			currentShopperptr = currentShopperptr->nextshopper_;
 			
 		}
+		shop_time++;
+		TIME++;
 	}
 	return 0;
 }
