@@ -22,7 +22,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 		cout<<"removing shopper"<<endl;
 	}
 	if(currentPtr){
-		cout<<"Current Ptr null"
+		cout<<"Current Ptr null"<<endl;
 		return NULL;
 	}
 	else{
