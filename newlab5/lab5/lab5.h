@@ -73,6 +73,7 @@ public:
         void AddStorelist(Store*);
         void AddStore(Store*, Store*);
         Store* FindStore(BinaryTree, int &, int &, int &);
+        Store* FindStore(Store*);
 	int ShopperinQueue(Shopper*);
         int GetSize();
         void PrintStores();
