@@ -183,9 +183,9 @@ int main(int argc, char* argv[])
 			//add the item to the new store
 			newStore->items_ = newitem;
 			//cout << "OKD" << endl;
-			int* xs= new int;
-			int*ys = new int;
-			int*zs = new int;
+			int *xs= new int;
+			int *ys = new int;
+			int *zs = new int;
 			//finds the store with the most of the item added
 			Store* foundStore = newStore->FindStore(*RoboMall, *xs, *ys, *zs);
 			cout<<"found store1" <<endl;
@@ -193,9 +193,9 @@ int main(int argc, char* argv[])
 			if (xs != -1){
 				cout<<"found a store"<<endl;
 				//sets the new store's location to the store with the most items
-				newStore->xstore_ = xs;
-				newStore->ystore_ = ys;
-				newStore->zstore_ = zs;
+				newStore->xstore_ = *xs;
+				newStore->ystore_ = *ys;
+				newStore->zstore_ = *zs;
 				cout << "Adding store" << endl;
 				nextShopper->smove_->AddStore(newStore);//Add the store to the shopper's storelist
 				/*
