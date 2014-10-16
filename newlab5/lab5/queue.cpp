@@ -17,13 +17,13 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 	Shopper* prevPtr;
 	while(currentPtr && currentPtr->RobotNum_ != shopper->RobotNum_){
 		prevPtr = currentPtr;
-		currentPtr = currentPtr->nextInQueue;
+		currentPtr = currentPtr->nextInQueue_;
 	}
 	if(currentPtr){
 		return NULL;
 	}
 	else{
-		prevPtr->nextInQueue = currentPtr->nextInQueue;
+		prevPtr->nextInQueue_ = currentPtr->nextInQueue_;
 		return prevPtr;
 	}
 }
