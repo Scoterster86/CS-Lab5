@@ -412,7 +412,7 @@ int main(int argc, char* argv[])
 							//find the store that the shopper is at
 							Store* currentStore = currentShopperptr->smove_->storelist_->FindStore(StoreList);
 							//if the shopper is already in the queue
-							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr->smove_->storelist_)){
+							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
