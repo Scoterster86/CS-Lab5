@@ -426,10 +426,16 @@ int main(int argc, char* argv[])
 							//if the shopper is already in the queue
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
-								//if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
+								if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									currentStore->storequeue->RunQueue();
 								}
+								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
+								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
+								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ){
+								  	cout<<"REMOVE HEAD SHOPPER NEW HEAD "<<currentStore->storequeue->listhead_->nextInQueue_->RobotNum_<<endl;
+								  	currentStore->storequeue->listhead_ = NULL;
+								  }
 							}
 							else{
 								//if(Debug)cout<<"shopper not in queue"<<endl;
