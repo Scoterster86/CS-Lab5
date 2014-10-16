@@ -21,7 +21,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 		currentPtr = currentPtr->nextshopper_ ;
 		cout<<"removing shopper"<<endl;
 	}
-	if(currentPtr){
+	if(currentPtr == NULL){
 		cout<<"Current Ptr null"<<endl;
 		return NULL;
 	}
