@@ -414,7 +414,7 @@ int main(int argc, char* argv[])
 							if(Debug)cout<<"find store"<<endl;
 							Store* currentStore = currentShopperptr->smove_->storelist_->FindStore(StoreList);
 							//if the shopper is already in the queue
-							if(Debug)cout<<"found store"<<endl;;
+							if(currentStore ==NULL)if(Debug)cout<<"found store"<<endl;
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
 								if(Debug)cout<<"shopper in queue"<<endl;
