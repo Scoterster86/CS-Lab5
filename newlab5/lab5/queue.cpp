@@ -13,8 +13,8 @@ void Queue::RemoveShopper()
 }
 
 Shopper* Queue::RemoveShopper(Shopper* shopper){
-	Store* currentPtr =this->listhead_;
-	Store* prevPtr
+	Shopper* currentPtr =this->listhead_;
+	Shopper* prevPtr
 	while(currentPtr && currentPtr->RobotNum_ != shopper->RobotNum_){
 		prevPtr = currentPtr;
 		currentPtr = currentPtr->nextInQueue;
