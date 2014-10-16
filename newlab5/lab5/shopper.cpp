@@ -10,6 +10,7 @@ Shopper::Shopper()
         this->slices = 0;
         this->enteredstore_=0;
         this->nextshopper_ = nullptr;
+        this->nextInQueue_=nullptr;
 }
 
 //Yo Karita
@@ -21,6 +22,7 @@ Shopper::Shopper(int k)
         this->slices = 0;
         this->enteredstore_=0;
         this->nextshopper_ = nullptr;
+        this->nextInQueue_=nullptr;
 }
 
 
