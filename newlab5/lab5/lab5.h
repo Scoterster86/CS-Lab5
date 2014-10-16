@@ -142,6 +142,7 @@ public:
 
 	int storecomplete();
 	void AddShopper(Shopper*);
+	void AddShopper(Shopper*, int);
 	void RemoveShopper(Shopper*);
 	
 	//void AddStore(BinaryTree*);
