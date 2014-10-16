@@ -88,7 +88,7 @@ public:
 class Move
 {
 public:
-        int xpos_, ypos_, zpos_, wait_;
+        int xpos_, ypos_, zpos_, wait_, delay_;
         Store* storelist_;
 
         Move();
