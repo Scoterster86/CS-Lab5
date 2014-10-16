@@ -82,6 +82,7 @@ void Queue::RunQueue()
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
         				this->listhead_ = this->listhead_->nextInQueue_;
+        				cout<<"Remove Store for queue";
         				ptr->smove_->RemoveStore();
         			}
         	}
