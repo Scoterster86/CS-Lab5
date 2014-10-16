@@ -75,33 +75,44 @@ void Queue::RunQueue()
         ptr = this->listhead_;
         //if the shopper needs more service
         ptr->smove_->storelist_->items_->itemsleft_ --;
+        //if the store is on the first floor
         if(ptr->smove_->storelist_->zstore_ == 0){
         	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
         	cout<<"Store is z=0"<<endl;
+        	//if the shopper is done with that item 
         	if(ptr->smove_->storelist_->items_->itemsleft_==0){
-        			ptr->smove_->storelist_->RemoveItem();
-        			if(ptr->smove_->storelist_->items_ == NULL){
-        				this->listhead_ = this->listhead_->nextInQueue_;
-        				cout<<"Remove Store for queue";
-        				ptr->smove_->RemoveStore();
-        			}
-        			else if(ptr->smove_->storelist_->items_->ProductCode_  == ""){
-        				this->listhead_ = this->listhead_->nextInQueue_;
-        				cout<<"Remove Store for queue";
-        				ptr->smove_->RemoveStore();
-        			}
+        		ptr->smove_->storelist_->RemoveItem();
+        		//if there are no more items in the shopper's list
+        		if(ptr->smove_->storelist_->items_ == NULL){
+        			this->listhead_ = this->listhead_->nextInQueue_;
+        			cout<<"Remove Store for queue";
+        			ptr->smove_->RemoveStore();
+        		}
+        		else if(ptr->smove_->storelist_->items_->ProductCode_  == ""){
+        			this->listhead_ = this->listhead_->nextInQueue_;
+        			cout<<"Remove Store for queue";
+        			ptr->smove_->RemoveStore();
+        		}
         	}
         }
+        //if the store is on the second floor
         else{
         	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
+        	//if the timeslice is up or if the shopper is out of the item
         	if((ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_ % TimeSlice == 0 )
         		|| (ptr->smove_->storelist_->items_->itemsleft_ == 0)){
         			cout<<"TimeSlice Up/Out of Items"<<endl;
+        			//if the 
         		if(ptr->smove_->storelist_->items_->itemsleft_ == 0){
-        			this->listtail_->nextInQueue_ = this->listhead_;
-        			this->listtail_ = this->listhead_;
-        			this->listhead_ = this->listhead_->nextInQueue_;
         			ptr->smove_->storelist_->RemoveItem();
+        			if(ptr->smove_->storelist_->items_ == NULL){
+        				ptr->smove_->RemoveStore();
+        			}
+        			else{
+        				this->listtail_->nextInQueue_ = this->listhead_;
+        				this->listtail_ = this->listhead_;
+        				this->listhead_ = this->listhead_->nextInQueue_;
+        			}
         			
         		}
         		else{
