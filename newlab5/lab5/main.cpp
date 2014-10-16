@@ -4,6 +4,7 @@ int Floor[LENGTH][WIDTH][HEIGHT];
 int TIME = 0;
 int TimeSlice =0;
 int NumOfRobots =0;
+int Debug = 1;
 Shopper* Shopperlist[9];
 Store* headstoreptr = NULL;
 //Scott Iwanicki
@@ -410,10 +411,13 @@ int main(int argc, char* argv[])
 						}
 						else{
 							//find the store that the shopper is at
+							if(Debug)cout<<"find store"<<endl;
 							Store* currentStore = currentShopperptr->smove_->storelist_->FindStore(StoreList);
 							//if the shopper is already in the queue
+							if(Debug)cout<<"found store"<<endl;;
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
+								if(Debug)cout<<"shopper in queue"<<endl;
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
 										currentStore->storequeue->RunQueue();
@@ -421,8 +425,10 @@ int main(int argc, char* argv[])
 								}
 							}
 							else{
+								if(Debug)cout<<"shopper not in queue"<<endl;
 								//add the shopper to the queue
 								currentStore->storequeue->AddShopper(currentShopperptr);
+								if(Debug)cout<<"added shopper"<endl;
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
