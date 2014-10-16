@@ -424,7 +424,7 @@ int main(int argc, char* argv[])
 								//add the shopper to the queue
 								currentStore->storequeue->AddShopper(currentShopperptr);
 								//if the shopper is at the head of the store
-								if(currentShopperptr->RoboNum_ = currentStore->storequeue->listhead_->RoboNum_){
+								if(currentShopperptr->RobotNum_  = currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 0){
 										currentStore->storequeue->RunQueue();
 									}
