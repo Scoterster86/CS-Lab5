@@ -194,7 +194,7 @@ Store* Store::FindStore(BinaryTree tree, int & x, int & y, int & z)
 	}
 }
 
-
+//Scott Iwanicki
 //finds the store the shopper is in
 Store* Store::FindStore(Store* store){
 	Store* storelist = store;
@@ -210,7 +210,7 @@ Store* Store::FindStore(Store* store){
 	return storelist;
 }
 
-
+//Scott Iwanicki
 //checks to see if the shopper is in the queue
 int Store::ShopperinQueue(Shopper* shopper){
 	//if the queue isn't null
