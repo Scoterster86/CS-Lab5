@@ -32,6 +32,7 @@ class Item
   //the item's product code
   string ProductCode_;
   int amount_;
+  int itemsleft_;
   Item* nextItem_;
   RRqueue* rrqueue;
   Queue* queue;
