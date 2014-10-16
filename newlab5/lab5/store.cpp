@@ -210,7 +210,7 @@ int Store::ShopperinQueue(Shopper* shopper){
 	while(shopperlist && (shopperlist->RobotNum_ != shopper->RobotNum_)){
 		shopperlist = shopperlist->nextshopper_;
 	}
-	if(shoperlist == NULL){
+	if(shopperlist == NULL){
 		return 0;
 	}
 	else{
