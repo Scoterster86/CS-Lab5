@@ -395,6 +395,12 @@ int main(int argc, char* argv[])
 				//if the shopper is at a "store"
 				else{
 					cout<<"At a store"<<endl;
+					cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
+               << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
+               <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
+          cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
+               << " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
+               <<currentShopperptr->smove_->storelist_->zstore_ << endl;
 					//if the store is A1, remove the shopper from the simulation
 					if (currentShopperptr->smove_->storelist_->xstore_ == 8 &&
 						currentShopperptr->smove_->storelist_->ystore_ == 16 &&
