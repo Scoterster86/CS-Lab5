@@ -87,11 +87,13 @@ void Queue::RunQueue()
         			this->listhead_ = this->listhead_->nextInQueue_;
         			cout<<"Remove Store for queue";
         			ptr->smove_->RemoveStore();
+        			ptr->enteredstore_ = 0;
         		}
         		else if(ptr->smove_->storelist_->items_->ProductCode_  == ""){
         			this->listhead_ = this->listhead_->nextInQueue_;
         			cout<<"Remove Store for queue";
         			ptr->smove_->RemoveStore();
+        			ptr->enteredstore_ = 0;
         		}
         	}
         }
@@ -107,6 +109,7 @@ void Queue::RunQueue()
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
         				ptr->smove_->RemoveStore();
+        				ptr->enteredstore_ = 0;
         			}
         			else{
         				this->listtail_->nextInQueue_ = this->listhead_;
@@ -119,6 +122,7 @@ void Queue::RunQueue()
         			if(ptr->smove_->storelist_->items_ == NULL){
         				this->listhead_ = this->listhead_->nextInQueue_;
         				ptr->smove_->RemoveStore();
+        				ptr->enteredstore_ = 0;
         			}
         			else{
 					this->listtail_->nextInQueue_ = this->listhead_;
