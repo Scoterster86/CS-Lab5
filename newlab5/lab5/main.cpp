@@ -443,7 +443,7 @@ int main(int argc, char* argv[])
 							}
 						}
 						//if there are no more stores in the robots list
-						if (currentShopperptr->smove_->storelist_ == NULL){
+						if (currentShopperptr->smove_->storelist_ == NULL || currentShopperptr->smove_->storelist_->xstore_ == 0){
 							//cout<<"Storelist NULL"<<endl;
 							Store* endStore = new Store();
 							endStore->xstore_ = 8;
