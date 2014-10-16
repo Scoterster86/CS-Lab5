@@ -435,6 +435,11 @@ int main(int argc, char* argv[])
 								//add the shopper to the queue
 								currentStore->storequeue->AddShopper(currentShopperptr);
 								if(Debug)cout<<"added shopper"<< " Head of list: "<<currentStore->storequeue->listhead_->RobotNum_  <<endl;
+								if(currentStore->storequeue->listhead_->smove_->xpos_ != currentStore->xstore_ ||
+								  currentStore->storequeue->listhead_->smove_->ypos_ != currentStore->ystore_ ||
+								  currentStore->storequeue->listhead_->smove_->zpos_ != currentStore->zstore_ ||){
+								  	currentStore->listhead_ = this->listhead_->nextInQueue_;
+								  }
 								//if the shopper is at the head of the store
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									if(currentShopperptr->smove_->storelist_->zstore_ == 1){
