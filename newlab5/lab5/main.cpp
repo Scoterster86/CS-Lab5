@@ -166,7 +166,7 @@ int main(int argc, char* argv[])
 		Shopper* nextShopper = new Shopper(i);
 		cin >> arrival >> numOfItems;
 		//cout<<"adding arrival time"<<endl;
-		nextShopper->smove_->wait_ = arrival;
+		nextShopper->smove_->delay_ = arrival;
 		//cout<<"added arrival time"<<endl;
 		//for every store
 		for (j = 0; j<numOfItems; j++){
@@ -372,11 +372,11 @@ int main(int argc, char* argv[])
 	while (Shoppers){
 		Shopper* currentShopperptr = Shoppers->listhead_;
 		while (currentShopperptr){
-			if (currentShopperptr->smove_->wait_ <= shop_time){
-				if (currentShopperptr->smove_->wait_ == shop_time){
+			if (currentShopperptr->smove_->delay_ <= shop_time){
+				if (currentShopperptr->smove_->delay_ == shop_time){
 					cout << "Shopper " << currentShopperptr->RobotNum_
 						<< " enters the simulation at time " << TIME << endl;
-					currentShopperptr->smove_->wait_ = -1;
+					currentShopperptr->smove_->delay_ = -1;
 				}
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
