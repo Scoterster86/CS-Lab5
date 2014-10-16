@@ -172,6 +172,7 @@ public:
 	Queue();
 	void RunQueue();
 	void RemoveShopper();
+	Shopper* RemoveShopper(Shopper*);
 	void AddShopper(Shopper*, int);
 	void AddShopper(Shopper*);
 };
