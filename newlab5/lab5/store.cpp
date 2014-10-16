@@ -194,45 +194,46 @@ Store* Store::FindStore(BinaryTree tree, int & x, int & y, int & z)
 	}
 }
 
+
+//finds the store the shopper is in
 Store* Store::FindStore(Store* store){
 	Store* storelist = store;
+	//while storelist isnt null and the current store isn't the shopper's current store
+	//go to next store in list
 	while(storelist && (storelist->xstore_ != this->xstore_ ||
 			storelist->ystore_ != this->ystore_ ||
 			storelist->zstore_ != this->zstore_)){
 		storelist = storelist->pNext;
 		
 	}
+	//return the store
 	return storelist;
 }
 
+
+//checks to see if the shopper is in the queue
 int Store::ShopperinQueue(Shopper* shopper){
+	//if the queue isn't null
 	if(this->storequeue != NULL){
-	//	cout<<"queue not null"<<endl;
-	Shopper* shopperlist = this->storequeue->listhead_;
-	while(shopperlist && (shopperlist->RobotNum_ != shopper->RobotNum_)){
+	   //	cout<<"queue not null"<<endl;
+	   Shopper* shopperlist = this->storequeue->listhead_;
+   	   //while shopperlist isn't null and the current shopper's number isn't the inputted shopper's number
+	   //traverse through the list
+	   while(shopperlist && (shopperlist->RobotNum_ != shopper->RobotNum_)){
 		shopperlist = shopperlist->nextshopper_;
-	}
-	if(shopperlist == NULL){
+	  }
+  	   //if the shopper isn't in the list
+	   if(shopperlist == NULL){
 		return 0;
-	}
-	else{
+	   }
+	   //if the shopper is in the list
+	   else{
 		return 1;
+	   }
 	}
-	}
+	//if the list is empty
 	else{
 		return 0;
 	}
 }
-/*
-void Store::addItem(Item* item){
-	if(this->items_ ==NULL){
-		this->items_=item;
-	}
-	else{
-		Item* pCurrent = this->items_;
-		Item* pNext = NULL;
-		while(pCurrent &&)
-		
-	}
-}
-*/
+
