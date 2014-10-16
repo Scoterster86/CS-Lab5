@@ -378,13 +378,14 @@ int main(int argc, char* argv[])
 						<< " enters the simulation at time " << TIME << endl;
 					currentShopperptr->smove_->delay_ = -1;
 				}
+				/*
 				cout <<"Shopper: "<< currentShopperptr->RobotNum_<< endl
                << "Pos: "<<currentShopperptr->smove_->xpos_ <<" "
                <<currentShopperptr->smove_->ypos_ <<" "<< currentShopperptr->smove_->zpos_ << endl;
           cout <<"Store:" <<currentShopperptr->smove_->storelist_->xstore_
                << " " <<currentShopperptr->smove_->storelist_->ystore_ << " "
                <<currentShopperptr->smove_->storelist_->zstore_ << endl;
-				
+				*/
 				if (currentShopperptr->smove_->xpos_ != currentShopperptr->smove_->storelist_->xstore_ ||
 					currentShopperptr->smove_->ypos_ != currentShopperptr->smove_->storelist_->ystore_ ||
 					currentShopperptr->smove_->zpos_ != currentShopperptr->smove_->storelist_->zstore_)
@@ -420,18 +421,18 @@ int main(int argc, char* argv[])
 						}
 						else{
 							//find the store that the shopper is at
-							if(Debug)cout<<"find store"<<endl;
+							//if(Debug)cout<<"find store"<<endl;
 							Store* currentStore = currentShopperptr->smove_->storelist_->FindStore(StoreList);
 							//if the shopper is already in the queue
 							if(currentShopperptr->smove_->storelist_->FindStore(StoreList)->ShopperinQueue(currentShopperptr)){
 								//if the shopper is at the head of the store
-								if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
+								//if(Debug)cout<<"shopper in queue"<<endl <<currentStore->storequeue->listhead_->RobotNum_<<endl;
 								if(currentShopperptr->RobotNum_  == currentStore->storequeue->listhead_->RobotNum_ ){
 									currentStore->storequeue->RunQueue();
 								}
 							}
 							else{
-								if(Debug)cout<<"shopper not in queue"<<endl;
+								//if(Debug)cout<<"shopper not in queue"<<endl;
 								//add the shopper to the queue
 								currentStore->storequeue->AddShopper(currentShopperptr);
 								if(Debug){cout<<"added shopper"<< " Head of list: "<<currentStore->storequeue->listhead_->RobotNum_
