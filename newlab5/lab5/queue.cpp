@@ -28,7 +28,7 @@ Shopper* Queue::RemoveShopper(Shopper* shopper){
 	else{
 		if(prevPtr != NULL){
 			cout<<"Prev Ptr not null"<<endl;
-		prevPtr->nextInQueue_ = currentPtr->nextshopper_ ;
+		prevPtr->nextInQueue_ = currentPtr->nextInQueue_ ;
 		return currentPtr->nextshopper_;
 		}
 		else{
