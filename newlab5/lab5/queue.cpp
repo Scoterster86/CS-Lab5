@@ -15,24 +15,24 @@ void Queue::RemoveShopper()
 Shopper* Queue::RemoveShopper(Shopper* shopper){
 	Shopper* currentPtr =this->listhead_;
 	Shopper* prevPtr = NULL;
-	cout<<"Remove Shopper"<<endl;
+	//cout<<"Remove Shopper"<<endl;
 	while(currentPtr && currentPtr->RobotNum_ != shopper->RobotNum_){
 		prevPtr = currentPtr;
 		currentPtr = currentPtr->nextshopper_ ;
-		cout<<"removing shopper"<<endl;
+		//cout<<"removing shopper"<<endl;
 	}
 	if(currentPtr == NULL){
-		cout<<"Current Ptr null"<<endl;
+		//cout<<"Current Ptr null"<<endl;
 		return NULL;
 	}
 	else{
 		if(prevPtr != NULL){
-			cout<<"Prev Ptr not null"<<endl;
+		//	cout<<"Prev Ptr not null"<<endl;
 		prevPtr->nextshopper_ = currentPtr->nextshopper_ ;
 		return currentPtr->nextshopper_;
 		}
 		else{
-			cout<<"Remove first shopper in list"<<endl;
+		//cout<<"Remove first shopper in list"<<endl;
 			this->listhead_ = this->listhead_->nextshopper_ ;
 			return this->listhead_;
 		}
@@ -78,20 +78,20 @@ void Queue::RunQueue()
         //if the store is on the first floor
         if(ptr->smove_->storelist_->zstore_ == 0){
         	cout<< ptr->smove_->storelist_->items_->itemsleft_<< endl;
-        	cout<<"Store is z=0"<<endl;
+        //	cout<<"Store is z=0"<<endl;
         	//if the shopper is done with that item 
         	if(ptr->smove_->storelist_->items_->itemsleft_==0){
         		ptr->smove_->storelist_->RemoveItem();
         		//if there are no more items in the shopper's list
         		if(ptr->smove_->storelist_->items_ == NULL){
         			this->listhead_ = this->listhead_->nextInQueue_;
-        			cout<<"Remove Store for queue"<<endl;
+        		//	cout<<"Remove Store for queue"<<endl;
         			ptr->smove_->RemoveStore();
         			ptr->enteredstore_ = 0;
         		}
         		else if(ptr->smove_->storelist_->items_->ProductCode_  == ""){
         			this->listhead_ = this->listhead_->nextInQueue_;
-        			cout<<"Remove Store for queue"<<endl;
+        			//cout<<"Remove Store for queue"<<endl;
         			ptr->smove_->RemoveStore();
         			ptr->enteredstore_ = 0;
         		}
@@ -103,8 +103,8 @@ void Queue::RunQueue()
         	//if the timeslice is up or if the shopper is out of the item
         	if((ptr->smove_->storelist_->items_->amount_ - ptr->smove_->storelist_->items_->itemsleft_ % TimeSlice == 0 )
         		|| (ptr->smove_->storelist_->items_->itemsleft_ == 0)){
-        			cout<<"TimeSlice Up/Out of Items"<<endl;
-        			//if the 
+        			//cout<<"TimeSlice Up/Out of Items"<<endl;
+        			
         		if(ptr->smove_->storelist_->items_->itemsleft_ == 0){
         			ptr->smove_->storelist_->RemoveItem();
         			if(ptr->smove_->storelist_->items_ == NULL){
